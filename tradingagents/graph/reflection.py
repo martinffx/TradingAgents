@@ -1,13 +1,19 @@
 # TradingAgents/graph/reflection.py
 
-from typing import Dict, Any
+from typing import Any
+
+from langchain_anthropic import ChatAnthropic
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
 
 
 class Reflector:
     """Handles reflection on decisions and updating memory."""
 
-    def __init__(self, quick_thinking_llm: ChatOpenAI):
+    def __init__(
+        self,
+        quick_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI,
+    ):
         """Initialize the reflector with an LLM."""
         self.quick_thinking_llm = quick_thinking_llm
         self.reflection_system_prompt = self._get_reflection_prompt()
@@ -15,7 +21,7 @@ class Reflector:
     def _get_reflection_prompt(self) -> str:
         """Get the system prompt for reflection."""
         return """
-You are an expert financial analyst tasked with reviewing trading decisions/analysis and providing a comprehensive, step-by-step analysis. 
+You are an expert financial analyst tasked with reviewing trading decisions/analysis and providing a comprehensive, step-by-step analysis.
 Your goal is to deliver detailed insights into investment decisions and highlight opportunities for improvement, adhering strictly to the following guidelines:
 
 1. Reasoning:
@@ -25,7 +31,7 @@ Your goal is to deliver detailed insights into investment decisions and highligh
      - Technical indicators.
      - Technical signals.
      - Price movement analysis.
-     - Overall market data analysis 
+     - Overall market data analysis
      - News analysis.
      - Social media and sentiment analysis.
      - Fundamental data analysis.
@@ -46,7 +52,7 @@ Your goal is to deliver detailed insights into investment decisions and highligh
 Adhere strictly to these instructions, and ensure your output is detailed, accurate, and actionable. You will also be given objective descriptions of the market from a price movements, technical indicator, news, and sentiment perspective to provide more context for your analysis.
 """
 
-    def _extract_current_situation(self, current_state: Dict[str, Any]) -> str:
+    def _extract_current_situation(self, current_state: dict[str, Any]) -> str:
         """Extract the current market situation from the state."""
         curr_market_report = current_state["market_report"]
         curr_sentiment_report = current_state["sentiment_report"]
@@ -68,7 +74,13 @@ Adhere strictly to these instructions, and ensure your output is detailed, accur
         ]
 
         result = self.quick_thinking_llm.invoke(messages).content
-        return result
+        # Ensure we return a string
+        if isinstance(result, str):
+            return result
+        elif isinstance(result, list):
+            return str(result)
+        else:
+            return str(result)
 
     def reflect_bull_researcher(self, current_state, returns_losses, bull_memory):
         """Reflect on bull researcher's analysis and update memory."""

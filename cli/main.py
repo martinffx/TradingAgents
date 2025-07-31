@@ -1,29 +1,32 @@
-from typing import Optional
 import datetime
-import typer
-from pathlib import Path
-from functools import wraps
-from rich.console import Console
-from rich.panel import Panel
-from rich.spinner import Spinner
-from rich.live import Live
-from rich.columns import Columns
-from rich.markdown import Markdown
-from rich.layout import Layout
-from rich.text import Text
-from rich.live import Live
-from rich.table import Table
 from collections import deque
-import time
-from rich.tree import Tree
+from functools import wraps
+from pathlib import Path
+
+import typer
 from rich import box
 from rich.align import Align
-from rich.rule import Rule
+from rich.columns import Columns
+from rich.console import Console
+from rich.layout import Layout
+from rich.live import Live
+from rich.markdown import Markdown
+from rich.panel import Panel
+from rich.spinner import Spinner
+from rich.table import Table
+from rich.text import Text
 
+from cli.utils import (
+    get_analysis_date,
+    get_ticker,
+    select_analysts,
+    select_deep_thinking_agent,
+    select_llm_provider,
+    select_research_depth,
+    select_shallow_thinking_agent,
+)
+from tradingagents.config import TradingAgentsConfig
 from tradingagents.graph.trading_graph import TradingAgentsGraph
-from tradingagents.default_config import DEFAULT_CONFIG
-from cli.models import AnalystType
-from cli.utils import *
 
 console = Console()
 
@@ -99,7 +102,7 @@ class MessageBuffer:
             if content is not None:
                 latest_section = section
                 latest_content = content
-               
+
         if latest_section and latest_content:
             # Format the current section for display
             section_titles = {
@@ -304,16 +307,16 @@ def update_display(layout, spinner_text=None):
             text_parts = []
             for item in content:
                 if isinstance(item, dict):
-                    if item.get('type') == 'text':
-                        text_parts.append(item.get('text', ''))
-                    elif item.get('type') == 'tool_use':
+                    if item.get("type") == "text":
+                        text_parts.append(item.get("text", ""))
+                    elif item.get("type") == "tool_use":
                         text_parts.append(f"[Tool: {item.get('name', 'unknown')}]")
                 else:
                     text_parts.append(str(item))
-            content_str = ' '.join(text_parts)
+            content_str = " ".join(text_parts)
         elif not isinstance(content_str, str):
             content_str = str(content)
-            
+
         # Truncate message content if too long
         if len(content_str) > 200:
             content_str = content_str[:197] + "..."
@@ -338,10 +341,12 @@ def update_display(layout, spinner_text=None):
     if spinner_text:
         messages_table.add_row("", "Spinner", spinner_text)
 
-    # Add a footer to indicate if messages were truncated
+    # Add a footer row to indicate if messages were truncated
     if len(all_messages) > max_messages:
-        messages_table.footer = (
-            f"[dim]Showing last {max_messages} of {len(all_messages)} messages[/dim]"
+        messages_table.add_row(
+            "",
+            "",
+            f"[dim]Showing last {max_messages} of {len(all_messages)} messages[/dim]",
         )
 
     layout["messages"].update(
@@ -394,7 +399,7 @@ def update_display(layout, spinner_text=None):
 def get_user_selections():
     """Get all user selections before starting the analysis display."""
     # Display ASCII art welcome message
-    with open("./cli/static/welcome.txt", "r") as f:
+    with open("./cli/static/welcome.txt") as f:
         welcome_ascii = f.read()
 
     # Create welcome box content
@@ -465,12 +470,10 @@ def get_user_selections():
 
     # Step 5: OpenAI backend
     console.print(
-        create_question_box(
-            "Step 5: OpenAI backend", "Select which service to talk to"
-        )
+        create_question_box("Step 5: OpenAI backend", "Select which service to talk to")
     )
     selected_llm_provider, backend_url = select_llm_provider()
-    
+
     # Step 6: Thinking agents
     console.print(
         create_question_box(
@@ -490,30 +493,6 @@ def get_user_selections():
         "shallow_thinker": selected_shallow_thinker,
         "deep_thinker": selected_deep_thinker,
     }
-
-
-def get_ticker():
-    """Get ticker symbol from user input."""
-    return typer.prompt("", default="SPY")
-
-
-def get_analysis_date():
-    """Get the analysis date from user input."""
-    while True:
-        date_str = typer.prompt(
-            "", default=datetime.datetime.now().strftime("%Y-%m-%d")
-        )
-        try:
-            # Validate date format and ensure it's not in the future
-            analysis_date = datetime.datetime.strptime(date_str, "%Y-%m-%d")
-            if analysis_date.date() > datetime.datetime.now().date():
-                console.print("[red]Error: Analysis date cannot be in the future[/red]")
-                continue
-            return date_str
-        except ValueError:
-            console.print(
-                "[red]Error: Invalid date format. Please use YYYY-MM-DD[/red]"
-            )
 
 
 def display_complete_report(final_state):
@@ -712,6 +691,7 @@ def update_research_team_status(status):
     for agent in research_team:
         message_buffer.update_agent_status(agent, status)
 
+
 def extract_content_string(content):
     """Extract string content from various message formats."""
     if isinstance(content, str):
@@ -721,28 +701,30 @@ def extract_content_string(content):
         text_parts = []
         for item in content:
             if isinstance(item, dict):
-                if item.get('type') == 'text':
-                    text_parts.append(item.get('text', ''))
-                elif item.get('type') == 'tool_use':
+                if item.get("type") == "text":
+                    text_parts.append(item.get("text", ""))
+                elif item.get("type") == "tool_use":
                     text_parts.append(f"[Tool: {item.get('name', 'unknown')}]")
             else:
                 text_parts.append(str(item))
-        return ' '.join(text_parts)
+        return " ".join(text_parts)
     else:
         return str(content)
+
 
 def run_analysis():
     # First get all user selections
     selections = get_user_selections()
 
     # Create config with selected research depth
-    config = DEFAULT_CONFIG.copy()
-    config["max_debate_rounds"] = selections["research_depth"]
-    config["max_risk_discuss_rounds"] = selections["research_depth"]
-    config["quick_think_llm"] = selections["shallow_thinker"]
-    config["deep_think_llm"] = selections["deep_thinker"]
-    config["backend_url"] = selections["backend_url"]
-    config["llm_provider"] = selections["llm_provider"].lower()
+    config = TradingAgentsConfig(
+        max_debate_rounds=selections["research_depth"],
+        max_risk_discuss_rounds=selections["research_depth"],
+        quick_think_llm=selections["shallow_thinker"],
+        deep_think_llm=selections["deep_thinker"],
+        backend_url=selections["backend_url"],
+        llm_provider=selections["llm_provider"].lower(),
+    )
 
     # Initialize the graph
     graph = TradingAgentsGraph(
@@ -750,7 +732,9 @@ def run_analysis():
     )
 
     # Create result directory
-    results_dir = Path(config["results_dir"]) / selections["ticker"] / selections["analysis_date"]
+    results_dir = (
+        Path(config.results_dir) / selections["ticker"] / selections["analysis_date"]
+    )
     results_dir.mkdir(parents=True, exist_ok=True)
     report_dir = results_dir / "reports"
     report_dir.mkdir(parents=True, exist_ok=True)
@@ -759,6 +743,7 @@ def run_analysis():
 
     def save_message_decorator(obj, func_name):
         func = getattr(obj, func_name)
+
         @wraps(func)
         def wrapper(*args, **kwargs):
             func(*args, **kwargs)
@@ -766,10 +751,12 @@ def run_analysis():
             content = content.replace("\n", " ")  # Replace newlines with spaces
             with open(log_file, "a") as f:
                 f.write(f"{timestamp} [{message_type}] {content}\n")
+
         return wrapper
-    
+
     def save_tool_call_decorator(obj, func_name):
         func = getattr(obj, func_name)
+
         @wraps(func)
         def wrapper(*args, **kwargs):
             func(*args, **kwargs)
@@ -777,29 +764,39 @@ def run_analysis():
             args_str = ", ".join(f"{k}={v}" for k, v in args.items())
             with open(log_file, "a") as f:
                 f.write(f"{timestamp} [Tool Call] {tool_name}({args_str})\n")
+
         return wrapper
 
     def save_report_section_decorator(obj, func_name):
         func = getattr(obj, func_name)
+
         @wraps(func)
         def wrapper(section_name, content):
             func(section_name, content)
-            if section_name in obj.report_sections and obj.report_sections[section_name] is not None:
+            if (
+                section_name in obj.report_sections
+                and obj.report_sections[section_name] is not None
+            ):
                 content = obj.report_sections[section_name]
                 if content:
                     file_name = f"{section_name}.md"
                     with open(report_dir / file_name, "w") as f:
                         f.write(content)
+
         return wrapper
 
     message_buffer.add_message = save_message_decorator(message_buffer, "add_message")
-    message_buffer.add_tool_call = save_tool_call_decorator(message_buffer, "add_tool_call")
-    message_buffer.update_report_section = save_report_section_decorator(message_buffer, "update_report_section")
+    message_buffer.add_tool_call = save_tool_call_decorator(
+        message_buffer, "add_tool_call"
+    )
+    message_buffer.update_report_section = save_report_section_decorator(
+        message_buffer, "update_report_section"
+    )
 
     # Now start the display layout
     layout = create_layout()
 
-    with Live(layout, refresh_per_second=4) as live:
+    with Live(layout, refresh_per_second=4):
         # Initial display
         update_display(layout)
 
@@ -850,14 +847,16 @@ def run_analysis():
 
                 # Extract message content and type
                 if hasattr(last_message, "content"):
-                    content = extract_content_string(last_message.content)  # Use the helper function
+                    content = extract_content_string(
+                        last_message.content
+                    )  # Use the helper function
                     msg_type = "Reasoning"
                 else:
                     content = str(last_message)
                     msg_type = "System"
 
                 # Add message to buffer
-                message_buffer.add_message(msg_type, content)                
+                message_buffer.add_message(msg_type, content)
 
                 # If it's a tool call, add it to tool calls
                 if hasattr(last_message, "tool_calls"):
@@ -1075,7 +1074,7 @@ def run_analysis():
 
         # Get final state and decision
         final_state = trace[-1]
-        decision = graph.process_signal(final_state["final_trade_decision"])
+        _decision = graph.process_signal(final_state["final_trade_decision"])
 
         # Update all agent statuses to completed
         for agent in message_buffer.agent_status:
@@ -1086,7 +1085,7 @@ def run_analysis():
         )
 
         # Update final report sections
-        for section in message_buffer.report_sections.keys():
+        for section in message_buffer.report_sections:
             if section in final_state:
                 message_buffer.update_report_section(section, final_state[section])
 

@@ -1,12 +1,18 @@
 # TradingAgents/graph/signal_processing.py
 
+
+from langchain_anthropic import ChatAnthropic
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
 
 
 class SignalProcessor:
     """Processes trading signals to extract actionable decisions."""
 
-    def __init__(self, quick_thinking_llm: ChatOpenAI):
+    def __init__(
+        self,
+        quick_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI,
+    ):
         """Initialize with an LLM for processing."""
         self.quick_thinking_llm = quick_thinking_llm
 
@@ -28,4 +34,11 @@ class SignalProcessor:
             ("human", full_signal),
         ]
 
-        return self.quick_thinking_llm.invoke(messages).content
+        result = self.quick_thinking_llm.invoke(messages).content
+        # Ensure we return a string
+        if isinstance(result, str):
+            return result
+        elif isinstance(result, list):
+            return str(result)
+        else:
+            return str(result)
