@@ -1,43 +1,38 @@
-from langchain_core.messages import BaseMessage, HumanMessage, ToolMessage, AIMessage
-from typing import List
+from datetime import datetime
 from typing import Annotated
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.messages import RemoveMessage
+
+from langchain_core.messages import HumanMessage, RemoveMessage
 from langchain_core.tools import tool
-from datetime import date, timedelta, datetime
-import functools
-import pandas as pd
-import os
-from dateutil.relativedelta import relativedelta
-from langchain_openai import ChatOpenAI
+
 import tradingagents.dataflows.interface as interface
-from tradingagents.default_config import DEFAULT_CONFIG
-from langchain_core.messages import HumanMessage
+from tradingagents.config import TradingAgentsConfig
+
+DEFAULT_CONFIG = TradingAgentsConfig()
 
 
 def create_msg_delete():
     def delete_messages(state):
         """Clear messages and add placeholder for Anthropic compatibility"""
         messages = state["messages"]
-        
+
         # Remove all messages
         removal_operations = [RemoveMessage(id=m.id) for m in messages]
-        
+
         # Add a minimal placeholder message
         placeholder = HumanMessage(content="Continue")
-        
+
         return {"messages": removal_operations + [placeholder]}
-    
+
     return delete_messages
 
 
 class Toolkit:
-    _config = DEFAULT_CONFIG.copy()
+    _config = TradingAgentsConfig()
 
     @classmethod
     def update_config(cls, config):
         """Update the class-level configuration."""
-        cls._config.update(config)
+        cls._config = config
 
     @property
     def config(self):
@@ -60,7 +55,7 @@ class Toolkit:
         Returns:
             str: A formatted dataframe containing the latest global news from Reddit in the specified time frame.
         """
-        
+
         global_news_result = interface.get_reddit_global_news(curr_date, 7, 5)
 
         return global_news_result
@@ -87,9 +82,9 @@ class Toolkit:
 
         end_date_str = end_date
 
-        end_date = datetime.strptime(end_date, "%Y-%m-%d")
-        start_date = datetime.strptime(start_date, "%Y-%m-%d")
-        look_back_days = (end_date - start_date).days
+        end_date_dt = datetime.strptime(end_date, "%Y-%m-%d")
+        start_date_dt = datetime.strptime(start_date, "%Y-%m-%d")
+        look_back_days = (end_date_dt - start_date_dt).days
 
         finnhub_news_result = interface.get_finnhub_news(
             ticker, end_date_str, look_back_days
@@ -138,7 +133,8 @@ class Toolkit:
 
         result_data = interface.get_YFin_data(symbol, start_date, end_date)
 
-        return result_data
+        # Convert DataFrame to string for tool output
+        return result_data.to_string()
 
     @staticmethod
     @tool

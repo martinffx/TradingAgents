@@ -1,6 +1,4 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-import time
-import json
 
 
 def create_news_analyst(llm, toolkit):
@@ -8,7 +6,7 @@ def create_news_analyst(llm, toolkit):
         current_date = state["trade_date"]
         ticker = state["company_of_interest"]
 
-        if toolkit.config["online_tools"]:
+        if toolkit.config.online_tools:
             tools = [toolkit.get_global_news_openai, toolkit.get_google_news]
         else:
             tools = [

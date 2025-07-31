@@ -1,15 +1,14 @@
-import json
+import random
+import time
+from datetime import datetime
+
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
-import time
-import random
 from tenacity import (
     retry,
+    retry_if_result,
     stop_after_attempt,
     wait_exponential,
-    retry_if_exception_type,
-    retry_if_result,
 )
 
 
@@ -73,11 +72,24 @@ def getNewsData(query, start_date, end_date):
 
             for el in results_on_page:
                 try:
-                    link = el.find("a")["href"]
-                    title = el.select_one("div.MBeuO").get_text()
-                    snippet = el.select_one(".GI74Re").get_text()
-                    date = el.select_one(".LfVVr").get_text()
-                    source = el.select_one(".NUnG9d span").get_text()
+                    link_elem = el.find("a")
+                    # Handle BeautifulSoup element access safely
+                    if link_elem:
+                        link = getattr(link_elem, "attrs", {}).get("href", "")
+                    else:
+                        link = ""
+
+                    title_elem = el.select_one("div.MBeuO")
+                    title = title_elem.get_text() if title_elem else ""
+
+                    snippet_elem = el.select_one(".GI74Re")
+                    snippet = snippet_elem.get_text() if snippet_elem else ""
+
+                    date_elem = el.select_one(".LfVVr")
+                    date = date_elem.get_text() if date_elem else ""
+
+                    source_elem = el.select_one(".NUnG9d span")
+                    source = source_elem.get_text() if source_elem else ""
                     news_results.append(
                         {
                             "link": link,

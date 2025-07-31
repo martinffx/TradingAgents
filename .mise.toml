@@ -1,0 +1,75 @@
+[tools]
+python = "3.13"
+uv = "latest"
+ruff = "latest"
+"npm:pyright" = "latest"
+
+[env]
+# Python environment settings
+PYTHONPATH = "."
+PYTHONDONTWRITEBYTECODE = "1"
+PYTHONUNBUFFERED = "1"
+
+# TradingAgents specific environment variables
+TRADINGAGENTS_RESULTS_DIR = "./results"
+TRADINGAGENTS_DATA_DIR = "./data"
+
+[tasks.install]
+description = "Install dependencies using uv"
+run = "uv sync --dev"
+
+[tasks.dev]
+description = "Run the CLI application"
+run = "uv run python -m cli.main"
+
+[tasks.run]
+description = "Run the main application"
+run = "uv run python main.py"
+
+[tasks.test]
+description = "Run tests with pytest"
+run = "uv run pytest"
+
+[tasks.lint]
+description = "Run ruff linting"
+run = "ruff check ."
+
+[tasks.format]
+description = "Format code with ruff"
+run = "ruff format ."
+
+[tasks.typecheck]
+description = "Run pyright type checking"
+run = "pyright"
+
+[tasks.fix]
+description = "Auto-fix linting issues"
+run = "ruff check --fix ."
+
+[tasks.all]
+description = "Run format, lint, and typecheck"
+run = [
+    "ruff format .",
+    "ruff check .",
+    "pyright"
+]
+
+[tasks.clean]
+description = "Clean up cache and build artifacts"
+run = [
+    "find . -type d -name __pycache__ -exec rm -rf {} +",
+    "find . -type f -name '*.pyc' -delete",
+    "rm -rf .pytest_cache",
+    "rm -rf .ruff_cache",
+    "rm -rf dist",
+    "rm -rf build",
+    "rm -rf *.egg-info"
+]
+
+[tasks.setup]
+description = "Initial project setup"
+run = [
+    "mise install",
+    "uv sync --dev",
+    "echo 'Setup complete! Run mise run --help to see available tasks.'"
+]

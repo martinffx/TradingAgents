@@ -1,31 +1,22 @@
 # TradingAgents/graph/trading_graph.py
 
+import json
 import os
 from pathlib import Path
-import json
-from datetime import date
-from typing import Dict, Any, Tuple, List, Optional
 
-from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
-
+from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import ToolNode
 
-from tradingagents.agents import *
-from tradingagents.default_config import DEFAULT_CONFIG
+from tradingagents.agents.utils.agent_utils import Toolkit
 from tradingagents.agents.utils.memory import FinancialSituationMemory
-from tradingagents.agents.utils.agent_states import (
-    AgentState,
-    InvestDebateState,
-    RiskDebateState,
-)
-from tradingagents.dataflows.interface import set_config
+from tradingagents.config import TradingAgentsConfig
 
 from .conditional_logic import ConditionalLogic
-from .setup import GraphSetup
 from .propagation import Propagator
 from .reflection import Reflector
+from .setup import GraphSetup
 from .signal_processing import SignalProcessor
 
 
@@ -34,50 +25,70 @@ class TradingAgentsGraph:
 
     def __init__(
         self,
-        selected_analysts=["market", "social", "news", "fundamentals"],
+        selected_analysts=None,
         debug=False,
-        config: Dict[str, Any] = None,
+        config: TradingAgentsConfig | None = None,
     ):
         """Initialize the trading agents graph and components.
 
         Args:
             selected_analysts: List of analyst types to include
             debug: Whether to run in debug mode
-            config: Configuration dictionary. If None, uses default config
+            config: Configuration object. If None, uses default config
         """
-        self.debug = debug
-        self.config = config or DEFAULT_CONFIG
+        if selected_analysts is None:
+            selected_analysts = ["market", "social", "news", "fundamentals"]
 
-        # Update the interface's config
-        set_config(self.config)
+        self.debug = debug
+        self.config = config or TradingAgentsConfig()
 
         # Create necessary directories
         os.makedirs(
-            os.path.join(self.config["project_dir"], "dataflows/data_cache"),
+            os.path.join(self.config.project_dir, "dataflows/data_cache"),
             exist_ok=True,
         )
 
         # Initialize LLMs
-        if self.config["llm_provider"].lower() == "openai" or self.config["llm_provider"] == "ollama" or self.config["llm_provider"] == "openrouter":
-            self.deep_thinking_llm = ChatOpenAI(model=self.config["deep_think_llm"], base_url=self.config["backend_url"])
-            self.quick_thinking_llm = ChatOpenAI(model=self.config["quick_think_llm"], base_url=self.config["backend_url"])
-        elif self.config["llm_provider"].lower() == "anthropic":
-            self.deep_thinking_llm = ChatAnthropic(model=self.config["deep_think_llm"], base_url=self.config["backend_url"])
-            self.quick_thinking_llm = ChatAnthropic(model=self.config["quick_think_llm"], base_url=self.config["backend_url"])
-        elif self.config["llm_provider"].lower() == "google":
-            self.deep_thinking_llm = ChatGoogleGenerativeAI(model=self.config["deep_think_llm"])
-            self.quick_thinking_llm = ChatGoogleGenerativeAI(model=self.config["quick_think_llm"])
+        if (
+            self.config.llm_provider.lower() == "openai"
+            or self.config.llm_provider == "ollama"
+            or self.config.llm_provider == "openrouter"
+        ):
+            self.deep_thinking_llm = ChatOpenAI(
+                model=self.config.deep_think_llm, base_url=self.config.backend_url
+            )
+            self.quick_thinking_llm = ChatOpenAI(
+                model=self.config.quick_think_llm, base_url=self.config.backend_url
+            )
+        elif self.config.llm_provider.lower() == "anthropic":
+            self.deep_thinking_llm = ChatAnthropic(
+                model_name=self.config.deep_think_llm, timeout=60, stop=[]
+            )
+            self.quick_thinking_llm = ChatAnthropic(
+                model_name=self.config.quick_think_llm, timeout=60, stop=[]
+            )
+        elif self.config.llm_provider.lower() == "google":
+            self.deep_thinking_llm = ChatGoogleGenerativeAI(
+                model=self.config.deep_think_llm
+            )
+            self.quick_thinking_llm = ChatGoogleGenerativeAI(
+                model=self.config.quick_think_llm
+            )
         else:
-            raise ValueError(f"Unsupported LLM provider: {self.config['llm_provider']}")
-        
+            raise ValueError(f"Unsupported LLM provider: {self.config.llm_provider}")
+
         self.toolkit = Toolkit(config=self.config)
 
         # Initialize memories
         self.bull_memory = FinancialSituationMemory("bull_memory", self.config)
         self.bear_memory = FinancialSituationMemory("bear_memory", self.config)
         self.trader_memory = FinancialSituationMemory("trader_memory", self.config)
-        self.invest_judge_memory = FinancialSituationMemory("invest_judge_memory", self.config)
-        self.risk_manager_memory = FinancialSituationMemory("risk_manager_memory", self.config)
+        self.invest_judge_memory = FinancialSituationMemory(
+            "invest_judge_memory", self.config
+        )
+        self.risk_manager_memory = FinancialSituationMemory(
+            "risk_manager_memory", self.config
+        )
 
         # Create tool nodes
         self.tool_nodes = self._create_tool_nodes()
@@ -109,7 +120,7 @@ class TradingAgentsGraph:
         # Set up the graph
         self.graph = self.graph_setup.setup_graph(selected_analysts)
 
-    def _create_tool_nodes(self) -> Dict[str, ToolNode]:
+    def _create_tool_nodes(self) -> dict[str, ToolNode]:
         """Create tool nodes for different data sources."""
         return {
             "market": ToolNode(

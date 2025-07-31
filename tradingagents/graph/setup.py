@@ -1,11 +1,27 @@
 # TradingAgents/graph/setup.py
 
-from typing import Dict, Any
+
+from langchain_anthropic import ChatAnthropic
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
-from langgraph.graph import END, StateGraph, START
+from langgraph.graph import END, START, StateGraph
 from langgraph.prebuilt import ToolNode
 
-from tradingagents.agents import *
+from tradingagents.agents import (
+    create_bear_researcher,
+    create_bull_researcher,
+    create_fundamentals_analyst,
+    create_market_analyst,
+    create_msg_delete,
+    create_neutral_debator,
+    create_news_analyst,
+    create_research_manager,
+    create_risk_manager,
+    create_risky_debator,
+    create_safe_debator,
+    create_social_media_analyst,
+    create_trader,
+)
 from tradingagents.agents.utils.agent_states import AgentState
 from tradingagents.agents.utils.agent_utils import Toolkit
 
@@ -17,10 +33,10 @@ class GraphSetup:
 
     def __init__(
         self,
-        quick_thinking_llm: ChatOpenAI,
-        deep_thinking_llm: ChatOpenAI,
+        quick_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI,
+        deep_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI,
         toolkit: Toolkit,
-        tool_nodes: Dict[str, ToolNode],
+        tool_nodes: dict[str, ToolNode],
         bull_memory,
         bear_memory,
         trader_memory,
@@ -40,9 +56,7 @@ class GraphSetup:
         self.risk_manager_memory = risk_manager_memory
         self.conditional_logic = conditional_logic
 
-    def setup_graph(
-        self, selected_analysts=["market", "social", "news", "fundamentals"]
-    ):
+    def setup_graph(self, selected_analysts=None):
         """Set up and compile the agent workflow graph.
 
         Args:
@@ -52,6 +66,9 @@ class GraphSetup:
                 - "news": News analyst
                 - "fundamentals": Fundamentals analyst
         """
+        if selected_analysts is None:
+            selected_analysts = ["market", "social", "news", "fundamentals"]
+
         if len(selected_analysts) == 0:
             raise ValueError("Trading Agents Graph Setup Error: no analysts selected!")
 
@@ -150,7 +167,7 @@ class GraphSetup:
 
             # Connect to next analyst or to Bull Researcher if this is the last analyst
             if i < len(selected_analysts) - 1:
-                next_analyst = f"{selected_analysts[i+1].capitalize()} Analyst"
+                next_analyst = f"{selected_analysts[i + 1].capitalize()} Analyst"
                 workflow.add_edge(current_clear, next_analyst)
             else:
                 workflow.add_edge(current_clear, "Bull Researcher")

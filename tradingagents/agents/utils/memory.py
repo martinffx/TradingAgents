@@ -5,20 +5,18 @@ from openai import OpenAI
 
 class FinancialSituationMemory:
     def __init__(self, name, config):
-        if config["backend_url"] == "http://localhost:11434/v1":
+        if config.backend_url == "http://localhost:11434/v1":
             self.embedding = "nomic-embed-text"
         else:
             self.embedding = "text-embedding-3-small"
-        self.client = OpenAI(base_url=config["backend_url"])
+        self.client = OpenAI(base_url=config.backend_url)
         self.chroma_client = chromadb.Client(Settings(allow_reset=True))
         self.situation_collection = self.chroma_client.create_collection(name=name)
 
     def get_embedding(self, text):
         """Get OpenAI embedding for a text"""
-        
-        response = self.client.embeddings.create(
-            model=self.embedding, input=text
-        )
+
+        response = self.client.embeddings.create(model=self.embedding, input=text)
         return response.data[0].embedding
 
     def add_situations(self, situations_and_advice):
@@ -55,21 +53,42 @@ class FinancialSituationMemory:
         )
 
         matched_results = []
-        for i in range(len(results["documents"][0])):
-            matched_results.append(
-                {
-                    "matched_situation": results["documents"][0][i],
-                    "recommendation": results["metadatas"][0][i]["recommendation"],
-                    "similarity_score": 1 - results["distances"][0][i],
-                }
-            )
+        if (
+            results
+            and "documents" in results
+            and results["documents"]
+            and len(results["documents"]) > 0
+        ):
+            for i in range(len(results["documents"][0])):
+                if (
+                    "metadatas" in results
+                    and results["metadatas"]
+                    and len(results["metadatas"]) > 0
+                    and i < len(results["metadatas"][0])
+                    and "distances" in results
+                    and results["distances"]
+                    and len(results["distances"]) > 0
+                    and i < len(results["distances"][0])
+                ):
+                    matched_results.append(
+                        {
+                            "matched_situation": results["documents"][0][i],
+                            "recommendation": results["metadatas"][0][i].get(
+                                "recommendation", ""
+                            ),
+                            "similarity_score": 1 - results["distances"][0][i],
+                        }
+                    )
 
         return matched_results
 
 
 if __name__ == "__main__":
     # Example usage
-    matcher = FinancialSituationMemory()
+    from tradingagents.config import TradingAgentsConfig
+
+    config = TradingAgentsConfig()
+    matcher = FinancialSituationMemory("example_memory", config)
 
     # Example data
     example_data = [
@@ -96,7 +115,7 @@ if __name__ == "__main__":
 
     # Example query
     current_situation = """
-    Market showing increased volatility in tech sector, with institutional investors 
+    Market showing increased volatility in tech sector, with institutional investors
     reducing positions and rising interest rates affecting growth stock valuations
     """
 
