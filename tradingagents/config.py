@@ -42,6 +42,10 @@ class TradingAgentsConfig:
     # Tool settings
     online_tools: bool = True
 
+    # Data retrieval settings
+    default_lookback_days: int = 30
+    default_ta_lookback_days: int = 30
+
     def __post_init__(self):
         """Set computed fields after initialization."""
         self.data_cache_dir = os.path.join(self.project_dir, "dataflows/data_cache")
@@ -79,6 +83,8 @@ class TradingAgentsConfig:
             max_risk_discuss_rounds=int(os.getenv("MAX_RISK_DISCUSS_ROUNDS", "1")),
             max_recur_limit=int(os.getenv("MAX_RECUR_LIMIT", "100")),
             online_tools=os.getenv("ONLINE_TOOLS", "true").lower() == "true",
+            default_lookback_days=int(os.getenv("DEFAULT_LOOKBACK_DAYS", "30")),
+            default_ta_lookback_days=int(os.getenv("DEFAULT_TA_LOOKBACK_DAYS", "30")),
         )
 
     def to_dict(self) -> dict:
@@ -96,6 +102,8 @@ class TradingAgentsConfig:
             "max_risk_discuss_rounds": self.max_risk_discuss_rounds,
             "max_recur_limit": self.max_recur_limit,
             "online_tools": self.online_tools,
+            "default_lookback_days": self.default_lookback_days,
+            "default_ta_lookback_days": self.default_ta_lookback_days,
         }
 
     def copy(self) -> "TradingAgentsConfig":
@@ -112,6 +120,8 @@ class TradingAgentsConfig:
             max_risk_discuss_rounds=self.max_risk_discuss_rounds,
             max_recur_limit=self.max_recur_limit,
             online_tools=self.online_tools,
+            default_lookback_days=self.default_lookback_days,
+            default_ta_lookback_days=self.default_ta_lookback_days,
         )
 
 
