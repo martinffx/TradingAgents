@@ -1,6 +1,6 @@
 import logging
 import re
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from typing import Annotated
 
 from langchain_core.tools import tool
@@ -41,9 +41,9 @@ class AgentToolkit:
     def __init__(
         self,
         news_service: NewsService,
+        socialmedia_service: SocialMediaService,
         marketdata_service: MarketDataService,
         fundamentaldata_service: FundamentalDataService,
-        socialmedia_service: SocialMediaService,
         insiderdata_service: InsiderDataService,
         config: TradingAgentsConfig = DEFAULT_CONFIG,
     ):
@@ -102,8 +102,8 @@ class AgentToolkit:
             datetime.strptime(start_date, "%Y-%m-%d")
             datetime.strptime(end_date, "%Y-%m-%d")
 
-            return self._news_service.get_context(
-                query=ticker, start_date=start_date, end_date=end_date, symbol=ticker
+            return self._news_service.get_company_news_context(
+                symbol=ticker, start_date=start_date, end_date=end_date
             )
         except Exception as e:
             logger.error(f"Error getting news for {ticker}: {e}")
@@ -177,7 +177,7 @@ class AgentToolkit:
         curr_date: Annotated[
             str, "The current trading date you are trading on, YYYY-mm-dd"
         ],
-        look_back_days: Annotated[int, "how many days to look back"] = None,
+        look_back_days: Annotated[int, "how many days to look back"],
     ) -> TAReportContext:
         """
         Retrieve stock stats indicators for a given ticker symbol and indicator.
@@ -280,11 +280,11 @@ class AgentToolkit:
         Returns:
             BalanceSheetContext: Structured balance sheet analysis with key liquidity and debt metrics.
         """
+        curr_date_obj = self._parse_date(curr_date)
         return self._fundamentaldata_service.get_balance_sheet_context(
             symbol=ticker,
-            start_date=curr_date,
-            end_date=curr_date,
-            frequency=freq.lower(),
+            start_date=curr_date_obj,
+            end_date=curr_date_obj,
         )
 
     @tool
@@ -306,11 +306,11 @@ class AgentToolkit:
         Returns:
             CashFlowContext: Structured cash flow analysis with operating cash flow metrics.
         """
+        curr_date_obj = self._parse_date(curr_date)
         return self._fundamentaldata_service.get_cashflow_context(
             symbol=ticker,
-            start_date=curr_date,
-            end_date=curr_date,
-            frequency=freq.lower(),
+            start_date=curr_date_obj,
+            end_date=curr_date_obj,
         )
 
     @tool
@@ -332,11 +332,11 @@ class AgentToolkit:
         Returns:
             IncomeStatementContext: Structured income statement analysis with profitability metrics.
         """
+        curr_date_obj = self._parse_date(curr_date)
         return self._fundamentaldata_service.get_income_statement_context(
             symbol=ticker,
-            start_date=curr_date,
-            end_date=curr_date,
-            frequency=freq.lower(),
+            start_date=curr_date_obj,
+            end_date=curr_date_obj,
         )
 
     def _calculate_date_range(
@@ -359,13 +359,36 @@ class AgentToolkit:
             curr_date_obj = datetime.strptime(curr_date, "%Y-%m-%d")
         except ValueError as e:
             logger.error(f"Invalid date format '{curr_date}': {e}")
-            raise ValueError(f"Date must be in YYYY-MM-DD format, got: {curr_date}")
+            raise ValueError(
+                f"Date must be in YYYY-MM-DD format, got: {curr_date}"
+            ) from e
 
         if lookback_days is None:
             lookback_days = self._config.default_lookback_days
 
         start_date_obj = curr_date_obj - timedelta(days=lookback_days)
         return start_date_obj.strftime("%Y-%m-%d"), curr_date
+
+    def _parse_date(self, date_str: str) -> date:
+        """
+        Convert string date to date object.
+
+        Args:
+            date_str: Date string in YYYY-MM-DD format
+
+        Returns:
+            date object
+
+        Raises:
+            ValueError: If date format is invalid
+        """
+        try:
+            return datetime.strptime(date_str, "%Y-%m-%d").date()
+        except ValueError as e:
+            logger.error(f"Invalid date format '{date_str}': {e}")
+            raise ValueError(
+                f"Date must be in YYYY-MM-DD format, got '{date_str}'"
+            ) from e
 
     def _validate_ticker(self, ticker: str) -> str:
         """

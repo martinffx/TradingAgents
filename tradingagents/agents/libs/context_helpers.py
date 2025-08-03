@@ -310,3 +310,24 @@ def is_high_quality_data(context_json: str) -> bool:
     """Quick check if context contains high quality data."""
     context = ContextParser.parse_context(context_json)
     return ContextParser.is_high_quality(context)
+
+
+def create_msg_delete():
+    """
+    Create a message deletion node function for LangGraph workflows.
+
+    This function returns a node that clears all messages from the state,
+    which is useful for preventing context pollution between different
+    phases of multi-agent workflows.
+
+    Returns:
+        Callable: A function that can be used as a LangGraph node
+    """
+    from langchain_core.messages import RemoveMessage
+    from langgraph.graph.message import REMOVE_ALL_MESSAGES
+
+    def delete_messages(state):
+        """Delete all messages from the current state."""
+        return {"messages": [RemoveMessage(id=REMOVE_ALL_MESSAGES)]}
+
+    return delete_messages

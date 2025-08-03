@@ -9,9 +9,16 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import ToolNode
 
-from tradingagents.agents.utils.agent_utils import Toolkit
-from tradingagents.agents.utils.memory import FinancialSituationMemory
+from tradingagents.agents.libs.agent_toolkit import AgentToolkit
+from tradingagents.agents.libs.memory import FinancialSituationMemory
 from tradingagents.config import TradingAgentsConfig
+from tradingagents.domains.marketdata.fundamental_data_service import (
+    FundamentalDataService,
+)
+from tradingagents.domains.marketdata.insider_data_service import InsiderDataService
+from tradingagents.domains.marketdata.market_data_service import MarketDataService
+from tradingagents.domains.news.news_service import NewsService
+from tradingagents.domains.socialmedia.social_media_service import SocialMediaService
 
 from .conditional_logic import ConditionalLogic
 from .propagation import Propagator
@@ -77,7 +84,18 @@ class TradingAgentsGraph:
         else:
             raise ValueError(f"Unsupported LLM provider: {self.config.llm_provider}")
 
-        self.toolkit = Toolkit(config=self.config)
+        news_service = NewsService.build(self.config)
+        social_media_service = SocialMediaService.build(self.config)
+        market_data_service = MarketDataService.build(self.config)
+        fundamental_data_service = FundamentalDataService.build(self.config)
+        insider_data_service = InsiderDataService.build(self.config)
+        self.toolkit = AgentToolkit(
+            news_service,
+            social_media_service,
+            market_data_service,
+            fundamental_data_service,
+            insider_data_service,
+        )
 
         # Initialize memories
         self.bull_memory = FinancialSituationMemory("bull_memory", self.config)
@@ -125,42 +143,28 @@ class TradingAgentsGraph:
         return {
             "market": ToolNode(
                 [
-                    # online tools
-                    self.toolkit.get_YFin_data_online,
-                    self.toolkit.get_stockstats_indicators_report_online,
-                    # offline tools
-                    self.toolkit.get_YFin_data,
-                    self.toolkit.get_stockstats_indicators_report,
+                    self.toolkit.get_market_data,
+                    self.toolkit.get_ta_report,
                 ]
             ),
             "social": ToolNode(
                 [
-                    # online tools
-                    self.toolkit.get_stock_news_openai,
-                    # offline tools
-                    self.toolkit.get_reddit_stock_info,
+                    self.toolkit.get_socialmedia_stock_info,
                 ]
             ),
             "news": ToolNode(
                 [
-                    # online tools
-                    self.toolkit.get_global_news_openai,
-                    self.toolkit.get_google_news,
-                    # offline tools
-                    self.toolkit.get_finnhub_news,
-                    self.toolkit.get_reddit_news,
+                    self.toolkit.get_global_news,
+                    self.toolkit.get_news,
                 ]
             ),
             "fundamentals": ToolNode(
                 [
-                    # online tools
-                    self.toolkit.get_fundamentals_openai,
-                    # offline tools
-                    self.toolkit.get_finnhub_company_insider_sentiment,
-                    self.toolkit.get_finnhub_company_insider_transactions,
-                    self.toolkit.get_simfin_balance_sheet,
-                    self.toolkit.get_simfin_cashflow,
-                    self.toolkit.get_simfin_income_stmt,
+                    self.toolkit.get_insider_sentiment,
+                    self.toolkit.get_insider_transactions,
+                    self.toolkit.get_balance_sheet,
+                    self.toolkit.get_cashflow,
+                    self.toolkit.get_income_stmt,
                 ]
             ),
         }

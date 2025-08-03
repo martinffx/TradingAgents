@@ -7,9 +7,24 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
-from tradingagents.domains.marketdata.finnhub_client import FinnhubClient
+from tradingagents.config import TradingAgentsConfig
+
+from .clients.finnhub_client import FinnhubClient
 
 logger = logging.getLogger(__name__)
+
+
+class InsiderDataRepository:
+    """Simple repository for insider data - placeholder implementation."""
+
+    def __init__(self, data_dir: str):
+        self.data_dir = data_dir
+
+    def get_data(self, symbol: str, start_date: str, end_date: str) -> dict:
+        return {}
+
+    def store_data(self, symbol: str, data: dict) -> bool:
+        return True
 
 
 class DataQuality(Enum):
@@ -84,6 +99,12 @@ class InsiderDataService:
         """
         self.client = client
         self.repository = repository
+
+    @staticmethod
+    def build(_config: TradingAgentsConfig):
+        client = FinnhubClient("")
+        repo = InsiderDataRepository("")
+        return InsiderDataService(client, repo)
 
     def get_insider_sentiment_context(
         self,

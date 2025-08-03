@@ -8,8 +8,6 @@ from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
 
-from .base import BaseRepository
-
 logger = logging.getLogger(__name__)
 
 
@@ -40,10 +38,10 @@ class NewsData:
     articles: list[NewsArticle]
 
 
-class NewsRepository(BaseRepository):
+class NewsRepository:
     """Repository for accessing cached news data with source separation."""
 
-    def __init__(self, data_dir: str, **kwargs):
+    def __init__(self, data_dir: str):
         """
         Initialize news repository.
 
@@ -155,7 +153,6 @@ class NewsRepository(BaseRepository):
         """
         # Create source/query directory
         source_dir = self.news_data_dir / source / query
-        self._ensure_path_exists(source_dir)
 
         # Create JSON file path
         file_path = source_dir / f"{date.isoformat()}.json"

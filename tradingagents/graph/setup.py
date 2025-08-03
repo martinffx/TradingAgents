@@ -22,8 +22,8 @@ from tradingagents.agents import (
     create_social_media_analyst,
     create_trader,
 )
-from tradingagents.agents.utils.agent_states import AgentState
-from tradingagents.agents.utils.agent_utils import Toolkit
+from tradingagents.agents.libs.agent_states import AgentState
+from tradingagents.agents.libs.agent_toolkit import AgentToolkit
 
 from .conditional_logic import ConditionalLogic
 
@@ -35,7 +35,7 @@ class GraphSetup:
         self,
         quick_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI,
         deep_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI,
-        toolkit: Toolkit,
+        toolkit: AgentToolkit,
         tool_nodes: dict[str, ToolNode],
         bull_memory,
         bear_memory,
