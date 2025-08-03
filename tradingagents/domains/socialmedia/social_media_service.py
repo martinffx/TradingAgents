@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any
 
+from tradingagents.config import TradingAgentsConfig
+
 from .reddit_client import RedditClient
 from .social_media_repository import SocialMediaRepository
 
@@ -111,6 +113,12 @@ class SocialMediaService:
         self.reddit_client = reddit_client
         self.repository = repository
 
+    @staticmethod
+    def build(_config: TradingAgentsConfig):
+        client = RedditClient()
+        repo = SocialMediaRepository("")
+        return SocialMediaService(client, repo)
+
     def get_context(
         self,
         query: str,
@@ -134,74 +142,29 @@ class SocialMediaService:
             SocialContext with posts and sentiment analysis
         """
         posts = []
-        error_info = {}
         data_source = "unknown"
-
-        try:
-            # Local-first data strategy with force refresh option
-            if force_refresh:
-                # Skip local data, fetch fresh from APIs
-                posts, data_source = self._fetch_and_cache_fresh_social_data(
-                    query, start_date, end_date, symbol, subreddits
-                )
-            else:
-                # Check local data first, fetch missing if needed
-                posts, data_source = self._get_social_data_local_first(
-                    query, start_date, end_date, symbol, subreddits
-                )
-
-        except Exception as e:
-            logger.error(f"Error fetching social media data: {e}")
-            error_info = {"error": str(e)}
-
-        # Calculate sentiment and engagement metrics
-        sentiment_summary = self._calculate_sentiment(posts)
-        engagement_metrics = self._calculate_engagement_metrics(posts)
-
-        # Determine data quality based on data source
-        data_quality = self._determine_data_quality(
-            data_source=data_source,
-            record_count=len(posts),
-            has_errors=bool(error_info),
-        )
 
         # Create structured engagement metrics
         structured_metrics = EngagementMetrics(
-            total_engagement=float(engagement_metrics.get("total_engagement", 0)),
-            average_engagement=float(engagement_metrics.get("average_engagement", 0)),
-            max_engagement=float(engagement_metrics.get("max_engagement", 0)),
-            total_posts=int(engagement_metrics.get("total_posts", 0)),
+            total_engagement=0,
+            average_engagement=0,
+            max_engagement=0,
+            total_posts=0,
         )
-
-        # Separate non-float metrics for metadata
-        metadata_info = {
-            k: v
-            for k, v in engagement_metrics.items()
-            if k
-            not in [
-                "total_engagement",
-                "average_engagement",
-                "max_engagement",
-                "total_posts",
-            ]
-        }
 
         return SocialContext(
             symbol=symbol,
             period=(start_date, end_date),
             posts=posts,
             engagement_metrics=structured_metrics,
-            sentiment_summary=sentiment_summary,
+            sentiment_summary=SentimentScore(score=0, confidence=0, label=""),
             post_count=len(posts),
             platforms=["reddit"],
             metadata={
-                "data_quality": data_quality,
                 "service": "social_media",
                 "subreddits": subreddits or [],
                 "data_source": data_source,
                 "force_refresh": force_refresh,
-                **metadata_info,
-                **error_info,
             },
         )
 

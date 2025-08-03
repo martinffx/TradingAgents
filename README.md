@@ -418,6 +418,42 @@ LangGraph-based workflow management:
 - **Constants**: UPPER_CASE (e.g., `DEFAULT_CONFIG`)
 - **Imports**: Standard library first, third-party, then local imports (langchain, tradingagents modules)
 
+#### Data Structure Guidelines
+**MANDATORY: Always use dataclasses for method returns**
+- **Never return**: `dict`, `str`, `Any`, or unstructured data from public methods
+- **Always return**: Properly typed dataclasses with clear field definitions
+- **Rationale**: Provides type safety, IDE support, clear contracts, and prevents runtime errors
+
+**Examples**:
+```python
+# ❌ BAD - Dictionary returns
+def update_news() -> dict[str, Any]:
+    return {"status": "completed", "count": 5}
+
+# ✅ GOOD - Dataclass returns
+@dataclass
+class NewsUpdateResult:
+    status: str
+    articles_found: int
+    articles_scraped: int
+    articles_failed: int
+
+def update_news() -> NewsUpdateResult:
+    return NewsUpdateResult(
+        status="completed",
+        articles_found=10,
+        articles_scraped=8,
+        articles_failed=2
+    )
+```
+
+**Dataclass Best Practices**:
+- Use `@dataclass` decorator for all return value structures
+- Include type hints for all fields
+- Use `| None` for optional fields (modern Python 3.10+ syntax)
+- Group related dataclasses in the same module
+- Prefer immutable dataclasses with `frozen=True` for value objects
+
 #### Ruff Formatting & Linting Rules
 **Formatting** (`mise run format`):
 - **Line length**: 88 characters maximum
@@ -533,6 +569,313 @@ service.update_market_data("AAPL", "2024-01-01", "2024-01-31")
 - Agent progress tracking through `MessageBuffer` class
 - Questionnaire-driven configuration collection
 - Real-time streaming of analysis results
+
+### Progressive Development Framework
+
+This framework ensures agents create type-safe, testable code through incremental development. It emphasizes building one component at a time with proper testing and type safety.
+
+#### Core Principles
+
+1. **Service-First Development**: Start with business logic in the service layer
+2. **Stub Dependencies**: Create placeholder methods that return proper dataclasses
+3. **Progressive Implementation**: Implement one dependency (client OR repository) at a time
+4. **Constructor Injection**: Dependencies passed through constructor for testability
+5. **Dataclass Returns**: All public methods return properly typed dataclasses
+6. **Test-Driven Development**: Write tests first, implement to make them pass
+
+#### Development Process
+
+**Step 1: Design Domain Models**
+```python
+# models.py - Define all dataclasses first
+@dataclass
+class DomainEntity:
+    id: str
+    name: str
+    created_at: datetime
+
+@dataclass
+class DomainContext:
+    entities: list[DomainEntity]
+    metadata: dict[str, Any]
+    quality_score: float
+
+@dataclass
+class UpdateResult:
+    status: str
+    entities_processed: int
+    entities_failed: int
+```
+
+**Step 2: Create Service with Business Logic**
+```python
+# service.py - Main business logic with stub dependencies
+class DomainService:
+    def __init__(self, client: DomainClient, repository: DomainRepository):
+        self.client = client
+        self.repository = repository
+    
+    def get_context(self, symbol: str, start_date: str, end_date: str) -> DomainContext:
+        # Implement business logic flow
+        entities = self.repository.get_entities(symbol, start_date, end_date)
+        
+        # Process and transform data
+        processed_entities = self._process_entities(entities)
+        
+        # Calculate quality metrics
+        quality_score = self._calculate_quality(processed_entities)
+        
+        return DomainContext(
+            entities=processed_entities,
+            metadata={"symbol": symbol, "date_range": f"{start_date} to {end_date}"},
+            quality_score=quality_score
+        )
+    
+    def update_data(self, symbol: str, start_date: str, end_date: str) -> UpdateResult:
+        # Business logic for updating data
+        raw_data = self.client.fetch_data(symbol, start_date, end_date)
+        entities = self._transform_raw_data(raw_data)
+        
+        processed = 0
+        failed = 0
+        for entity in entities:
+            try:
+                self.repository.save_entity(entity)
+                processed += 1
+            except Exception:
+                failed += 1
+        
+        return UpdateResult(
+            status="completed",
+            entities_processed=processed,
+            entities_failed=failed
+        )
+    
+    def _process_entities(self, entities: list[DomainEntity]) -> list[DomainEntity]:
+        # Private method for business logic
+        return entities  # Stub implementation
+    
+    def _calculate_quality(self, entities: list[DomainEntity]) -> float:
+        # Private method for quality calculation
+        return 1.0  # Stub implementation
+```
+
+**Step 3: Create Stub Dependencies**
+```python
+# client.py - Stub client that returns proper dataclasses
+class DomainClient:
+    def fetch_data(self, symbol: str, start_date: str, end_date: str) -> list[dict[str, Any]]:
+        # Stub implementation - returns realistic structure
+        return [
+            {"id": "1", "name": f"{symbol}_entity", "created_at": "2024-01-01T00:00:00Z"},
+            {"id": "2", "name": f"{symbol}_entity_2", "created_at": "2024-01-02T00:00:00Z"}
+        ]
+
+# repository.py - Stub repository that returns proper dataclasses
+class DomainRepository:
+    def __init__(self, cache_dir: str):
+        self.cache_dir = cache_dir
+    
+    def get_entities(self, symbol: str, start_date: str, end_date: str) -> list[DomainEntity]:
+        # Stub implementation - returns proper dataclasses
+        return [
+            DomainEntity(id="1", name=f"{symbol}_cached", created_at=datetime.now()),
+            DomainEntity(id="2", name=f"{symbol}_cached_2", created_at=datetime.now())
+        ]
+    
+    def save_entity(self, entity: DomainEntity) -> None:
+        # Stub implementation
+        pass
+```
+
+**Step 4: Write Comprehensive Tests**
+```python
+# service_test.py - Test the service with mock dependencies
+from unittest.mock import Mock
+import pytest
+
+def test_get_context_with_mock_dependencies():
+    """Test service business logic with mocked dependencies."""
+    # Mock the dependencies
+    mock_client = Mock()
+    mock_repository = Mock()
+    
+    # Configure mock returns
+    mock_repository.get_entities.return_value = [
+        DomainEntity(id="1", name="TEST_entity", created_at=datetime(2024, 1, 1))
+    ]
+    
+    # Create service with mocks
+    service = DomainService(client=mock_client, repository=mock_repository)
+    
+    # Test the business logic
+    context = service.get_context("TEST", "2024-01-01", "2024-01-31")
+    
+    # Validate structure and business logic
+    assert isinstance(context, DomainContext)
+    assert context.metadata["symbol"] == "TEST"
+    assert context.quality_score > 0
+    assert len(context.entities) > 0
+    
+    # Verify repository was called correctly
+    mock_repository.get_entities.assert_called_once_with("TEST", "2024-01-01", "2024-01-31")
+
+def test_update_data_with_mock_dependencies():
+    """Test update business logic with mocked dependencies."""
+    mock_client = Mock()
+    mock_repository = Mock()
+    
+    # Configure mock client to return raw data
+    mock_client.fetch_data.return_value = [
+        {"id": "1", "name": "TEST_raw", "created_at": "2024-01-01T00:00:00Z"}
+    ]
+    
+    service = DomainService(client=mock_client, repository=mock_repository)
+    
+    result = service.update_data("TEST", "2024-01-01", "2024-01-31")
+    
+    # Validate business logic results
+    assert isinstance(result, UpdateResult)
+    assert result.status == "completed"
+    assert result.entities_processed >= 0
+    
+    # Verify client and repository interactions
+    mock_client.fetch_data.assert_called_once()
+    mock_repository.save_entity.assert_called()
+```
+
+**Step 5: Implement One Dependency at a Time**
+
+Choose either client OR repository to implement first:
+
+```python
+# Option A: Implement client first
+class DomainClient:
+    def __init__(self, api_key: str):
+        self.api_key = api_key
+        self.session = requests.Session()
+        self.session.headers.update({"User-Agent": "TradingAgents/1.0"})
+    
+    def fetch_data(self, symbol: str, start_date: str, end_date: str) -> list[dict[str, Any]]:
+        # Real implementation with error handling
+        try:
+            response = self.session.get(
+                f"https://api.example.com/data/{symbol}",
+                params={"start": start_date, "end": end_date},
+                timeout=30
+            )
+            response.raise_for_status()
+            return response.json()["data"]
+        except requests.RequestException as e:
+            raise DomainClientError(f"Failed to fetch data: {e}")
+
+# Option B: Implement repository first  
+class DomainRepository:
+    def __init__(self, cache_dir: str):
+        self.cache_dir = Path(cache_dir)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+    
+    def get_entities(self, symbol: str, start_date: str, end_date: str) -> list[DomainEntity]:
+        # Real implementation with file I/O
+        cache_file = self.cache_dir / f"{symbol}_{start_date}_{end_date}.json"
+        
+        if not cache_file.exists():
+            return []
+        
+        try:
+            with open(cache_file, 'r') as f:
+                data = json.load(f)
+            
+            return [
+                DomainEntity(
+                    id=item["id"],
+                    name=item["name"],
+                    created_at=datetime.fromisoformat(item["created_at"])
+                )
+                for item in data
+            ]
+        except (json.JSONDecodeError, KeyError) as e:
+            raise DomainRepositoryError(f"Failed to load cached data: {e}")
+```
+
+**Step 6: Test Real Implementation**
+```python
+def test_real_client_integration():
+    """Test real client implementation."""
+    client = DomainClient(api_key="test_key")
+    
+    # Test with real HTTP calls (or use responses library for mocking)
+    with responses.RequestsMock() as rsps:
+        rsps.add(
+            responses.GET,
+            "https://api.example.com/data/TEST",
+            json={"data": [{"id": "1", "name": "TEST", "created_at": "2024-01-01T00:00:00Z"}]},
+            status=200
+        )
+        
+        result = client.fetch_data("TEST", "2024-01-01", "2024-01-31")
+        
+        assert len(result) == 1
+        assert result[0]["id"] == "1"
+
+def test_real_repository_integration():
+    """Test real repository implementation."""
+    with tempfile.TemporaryDirectory() as temp_dir:
+        repo = DomainRepository(temp_dir)
+        
+        # Test saving and loading
+        entity = DomainEntity(id="1", name="TEST", created_at=datetime.now())
+        repo.save_entity(entity)
+        
+        entities = repo.get_entities("TEST", "2024-01-01", "2024-01-31")
+        assert len(entities) == 1
+        assert entities[0].id == "1"
+```
+
+**Step 7: Iterate and Refine**
+
+1. Run tests after each implementation
+2. Refactor business logic as needed
+3. Add error handling and edge cases
+4. Implement the remaining dependency
+5. Add integration tests with both real dependencies
+
+#### Directory Structure
+
+```
+domain_name/
+├── models.py           # Dataclasses only - no business logic
+├── client.py          # External API integration
+├── repository.py      # Data persistence and caching
+├── service.py         # Main business logic coordinator
+└── service_test.py    # Comprehensive test suite
+```
+
+#### Benefits of This Approach
+
+1. **Type Safety**: All interfaces defined upfront with dataclasses
+2. **Testability**: Business logic tested independently of external dependencies
+3. **Incremental Development**: One component at a time reduces complexity
+4. **Clear Contracts**: Dataclass returns make interfaces explicit
+5. **Error Isolation**: Issues contained within single components
+6. **Refactoring Safety**: Type system catches interface changes
+7. **Documentation**: Dataclasses serve as living documentation
+
+#### Anti-Patterns to Avoid
+
+❌ **Don't return dictionaries or strings from public methods**
+❌ **Don't implement all dependencies simultaneously**
+❌ **Don't skip writing tests first**
+❌ **Don't mix business logic with I/O operations**
+❌ **Don't use inheritance for dependency injection**
+❌ **Don't create circular dependencies between components**
+
+✅ **Do use dataclasses for all return values**
+✅ **Do implement one dependency at a time**
+✅ **Do write tests before implementation**
+✅ **Do separate business logic from I/O**
+✅ **Do use constructor injection**
+✅ **Do maintain clear separation of concerns**
 
 ### File Structure Context
 - **`cli/`**: Interactive command-line interface

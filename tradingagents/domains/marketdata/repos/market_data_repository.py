@@ -8,12 +8,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from .base import BaseRepository
+# from .base import BaseRepository  # Not found, removing import
 
 logger = logging.getLogger(__name__)
 
 
-class MarketDataRepository(BaseRepository):
+class MarketDataRepository:
     """Repository for accessing historical market data from CSV files."""
 
     def __init__(self, data_dir: str, **kwargs):
@@ -60,9 +60,8 @@ class MarketDataRepository(BaseRepository):
                 df["Date"] = pd.to_datetime(df["Date"]).dt.date
 
                 # Filter by date range
-                filtered_df = df[
-                    (df["Date"] >= start_date) & (df["Date"] <= end_date)
-                ].copy()
+                mask = (df["Date"] >= start_date) & (df["Date"] <= end_date)
+                filtered_df: pd.DataFrame = df.loc[mask].copy()
 
                 logger.info(
                     f"Retrieved {len(filtered_df)} records for {symbol} from {start_date} to {end_date}"
