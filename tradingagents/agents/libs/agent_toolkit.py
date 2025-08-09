@@ -5,7 +5,7 @@ from typing import Annotated
 
 from langchain_core.tools import tool
 
-from tradingagents.config import DEFAULT_CONFIG, TradingAgentsConfig
+from tradingagents.config import TradingAgentsConfig
 from tradingagents.domains.marketdata.fundamental_data_service import (
     BalanceSheetContext,
     CashFlowContext,
@@ -45,7 +45,7 @@ class AgentToolkit:
         marketdata_service: MarketDataService,
         fundamentaldata_service: FundamentalDataService,
         insiderdata_service: InsiderDataService,
-        config: TradingAgentsConfig = DEFAULT_CONFIG,
+        config: TradingAgentsConfig,
     ):
         self._news_service = news_service
         self._marketdata_service = marketdata_service

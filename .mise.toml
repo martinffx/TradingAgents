@@ -5,6 +5,7 @@ ruff = "latest"
 "npm:pyright" = "latest"
 
 [env]
+_.file = ".env"
 # Python environment settings
 PYTHONPATH = "."
 PYTHONDONTWRITEBYTECODE = "1"
@@ -48,11 +49,7 @@ run = "ruff check --fix ."
 
 [tasks.all]
 description = "Run format, lint, and typecheck"
-run = [
-    "ruff format .",
-    "ruff check .",
-    "pyright"
-]
+run = ["ruff format .", "ruff check .", "pyright"]
 
 [tasks.clean]
 description = "Clean up cache and build artifacts"
@@ -66,10 +63,6 @@ run = [
     "rm -rf *.egg-info"
 ]
 
-[tasks.setup]
-description = "Initial project setup"
-run = [
-    "mise install",
-    "uv sync --dev",
-    "echo 'Setup complete! Run mise run --help to see available tasks.'"
-]
+[tasks.litellm]
+run = "uvx --from litellm[proxy] litellm --config litellm.yml --port 4000"
+description = "Start LiteLLM proxy for Claude Code → OpenRouter"
