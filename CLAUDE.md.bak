@@ -290,7 +290,8 @@ This project uses [mise](https://mise.jdx.dev/) for tool and task management. Al
 - **Run all tests**: `mise run test` - Run tests with pytest
 
 #### Initial Setup
-- **Install tools**: `mise install` - Install Python, uv, ruff, pyright
+- **First-time setup**: `mise run setup` - Install tools and dependencies
+- **Install tools only**: `mise install` - Install Python, uv, ruff, pyright
 - **Install dependencies**: `mise run install` - Install project dependencies with uv
 
 ### Configuration

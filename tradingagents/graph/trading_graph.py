@@ -95,6 +95,7 @@ class TradingAgentsGraph:
             market_data_service,
             fundamental_data_service,
             insider_data_service,
+            self.config,
         )
 
         # Initialize memories
