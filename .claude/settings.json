@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mise run format"
+          },
+          {
+            "type": "command",
+            "command": "mise run lint --fix"
+          },
+          {
+            "type": "command",
+            "command": "mise run typecheck"
+          }
+        ]
+      }
+    ]
+  }
+}

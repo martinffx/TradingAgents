@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from urllib.parse import urlparse
 
-import newspaper
+from newspaper import Article, Config
 
 logger = logging.getLogger(__name__)
 
@@ -28,12 +28,12 @@ class ScrapeResult:
 class ArticleScraperClient:
     """Client for scraping article content with Internet Archive fallback."""
 
-    def __init__(self, user_agent: str, delay: float = 1.0):
+    def __init__(self, user_agent: str | None = None, delay: float = 1.0):
         """
         Initialize article scraper.
 
         Args:
-            user_agent: User agent string for requests
+            user_agent: User agent string for requests (None for default)
             delay: Delay between requests in seconds
         """
         self.user_agent = user_agent or (
@@ -65,17 +65,18 @@ class ArticleScraperClient:
         return self._scrape_from_wayback(url)
 
     def _scrape_from_source(self, url: str) -> ScrapeResult:
-        """Scrape article from original source using newspaper3k."""
+        """Scrape article from original source using newspaper4k."""
         try:
             # Add delay to be respectful
             time.sleep(self.delay)
 
-            # Configure newspaper article
-            article = newspaper.Article(url)
-            article.config.browser_user_agent = self.user_agent
-            article.config.request_timeout = 10
+            # Configure newspaper4k with optimizations
+            config = Config()
+            config.browser_user_agent = self.user_agent
+            config.request_timeout = 10
+            config.fetch_images = False
 
-            # Download and parse
+            article = Article(url, config=config)
             article.download()
             article.parse()
 
