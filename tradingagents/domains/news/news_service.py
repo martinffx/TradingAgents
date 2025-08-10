@@ -4,6 +4,7 @@ News service that provides structured news context.
 
 import logging
 from dataclasses import dataclass
+from datetime import date
 from enum import Enum
 from typing import Any
 
@@ -134,13 +135,39 @@ class NewsService:
         try:
             logger.info(f"Getting company news context for {symbol} from repository")
 
-            # Get articles from repository
+            # Get articles from repository (READ PATH - no API calls)
             articles = []
             if self.repository:
                 try:
-                    # This would depend on the actual repository interface
-                    # For now, return empty list - repository integration needs to be completed
-                    articles = []
+                    # Convert date strings to date objects
+                    start_date_obj = date.fromisoformat(start_date)
+                    end_date_obj = date.fromisoformat(end_date)
+
+                    # Get cached news data from repository
+                    news_data_by_date = self.repository.get_news_data(
+                        query=symbol,
+                        start_date=start_date_obj,
+                        end_date=end_date_obj,
+                        sources=["finnhub", "google_news"],
+                    )
+
+                    # Convert repository data to ArticleData objects
+                    for _date_key, news_data_list in news_data_by_date.items():
+                        for news_data in news_data_list:
+                            for article in news_data.articles:
+                                articles.append(
+                                    ArticleData(
+                                        title=article.headline,
+                                        content=article.summary
+                                        or "",  # Use summary as fallback for content
+                                        author=article.author or "",
+                                        source=article.source,
+                                        date=article.published_date.isoformat(),
+                                        url=article.url,
+                                        sentiment=None,  # Will be calculated later
+                                    )
+                                )
+
                     logger.debug(
                         f"Retrieved {len(articles)} articles from repository for {symbol}"
                     )
@@ -218,13 +245,39 @@ class NewsService:
                 f"Getting global news context from repository for categories: {categories}"
             )
 
-            # Get articles from repository
+            # Get articles from repository (READ PATH - no API calls)
             articles = []
             if self.repository:
                 try:
-                    # This would depend on the actual repository interface
-                    # For now, return empty list - repository integration needs to be completed
-                    articles = []
+                    # Convert date strings to date objects
+                    start_date_obj = date.fromisoformat(start_date)
+                    end_date_obj = date.fromisoformat(end_date)
+
+                    # Get cached news data from repository for each category
+                    for category in categories:
+                        news_data_by_date = self.repository.get_news_data(
+                            query=category,
+                            start_date=start_date_obj,
+                            end_date=end_date_obj,
+                            sources=["google_news"],  # Global news mainly from Google
+                        )
+
+                        # Convert repository data to ArticleData objects
+                        for _date_key, news_data_list in news_data_by_date.items():
+                            for news_data in news_data_list:
+                                for article in news_data.articles:
+                                    articles.append(
+                                        ArticleData(
+                                            title=article.headline,
+                                            content=article.summary or "",
+                                            author=article.author or "",
+                                            source=article.source,
+                                            date=article.published_date.isoformat(),
+                                            url=article.url,
+                                            sentiment=None,
+                                        )
+                                    )
+
                     logger.debug(
                         f"Retrieved {len(articles)} global articles from repository"
                     )

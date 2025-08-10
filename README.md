@@ -293,6 +293,33 @@ This project uses [mise](https://mise.jdx.dev/) for tool and task management. Al
 - **Install tools**: `mise install` - Install Python, uv, ruff, pyright
 - **Install dependencies**: `mise run install` - Install project dependencies with uv
 
+### Testing Principles
+
+**Pragmatic outside-in TDD** - Mock I/O boundaries, test real logic, fast feedback.
+
+#### Test Structure (Mirror Source)
+```
+tests/
+├── conftest.py                    # Shared fixtures
+├── domains/
+│   ├── __init__.py
+│   └── news/
+│       ├── __init__.py  
+│       ├── test_news_service.py   # Mock repo + clients
+│       ├── test_news_repository.py # Docker test DB
+│       └── test_google_news_client.py # pytest-vcr
+```
+
+#### Mocking Strategy by Layer
+- **Services**: Mock Repository + Clients, test real transformations
+- **Repositories**: Real persistence (temp files/Docker), no mocks
+- **Clients**: Real HTTP with pytest-vcr cassettes
+
+#### Quality Standards
+- **85% coverage** minimum
+- **< 100ms** per unit test
+- **Mock boundaries, test behavior**
+
 ### Configuration
 
 The TradingAgents framework uses a centralized `TradingAgentsConfig` class for all configuration management.
@@ -429,3 +456,4 @@ NEVER proactively create documentation files (*.md) or README files. Only create
 
       
       IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.
+- remember what we learnt about testing?
