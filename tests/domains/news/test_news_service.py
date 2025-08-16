@@ -12,9 +12,6 @@ from unittest.mock import Mock
 
 import pytest
 
-# Import mock ScrapeResult from conftest to avoid newspaper3k import issues
-from conftest import ScrapeResult
-
 from tradingagents.domains.news.news_repository import (
     NewsData,
 )
@@ -25,6 +22,9 @@ from tradingagents.domains.news.news_service import (
     NewsUpdateResult,
     SentimentScore,
 )
+
+# Import mock ScrapeResult from conftest to avoid newspaper3k import issues
+from ...conftest import ScrapeResult
 
 
 class TestNewsServiceCollaboratorInteractions:

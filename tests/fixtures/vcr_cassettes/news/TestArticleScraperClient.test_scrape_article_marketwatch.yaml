@@ -1,0 +1,293 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+    method: HEAD
+    uri: https://www.marketwatch.com/
+  response:
+    body:
+      string: ''
+    headers:
+      Age:
+      - '9'
+      Cache-Control:
+      - max-age=15,s-maxage=15,stale-while-revalidate=3600
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sat, 16 Aug 2025 09:25:48 GMT
+      ETag:
+      - '"16541uq28i8d2eu"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 9158fa1ac72d0c0684fe558c8655aeda.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - WnxOaO_X9Ha6Bl1kttceeANQOWPglhx6yji3g-trhzE8DzqOV5ShLg==
+      X-Amz-Cf-Pop:
+      - AMS58-P6
+      X-Cache:
+      - Hit from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+    method: HEAD
+    uri: https://www.marketwatch.com/
+  response:
+    body:
+      string: ''
+    headers:
+      Age:
+      - '9'
+      Cache-Control:
+      - max-age=15,s-maxage=15,stale-while-revalidate=3600
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Sat, 16 Aug 2025 09:25:48 GMT
+      ETag:
+      - '"16541uq28i8d2eu"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 b7258653b42aa6de9758e92b2878c108.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - KY6PMh_UdRBvwvw2_X8DiocGroAMWN-H5Yvm3XQ9lsgR-x9QzNq_fg==
+      X-Amz-Cf-Pop:
+      - AMS58-P6
+      X-Cache:
+      - Hit from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Range:
+      - bytes=0-100
+    method: GET
+    uri: https://www.marketwatch.com/
+  response:
+    body:
+      string: '<html lang="en"><head><title>marketwatch.com</title><style>#cmsg{animation:
+        A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style></head><body
+        style="margin:0"><p id="cmsg">Please enable JS and disable any ad blocker</p><script
+        data-cfasync="false">var dd={''rt'':''c'',''cid'':''AHrlqAAAAAMAjSPVV_1oLcoA1V1s-g=='',''hsh'':''D428D51E28968797BC27FB9153435D'',''t'':''fe'',''qp'':'''',''s'':47891,''e'':''790151f692f4dd9eb3ed40b035ea9a8d35d12abd8085f8d73942e7cd7d933885'',''host'':''geo.captcha-delivery.com'',''cookie'':''iOk_wpxMHnH24N9G8907~eT~5C2Erb1E3lwtqPUrELHb7b329G6JXl8C5OMaY_Ocly5R3Ho1bjdZK266cwBD~IokhajgO5aZ0EVCkAvVh1gDdEo84pnYC2rrU2IYI6sI''}</script><script
+        data-cfasync="false" src="https://ct.captcha-delivery.com/c.js"></script></body></html>'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '743'
+      Content-Type:
+      - text/html;charset=utf-8
+      Date:
+      - Sat, 16 Aug 2025 09:25:57 GMT
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 b7258653b42aa6de9758e92b2878c108.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - eaigBLeIFd3UqzVz9ugedb3xWFMCpbwKkCXQentj0NT88W-bG-mwBQ==
+      X-Amz-Cf-Pop:
+      - AMS58-P6
+      X-Cache:
+      - LambdaGeneratedResponse from cloudfront
+      accept-ch:
+      - Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - x-dd-b, x-set-cookie
+      cache-control:
+      - max-age=0, private, no-cache, no-store, must-revalidate
+      charset:
+      - utf-8
+      pragma:
+      - no-cache
+      set-cookie:
+      - datadome=iOk_wpxMHnH24N9G8907~eT~5C2Erb1E3lwtqPUrELHb7b329G6JXl8C5OMaY_Ocly5R3Ho1bjdZK266cwBD~IokhajgO5aZ0EVCkAvVh1gDdEo84pnYC2rrU2IYI6sI;
+        Max-Age=31536000; Domain=.marketwatch.com; Path=/; SameSite=Lax
+      x-datadome:
+      - protected
+      x-datadome-cid:
+      - AHrlqAAAAAMAjSPVV_1oLcoA1V1s-g==
+      x-dd-b:
+      - '1'
+    status:
+      code: 401
+      message: HTTP Forbidden
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+    method: GET
+    uri: https://www.marketwatch.com/
+  response:
+    body:
+      string: '<html lang="en"><head><title>marketwatch.com</title><style>#cmsg{animation:
+        A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style></head><body
+        style="margin:0"><p id="cmsg">Please enable JS and disable any ad blocker</p><script
+        data-cfasync="false">var dd={''rt'':''c'',''cid'':''AHrlqAAAAAMAjSPVV_1oLcoA1V1s-g=='',''hsh'':''D428D51E28968797BC27FB9153435D'',''t'':''fe'',''qp'':'''',''s'':47891,''e'':''790151f692f4dd9eb3ed40b035ea9a8d7390bea2e91fcde9893303bba5852699'',''host'':''geo.captcha-delivery.com'',''cookie'':''h0EmeS4jcwCiFsI~oVw3c2mMI7n02GLQFd0ohSnM6f_YL58eqz3UNqF~~FpnXKpjPSL0JLWPXzCj9awouSFxvoaV6WTc9NhWhl3yRrRWlj0M3zxqFklIXCrYX76b12It''}</script><script
+        data-cfasync="false" src="https://ct.captcha-delivery.com/c.js"></script></body></html>'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '743'
+      Content-Type:
+      - text/html;charset=utf-8
+      Date:
+      - Sat, 16 Aug 2025 09:25:57 GMT
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 65c7ccdbbbb8463f3d45d2d76098350e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - CUcbO9OnOzfBgRtFzyBkqgQ59cql-jWQoYl7wy9mHDHkVHxWroAhBQ==
+      X-Amz-Cf-Pop:
+      - AMS58-P6
+      X-Cache:
+      - LambdaGeneratedResponse from cloudfront
+      accept-ch:
+      - Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - x-dd-b, x-set-cookie
+      cache-control:
+      - max-age=0, private, no-cache, no-store, must-revalidate
+      charset:
+      - utf-8
+      pragma:
+      - no-cache
+      set-cookie:
+      - datadome=h0EmeS4jcwCiFsI~oVw3c2mMI7n02GLQFd0ohSnM6f_YL58eqz3UNqF~~FpnXKpjPSL0JLWPXzCj9awouSFxvoaV6WTc9NhWhl3yRrRWlj0M3zxqFklIXCrYX76b12It;
+        Max-Age=31536000; Domain=.marketwatch.com; Path=/; SameSite=Lax
+      x-datadome:
+      - protected
+      x-datadome-cid:
+      - AHrlqAAAAAMAjSPVV_1oLcoA1V1s-g==
+      x-dd-b:
+      - '1'
+    status:
+      code: 401
+      message: HTTP Forbidden
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+    method: GET
+    uri: https://www.marketwatch.com/
+  response:
+    body:
+      string: '<html lang="en"><head><title>marketwatch.com</title><style>#cmsg{animation:
+        A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style></head><body
+        style="margin:0"><p id="cmsg">Please enable JS and disable any ad blocker</p><script
+        data-cfasync="false">var dd={''rt'':''c'',''cid'':''AHrlqAAAAAMAjSPVV_1oLcoA1V1s-g=='',''hsh'':''D428D51E28968797BC27FB9153435D'',''t'':''fe'',''qp'':'''',''s'':47891,''e'':''790151f692f4dd9eb3ed40b035ea9a8d2e67c62e5c3d0cb9374648bf7b1df7fc'',''host'':''geo.captcha-delivery.com'',''cookie'':''2yiKpqoh3ChnNVUjdsQLQa2Bf5zaYI_Ey7DiwJtN6AS09YpimYFAF6jRXfj1rB6M4h7ivw3lIhHdWcVNDBObUnTTOP26otua83leFBUM3rlDzEgiFwvNKnfwWptcP_od''}</script><script
+        data-cfasync="false" src="https://ct.captcha-delivery.com/c.js"></script></body></html>'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '743'
+      Content-Type:
+      - text/html;charset=utf-8
+      Date:
+      - Sat, 16 Aug 2025 09:25:57 GMT
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 32301bfd0e3b06c528ccd8abdb13411e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - xCjoAKCautAdoyEWF6gWh395azLOJk4U8cqvVkcrKFkEUrtmgUcCxQ==
+      X-Amz-Cf-Pop:
+      - AMS58-P6
+      X-Cache:
+      - LambdaGeneratedResponse from cloudfront
+      accept-ch:
+      - Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - x-dd-b, x-set-cookie
+      cache-control:
+      - max-age=0, private, no-cache, no-store, must-revalidate
+      charset:
+      - utf-8
+      pragma:
+      - no-cache
+      set-cookie:
+      - datadome=2yiKpqoh3ChnNVUjdsQLQa2Bf5zaYI_Ey7DiwJtN6AS09YpimYFAF6jRXfj1rB6M4h7ivw3lIhHdWcVNDBObUnTTOP26otua83leFBUM3rlDzEgiFwvNKnfwWptcP_od;
+        Max-Age=31536000; Domain=.marketwatch.com; Path=/; SameSite=Lax
+      x-datadome:
+      - protected
+      x-datadome-cid:
+      - AHrlqAAAAAMAjSPVV_1oLcoA1V1s-g==
+      x-dd-b:
+      - '1'
+    status:
+      code: 401
+      message: HTTP Forbidden
+version: 1

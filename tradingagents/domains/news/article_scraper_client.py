@@ -25,7 +25,7 @@ class ScrapeResult:
     title: str = ""
     publish_date: str = ""
     is_paywall: bool = False
-    keywords: list[str] = None  # Extracted keywords from newspaper4k
+    keywords: list[str] | None = None  # Extracted keywords from newspaper4k
     summary: str = ""  # Article summary from newspaper4k
 
 

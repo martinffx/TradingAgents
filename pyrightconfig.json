@@ -7,6 +7,5 @@
   "reportMissingTypeStubs": false,
   "useLibraryCodeForTypes": true,
   "autoSearchPaths": true,
-  "extraPaths": [],
-  "stubPath": "typings"
+  "extraPaths": []
 }

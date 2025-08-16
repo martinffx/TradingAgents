@@ -3,7 +3,7 @@ Yahoo Finance client for live market data.
 """
 
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Any
 
 import pandas as pd
@@ -99,7 +99,9 @@ class YFinanceClient:
                     "source": "yahoo_finance",
                     "record_count": len(records),
                     "columns": list(data.columns),
-                    "retrieved_at": datetime.utcnow().isoformat(),
+                    "retrieved_at": datetime.now(timezone.utc)
+                    .replace(tzinfo=None)
+                    .isoformat(),
                 },
             }
 
@@ -126,7 +128,9 @@ class YFinanceClient:
                 "info": info,
                 "metadata": {
                     "source": "yahoo_finance",
-                    "retrieved_at": datetime.utcnow().isoformat(),
+                    "retrieved_at": datetime.now(timezone.utc)
+                    .replace(tzinfo=None)
+                    .isoformat(),
                 },
             }
 
@@ -138,7 +142,9 @@ class YFinanceClient:
                 "metadata": {
                     "source": "yahoo_finance",
                     "error": str(e),
-                    "retrieved_at": datetime.utcnow().isoformat(),
+                    "retrieved_at": datetime.now(timezone.utc)
+                    .replace(tzinfo=None)
+                    .isoformat(),
                 },
             }
 
@@ -177,7 +183,9 @@ class YFinanceClient:
                 "quarterly": {},
                 "metadata": {
                     "source": "yahoo_finance",
-                    "retrieved_at": datetime.utcnow().isoformat(),
+                    "retrieved_at": datetime.now(timezone.utc)
+                    .replace(tzinfo=None)
+                    .isoformat(),
                 },
             }
 
@@ -209,7 +217,9 @@ class YFinanceClient:
                 "metadata": {
                     "source": "yahoo_finance",
                     "error": str(e),
-                    "retrieved_at": datetime.utcnow().isoformat(),
+                    "retrieved_at": datetime.now(timezone.utc)
+                    .replace(tzinfo=None)
+                    .isoformat(),
                 },
             }
 

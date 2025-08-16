@@ -4,7 +4,7 @@ Google News client for live news data via RSS feeds.
 
 import logging
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from urllib.parse import quote
 
 import feedparser
@@ -168,11 +168,19 @@ class GoogleNewsClient:
 
         # Parse published date with fallback to current time
         try:
-            published = (
-                date_parser.parse(published_str) if published_str else datetime.utcnow()
-            )
+            if published_str:
+                parsed_result = date_parser.parse(published_str)
+                # dateutil.parser.parse() always returns datetime unless fuzzy_with_tokens=True
+                # Since we're not using fuzzy_with_tokens, we know it's a datetime
+                if isinstance(parsed_result, datetime):
+                    published = parsed_result
+                else:
+                    # Fallback for any unexpected types (shouldn't happen)
+                    published = datetime.now(timezone.utc).replace(tzinfo=None)
+            else:
+                published = datetime.now(timezone.utc).replace(tzinfo=None)
         except (ValueError, OverflowError, TypeError):
-            published = datetime.utcnow()
+            published = datetime.now(timezone.utc).replace(tzinfo=None)
 
         # Extract source from title (Google News format: "Title - Source")
         title_parts = raw_title.split(" - ")
@@ -181,7 +189,7 @@ class GoogleNewsClient:
 
         return GoogleNewsArticle(
             title=title,
-            link=link,
+            link=str(link) if link else "",
             published=published,
             summary=summary,
             source=source,

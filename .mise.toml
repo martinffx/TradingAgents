@@ -2,12 +2,10 @@
 python = "3.13"
 uv = "latest"
 ruff = "latest"
-"npm:pyright" = "latest"
 
 [env]
 _.file = ".env"
 # Python environment settings
-PYTHONPATH = "."
 PYTHONDONTWRITEBYTECODE = "1"
 PYTHONUNBUFFERED = "1"
 
@@ -40,8 +38,8 @@ description = "Format code with ruff"
 run = "ruff format ."
 
 [tasks.typecheck]
-description = "Run pyright type checking"
-run = "pyright"
+description = "Run pyrefly type checking"
+run = "uv run pyrefly check ."
 
 [tasks.fix]
 description = "Auto-fix linting issues"
@@ -49,7 +47,7 @@ run = "ruff check --fix ."
 
 [tasks.all]
 description = "Run format, lint, and typecheck"
-run = ["ruff format .", "ruff check .", "pyright"]
+run = ["ruff format .", "ruff check .", "uv run pyrefly check ."]
 
 [tasks.clean]
 description = "Clean up cache and build artifacts"
@@ -60,9 +58,5 @@ run = [
     "rm -rf .ruff_cache",
     "rm -rf dist",
     "rm -rf build",
-    "rm -rf *.egg-info"
+    "rm -rf *.egg-info",
 ]
-
-[tasks.litellm]
-run = "uvx --from litellm[proxy] litellm --config litellm.yml --port 4000"
-description = "Start LiteLLM proxy for Claude Code → OpenRouter"

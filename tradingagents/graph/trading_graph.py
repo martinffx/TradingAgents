@@ -3,6 +3,7 @@
 import json
 import os
 from pathlib import Path
+from typing import Any
 
 from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -21,14 +22,19 @@ from tradingagents.domains.news.news_service import NewsService
 from tradingagents.domains.socialmedia.social_media_service import SocialMediaService
 
 from .conditional_logic import ConditionalLogic
+from .graph_setup import GraphSetup
 from .propagation import Propagator
 from .reflection import Reflector
-from .setup import GraphSetup
 from .signal_processing import SignalProcessor
 
 
 class TradingAgentsGraph:
     """Main class that orchestrates the trading agents framework."""
+
+    # Type annotations for LLM attributes
+    deep_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI
+    quick_thinking_llm: ChatOpenAI | ChatAnthropic | ChatGoogleGenerativeAI
+    curr_state: dict[str, Any] | None
 
     def __init__(
         self,
@@ -48,6 +54,7 @@ class TradingAgentsGraph:
 
         self.debug = debug
         self.config = config or TradingAgentsConfig()
+        self.curr_state = None
 
         # Create necessary directories
         os.makedirs(

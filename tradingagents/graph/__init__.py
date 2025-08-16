@@ -1,9 +1,9 @@
 # TradingAgents/graph/__init__.py
 
 from .conditional_logic import ConditionalLogic
+from .graph_setup import GraphSetup
 from .propagation import Propagator
 from .reflection import Reflector
-from .setup import GraphSetup
 from .signal_processing import SignalProcessor
 from .trading_graph import TradingAgentsGraph
 

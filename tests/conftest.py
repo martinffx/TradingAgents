@@ -49,7 +49,10 @@ def temp_data_dir():
     """Temporary directory for testing real repository persistence."""
     temp_dir = tempfile.mkdtemp()
     yield temp_dir
-    shutil.rmtree(temp_dir)
+    try:
+        shutil.rmtree(temp_dir)
+    except OSError:
+        pass  # Directory might already be deleted
 
 
 @pytest.fixture

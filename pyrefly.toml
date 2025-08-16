@@ -1,0 +1,5 @@
+python-version = "3.13.0"
+search_path = ["."]       # Changed from src-roots
+
+[errors]
+import-error = "warn"

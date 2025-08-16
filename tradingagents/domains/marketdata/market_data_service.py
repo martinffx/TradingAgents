@@ -3,8 +3,8 @@ Market data service that provides structured market context.
 """
 
 import logging
-from datetime import datetime
-from typing import Any
+from datetime import datetime, timezone
+from typing import Any, cast
 
 import pandas as pd
 import talib
@@ -18,6 +18,8 @@ from tradingagents.domains.marketdata.models import (
     IndicatorParamValue,
     IndicatorPresets,
     InputSpec,
+    OutputSpec,
+    ParamRanges,
     PriceDataContext,
     TAReportContext,
     TechnicalAnalysisError,
@@ -125,7 +127,9 @@ class MarketDataService:
                 "service": "market_data",
                 "record_count": len(price_data),
                 "source": "repository" if not df.empty else "client",
-                "retrieved_at": datetime.utcnow().isoformat(),
+                "retrieved_at": datetime.now(timezone.utc)
+                .replace(tzinfo=None)
+                .isoformat(),
             }
 
             return PriceDataContext(
@@ -153,7 +157,9 @@ class MarketDataService:
                     "data_quality": DataQuality.LOW.value,
                     "service": "market_data",
                     "error": str(e),
-                    "retrieved_at": datetime.utcnow().isoformat(),
+                    "retrieved_at": datetime.now(timezone.utc)
+                    .replace(tzinfo=None)
+                    .isoformat(),
                 },
             )
 
@@ -224,27 +230,23 @@ class MarketDataService:
             )
 
             # Create indicator config from the calculation
+            definition = INDICATOR_DEFINITIONS.get(indicator.upper(), {})
             indicator_config = IndicatorConfig(
                 name=indicator.upper(),
                 parameters=indicator_data[0].parameters if indicator_data else {},
-                input_types=INDICATOR_DEFINITIONS.get(indicator.upper(), {}).get(
-                    "input_types", ["close"]
+                input_types=cast(
+                    "list[InputSpec]", definition.get("input_types", ["close"])
                 ),
-                output_format=INDICATOR_DEFINITIONS.get(indicator.upper(), {}).get(
-                    "output_format", "single"
+                output_format=cast(
+                    "OutputSpec", definition.get("output_format", "single")
                 ),
-                param_ranges=INDICATOR_DEFINITIONS.get(indicator.upper(), {}).get(
-                    "param_ranges", {}
+                param_ranges=cast("ParamRanges", definition.get("param_ranges", {})),
+                default_params=cast(
+                    "dict[str, IndicatorParamValue]",
+                    definition.get("default_params", {}),
                 ),
-                default_params=INDICATOR_DEFINITIONS.get(indicator.upper(), {}).get(
-                    "default_params", {}
-                ),
-                talib_function=INDICATOR_DEFINITIONS.get(indicator.upper(), {}).get(
-                    "talib_function", ""
-                ),
-                description=INDICATOR_DEFINITIONS.get(indicator.upper(), {}).get(
-                    "description", ""
-                ),
+                talib_function=str(definition.get("talib_function", "")),
+                description=str(definition.get("description", "")),
             )
 
             # Generate parameter summary
@@ -265,7 +267,9 @@ class MarketDataService:
                     "data_quality": DataQuality.HIGH.value,
                     "service": "technical_analysis",
                     "indicator_count": len(indicator_data),
-                    "retrieved_at": datetime.utcnow().isoformat(),
+                    "retrieved_at": datetime.now(timezone.utc)
+                    .replace(tzinfo=None)
+                    .isoformat(),
                 },
             )
 
@@ -308,19 +312,21 @@ class MarketDataService:
             raise TechnicalAnalysisError(f"Unknown indicator: {indicator}")
 
         definition = INDICATOR_DEFINITIONS[indicator.upper()]
-        param_ranges = definition.get("param_ranges", {})
+        param_ranges = cast("ParamRanges", definition.get("param_ranges", {}))
 
         for param_name, value in params.items():
             if param_name in param_ranges:
-                min_val, max_val = param_ranges[param_name]
-                if not isinstance(value, int | float):
-                    raise TechnicalAnalysisError(
-                        f"Parameter {param_name} must be numeric"
-                    )
-                if not (min_val <= value <= max_val):
-                    raise TechnicalAnalysisError(
-                        f"Parameter {param_name}={value} out of range [{min_val}, {max_val}]"
-                    )
+                range_tuple = param_ranges[param_name]
+                if isinstance(range_tuple, tuple) and len(range_tuple) == 2:
+                    min_val, max_val = range_tuple
+                    if not isinstance(value, int | float):
+                        raise TechnicalAnalysisError(
+                            f"Parameter {param_name} must be numeric"
+                        )
+                    if not (min_val <= value <= max_val):
+                        raise TechnicalAnalysisError(
+                            f"Parameter {param_name}={value} out of range [{min_val}, {max_val}]"
+                        )
 
     def _prepare_price_arrays(
         self, price_data: list[dict[str, Any]], input_types: list[InputSpec]
@@ -383,20 +389,26 @@ class MarketDataService:
         # Use provided params or defaults
         final_params: dict[str, IndicatorParamValue]
         if params is None:
-            final_params = definition["default_params"].copy()
+            final_params = cast(
+                "dict[str, IndicatorParamValue]", definition["default_params"]
+            )
         else:
             # Merge with defaults for missing parameters
-            final_params = definition["default_params"].copy()
+            final_params = cast(
+                "dict[str, IndicatorParamValue]", definition["default_params"]
+            ).copy()
             final_params.update(params)
 
         # Validate parameters
         self._validate_parameters(indicator, final_params)
 
         # Prepare price arrays
-        arrays = self._prepare_price_arrays(price_data, definition["input_types"])
+        arrays = self._prepare_price_arrays(
+            price_data, cast("list[InputSpec]", definition["input_types"])
+        )
 
         # Get TA-Lib function
-        talib_func_name = definition["talib_function"].split(".")[
+        talib_func_name = str(definition["talib_function"]).split(".")[
             -1
         ]  # Extract function name
         talib_func = getattr(talib, talib_func_name)
@@ -406,7 +418,7 @@ class MarketDataService:
         func_kwargs = {}
 
         # Add required price arrays based on input types
-        for input_type in definition["input_types"]:
+        for input_type in list(definition["input_types"]):
             if input_type == "close":
                 func_args.append(arrays["close"])
             elif input_type == "ohlc":
@@ -433,7 +445,7 @@ class MarketDataService:
         # Process results based on output format
         result = []
         dates = arrays["dates"]
-        output_format = definition["output_format"]
+        output_format = str(definition["output_format"])
 
         if output_format == "single":
             # Single output array
@@ -576,7 +588,8 @@ class MarketDataService:
     def get_available_indicators(self) -> dict[str, str]:
         """Get list of all available indicators with descriptions."""
         return {
-            name: info["description"] for name, info in INDICATOR_DEFINITIONS.items()
+            name: str(info["description"])
+            for name, info in INDICATOR_DEFINITIONS.items()
         }
 
     def get_available_presets(
@@ -612,13 +625,17 @@ class MarketDataService:
         definition = INDICATOR_DEFINITIONS[indicator_upper]
         return IndicatorConfig(
             name=indicator_upper,
-            parameters=definition["default_params"],
-            input_types=definition["input_types"],
-            output_format=definition["output_format"],
-            param_ranges=definition["param_ranges"],
-            default_params=definition["default_params"],
-            talib_function=definition["talib_function"],
-            description=definition["description"],
+            parameters=cast(
+                "dict[str, IndicatorParamValue]", definition["default_params"]
+            ),
+            input_types=cast("list[InputSpec]", definition["input_types"]),
+            output_format=cast("OutputSpec", definition["output_format"]),
+            param_ranges=cast("ParamRanges", definition["param_ranges"]),
+            default_params=cast(
+                "dict[str, IndicatorParamValue]", definition["default_params"]
+            ),
+            talib_function=str(definition["talib_function"]),
+            description=str(definition["description"]),
         )
 
     def _calculate_signal_strength(

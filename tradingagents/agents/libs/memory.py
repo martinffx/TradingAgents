@@ -13,19 +13,19 @@ class FinancialSituationMemory:
         self.chroma_client = chromadb.Client(Settings(allow_reset=True))
         self.situation_collection = self.chroma_client.create_collection(name=name)
 
-    def get_embedding(self, text):
+    def get_embedding(self, text) -> list[float]:
         """Get OpenAI embedding for a text"""
-
         response = self.client.embeddings.create(model=self.embedding, input=text)
         return response.data[0].embedding
 
     def add_situations(self, situations_and_advice):
         """Add financial situations and their corresponding advice. Parameter is a list of tuples (situation, rec)"""
+        from typing import Any
 
-        situations = []
-        advice = []
-        ids = []
-        embeddings = []
+        situations: list[str] = []
+        advice: list[str] = []
+        ids: list[str] = []
+        embeddings: list[Any] = []  # ChromaDB expects flexible embedding types
 
         offset = self.situation_collection.count()
 
@@ -44,10 +44,11 @@ class FinancialSituationMemory:
 
     def get_memories(self, current_situation, n_matches=1):
         """Find matching recommendations using OpenAI embeddings"""
+
         query_embedding = self.get_embedding(current_situation)
 
         results = self.situation_collection.query(
-            query_embeddings=[query_embedding],
+            query_embeddings=[query_embedding],  # type: ignore
             n_results=n_matches,
             include=["metadatas", "documents", "distances"],
         )
@@ -58,6 +59,8 @@ class FinancialSituationMemory:
             and "documents" in results
             and results["documents"]
             and len(results["documents"]) > 0
+            and results["documents"][0] is not None
+            and len(results["documents"][0]) > 0
         ):
             for i in range(len(results["documents"][0])):
                 if (
@@ -70,6 +73,9 @@ class FinancialSituationMemory:
                     and len(results["distances"]) > 0
                     and i < len(results["distances"][0])
                 ):
+                    # Type checker satisfaction - we've already checked these exist
+                    assert results["documents"] is not None
+                    assert results["documents"][0] is not None
                     matched_results.append(
                         {
                             "matched_situation": results["documents"][0][i],
