@@ -828,6 +828,20 @@ wheels = [
 ]
 
 [[package]]
+name = "googlenewsdecoder"
+version = "0.1.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pysocks" },
+    { name = "requests" },
+    { name = "selectolax" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9f/99/d01ae4a3aa30e4d75e7ab6832cb44d79b298a2083b7776f3c8b8830b0aba/googlenewsdecoder-0.1.7.tar.gz", hash = "sha256:0fcd8fa2aa6a145f84798921aeef0ec45d40bcf5ceebb467742f0efd068d3902", size = 12591, upload-time = "2025-01-18T20:05:11.741Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c5/82/0ff6da895449c6703d24129c4319c5cc2545b0c2c39893f95156b1d841ae/googlenewsdecoder-0.1.7-py3-none-any.whl", hash = "sha256:a8be897bb41864a82d81da6e05777d8c795989cf65f14b41e8e772b3f5a8354d", size = 16520, upload-time = "2025-01-18T20:05:09.778Z" },
+]
+
+[[package]]
 name = "greenlet"
 version = "3.2.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1456,6 +1470,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ee/cd/95fa2201041a610c4d08ddaf31d43b98ecc4b1d74b1e7245b1abdab443cb/lxml-5.4.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:15a665ad90054a3d4f397bc40f73948d48e36e4c09f9bcffc7d90c87410e478a", size = 5021569, upload-time = "2025-04-23T01:47:33.805Z" },
     { url = "https://files.pythonhosted.org/packages/2d/a6/31da006fead660b9512d08d23d31e93ad3477dd47cc42e3285f143443176/lxml-5.4.0-cp313-cp313-win32.whl", hash = "sha256:d5663bc1b471c79f5c833cffbc9b87d7bf13f87e055a5c86c363ccd2348d7e82", size = 3485270, upload-time = "2025-04-23T01:47:36.133Z" },
     { url = "https://files.pythonhosted.org/packages/fc/14/c115516c62a7d2499781d2d3d7215218c0731b2c940753bf9f9b7b73924d/lxml-5.4.0-cp313-cp313-win_amd64.whl", hash = "sha256:bcb7a1096b4b6b24ce1ac24d4942ad98f983cd3810f9711bcd0293f43a9d8b9f", size = 3814606, upload-time = "2025-04-23T01:47:39.028Z" },
+]
+
+[[package]]
+name = "lxml-html-clean"
+version = "0.4.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "lxml" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/79/b6/466e71db127950fb8d172026a8f0a9f0dc6f64c8e78e2ca79f252e5790b8/lxml_html_clean-0.4.2.tar.gz", hash = "sha256:91291e7b5db95430abf461bc53440964d58e06cc468950f9e47db64976cebcb3", size = 21622, upload-time = "2025-04-09T11:33:59.432Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4e/0b/942cb7278d6caad79343ad2ddd636ed204a47909b969d19114a3097f5aa3/lxml_html_clean-0.4.2-py3-none-any.whl", hash = "sha256:74ccfba277adcfea87a1e9294f47dd86b05d65b4da7c5b07966e3d5f3be8a505", size = 14184, upload-time = "2025-04-09T11:33:57.988Z" },
 ]
 
 [[package]]
@@ -2896,6 +2922,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pysocks"
+version = "1.7.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/bd/11/293dd436aea955d45fc4e8a35b6ae7270f5b8e00b53cf6c024c83b657a11/PySocks-1.7.1.tar.gz", hash = "sha256:3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0", size = 284429, upload-time = "2019-09-20T02:07:35.714Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8d/59/b4572118e098ac8e46e399a1dd0f2d85403ce8bbaad9ec79373ed6badaf9/PySocks-1.7.1-py3-none-any.whl", hash = "sha256:2725bd0a9925919b9b51739eea5f9e2bae91e83288108a9ad338b2e3a4435ee5", size = 16725, upload-time = "2019-09-20T02:06:22.938Z" },
+]
+
+[[package]]
 name = "pytest"
 version = "8.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -3224,6 +3259,20 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/3e/b9/053d6445dc7544fb6594785056d8ece61daae7214859ada4a152ad56b6e0/ruff-0.12.5-py3-none-win32.whl", hash = "sha256:dfeb2627c459b0b78ca2bbdc38dd11cc9a0a88bf91db982058b26ce41714ffa9", size = 11751575, upload-time = "2025-07-24T13:26:30.835Z" },
     { url = "https://files.pythonhosted.org/packages/bc/0f/ab16e8259493137598b9149734fec2e06fdeda9837e6f634f5c4e35916da/ruff-0.12.5-py3-none-win_amd64.whl", hash = "sha256:ae0d90cf5f49466c954991b9d8b953bd093c32c27608e409ae3564c63c5306a5", size = 12882273, upload-time = "2025-07-24T13:26:32.929Z" },
     { url = "https://files.pythonhosted.org/packages/00/db/c376b0661c24cf770cb8815268190668ec1330eba8374a126ceef8c72d55/ruff-0.12.5-py3-none-win_arm64.whl", hash = "sha256:48cdbfc633de2c5c37d9f090ba3b352d1576b0015bfc3bc98eaf230275b7e805", size = 11951564, upload-time = "2025-07-24T13:26:34.994Z" },
+]
+
+[[package]]
+name = "selectolax"
+version = "0.3.33"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e6/02/d249d3ee4c2b93c0fe2aa2cadcb7b65fda88730028af8853ea6cd2e5434b/selectolax-0.3.33.tar.gz", hash = "sha256:e352abb1621decf7cdf2ef51f245aaf684622a07fabed876eb86e5c69c7ef668", size = 4707132, upload-time = "2025-08-09T16:48:44.519Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ca/dc/54af23db2099b323659c1d57815736914af90a9a3764458c8041d815a6d9/selectolax-0.3.33-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:0661530655a69d437c5ec02e545d17bd462c791d9a02500136805fefbaed5975", size = 2080318, upload-time = "2025-08-09T16:48:24.055Z" },
+    { url = "https://files.pythonhosted.org/packages/d5/ef/cabba21b87a70241c3a9e46c7e8638c211ef3a4021763104ae9b45277321/selectolax-0.3.33-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:66e489a06626de8eb2289ada10c91c8ca0eecc4e7b83e6d5ec4652b9a80a4c75", size = 2075524, upload-time = "2025-08-09T16:48:25.53Z" },
+    { url = "https://files.pythonhosted.org/packages/71/09/7bc70fe13420b1b43809791004432c4e25eff39c44ef8084071768dcef9d/selectolax-0.3.33-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:1cab500be25c9a9443dd4b047cea26f50e30a1be8f95407b25c9eba5a6c8beaa", size = 5772059, upload-time = "2025-08-09T16:48:27.066Z" },
+    { url = "https://files.pythonhosted.org/packages/51/d5/831b1c25d5ee875183c114acfd595365e550f2b75a226d5577d15cf9b978/selectolax-0.3.33-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:48bc6f799d975565ce011e402e19917588e1f34c2849519691dcd2b97b8cfa36", size = 5805851, upload-time = "2025-08-09T16:48:28.849Z" },
+    { url = "https://files.pythonhosted.org/packages/89/a8/1ab9e030b76475808365bd32575964e96f5458023c907615c7d0b036b4a9/selectolax-0.3.33-cp313-cp313-win_amd64.whl", hash = "sha256:7f2c467085f7f5f050a259efbc982970793671c6e55e9c05cca8c6f142baf670", size = 1795238, upload-time = "2025-08-09T16:48:30.375Z" },
+    { url = "https://files.pythonhosted.org/packages/bb/da/e88c3523c00648708bc13da60c48353a45bb10dee3dd07a87ac469ea0987/selectolax-0.3.33-cp313-cp313-win_arm64.whl", hash = "sha256:f4332d0927e2f12d5d9e30a9eb8b3e72b5a606dcb4914ba9920dd6a3e4e278f6", size = 1732238, upload-time = "2025-08-09T16:48:32.318Z" },
 ]
 
 [[package]]
@@ -3561,12 +3610,15 @@ dependencies = [
     { name = "eodhd" },
     { name = "feedparser" },
     { name = "finnhub-python" },
+    { name = "googlenewsdecoder" },
     { name = "langchain-anthropic" },
     { name = "langchain-experimental" },
     { name = "langchain-google-genai" },
     { name = "langchain-openai" },
     { name = "langgraph" },
+    { name = "lxml-html-clean" },
     { name = "newspaper4k" },
+    { name = "nltk" },
     { name = "pandas" },
     { name = "parsel" },
     { name = "praw" },
@@ -3612,12 +3664,15 @@ requires-dist = [
     { name = "eodhd", specifier = ">=1.0.32" },
     { name = "feedparser", specifier = ">=6.0.11" },
     { name = "finnhub-python", specifier = ">=2.4.23" },
+    { name = "googlenewsdecoder", specifier = ">=0.1.7" },
     { name = "langchain-anthropic", specifier = ">=0.3.15" },
     { name = "langchain-experimental", specifier = ">=0.3.4" },
     { name = "langchain-google-genai", specifier = ">=2.1.5" },
     { name = "langchain-openai", specifier = ">=0.3.23" },
     { name = "langgraph", specifier = ">=0.4.8" },
+    { name = "lxml-html-clean", specifier = ">=0.4.0" },
     { name = "newspaper4k", specifier = ">=0.9.3" },
+    { name = "nltk", specifier = ">=3.9.1" },
     { name = "pandas", specifier = ">=2.3.0" },
     { name = "parsel", specifier = ">=1.10.0" },
     { name = "praw", specifier = ">=7.8.1" },

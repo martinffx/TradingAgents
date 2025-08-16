@@ -3,7 +3,6 @@ Google News client for live news data via RSS feeds.
 """
 
 import logging
-import time
 from dataclasses import dataclass
 from datetime import datetime
 from urllib.parse import quote
@@ -13,30 +12,6 @@ import requests
 from dateutil import parser as date_parser
 
 logger = logging.getLogger(__name__)
-
-
-@dataclass
-class FeedEntry:
-    """Structured representation of a feedparser entry."""
-
-    title: str
-    link: str
-    published: str
-    published_parsed: time.struct_time | None
-    summary: str
-    guid: str
-
-    @classmethod
-    def from_feedparser_dict(cls, entry: feedparser.FeedParserDict) -> "FeedEntry":
-        """Convert a FeedParserDict to a structured FeedEntry."""
-        return cls(
-            title=getattr(entry, "title", "Untitled"),
-            link=getattr(entry, "link", ""),
-            published=getattr(entry, "published", ""),
-            published_parsed=getattr(entry, "published_parsed", None),
-            summary=getattr(entry, "summary", ""),
-            guid=getattr(entry, "id", getattr(entry, "link", "")),
-        )
 
 
 @dataclass
@@ -128,11 +103,9 @@ class GoogleNewsClient:
                 )
 
             articles = []
-            for raw_entry in feed.entries:
+            for entry in feed.entries:
                 try:
-                    # Convert FeedParserDict to structured dataclass
-                    entry = FeedEntry.from_feedparser_dict(raw_entry)
-                    article = self._convert_entry_to_article(entry)
+                    article = self._parse_feed_entry(entry)
                     articles.append(article)
                 except Exception as e:
                     logger.warning(f"Failed to parse article entry: {e}")
@@ -153,36 +126,64 @@ class GoogleNewsClient:
             )
             return []
 
-    def _convert_entry_to_article(self, entry: FeedEntry) -> GoogleNewsArticle:
+    def _parse_feed_entry(self, entry: feedparser.FeedParserDict) -> GoogleNewsArticle:
         """
-        Convert a structured FeedEntry to a GoogleNewsArticle.
+        Parse a feedparser entry directly into a GoogleNewsArticle.
 
         Args:
-            entry: Structured FeedEntry dataclass
+            entry: Raw feedparser entry
 
         Returns:
-            GoogleNewsArticle: Converted article object
+            GoogleNewsArticle: Parsed article object
         """
+        # Get fields with safe defaults
+        raw_title = getattr(entry, "title", "Untitled")
+        raw_link = getattr(entry, "link", "")
+        published_str = getattr(entry, "published", "")
+        summary = getattr(entry, "summary", "")
+        guid = getattr(entry, "id", getattr(entry, "link", ""))
+
+        # Decode Google News redirect URL to get actual article URL
+        # Only attempt to decode if it's a Google News URL
+        if raw_link and "news.google.com" in raw_link:
+            try:
+                from googlenewsdecoder import gnewsdecoder
+
+                decoded_result = gnewsdecoder(raw_link, interval=0)
+                # gnewsdecoder returns a dict with 'status' and 'decoded_url' keys
+                if decoded_result.get("status"):
+                    link = decoded_result["decoded_url"]
+                else:
+                    # Failed to decode, use original URL
+                    logger.debug(
+                        f"Failed to decode Google News URL: {decoded_result.get('message', 'Unknown error')}"
+                    )
+                    link = raw_link
+            except Exception as e:
+                logger.debug(f"Failed to decode Google News URL: {e}")
+                link = raw_link
+        else:
+            # Not a Google News URL, use as-is
+            link = raw_link
+
         # Parse published date with fallback to current time
         try:
             published = (
-                date_parser.parse(entry.published)
-                if entry.published
-                else datetime.utcnow()
+                date_parser.parse(published_str) if published_str else datetime.utcnow()
             )
         except (ValueError, OverflowError, TypeError):
             published = datetime.utcnow()
 
         # Extract source from title (Google News format: "Title - Source")
-        title_parts = entry.title.split(" - ")
-        title = title_parts[0] if title_parts else entry.title
+        title_parts = raw_title.split(" - ")
+        title = title_parts[0] if title_parts else raw_title
         source = title_parts[-1] if len(title_parts) > 1 else "Unknown"
 
         return GoogleNewsArticle(
             title=title,
-            link=entry.link,
+            link=link,
             published=published,
-            summary=entry.summary,
+            summary=summary,
             source=source,
-            guid=entry.guid,
+            guid=guid,
         )
