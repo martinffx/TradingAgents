@@ -50,9 +50,10 @@ def temp_data_dir():
     temp_dir = tempfile.mkdtemp()
     yield temp_dir
     try:
-        shutil.rmtree(temp_dir)
-    except OSError:
-        pass  # Directory might already be deleted
+        # pyrefly: ignore[deprecated]
+        shutil.rmtree(temp_dir, ignore_errors=True)
+    except Exception:
+        pass
 
 
 @pytest.fixture
