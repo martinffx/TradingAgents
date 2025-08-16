@@ -1,0 +1,751 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/91.0.4472.124 Safari/537.36
+    method: GET
+    uri: https://news.google.com/rss/search?q=AAPL&hl=en-US&gl=US&ceid=US:en
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><rss version=\"2.0\"
+        xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><generator>NFE/5.0</generator><title>\"AAPL\"
+        - Google News</title><link>https://news.google.com/search?q=AAPL&amp;hl=en-US&amp;gl=US&amp;ceid=US:en</link><language>en-US</language><webMaster>news-webmaster@google.com</webMaster><copyright>Copyright
+        \xA9 2025 Google. All rights reserved. This XML feed is made available solely
+        for the purpose of rendering Google News results within a personal feed reader
+        for personal, non-commercial use. Any other use of the feed is expressly prohibited.
+        By accessing this feed or using these results in any manner whatsoever, you
+        agree to be bound by the foregoing restrictions.</copyright><lastBuildDate>Fri,
+        15 Aug 2025 06:31:41 GMT</lastBuildDate><image><title>Google News</title><url>https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w256</url><link>https://news.google.com/</link><height>256</height><width>256</width></image><description>Google
+        News</description><item><title>Apple Stock Is Gaining Momentum, Is AAPL Stock
+        A Buy? - Barchart.com</title><link>https://news.google.com/rss/articles/CBMinAFBVV95cUxONXYzWnJQQU9jTUtHTTNqcDh1UnJ4QlJ4cndlNXIyc2NvZDdRZWc2SWFyamE0QVpZNWRzT2IzQXY2SDA1NF9KZEI0TTlTc3JZd0hvX216cmhEcFJ2dWZNWVNaYXRrdDlaWVFQLV9PbUdzNFY0M19pNk5UWTdEYUozSmwtTnVjTHljYzZQUnl4SVZuLWpnMTRGbUZXUWg?oc=5</link><guid
+        isPermaLink=\"false\">CBMinAFBVV95cUxONXYzWnJQQU9jTUtHTTNqcDh1UnJ4QlJ4cndlNXIyc2NvZDdRZWc2SWFyamE0QVpZNWRzT2IzQXY2SDA1NF9KZEI0TTlTc3JZd0hvX216cmhEcFJ2dWZNWVNaYXRrdDlaWVFQLV9PbUdzNFY0M19pNk5UWTdEYUozSmwtTnVjTHljYzZQUnl4SVZuLWpnMTRGbUZXUWg</guid><pubDate>Wed,
+        13 Aug 2025 17:24:06 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxONXYzWnJQQU9jTUtHTTNqcDh1UnJ4QlJ4cndlNXIyc2NvZDdRZWc2SWFyamE0QVpZNWRzT2IzQXY2SDA1NF9KZEI0TTlTc3JZd0hvX216cmhEcFJ2dWZNWVNaYXRrdDlaWVFQLV9PbUdzNFY0M19pNk5UWTdEYUozSmwtTnVjTHljYzZQUnl4SVZuLWpnMTRGbUZXUWg?oc=5\"
+        target=\"_blank\"&gt;Apple Stock Is Gaining Momentum, Is AAPL Stock A Buy?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Barchart.com&lt;/font&gt;</description><source url=\"https://www.barchart.com\">Barchart.com</source></item><item><title>Apple
+        (AAPL) Is Developing a Tabletop Robot as Part of Its AI Strategy - TipRanks</title><link>https://news.google.com/rss/articles/CBMinwFBVV95cUxPYnVLV3A1YzlKemdGMVRYcFJXR0VvRVk5NWJvNVN1RmRxSjhpZ2F4YjduRXZhcVI1VFRfejBsTjdSN0FvTXRQcVVEb2xTZ3JnYy0ydkdKT2I2RG43Z29jYnpHYmhyUVRYUkVoeXI5TDNRRGU4a05rZHBHemVmaUJDVFNUUHl5ZkVWNmp3YS1VZXJ3MDRvQUgzZjkySTQ0eEk?oc=5</link><guid
+        isPermaLink=\"false\">CBMinwFBVV95cUxPYnVLV3A1YzlKemdGMVRYcFJXR0VvRVk5NWJvNVN1RmRxSjhpZ2F4YjduRXZhcVI1VFRfejBsTjdSN0FvTXRQcVVEb2xTZ3JnYy0ydkdKT2I2RG43Z29jYnpHYmhyUVRYUkVoeXI5TDNRRGU4a05rZHBHemVmaUJDVFNUUHl5ZkVWNmp3YS1VZXJ3MDRvQUgzZjkySTQ0eEk</guid><pubDate>Thu,
+        14 Aug 2025 08:03:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPYnVLV3A1YzlKemdGMVRYcFJXR0VvRVk5NWJvNVN1RmRxSjhpZ2F4YjduRXZhcVI1VFRfejBsTjdSN0FvTXRQcVVEb2xTZ3JnYy0ydkdKT2I2RG43Z29jYnpHYmhyUVRYUkVoeXI5TDNRRGU4a05rZHBHemVmaUJDVFNUUHl5ZkVWNmp3YS1VZXJ3MDRvQUgzZjkySTQ0eEk?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Is Developing a Tabletop Robot as Part of
+        Its AI Strategy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>As Elon
+        Musk Lashes Out at Apple, How Should You Play TSLA and AAPL Stock? - Yahoo
+        Finance</title><link>https://news.google.com/rss/articles/CBMifkFVX3lxTE4zLXctdTFyY3RjOHNFc1liRkJrdm9hbnN2WFVyZGlMNFFXZ0dNMmdVaFBRWWxvbUZMY1hKZUVkYnlrWldQVzI4WXg1NDNkM3BJODJUNU51QUhfckVZdE4ySWRfU0FIeVg2TVZVc09hYXZ3UVBoZFhacEl1Y1dYdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMifkFVX3lxTE4zLXctdTFyY3RjOHNFc1liRkJrdm9hbnN2WFVyZGlMNFFXZ0dNMmdVaFBRWWxvbUZMY1hKZUVkYnlrWldQVzI4WXg1NDNkM3BJODJUNU51QUhfckVZdE4ySWRfU0FIeVg2TVZVc09hYXZ3UVBoZFhacEl1Y1dYdw</guid><pubDate>Wed,
+        13 Aug 2025 14:38:51 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE4zLXctdTFyY3RjOHNFc1liRkJrdm9hbnN2WFVyZGlMNFFXZ0dNMmdVaFBRWWxvbUZMY1hKZUVkYnlrWldQVzI4WXg1NDNkM3BJODJUNU51QUhfckVZdE4ySWRfU0FIeVg2TVZVc09hYXZ3UVBoZFhacEl1Y1dYdw?oc=5\"
+        target=\"_blank\"&gt;As Elon Musk Lashes Out at Apple, How Should You Play
+        TSLA and AAPL Stock?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple\u2019s Hidden Growth Engine Surges
+        (NASDAQ:AAPL) - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMigAFBVV95cUxQZ1E5SjA2Y0FrNmxycHdaYS1fQXctLXRUR29jS1RpTzdKclptZ25ONUdJeDhjSksyX0J2MmVtZEJtVTVtVzcxanV2d0pBdjJNU2MzRHdMTjctcTBTQVNDdDdvdkZneXpIOE02YVcwcTBGV3JQcFg1c19Mb0poaXdlZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMigAFBVV95cUxQZ1E5SjA2Y0FrNmxycHdaYS1fQXctLXRUR29jS1RpTzdKclptZ25ONUdJeDhjSksyX0J2MmVtZEJtVTVtVzcxanV2d0pBdjJNU2MzRHdMTjctcTBTQVNDdDdvdkZneXpIOE02YVcwcTBGV3JQcFg1c19Mb0poaXdlZw</guid><pubDate>Thu,
+        14 Aug 2025 16:10:23 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxQZ1E5SjA2Y0FrNmxycHdaYS1fQXctLXRUR29jS1RpTzdKclptZ25ONUdJeDhjSksyX0J2MmVtZEJtVTVtVzcxanV2d0pBdjJNU2MzRHdMTjctcTBTQVNDdDdvdkZneXpIOE02YVcwcTBGV3JQcFg1c19Mb0poaXdlZw?oc=5\"
+        target=\"_blank\"&gt;Apple\u2019s Hidden Growth Engine Surges (NASDAQ:AAPL)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Seeking Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Final Trade: LLY, ULTA, AAPL, GDX - CNBC</title><link>https://news.google.com/rss/articles/CBMifEFVX3lxTE5FUG5mX2VGZ0hET2VCVDRaZEhlaWpVRTJvQ19hOC0yekNtRURTZFJVWTE3ZVRzSVlHNTNndFZOaVZJcDYxN28xWlpkLTJzN2pHSnpLbzRTZms3dVN0OXliTU9XekkwUWx6Sjg0MW1mVHNCTUNKVEZzenpGMjQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMifEFVX3lxTE5FUG5mX2VGZ0hET2VCVDRaZEhlaWpVRTJvQ19hOC0yekNtRURTZFJVWTE3ZVRzSVlHNTNndFZOaVZJcDYxN28xWlpkLTJzN2pHSnpLbzRTZms3dVN0OXliTU9XekkwUWx6Sjg0MW1mVHNCTUNKVEZzenpGMjQ</guid><pubDate>Tue,
+        12 Aug 2025 22:09:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE5FUG5mX2VGZ0hET2VCVDRaZEhlaWpVRTJvQ19hOC0yekNtRURTZFJVWTE3ZVRzSVlHNTNndFZOaVZJcDYxN28xWlpkLTJzN2pHSnpLbzRTZms3dVN0OXliTU9XekkwUWx6Sjg0MW1mVHNCTUNKVEZzenpGMjQ?oc=5\"
+        target=\"_blank\"&gt;Final Trade: LLY, ULTA, AAPL, GDX&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source url=\"https://www.cnbc.com\">CNBC</source></item><item><title>Melius
+        Raises Apple (AAPL) PT to $260, Cites Upcoming iPhone Cycles - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMifkFVX3lxTFA0aHNtM0tud0tsNXJwYXVveWFkM0I4dnltN0hDQkcxSzVnd3VCUEl1SVdDVVZYZkJPQXNHaS0taHBXeU1DN2RyRXVaQno1QlBzSlMxbU0ySmJvQndjMFBZOTJacHZpX0FIc04wMFBkekZvcUd1YkJLZmU0RmNkdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMifkFVX3lxTFA0aHNtM0tud0tsNXJwYXVveWFkM0I4dnltN0hDQkcxSzVnd3VCUEl1SVdDVVZYZkJPQXNHaS0taHBXeU1DN2RyRXVaQno1QlBzSlMxbU0ySmJvQndjMFBZOTJacHZpX0FIc04wMFBkekZvcUd1YkJLZmU0RmNkdw</guid><pubDate>Wed,
+        13 Aug 2025 18:47:07 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTFA0aHNtM0tud0tsNXJwYXVveWFkM0I4dnltN0hDQkcxSzVnd3VCUEl1SVdDVVZYZkJPQXNHaS0taHBXeU1DN2RyRXVaQno1QlBzSlMxbU0ySmJvQndjMFBZOTJacHZpX0FIc04wMFBkekZvcUd1YkJLZmU0RmNkdw?oc=5\"
+        target=\"_blank\"&gt;Melius Raises Apple (AAPL) PT to $260, Cites Upcoming
+        iPhone Cycles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Upgrading Siri with AI-Powered
+        Apple Intent - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE9CMkhRaklybjhWenRnWVJNeXpCbmZEeE9lRDA4V1FmdTdCVnFlbFRIeDJCekw4cGc5X2QtVzZqR1lQM245YkZxM3JtUy1mMFljYWttQnZrdjZqRFF1ZHYyMzBBd0VibG9BOFF1Z29DRnlzbktTYWVfc0ZZOFFuMEE?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE9CMkhRaklybjhWenRnWVJNeXpCbmZEeE9lRDA4V1FmdTdCVnFlbFRIeDJCekw4cGc5X2QtVzZqR1lQM245YkZxM3JtUy1mMFljYWttQnZrdjZqRFF1ZHYyMzBBd0VibG9BOFF1Z29DRnlzbktTYWVfc0ZZOFFuMEE</guid><pubDate>Wed,
+        13 Aug 2025 19:32:31 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE9CMkhRaklybjhWenRnWVJNeXpCbmZEeE9lRDA4V1FmdTdCVnFlbFRIeDJCekw4cGc5X2QtVzZqR1lQM245YkZxM3JtUy1mMFljYWttQnZrdjZqRFF1ZHYyMzBBd0VibG9BOFF1Z29DRnlzbktTYWVfc0ZZOFFuMEE?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Upgrading Siri with AI-Powered Apple Intent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Stock Price Prediction for
+        2025, 2026, 2030: Pro Forecasts &amp; Key Risks - Benzinga</title><link>https://news.google.com/rss/articles/CBMia0FVX3lxTE5jUU5Fc1lONzdYcGpZM2FNVjljcHhrLW1zRExnem1Vek1ndmNFMzZjd2lQRUFmblYtaDMtUnhtMHNGYnBiZUYtb2xTQTVHUFNFN3ZjQ2x3d3cxTFFVZEJMZzlzVXBjQ2o0UWlR?oc=5</link><guid
+        isPermaLink=\"false\">CBMia0FVX3lxTE5jUU5Fc1lONzdYcGpZM2FNVjljcHhrLW1zRExnem1Vek1ndmNFMzZjd2lQRUFmblYtaDMtUnhtMHNGYnBiZUYtb2xTQTVHUFNFN3ZjQ2x3d3cxTFFVZEJMZzlzVXBjQ2o0UWlR</guid><pubDate>Tue,
+        12 Aug 2025 14:51:35 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE5jUU5Fc1lONzdYcGpZM2FNVjljcHhrLW1zRExnem1Vek1ndmNFMzZjd2lQRUFmblYtaDMtUnhtMHNGYnBiZUYtb2xTQTVHUFNFN3ZjQ2x3d3cxTFFVZEJMZzlzVXBjQ2o0UWlR?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Stock Price Prediction for 2025, 2026, 2030:
+        Pro Forecasts &amp; Key Risks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Benzinga&lt;/font&gt;</description><source
+        url=\"https://www.benzinga.com\">Benzinga</source></item><item><title>Apple
+        Rises 9% in a Month: Buy, Sell or Hold the AAPL Stock? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMieEFVX3lxTE92X2NNZzBNeC1Zb2p0aHdfY2lZME5aUmk5eDZVQUZpZ0lQOGpwUC1idUhjOXNkbjFDMWwybkxmQmlDMjdHdlU3SllneDRfNHhlbEV2NG83M3JIUi1yQ2tGUHU4Zjhzd0FjMkdfMEhleDY4dU5LSW5KLQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMieEFVX3lxTE92X2NNZzBNeC1Zb2p0aHdfY2lZME5aUmk5eDZVQUZpZ0lQOGpwUC1idUhjOXNkbjFDMWwybkxmQmlDMjdHdlU3SllneDRfNHhlbEV2NG83M3JIUi1yQ2tGUHU4Zjhzd0FjMkdfMEhleDY4dU5LSW5KLQ</guid><pubDate>Tue,
+        12 Aug 2025 16:21:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE92X2NNZzBNeC1Zb2p0aHdfY2lZME5aUmk5eDZVQUZpZ0lQOGpwUC1idUhjOXNkbjFDMWwybkxmQmlDMjdHdlU3SllneDRfNHhlbEV2NG83M3JIUi1yQ2tGUHU4Zjhzd0FjMkdfMEhleDY4dU5LSW5KLQ?oc=5\"
+        target=\"_blank\"&gt;Apple Rises 9% in a Month: Buy, Sell or Hold the AAPL
+        Stock?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source
+        url=\"https://finance.yahoo.com\">Yahoo Finance</source></item><item><title>\u2018Free
+        and Fair\u2019 Apple (AAPL) Fights Back in Musk Apps War - TipRanks</title><link>https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYUYwclFIcDcxOTRGMEoxdnZnZG0tNV9VV1JDVmtoN1p5MUxlSG1HMi1obGU5QjJ2QW5MdjNDQWZGZGh3c0JWRVdYZUJmVWMxU1kwWmRtZldUdng0OVNocXdfTHJEWm5OcXh2Mkl3R1p2STBMYm9mWk4zSzhxaXIxeXhPdlFmZkNSTTFV?oc=5</link><guid
+        isPermaLink=\"false\">CBMiiwFBVV95cUxQYUYwclFIcDcxOTRGMEoxdnZnZG0tNV9VV1JDVmtoN1p5MUxlSG1HMi1obGU5QjJ2QW5MdjNDQWZGZGh3c0JWRVdYZUJmVWMxU1kwWmRtZldUdng0OVNocXdfTHJEWm5OcXh2Mkl3R1p2STBMYm9mWk4zSzhxaXIxeXhPdlFmZkNSTTFV</guid><pubDate>Wed,
+        13 Aug 2025 17:12:42 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYUYwclFIcDcxOTRGMEoxdnZnZG0tNV9VV1JDVmtoN1p5MUxlSG1HMi1obGU5QjJ2QW5MdjNDQWZGZGh3c0JWRVdYZUJmVWMxU1kwWmRtZldUdng0OVNocXdfTHJEWm5OcXh2Mkl3R1p2STBMYm9mWk4zSzhxaXIxeXhPdlFmZkNSTTFV?oc=5\"
+        target=\"_blank\"&gt;\u2018Free and Fair\u2019 Apple (AAPL) Fights Back in
+        Musk Apps War&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>Apple
+        Inc. ($AAPL) Stock: Reintroduces Blood Oxygen Monitoring via iPhone Amid 6.78%
+        YTD Decline - CoinCentral</title><link>https://news.google.com/rss/articles/CBMitgFBVV95cUxNbVhVS0VncDVaR0llVnJnTWVIalIxUktVZzVkRE1lcl9JWFJZS29tRzRiNU9tYUlFSGhoN2dLSXh3S0Y2d0tmOEY1TUJZM2NsUFpua2d0U2tIa1lqT2REOVlrUnU4bGkyX2hvRFNBeGVjQWw3Z29GWENCc3ZDU0YtNnUxNHZNdHNvNmVnOEprWHNjc254MGx1dFh4TWFHcXNGRjY3djBvRFVyZGdiWWpuc3JIQ2hjZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMitgFBVV95cUxNbVhVS0VncDVaR0llVnJnTWVIalIxUktVZzVkRE1lcl9JWFJZS29tRzRiNU9tYUlFSGhoN2dLSXh3S0Y2d0tmOEY1TUJZM2NsUFpua2d0U2tIa1lqT2REOVlrUnU4bGkyX2hvRFNBeGVjQWw3Z29GWENCc3ZDU0YtNnUxNHZNdHNvNmVnOEprWHNjc254MGx1dFh4TWFHcXNGRjY3djBvRFVyZGdiWWpuc3JIQ2hjZw</guid><pubDate>Thu,
+        14 Aug 2025 20:24:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNbVhVS0VncDVaR0llVnJnTWVIalIxUktVZzVkRE1lcl9JWFJZS29tRzRiNU9tYUlFSGhoN2dLSXh3S0Y2d0tmOEY1TUJZM2NsUFpua2d0U2tIa1lqT2REOVlrUnU4bGkyX2hvRFNBeGVjQWw3Z29GWENCc3ZDU0YtNnUxNHZNdHNvNmVnOEprWHNjc254MGx1dFh4TWFHcXNGRjY3djBvRFVyZGdiWWpuc3JIQ2hjZw?oc=5\"
+        target=\"_blank\"&gt;Apple Inc. ($AAPL) Stock: Reintroduces Blood Oxygen Monitoring
+        via iPhone Amid 6.78% YTD Decline&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;CoinCentral&lt;/font&gt;</description><source
+        url=\"https://coincentral.com\">CoinCentral</source></item><item><title>Apple
+        Inc (AAPL) Increases its Total Investment to $600 billion to Expand its Manufacturing
+        in the United States - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiggFBVV95cUxPVUh1blVHdUlkM1MzaEpvUEstRl9KTkhvY1p6NHNmTEhWTm5Wdm4yVGQ5c2NMUWhNVVNCRW9pampJdndmY3JILVVua1VvWXF5RE5INEFMSmxGc0Jrc05HZVM4eHJBSzBZR0xRUUxtaG9maFRCZGlXd1U4T2RuN1JJd3VR?oc=5</link><guid
+        isPermaLink=\"false\">CBMiggFBVV95cUxPVUh1blVHdUlkM1MzaEpvUEstRl9KTkhvY1p6NHNmTEhWTm5Wdm4yVGQ5c2NMUWhNVVNCRW9pampJdndmY3JILVVua1VvWXF5RE5INEFMSmxGc0Jrc05HZVM4eHJBSzBZR0xRUUxtaG9maFRCZGlXd1U4T2RuN1JJd3VR</guid><pubDate>Mon,
+        11 Aug 2025 14:08:28 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPVUh1blVHdUlkM1MzaEpvUEstRl9KTkhvY1p6NHNmTEhWTm5Wdm4yVGQ5c2NMUWhNVVNCRW9pampJdndmY3JILVVua1VvWXF5RE5INEFMSmxGc0Jrc05HZVM4eHJBSzBZR0xRUUxtaG9maFRCZGlXd1U4T2RuN1JJd3VR?oc=5\"
+        target=\"_blank\"&gt;Apple Inc (AAPL) Increases its Total Investment to $600
+        billion to Expand its Manufacturing in the United States&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple Plots Expansion Into AI Robots,
+        Home Security and Smart Displays - Bloomberg.com</title><link>https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbEFEVGtsMGlmeDhMRzZUZmdYSFNTWjl3QjEzcUN5NXBtaVIyaXZkbnZDTWZzX0lsNTQxbGpjNnY4Q0xiNjVLUF9zWlBGWGQ0aC1xb0swd0NxNmxkcUs2cmJXaXduXzU4TGxZOV85VlJUbUFZVC1rNUJzX1EzTGVlZVdiaUp0U05YNDM2ZzlpUTIzRV9wanM2N2Iyczd4QjFLS19sc3VyTjFyQnl5YXJHZkdRQWlyU0hMYktoTDRNbTN0QQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMiwgFBVV95cUxNbEFEVGtsMGlmeDhMRzZUZmdYSFNTWjl3QjEzcUN5NXBtaVIyaXZkbnZDTWZzX0lsNTQxbGpjNnY4Q0xiNjVLUF9zWlBGWGQ0aC1xb0swd0NxNmxkcUs2cmJXaXduXzU4TGxZOV85VlJUbUFZVC1rNUJzX1EzTGVlZVdiaUp0U05YNDM2ZzlpUTIzRV9wanM2N2Iyczd4QjFLS19sc3VyTjFyQnl5YXJHZkdRQWlyU0hMYktoTDRNbTN0QQ</guid><pubDate>Wed,
+        13 Aug 2025 18:21:12 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbEFEVGtsMGlmeDhMRzZUZmdYSFNTWjl3QjEzcUN5NXBtaVIyaXZkbnZDTWZzX0lsNTQxbGpjNnY4Q0xiNjVLUF9zWlBGWGQ0aC1xb0swd0NxNmxkcUs2cmJXaXduXzU4TGxZOV85VlJUbUFZVC1rNUJzX1EzTGVlZVdiaUp0U05YNDM2ZzlpUTIzRV9wanM2N2Iyczd4QjFLS19sc3VyTjFyQnl5YXJHZkdRQWlyU0hMYktoTDRNbTN0QQ?oc=5\"
+        target=\"_blank\"&gt;Apple Plots Expansion Into AI Robots, Home Security and
+        Smart Displays&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Bloomberg.com&lt;/font&gt;</description><source
+        url=\"https://www.bloomberg.com\">Bloomberg.com</source></item><item><title>AAPL:
+        Blood Oxygen Feature Returns to Apple Watch \u2014 But China iPhone Demand
+        Case Still Lingers - TradingView</title><link>https://news.google.com/rss/articles/CBMi5wFBVV95cUxPcVdmeVFkWkpqbTcyMmZJaUxrdjY2TlA5eHdUVHpwQVg3a2E5b2VxWS1yaElzUHhLM2E0WkFPMkp1X3Vta1M0YkZOWmdVeVBjUWNLMFBKRHJDTW0wRFBCNFo3d3dkaGp5UnlHd3NvaGdadGVDSFYwcklXLUdaV3ZYWFFRQkhzeGxyeHJtazJvUkFWQXRZOW9nUjZmRXhac3M5SEFmUzhfNWtMX08xUEFUekI5eEJGZTNlN0IwSzE1a1ZaSWxmUXMtWDkwQmtyRDVXaGEzcHdNR0JsZWMyYWpHZ2NDb2RLOTA?oc=5</link><guid
+        isPermaLink=\"false\">CBMi5wFBVV95cUxPcVdmeVFkWkpqbTcyMmZJaUxrdjY2TlA5eHdUVHpwQVg3a2E5b2VxWS1yaElzUHhLM2E0WkFPMkp1X3Vta1M0YkZOWmdVeVBjUWNLMFBKRHJDTW0wRFBCNFo3d3dkaGp5UnlHd3NvaGdadGVDSFYwcklXLUdaV3ZYWFFRQkhzeGxyeHJtazJvUkFWQXRZOW9nUjZmRXhac3M5SEFmUzhfNWtMX08xUEFUekI5eEJGZTNlN0IwSzE1a1ZaSWxmUXMtWDkwQmtyRDVXaGEzcHdNR0JsZWMyYWpHZ2NDb2RLOTA</guid><pubDate>Fri,
+        15 Aug 2025 03:24:22 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxPcVdmeVFkWkpqbTcyMmZJaUxrdjY2TlA5eHdUVHpwQVg3a2E5b2VxWS1yaElzUHhLM2E0WkFPMkp1X3Vta1M0YkZOWmdVeVBjUWNLMFBKRHJDTW0wRFBCNFo3d3dkaGp5UnlHd3NvaGdadGVDSFYwcklXLUdaV3ZYWFFRQkhzeGxyeHJtazJvUkFWQXRZOW9nUjZmRXhac3M5SEFmUzhfNWtMX08xUEFUekI5eEJGZTNlN0IwSzE1a1ZaSWxmUXMtWDkwQmtyRDVXaGEzcHdNR0JsZWMyYWpHZ2NDb2RLOTA?oc=5\"
+        target=\"_blank\"&gt;AAPL: Blood Oxygen Feature Returns to Apple Watch \u2014
+        But China iPhone Demand Case Still Lingers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>Apple
+        (AAPL) Brings Back Its Blood Oxygen Feature to Watches - TipRanks</title><link>https://news.google.com/rss/articles/CBMikgFBVV95cUxNVG9tc2c1LXE4WjlxTXlUQ3ZHb21EOEZESFczd0hQOXk3MTJnRW5JaWJuS25KM3FEdzhVY040dEFKbGxuZWxIZEFyYTNpV2NsMDhMUkpoN2xsSmtHcVVBUVhQdzl5eUZaWXI3WUxMTkluRlZSdmYxZ2U3aVFHVDFfZkpxTHh6b1lhZVU1eTMydUU0UQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMikgFBVV95cUxNVG9tc2c1LXE4WjlxTXlUQ3ZHb21EOEZESFczd0hQOXk3MTJnRW5JaWJuS25KM3FEdzhVY040dEFKbGxuZWxIZEFyYTNpV2NsMDhMUkpoN2xsSmtHcVVBUVhQdzl5eUZaWXI3WUxMTkluRlZSdmYxZ2U3aVFHVDFfZkpxTHh6b1lhZVU1eTMydUU0UQ</guid><pubDate>Thu,
+        14 Aug 2025 17:50:01 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxNVG9tc2c1LXE4WjlxTXlUQ3ZHb21EOEZESFczd0hQOXk3MTJnRW5JaWJuS25KM3FEdzhVY040dEFKbGxuZWxIZEFyYTNpV2NsMDhMUkpoN2xsSmtHcVVBUVhQdzl5eUZaWXI3WUxMTkluRlZSdmYxZ2U3aVFHVDFfZkpxTHh6b1lhZVU1eTMydUU0UQ?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Brings Back Its Blood Oxygen Feature to
+        Watches&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>AAPL:
+        iPhone 17 Launch Nears \u2014 But China iPhone Demand Case Still Casts a Shadow
+        - TradingView</title><link>https://news.google.com/rss/articles/CBMi1AFBVV95cUxNUDdFQkNNR2U5UVJiUU50aFdTME82Ulg1WnR1dGx5YTJhLXQwdTB4cjBpXzZfdGJtYk5vUVBsRUktd2JTX0hEM3M0QTZPR01yMkVUTXBCUld5XzNMel9hMXBhV3dMVmE2U0thU3AzTTdrdnA2Qk5wb1hiOFNmODVrajBsTURQTHdkSERMYzlLSlJsRzR2eUNrNWZpQmFXdTF5VFhGTmlOWTBOTkdkWWtPTC1KSnhvOVpjdjNJeGRjTmZ5cFJWTXoxREttOVNMdGxRWl84dw?oc=5</link><guid
+        isPermaLink=\"false\">CBMi1AFBVV95cUxNUDdFQkNNR2U5UVJiUU50aFdTME82Ulg1WnR1dGx5YTJhLXQwdTB4cjBpXzZfdGJtYk5vUVBsRUktd2JTX0hEM3M0QTZPR01yMkVUTXBCUld5XzNMel9hMXBhV3dMVmE2U0thU3AzTTdrdnA2Qk5wb1hiOFNmODVrajBsTURQTHdkSERMYzlLSlJsRzR2eUNrNWZpQmFXdTF5VFhGTmlOWTBOTkdkWWtPTC1KSnhvOVpjdjNJeGRjTmZ5cFJWTXoxREttOVNMdGxRWl84dw</guid><pubDate>Fri,
+        15 Aug 2025 03:27:37 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNUDdFQkNNR2U5UVJiUU50aFdTME82Ulg1WnR1dGx5YTJhLXQwdTB4cjBpXzZfdGJtYk5vUVBsRUktd2JTX0hEM3M0QTZPR01yMkVUTXBCUld5XzNMel9hMXBhV3dMVmE2U0thU3AzTTdrdnA2Qk5wb1hiOFNmODVrajBsTURQTHdkSERMYzlLSlJsRzR2eUNrNWZpQmFXdTF5VFhGTmlOWTBOTkdkWWtPTC1KSnhvOVpjdjNJeGRjTmZ5cFJWTXoxREttOVNMdGxRWl84dw?oc=5\"
+        target=\"_blank\"&gt;AAPL: iPhone 17 Launch Nears \u2014 But China iPhone
+        Demand Case Still Casts a Shadow&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source
+        url=\"https://www.tradingview.com\">TradingView</source></item><item><title>TSLA
+        vs. AAPL vs. MSFT: Which Magnificent 7 Stock Is Wall Street\u2019s Best Pick?
+        - TipRanks</title><link>https://news.google.com/rss/articles/CBMipAFBVV95cUxNNlRVdktaemprU2g2cGRHNFQ3TDIwY2FJSGNUX3RmZlZHV2ZsZzZHMjhQVF92eFh2MEc5Wnl4SGtIVHV5NkFoaFlMeDhMeGxxcmNDQWtRNFFjWnBFeEFPNXAwb0Zsa1dNZ0s2elVHbWNuRXZRS1I2VGt0UW51ZHlvSmN1elBYR251R1F5N3Znc0lGTXBRY1NzaW43Q0RQNjFRY1lwdQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMipAFBVV95cUxNNlRVdktaemprU2g2cGRHNFQ3TDIwY2FJSGNUX3RmZlZHV2ZsZzZHMjhQVF92eFh2MEc5Wnl4SGtIVHV5NkFoaFlMeDhMeGxxcmNDQWtRNFFjWnBFeEFPNXAwb0Zsa1dNZ0s2elVHbWNuRXZRS1I2VGt0UW51ZHlvSmN1elBYR251R1F5N3Znc0lGTXBRY1NzaW43Q0RQNjFRY1lwdQ</guid><pubDate>Tue,
+        12 Aug 2025 17:07:02 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNNlRVdktaemprU2g2cGRHNFQ3TDIwY2FJSGNUX3RmZlZHV2ZsZzZHMjhQVF92eFh2MEc5Wnl4SGtIVHV5NkFoaFlMeDhMeGxxcmNDQWtRNFFjWnBFeEFPNXAwb0Zsa1dNZ0s2elVHbWNuRXZRS1I2VGt0UW51ZHlvSmN1elBYR251R1F5N3Znc0lGTXBRY1NzaW43Q0RQNjFRY1lwdQ?oc=5\"
+        target=\"_blank\"&gt;TSLA vs. AAPL vs. MSFT: Which Magnificent 7 Stock Is
+        Wall Street\u2019s Best Pick?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>$AAPL
+        Stock Rises on Strong Q3 and U.S. Manufacturing Push, but a $490M China Settlement
+        Lingers - TradingView</title><link>https://news.google.com/rss/articles/CBMi6AFBVV95cUxPellfRGhROUloXzhMRUlxbTNMSmVIcDR0TGRBV0d3UXhJVmVaYXJlVUdjUVp4MThSREUzTzVLSmxYTW5yT1Vucm4xN2dleWI5dldhS1NrVVNleWx5a0hhM0U4VEl0all2LTl6RmhLcDJLNVNuNE5sdXowV2FYek9teU9yUmZCUlVTVEp0cHNGTXpleFBzTUdIQVJoR0JCZDdVMEg4Z2JxbmdwOG93Zi1mclpaa3FGbXFOT3FYNjdWN203UzlDZFJVdVBlbHd1Z0JjbkJZQms1NW9haWtQTGY0M1Rqb3Zqa29X?oc=5</link><guid
+        isPermaLink=\"false\">CBMi6AFBVV95cUxPellfRGhROUloXzhMRUlxbTNMSmVIcDR0TGRBV0d3UXhJVmVaYXJlVUdjUVp4MThSREUzTzVLSmxYTW5yT1Vucm4xN2dleWI5dldhS1NrVVNleWx5a0hhM0U4VEl0all2LTl6RmhLcDJLNVNuNE5sdXowV2FYek9teU9yUmZCUlVTVEp0cHNGTXpleFBzTUdIQVJoR0JCZDdVMEg4Z2JxbmdwOG93Zi1mclpaa3FGbXFOT3FYNjdWN203UzlDZFJVdVBlbHd1Z0JjbkJZQms1NW9haWtQTGY0M1Rqb3Zqa29X</guid><pubDate>Thu,
+        14 Aug 2025 11:16:36 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi6AFBVV95cUxPellfRGhROUloXzhMRUlxbTNMSmVIcDR0TGRBV0d3UXhJVmVaYXJlVUdjUVp4MThSREUzTzVLSmxYTW5yT1Vucm4xN2dleWI5dldhS1NrVVNleWx5a0hhM0U4VEl0all2LTl6RmhLcDJLNVNuNE5sdXowV2FYek9teU9yUmZCUlVTVEp0cHNGTXpleFBzTUdIQVJoR0JCZDdVMEg4Z2JxbmdwOG93Zi1mclpaa3FGbXFOT3FYNjdWN203UzlDZFJVdVBlbHd1Z0JjbkJZQms1NW9haWtQTGY0M1Rqb3Zqa29X?oc=5\"
+        target=\"_blank\"&gt;$AAPL Stock Rises on Strong Q3 and U.S. Manufacturing
+        Push, but a $490M China Settlement Lingers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>Wells
+        Fargo Stays Bullish on Apple (AAPL) Amid $100B U.S. Expansion Plan - Yahoo
+        Finance</title><link>https://news.google.com/rss/articles/CBMigwFBVV95cUxNdDduUHMwaHlfbGFEX2RTWXlIV1hEbnlUc3dkRUgyWkZQN2IyXzR6MFVuVExMNS1xejBnR1ludTQzSjlPYmREMUZZYzFsalpWclh1Q1ZnQ3JCT0FFSl9uSENlc2txVWJNYVB3c3JuVFNMUFlhZW1vN0JrRTk1bDhJZ1BMOA?oc=5</link><guid
+        isPermaLink=\"false\">CBMigwFBVV95cUxNdDduUHMwaHlfbGFEX2RTWXlIV1hEbnlUc3dkRUgyWkZQN2IyXzR6MFVuVExMNS1xejBnR1ludTQzSjlPYmREMUZZYzFsalpWclh1Q1ZnQ3JCT0FFSl9uSENlc2txVWJNYVB3c3JuVFNMUFlhZW1vN0JrRTk1bDhJZ1BMOA</guid><pubDate>Sat,
+        09 Aug 2025 19:44:39 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxNdDduUHMwaHlfbGFEX2RTWXlIV1hEbnlUc3dkRUgyWkZQN2IyXzR6MFVuVExMNS1xejBnR1ludTQzSjlPYmREMUZZYzFsalpWclh1Q1ZnQ3JCT0FFSl9uSENlc2txVWJNYVB3c3JuVFNMUFlhZW1vN0JrRTk1bDhJZ1BMOA?oc=5\"
+        target=\"_blank\"&gt;Wells Fargo Stays Bullish on Apple (AAPL) Amid $100B
+        U.S. Expansion Plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple Stock Is Gaining Momentum, Is AAPL
+        Stock a Buy? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMihgFBVV95cUxOeEY4X0h4dDN6SldSTmgtZ192RVlPWXdnN3dxSktYQXFVa3ZidVFIcjlPZ1QzdW9KaWlLQ240NmU5NTlKclM2Z3dUYVFlV2FIV28yRTBWaFlVU29MRkdKTTk5eWRJY0FpUWp0T2puOF92bWRIeGd0RzJJeUNXUzh2OFBKYXRpZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMihgFBVV95cUxOeEY4X0h4dDN6SldSTmgtZ192RVlPWXdnN3dxSktYQXFVa3ZidVFIcjlPZ1QzdW9KaWlLQ240NmU5NTlKclM2Z3dUYVFlV2FIV28yRTBWaFlVU29MRkdKTTk5eWRJY0FpUWp0T2puOF92bWRIeGd0RzJJeUNXUzh2OFBKYXRpZw</guid><pubDate>Wed,
+        13 Aug 2025 17:24:06 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxOeEY4X0h4dDN6SldSTmgtZ192RVlPWXdnN3dxSktYQXFVa3ZidVFIcjlPZ1QzdW9KaWlLQ240NmU5NTlKclM2Z3dUYVFlV2FIV28yRTBWaFlVU29MRkdKTTk5eWRJY0FpUWp0T2puOF92bWRIeGd0RzJJeUNXUzh2OFBKYXRpZw?oc=5\"
+        target=\"_blank\"&gt;Apple Stock Is Gaining Momentum, Is AAPL Stock a Buy?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Bull Says iPhone Will Be
+        a \u2018Great\u2019 AI Catalyst \u2013 \u2018We Feel Stock is Very Attractive\u2019
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMifkFVX3lxTE9UX29Yb3RnbjQzUEdINDYzTGFUcndrdGFPU1U2Vm9kOURoSnJTVnRSWFBmYUpOOXhQZzZ1YUVCelhqVzU2eVN4NVRadXdXZVJxSTFaVkVkcGxVdmtubExsOFNHSHlsMVF5RUtCdnJTZ3NKMzRVQkg4TzNVWWtyZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMifkFVX3lxTE9UX29Yb3RnbjQzUEdINDYzTGFUcndrdGFPU1U2Vm9kOURoSnJTVnRSWFBmYUpOOXhQZzZ1YUVCelhqVzU2eVN4NVRadXdXZVJxSTFaVkVkcGxVdmtubExsOFNHSHlsMVF5RUtCdnJTZ3NKMzRVQkg4TzNVWWtyZw</guid><pubDate>Mon,
+        28 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE9UX29Yb3RnbjQzUEdINDYzTGFUcndrdGFPU1U2Vm9kOURoSnJTVnRSWFBmYUpOOXhQZzZ1YUVCelhqVzU2eVN4NVRadXdXZVJxSTFaVkVkcGxVdmtubExsOFNHSHlsMVF5RUtCdnJTZ3NKMzRVQkg4TzNVWWtyZw?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Bull Says iPhone Will Be a \u2018Great\u2019
+        AI Catalyst \u2013 \u2018We Feel Stock is Very Attractive\u2019&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Wedbush Reaffirms \u2018Outperform\u2019
+        Rating on Apple Inc. (AAPL) with $270 PT - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMikAFBVV95cUxQSHN1NHBLbFlXV2pmS1pIQ2dFVjd0NWhXcS1zM1dWMTRldkR3UVBwSWpkZTNGME9oZDg2cGlVOEw4RTJFeTBxbktOUUktVjJtdEpjU29fQmJCV04wS3dRWVFkX2VKSFFqUncxcE9zTEJlakxxT3JLMjBBaVFZaVd4Uk5RXzNabEVVVEFGdG1BdXk?oc=5</link><guid
+        isPermaLink=\"false\">CBMikAFBVV95cUxQSHN1NHBLbFlXV2pmS1pIQ2dFVjd0NWhXcS1zM1dWMTRldkR3UVBwSWpkZTNGME9oZDg2cGlVOEw4RTJFeTBxbktOUUktVjJtdEpjU29fQmJCV04wS3dRWVFkX2VKSFFqUncxcE9zTEJlakxxT3JLMjBBaVFZaVd4Uk5RXzNabEVVVEFGdG1BdXk</guid><pubDate>Wed,
+        13 Aug 2025 04:15:11 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQSHN1NHBLbFlXV2pmS1pIQ2dFVjd0NWhXcS1zM1dWMTRldkR3UVBwSWpkZTNGME9oZDg2cGlVOEw4RTJFeTBxbktOUUktVjJtdEpjU29fQmJCV04wS3dRWVFkX2VKSFFqUncxcE9zTEJlakxxT3JLMjBBaVFZaVd4Uk5RXzNabEVVVEFGdG1BdXk?oc=5\"
+        target=\"_blank\"&gt;Wedbush Reaffirms \u2018Outperform\u2019 Rating on Apple
+        Inc. (AAPL) with $270 PT&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Why Apple (AAPL) Stock Is Moving Upwards
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMifkFVX3lxTE1lRElRLTFBQXlkVkZTSDdFZkpaNHlMLXJlaFIzMWNacEFneXMwTUlSMWppU2xNT29JbzBRUEk5aTdqdnhwNHBIZU0xaklqTXVod2xsRmNPVE5IQjNnZkM1Uk1xZFhLSlBxSUFIQUtxdHV2WVg4SjBIVE9ISnR3dw?oc=5</link><guid
+        isPermaLink=\"false\">CBMifkFVX3lxTE1lRElRLTFBQXlkVkZTSDdFZkpaNHlMLXJlaFIzMWNacEFneXMwTUlSMWppU2xNT29JbzBRUEk5aTdqdnhwNHBIZU0xaklqTXVod2xsRmNPVE5IQjNnZkM1Uk1xZFhLSlBxSUFIQUtxdHV2WVg4SjBIVE9ISnR3dw</guid><pubDate>Fri,
+        08 Aug 2025 12:43:50 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE1lRElRLTFBQXlkVkZTSDdFZkpaNHlMLXJlaFIzMWNacEFneXMwTUlSMWppU2xNT29JbzBRUEk5aTdqdnhwNHBIZU0xaklqTXVod2xsRmNPVE5IQjNnZkM1Uk1xZFhLSlBxSUFIQUtxdHV2WVg4SjBIVE9ISnR3dw?oc=5\"
+        target=\"_blank\"&gt;Why Apple (AAPL) Stock Is Moving Upwards&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Faces Margin Pressures Ahead
+        of Earnings \u2014 BofA Still Says Buy - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMihgFBVV95cUxPNmEtYndaVG9LUE0xNVVRV3lLQjR3Y1l6Wk16VXBUOFZnUmF1UUdkRGY5LWhTSjRWV1d2dVc1WV85WTl0S1cwa0Nzb2ZHdkUyTkRQWnpfR1h5QVhqeVRodmRBRDFWOUY3V2xaZ3Nsd0FRMnlGaFZERkdOQ2hRanRaTmNPX0FCZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMihgFBVV95cUxPNmEtYndaVG9LUE0xNVVRV3lLQjR3Y1l6Wk16VXBUOFZnUmF1UUdkRGY5LWhTSjRWV1d2dVc1WV85WTl0S1cwa0Nzb2ZHdkUyTkRQWnpfR1h5QVhqeVRodmRBRDFWOUY3V2xaZ3Nsd0FRMnlGaFZERkdOQ2hRanRaTmNPX0FCZw</guid><pubDate>Tue,
+        29 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxPNmEtYndaVG9LUE0xNVVRV3lLQjR3Y1l6Wk16VXBUOFZnUmF1UUdkRGY5LWhTSjRWV1d2dVc1WV85WTl0S1cwa0Nzb2ZHdkUyTkRQWnpfR1h5QVhqeVRodmRBRDFWOUY3V2xaZ3Nsd0FRMnlGaFZERkdOQ2hRanRaTmNPX0FCZw?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Faces Margin Pressures Ahead of Earnings
+        \u2014 BofA Still Says Buy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Gets $266 Price Target as
+        App Store Growth Surges - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMie0FVX3lxTFBWUjRyMktwb1dBZHRBT3VoTEFHYm5RS2pDZnFNSEU3b2U2TmNxWUpEZWlaOEFTaFZTbFhZWVZCSVh2dnZkanZmUEpGWGg0R192TFNqd2VNV1NHTHdZLTJiSkFEMzVvR29IZTJhT2tzVDJaOW1nOENBSjZ6UQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMie0FVX3lxTFBWUjRyMktwb1dBZHRBT3VoTEFHYm5RS2pDZnFNSEU3b2U2TmNxWUpEZWlaOEFTaFZTbFhZWVZCSVh2dnZkanZmUEpGWGg0R192TFNqd2VNV1NHTHdZLTJiSkFEMzVvR29IZTJhT2tzVDJaOW1nOENBSjZ6UQ</guid><pubDate>Wed,
+        06 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTFBWUjRyMktwb1dBZHRBT3VoTEFHYm5RS2pDZnFNSEU3b2U2TmNxWUpEZWlaOEFTaFZTbFhZWVZCSVh2dnZkanZmUEpGWGg0R192TFNqd2VNV1NHTHdZLTJiSkFEMzVvR29IZTJhT2tzVDJaOW1nOENBSjZ6UQ?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Gets $266 Price Target as App Store Growth
+        Surges&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source
+        url=\"https://finance.yahoo.com\">Yahoo Finance</source></item><item><title>Is
+        AAPL Stock a Buy Now as Tim Cook Vows to Win in the AI Race? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMid0FVX3lxTE9xU2gtRHlXUHJhbzdUem5FWEtKLUYzN09SSUxka0FEekZqcmwtLWdzTURCT0FHb1RKNUVoeHRsZGkzR2FiT3FlZFlBRHUwMTRjZGE4akdudUxybVd3UFhMUzJCZFFGbElxOWNvSmczd2ltay1EQjJr?oc=5</link><guid
+        isPermaLink=\"false\">CBMid0FVX3lxTE9xU2gtRHlXUHJhbzdUem5FWEtKLUYzN09SSUxka0FEekZqcmwtLWdzTURCT0FHb1RKNUVoeHRsZGkzR2FiT3FlZFlBRHUwMTRjZGE4akdudUxybVd3UFhMUzJCZFFGbElxOWNvSmczd2ltay1EQjJr</guid><pubDate>Mon,
+        04 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE9xU2gtRHlXUHJhbzdUem5FWEtKLUYzN09SSUxka0FEekZqcmwtLWdzTURCT0FHb1RKNUVoeHRsZGkzR2FiT3FlZFlBRHUwMTRjZGE4akdudUxybVd3UFhMUzJCZFFGbElxOWNvSmczd2ltay1EQjJr?oc=5\"
+        target=\"_blank\"&gt;Is AAPL Stock a Buy Now as Tim Cook Vows to Win in the
+        AI Race?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Why Apple (AAPL) Is Up 9.4% After $100
+        Billion U.S. Manufacturing and AI Investment Push - simplywall.st</title><link>https://news.google.com/rss/articles/CBMivAFBVV95cUxPOW5sb240c2tjX0JuOGpnWXdZZXotUV9INzFFcUVqZ2hUOG82VGVBMU5fX0ZkbUM1S1VnVjU3QnFqUktUSWdFbml0VGtuV0lwbVRycEJJNmhWcjJFUGlBblMzRjJPdXZjZXg3aDVaM2NzcllwdWh6MEhsZ2tER1NRTGdud3lWeWVrYjRFdDhUR2pJQmNGWmFBd1dRU2dDRGtZSDVMSS1mSlNlZGx0MGE1MzQ3S2VxLW9ZT1MyZNIBwgFBVV95cUxPeU9XRU9JTktZa0phTFdHZVhpZHdPMnVpOTAwMmhfbmZaT0hqNHpWTzlCX1ZjZWRlMDVOTHhJMXVIU1huU0ZhdUkxeUctRXcwMnBqWVBNc2xOQThGbU5mdGxlZDNQV0tUVk94Vk9DbXJiejNLNlpJOXZLOThvWGsxTVNuajl5Ri1TTTRJUllLR3dSN2o3a2YxbTlvUDFvbWNpSllQYl9kWU1XeHc0VlVTR0dJSGllN181X3ZjV2JhdVRrZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMivAFBVV95cUxPOW5sb240c2tjX0JuOGpnWXdZZXotUV9INzFFcUVqZ2hUOG82VGVBMU5fX0ZkbUM1S1VnVjU3QnFqUktUSWdFbml0VGtuV0lwbVRycEJJNmhWcjJFUGlBblMzRjJPdXZjZXg3aDVaM2NzcllwdWh6MEhsZ2tER1NRTGdud3lWeWVrYjRFdDhUR2pJQmNGWmFBd1dRU2dDRGtZSDVMSS1mSlNlZGx0MGE1MzQ3S2VxLW9ZT1MyZNIBwgFBVV95cUxPeU9XRU9JTktZa0phTFdHZVhpZHdPMnVpOTAwMmhfbmZaT0hqNHpWTzlCX1ZjZWRlMDVOTHhJMXVIU1huU0ZhdUkxeUctRXcwMnBqWVBNc2xOQThGbU5mdGxlZDNQV0tUVk94Vk9DbXJiejNLNlpJOXZLOThvWGsxTVNuajl5Ri1TTTRJUllLR3dSN2o3a2YxbTlvUDFvbWNpSllQYl9kWU1XeHc0VlVTR0dJSGllN181X3ZjV2JhdVRrZw</guid><pubDate>Thu,
+        14 Aug 2025 06:29:32 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPOW5sb240c2tjX0JuOGpnWXdZZXotUV9INzFFcUVqZ2hUOG82VGVBMU5fX0ZkbUM1S1VnVjU3QnFqUktUSWdFbml0VGtuV0lwbVRycEJJNmhWcjJFUGlBblMzRjJPdXZjZXg3aDVaM2NzcllwdWh6MEhsZ2tER1NRTGdud3lWeWVrYjRFdDhUR2pJQmNGWmFBd1dRU2dDRGtZSDVMSS1mSlNlZGx0MGE1MzQ3S2VxLW9ZT1MyZNIBwgFBVV95cUxPeU9XRU9JTktZa0phTFdHZVhpZHdPMnVpOTAwMmhfbmZaT0hqNHpWTzlCX1ZjZWRlMDVOTHhJMXVIU1huU0ZhdUkxeUctRXcwMnBqWVBNc2xOQThGbU5mdGxlZDNQV0tUVk94Vk9DbXJiejNLNlpJOXZLOThvWGsxTVNuajl5Ri1TTTRJUllLR3dSN2o3a2YxbTlvUDFvbWNpSllQYl9kWU1XeHc0VlVTR0dJSGllN181X3ZjV2JhdVRrZw?oc=5\"
+        target=\"_blank\"&gt;Why Apple (AAPL) Is Up 9.4% After $100 Billion U.S. Manufacturing
+        and AI Investment Push&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;simplywall.st&lt;/font&gt;</description><source
+        url=\"https://simplywall.st\">simplywall.st</source></item><item><title>$AAPL
+        will launch a new Apple TV with A17 Pro chip in 2025 as a $490M settlement
+        weighs - TradingView</title><link>https://news.google.com/rss/articles/CBMi3wFBVV95cUxNMlM2MzIwLUhpck5oZWdFX1NiY3VBZ1hPUUhTTS1uVlVBUlhLVmtuNk04aER0ZkljcFJwdVBBSzFGOGtGVHU2MmdNTm04cE13TmVoQzktelNYalNQNUhYR1I5TENRV1RhcFpwaTdyMUNyNlJNa0JOWDE4UWxGV19ic05CMWZSTVBPb1J0eTd0RUhaLVpYUkpSOU5YZnNvWjJTQUNWVFh6dEZwSVkwcVpQSTNWSHRXaWR5dUxHeWNEbnkwQWxTR1dMLUk1c1ZKOWhfQnNKRzdMazF4a2pya1cw?oc=5</link><guid
+        isPermaLink=\"false\">CBMi3wFBVV95cUxNMlM2MzIwLUhpck5oZWdFX1NiY3VBZ1hPUUhTTS1uVlVBUlhLVmtuNk04aER0ZkljcFJwdVBBSzFGOGtGVHU2MmdNTm04cE13TmVoQzktelNYalNQNUhYR1I5TENRV1RhcFpwaTdyMUNyNlJNa0JOWDE4UWxGV19ic05CMWZSTVBPb1J0eTd0RUhaLVpYUkpSOU5YZnNvWjJTQUNWVFh6dEZwSVkwcVpQSTNWSHRXaWR5dUxHeWNEbnkwQWxTR1dMLUk1c1ZKOWhfQnNKRzdMazF4a2pya1cw</guid><pubDate>Thu,
+        14 Aug 2025 11:10:39 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxNMlM2MzIwLUhpck5oZWdFX1NiY3VBZ1hPUUhTTS1uVlVBUlhLVmtuNk04aER0ZkljcFJwdVBBSzFGOGtGVHU2MmdNTm04cE13TmVoQzktelNYalNQNUhYR1I5TENRV1RhcFpwaTdyMUNyNlJNa0JOWDE4UWxGV19ic05CMWZSTVBPb1J0eTd0RUhaLVpYUkpSOU5YZnNvWjJTQUNWVFh6dEZwSVkwcVpQSTNWSHRXaWR5dUxHeWNEbnkwQWxTR1dMLUk1c1ZKOWhfQnNKRzdMazF4a2pya1cw?oc=5\"
+        target=\"_blank\"&gt;$AAPL will launch a new Apple TV with A17 Pro chip in
+        2025 as a $490M settlement weighs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source
+        url=\"https://www.tradingview.com\">TradingView</source></item><item><title>AAPL
+        Q2 Deep Dive: AI Investments, Tariff Pressures, and Product Upgrade Records
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMidEFVX3lxTE9TdnZ4b09oLW0yOVdKQzltUlRvbkc5cVVFWGM0QVBfUWk2V3dXZDY2NjlkNDlDWTJfZWxOaDJJaTZQVEtFWEFKS2lzcE90dmlLUE1fNTlYOFNpWDdOcnlxci1UNnRkR1k1VmJqY3hOaU85RHZH?oc=5</link><guid
+        isPermaLink=\"false\">CBMidEFVX3lxTE9TdnZ4b09oLW0yOVdKQzltUlRvbkc5cVVFWGM0QVBfUWk2V3dXZDY2NjlkNDlDWTJfZWxOaDJJaTZQVEtFWEFKS2lzcE90dmlLUE1fNTlYOFNpWDdOcnlxci1UNnRkR1k1VmJqY3hOaU85RHZH</guid><pubDate>Tue,
+        12 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidEFVX3lxTE9TdnZ4b09oLW0yOVdKQzltUlRvbkc5cVVFWGM0QVBfUWk2V3dXZDY2NjlkNDlDWTJfZWxOaDJJaTZQVEtFWEFKS2lzcE90dmlLUE1fNTlYOFNpWDdOcnlxci1UNnRkR1k1VmJqY3hOaU85RHZH?oc=5\"
+        target=\"_blank\"&gt;AAPL Q2 Deep Dive: AI Investments, Tariff Pressures,
+        and Product Upgrade Records&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Is Apple Stock a Buy Now? - The Motley
+        Fool</title><link>https://news.google.com/rss/articles/CBMidkFVX3lxTE9HdDdCcXlnX2ttLXpRTFJIMmlGNVcweVdpQk9OVGNaVi1zcTI1QzlyT0Zsb0p0YjNpRU1kVmZhT0p1blJRbndYakY4OWpvWmNfbUxEQVFaZVJhOEgzWDNTa0VFanVyMURKZ2FsZ21jZHhreDR2aEE?oc=5</link><guid
+        isPermaLink=\"false\">CBMidkFVX3lxTE9HdDdCcXlnX2ttLXpRTFJIMmlGNVcweVdpQk9OVGNaVi1zcTI1QzlyT0Zsb0p0YjNpRU1kVmZhT0p1blJRbndYakY4OWpvWmNfbUxEQVFaZVJhOEgzWDNTa0VFanVyMURKZ2FsZ21jZHhreDR2aEE</guid><pubDate>Sun,
+        10 Aug 2025 09:30:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE9HdDdCcXlnX2ttLXpRTFJIMmlGNVcweVdpQk9OVGNaVi1zcTI1QzlyT0Zsb0p0YjNpRU1kVmZhT0p1blJRbndYakY4OWpvWmNfbUxEQVFaZVJhOEgzWDNTa0VFanVyMURKZ2FsZ21jZHhreDR2aEE?oc=5\"
+        target=\"_blank\"&gt;Is Apple Stock a Buy Now?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;The Motley Fool&lt;/font&gt;</description><source url=\"https://www.fool.com\">The
+        Motley Fool</source></item><item><title>$AAPL makes deals to dodge tariffs,
+        but a $490M settlement over China iPhone demand still lingers - TradingView</title><link>https://news.google.com/rss/articles/CBMi6wFBVV95cUxNR0htWVR3ZElkbnQ3ejdPT1RXTVhSS0NsTHNTQXVlenpDbjBUeG1VaFQ2UkxsY2tNcHROanV5dlhUQ2F6bThmTFJ1Q3R0eXQ2QThlbExxWHNYZVpmdDJqSDlsQ2ZfVTIyOE1Lb0RsUmd6NGR6SVVaNWJCcldLWTlDOVNSTHVNUGV4RXYyTkNIUkRzdlFBb0dGREtvMDI0NUNvd2doUktUSUY0ZDNQcG1GWnRmOFFncWVCVk1hRXY3Q29aM3BFMlJqMUhtREp1b3pHYmhiUkhVaVd5QXpBYlVuQ3hpTGhReXNBUllF?oc=5</link><guid
+        isPermaLink=\"false\">CBMi6wFBVV95cUxNR0htWVR3ZElkbnQ3ejdPT1RXTVhSS0NsTHNTQXVlenpDbjBUeG1VaFQ2UkxsY2tNcHROanV5dlhUQ2F6bThmTFJ1Q3R0eXQ2QThlbExxWHNYZVpmdDJqSDlsQ2ZfVTIyOE1Lb0RsUmd6NGR6SVVaNWJCcldLWTlDOVNSTHVNUGV4RXYyTkNIUkRzdlFBb0dGREtvMDI0NUNvd2doUktUSUY0ZDNQcG1GWnRmOFFncWVCVk1hRXY3Q29aM3BFMlJqMUhtREp1b3pHYmhiUkhVaVd5QXpBYlVuQ3hpTGhReXNBUllF</guid><pubDate>Thu,
+        14 Aug 2025 11:06:56 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxNR0htWVR3ZElkbnQ3ejdPT1RXTVhSS0NsTHNTQXVlenpDbjBUeG1VaFQ2UkxsY2tNcHROanV5dlhUQ2F6bThmTFJ1Q3R0eXQ2QThlbExxWHNYZVpmdDJqSDlsQ2ZfVTIyOE1Lb0RsUmd6NGR6SVVaNWJCcldLWTlDOVNSTHVNUGV4RXYyTkNIUkRzdlFBb0dGREtvMDI0NUNvd2doUktUSUY0ZDNQcG1GWnRmOFFncWVCVk1hRXY3Q29aM3BFMlJqMUhtREp1b3pHYmhiUkhVaVd5QXpBYlVuQ3hpTGhReXNBUllF?oc=5\"
+        target=\"_blank\"&gt;$AAPL makes deals to dodge tariffs, but a $490M settlement
+        over China iPhone demand still lingers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>Apple\u2019s
+        (AAPL) AI Strategy Falls Short, Says Barclays\u2014Is the Stock Still a Must-Watch?
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE1haU9iNHVKeXZvaF81RHU2YjVvbnd4NEwxSHhZVWRDVWFVUmRNT3hyQnhfUWdZTWJENDVKWHA2ZkZSRjdvQl9BU2hCeEZ3TTVBOWtuRm9SdTVFczRvMjVld0swbG1MYWxQNDB1eExqcGM2YXFvaXNlejZUZHNyN3c?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE1haU9iNHVKeXZvaF81RHU2YjVvbnd4NEwxSHhZVWRDVWFVUmRNT3hyQnhfUWdZTWJENDVKWHA2ZkZSRjdvQl9BU2hCeEZ3TTVBOWtuRm9SdTVFczRvMjVld0swbG1MYWxQNDB1eExqcGM2YXFvaXNlejZUZHNyN3c</guid><pubDate>Thu,
+        31 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE1haU9iNHVKeXZvaF81RHU2YjVvbnd4NEwxSHhZVWRDVWFVUmRNT3hyQnhfUWdZTWJENDVKWHA2ZkZSRjdvQl9BU2hCeEZ3TTVBOWtuRm9SdTVFczRvMjVld0swbG1MYWxQNDB1eExqcGM2YXFvaXNlejZUZHNyN3c?oc=5\"
+        target=\"_blank\"&gt;Apple\u2019s (AAPL) AI Strategy Falls Short, Says Barclays\u2014Is
+        the Stock Still a Must-Watch?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Isn\u2019t Going To Buy Perplexity,
+        Says Jim Cramer - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMid0FVX3lxTE9WVEktXzVlWGR0TnlTRDJZWndOck5Zei03bUFKSWhMUE9BLXRmc1EzYVFRakZGN2N2LXB6bmM0X3hlY0dnVWQ5RGd6MmhDVlhVVHpQVzVubi1LbHpaNjhlZ1FOdnd6RGNZaEpPV1B5M3FscThfRG5r?oc=5</link><guid
+        isPermaLink=\"false\">CBMid0FVX3lxTE9WVEktXzVlWGR0TnlTRDJZWndOck5Zei03bUFKSWhMUE9BLXRmc1EzYVFRakZGN2N2LXB6bmM0X3hlY0dnVWQ5RGd6MmhDVlhVVHpQVzVubi1LbHpaNjhlZ1FOdnd6RGNZaEpPV1B5M3FscThfRG5r</guid><pubDate>Thu,
+        24 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE9WVEktXzVlWGR0TnlTRDJZWndOck5Zei03bUFKSWhMUE9BLXRmc1EzYVFRakZGN2N2LXB6bmM0X3hlY0dnVWQ5RGd6MmhDVlhVVHpQVzVubi1LbHpaNjhlZ1FOdnd6RGNZaEpPV1B5M3FscThfRG5r?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Isn\u2019t Going To Buy Perplexity, Says
+        Jim Cramer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Melius lifts $AAPL price target to $260
+        on iPhone growth, despite a lingering $490M China sales set - TradingView</title><link>https://news.google.com/rss/articles/CBMi7AFBVV95cUxQbUEycTNvWEFaN2c4TVZiWnZhRUI4SjhGcU5aODdkUWkzelNCODFQNjNzRTJVWXNUbVhKLWlNYWhycnZnOGF2T3hXUk1TWDZ6NkZCU3VDODZUNWw3Zmk0LU9FUnkzMm9FOVFuWEIwSmx2RlVvYU0yNWJJc3dVS01KWnhGZE1uRFJvVFZZQ2ZSemQyRDdzLWJMRXFtaC1zMzFJMVlVX0hKcm1HX2puNzZvWDZWRWNuSXhDVEZlWTZDeFQ3Ump4SlpfLWY3RGlfZDdJWDNVb09sdTk4WkVMVGxCaExhdklpTjRWUVdBcg?oc=5</link><guid
+        isPermaLink=\"false\">CBMi7AFBVV95cUxQbUEycTNvWEFaN2c4TVZiWnZhRUI4SjhGcU5aODdkUWkzelNCODFQNjNzRTJVWXNUbVhKLWlNYWhycnZnOGF2T3hXUk1TWDZ6NkZCU3VDODZUNWw3Zmk0LU9FUnkzMm9FOVFuWEIwSmx2RlVvYU0yNWJJc3dVS01KWnhGZE1uRFJvVFZZQ2ZSemQyRDdzLWJMRXFtaC1zMzFJMVlVX0hKcm1HX2puNzZvWDZWRWNuSXhDVEZlWTZDeFQ3Ump4SlpfLWY3RGlfZDdJWDNVb09sdTk4WkVMVGxCaExhdklpTjRWUVdBcg</guid><pubDate>Thu,
+        14 Aug 2025 11:27:01 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi7AFBVV95cUxQbUEycTNvWEFaN2c4TVZiWnZhRUI4SjhGcU5aODdkUWkzelNCODFQNjNzRTJVWXNUbVhKLWlNYWhycnZnOGF2T3hXUk1TWDZ6NkZCU3VDODZUNWw3Zmk0LU9FUnkzMm9FOVFuWEIwSmx2RlVvYU0yNWJJc3dVS01KWnhGZE1uRFJvVFZZQ2ZSemQyRDdzLWJMRXFtaC1zMzFJMVlVX0hKcm1HX2puNzZvWDZWRWNuSXhDVEZlWTZDeFQ3Ump4SlpfLWY3RGlfZDdJWDNVb09sdTk4WkVMVGxCaExhdklpTjRWUVdBcg?oc=5\"
+        target=\"_blank\"&gt;Melius lifts $AAPL price target to $260 on iPhone growth,
+        despite a lingering $490M China sales set&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>AAPL:
+        B2B Checkout Adds Apple Pay Option \u2014 But $490M China iPhone Demand Settlement
+        Still Weighs - TradingView</title><link>https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTGd1S25vUDIwNmhzWFZpUWJWajhkMHFEVmloRGFPX0VuMTZ3cHJwVkRZYzBLTl9RVk5PWU9oSnM0dlR6MzFLb1NoTTRzR2t4V2V3SVFHaVVoWXNmWVJHUDVSU0tObmwyYkJVS1N5Ukk3WXdqMVhGMEZGSndHS3RyTVJ1ZS1TRVY0Mi1UcW9hdUJDOEpfMnNTeHBnRGhCRy1FMEtZWmNDd09CZ1hOWFV4aWszU3VXYTFaN0FfQm5vcmNvWThPOWFDOUxZRlBxbklhRkxqbzlxWEIyelY5VjdPd2xZTkVvdmRm?oc=5</link><guid
+        isPermaLink=\"false\">CBMi6AFBVV95cUxPTGd1S25vUDIwNmhzWFZpUWJWajhkMHFEVmloRGFPX0VuMTZ3cHJwVkRZYzBLTl9RVk5PWU9oSnM0dlR6MzFLb1NoTTRzR2t4V2V3SVFHaVVoWXNmWVJHUDVSU0tObmwyYkJVS1N5Ukk3WXdqMVhGMEZGSndHS3RyTVJ1ZS1TRVY0Mi1UcW9hdUJDOEpfMnNTeHBnRGhCRy1FMEtZWmNDd09CZ1hOWFV4aWszU3VXYTFaN0FfQm5vcmNvWThPOWFDOUxZRlBxbklhRkxqbzlxWEIyelY5VjdPd2xZTkVvdmRm</guid><pubDate>Thu,
+        14 Aug 2025 11:13:25 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTGd1S25vUDIwNmhzWFZpUWJWajhkMHFEVmloRGFPX0VuMTZ3cHJwVkRZYzBLTl9RVk5PWU9oSnM0dlR6MzFLb1NoTTRzR2t4V2V3SVFHaVVoWXNmWVJHUDVSU0tObmwyYkJVS1N5Ukk3WXdqMVhGMEZGSndHS3RyTVJ1ZS1TRVY0Mi1UcW9hdUJDOEpfMnNTeHBnRGhCRy1FMEtZWmNDd09CZ1hOWFV4aWszU3VXYTFaN0FfQm5vcmNvWThPOWFDOUxZRlBxbklhRkxqbzlxWEIyelY5VjdPd2xZTkVvdmRm?oc=5\"
+        target=\"_blank\"&gt;AAPL: B2B Checkout Adds Apple Pay Option \u2014 But $490M
+        China iPhone Demand Settlement Still Weighs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>This
+        Is How Apple (AAPL) Plans to Make Its AI Comeback - TipRanks</title><link>https://news.google.com/rss/articles/CBMiigFBVV95cUxPdnQyaHhsY3RsNHRfVU5RVWRKTHVOVVZjYVJ0WElPdUgwU2pickU1TmFRcmVSdUZ4a2dHWXBNcWFLbTdJWV9RemVxelFhcUt4d01yWm1SUy1rbElkakZia1RqSF82dDdjSl9tTGhDX2xEbGEzalJremJLbXZ0VUZxWGdteGhhRXhXckE?oc=5</link><guid
+        isPermaLink=\"false\">CBMiigFBVV95cUxPdnQyaHhsY3RsNHRfVU5RVWRKTHVOVVZjYVJ0WElPdUgwU2pickU1TmFRcmVSdUZ4a2dHWXBNcWFLbTdJWV9RemVxelFhcUt4d01yWm1SUy1rbElkakZia1RqSF82dDdjSl9tTGhDX2xEbGEzalJremJLbXZ0VUZxWGdteGhhRXhXckE</guid><pubDate>Thu,
+        14 Aug 2025 08:03:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxPdnQyaHhsY3RsNHRfVU5RVWRKTHVOVVZjYVJ0WElPdUgwU2pickU1TmFRcmVSdUZ4a2dHWXBNcWFLbTdJWV9RemVxelFhcUt4d01yWm1SUy1rbElkakZia1RqSF82dDdjSl9tTGhDX2xEbGEzalJremJLbXZ0VUZxWGdteGhhRXhXckE?oc=5\"
+        target=\"_blank\"&gt;This Is How Apple (AAPL) Plans to Make Its AI Comeback&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>BFA
+        Law urges $AAPL investors to act by Aug. 19 in a Siri AI suit, as $490M China
+        settlement lingers - TradingView</title><link>https://news.google.com/rss/articles/CBMi7gFBVV95cUxPemYyNnN3c0VUeWVUU1MySnZuU05wdnpBX1BlN3BDMjVPRXBHZnNjWTZudHEySEtxY2JUSUpVdjk1TjM1aGR6M3NOcHppSHl3UWVrcFlWZk81ZDBKT19CanBvVXo5M1VuNlE2UUVsUDg1TVBtcXh0bi1mQ1k2Y0VCZThFTXBod1VyRkxXbWEtbEdISFhXRVRhb0g1d0IxZWh4aC14Q3hqaGlzZlZycWdGN3hVT3FiUWdNNXRDWEJqSERUVDJiUmpXaWJLbllvYUJmMFdIeHdHSkR3UGRGS0RNNUE5RG9xWXVXeVdDSGRR?oc=5</link><guid
+        isPermaLink=\"false\">CBMi7gFBVV95cUxPemYyNnN3c0VUeWVUU1MySnZuU05wdnpBX1BlN3BDMjVPRXBHZnNjWTZudHEySEtxY2JUSUpVdjk1TjM1aGR6M3NOcHppSHl3UWVrcFlWZk81ZDBKT19CanBvVXo5M1VuNlE2UUVsUDg1TVBtcXh0bi1mQ1k2Y0VCZThFTXBod1VyRkxXbWEtbEdISFhXRVRhb0g1d0IxZWh4aC14Q3hqaGlzZlZycWdGN3hVT3FiUWdNNXRDWEJqSERUVDJiUmpXaWJLbllvYUJmMFdIeHdHSkR3UGRGS0RNNUE5RG9xWXVXeVdDSGRR</guid><pubDate>Thu,
+        14 Aug 2025 11:32:48 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxPemYyNnN3c0VUeWVUU1MySnZuU05wdnpBX1BlN3BDMjVPRXBHZnNjWTZudHEySEtxY2JUSUpVdjk1TjM1aGR6M3NOcHppSHl3UWVrcFlWZk81ZDBKT19CanBvVXo5M1VuNlE2UUVsUDg1TVBtcXh0bi1mQ1k2Y0VCZThFTXBod1VyRkxXbWEtbEdISFhXRVRhb0g1d0IxZWh4aC14Q3hqaGlzZlZycWdGN3hVT3FiUWdNNXRDWEJqSERUVDJiUmpXaWJLbllvYUJmMFdIeHdHSkR3UGRGS0RNNUE5RG9xWXVXeVdDSGRR?oc=5\"
+        target=\"_blank\"&gt;BFA Law urges $AAPL investors to act by Aug. 19 in a
+        Siri AI suit, as $490M China settlement lingers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>AAPL:
+        Apple Pushes Back in Musk App Store Dispute \u2014 But $490M China Sales Settlement
+        Still Lingers - TradingView</title><link>https://news.google.com/rss/articles/CBMi6wFBVV95cUxPYl9zejA5MG0yZl81a29UQ1pqby1ZX2d1SHpCb3BsRU5Ca2I2aGxZMzRmM0QtQ0hzbm5tRFF3Um1mYkxxWGl3UmVNNnlNZGtrdVk5azB4emwtaGJWX0NiMUxtS0F0S05XM0dLaEZYR3Z1YUxGSHFSa0xocFdCcl9QRlRucllaLTZYWXEtUlBpWWlrTk5DU1NJSXRFa2h0a1UxX0s0U3RPSjliTEZWdjM1b1hYU0xiUmhMMzUySTAxQmpROUh2anhHWFJXc09RX2VHVVVPV2tvekNyOGxyaEJDZGR1WTVzQWRIQWZR?oc=5</link><guid
+        isPermaLink=\"false\">CBMi6wFBVV95cUxPYl9zejA5MG0yZl81a29UQ1pqby1ZX2d1SHpCb3BsRU5Ca2I2aGxZMzRmM0QtQ0hzbm5tRFF3Um1mYkxxWGl3UmVNNnlNZGtrdVk5azB4emwtaGJWX0NiMUxtS0F0S05XM0dLaEZYR3Z1YUxGSHFSa0xocFdCcl9QRlRucllaLTZYWXEtUlBpWWlrTk5DU1NJSXRFa2h0a1UxX0s0U3RPSjliTEZWdjM1b1hYU0xiUmhMMzUySTAxQmpROUh2anhHWFJXc09RX2VHVVVPV2tvekNyOGxyaEJDZGR1WTVzQWRIQWZR</guid><pubDate>Thu,
+        14 Aug 2025 11:22:55 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxPYl9zejA5MG0yZl81a29UQ1pqby1ZX2d1SHpCb3BsRU5Ca2I2aGxZMzRmM0QtQ0hzbm5tRFF3Um1mYkxxWGl3UmVNNnlNZGtrdVk5azB4emwtaGJWX0NiMUxtS0F0S05XM0dLaEZYR3Z1YUxGSHFSa0xocFdCcl9QRlRucllaLTZYWXEtUlBpWWlrTk5DU1NJSXRFa2h0a1UxX0s0U3RPSjliTEZWdjM1b1hYU0xiUmhMMzUySTAxQmpROUh2anhHWFJXc09RX2VHVVVPV2tvekNyOGxyaEJDZGR1WTVzQWRIQWZR?oc=5\"
+        target=\"_blank\"&gt;AAPL: Apple Pushes Back in Musk App Store Dispute \u2014
+        But $490M China Sales Settlement Still Lingers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>$AAPL
+        Expands into AI Robots and Smart Home, as a $490M China iPhone Settlement
+        Weighs - TradingView</title><link>https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUlFkcnNlZUJ1LVNKeDJiZTNsdzB2cDJySzlLYndlUmx2MHVSQUhpMnp6SFFWa3U1d2JPeUM3YlBIQXVVZ2h2SXpRdlpxXzBlYmw3QmRYT1dlMEhxek5IVEpoNzRyMU1POWJDQnEzSEJtT3MxZlBjRlRvT1Y0d3plQlp1OXUyRHhfSmY4bnZ1LVNneFBDWlBHZVhQZDVrOWVrNHB5WE1vb2RSRVVaVnY3RnVMUlFSbXBxVTdNOEI2TkUtRGkwdDFNWHF0MHp4Tmw0SmxhUDA0SDBkbkFz?oc=5</link><guid
+        isPermaLink=\"false\">CBMi3AFBVV95cUxQUlFkcnNlZUJ1LVNKeDJiZTNsdzB2cDJySzlLYndlUmx2MHVSQUhpMnp6SFFWa3U1d2JPeUM3YlBIQXVVZ2h2SXpRdlpxXzBlYmw3QmRYT1dlMEhxek5IVEpoNzRyMU1POWJDQnEzSEJtT3MxZlBjRlRvT1Y0d3plQlp1OXUyRHhfSmY4bnZ1LVNneFBDWlBHZVhQZDVrOWVrNHB5WE1vb2RSRVVaVnY3RnVMUlFSbXBxVTdNOEI2TkUtRGkwdDFNWHF0MHp4Tmw0SmxhUDA0SDBkbkFz</guid><pubDate>Thu,
+        14 Aug 2025 11:04:14 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxQUlFkcnNlZUJ1LVNKeDJiZTNsdzB2cDJySzlLYndlUmx2MHVSQUhpMnp6SFFWa3U1d2JPeUM3YlBIQXVVZ2h2SXpRdlpxXzBlYmw3QmRYT1dlMEhxek5IVEpoNzRyMU1POWJDQnEzSEJtT3MxZlBjRlRvT1Y0d3plQlp1OXUyRHhfSmY4bnZ1LVNneFBDWlBHZVhQZDVrOWVrNHB5WE1vb2RSRVVaVnY3RnVMUlFSbXBxVTdNOEI2TkUtRGkwdDFNWHF0MHp4Tmw0SmxhUDA0SDBkbkFz?oc=5\"
+        target=\"_blank\"&gt;$AAPL Expands into AI Robots and Smart Home, as a $490M
+        China iPhone Settlement Weighs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source
+        url=\"https://www.tradingview.com\">TradingView</source></item><item><title>AAPL
+        Stock Q3 Forecast: 4 Things to Watch When Apple Reports Earnings on July 31
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiekFVX3lxTFBKMnp5S2R2NjBJNFVvSlFnYlZjcG9MejM1X1cwRHdidF9BSk1zcGVHQnIwemJZWkxDNV9NV1BwSnZpN1h1X21vN0oxN01SSHNEeEZQemh0ZmJvblFzeXAya3BZZ0NDRjI2Rmwwdl9CclB5VGVaVnNSbGh3?oc=5</link><guid
+        isPermaLink=\"false\">CBMiekFVX3lxTFBKMnp5S2R2NjBJNFVvSlFnYlZjcG9MejM1X1cwRHdidF9BSk1zcGVHQnIwemJZWkxDNV9NV1BwSnZpN1h1X21vN0oxN01SSHNEeEZQemh0ZmJvblFzeXAya3BZZ0NDRjI2Rmwwdl9CclB5VGVaVnNSbGh3</guid><pubDate>Wed,
+        30 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTFBKMnp5S2R2NjBJNFVvSlFnYlZjcG9MejM1X1cwRHdidF9BSk1zcGVHQnIwemJZWkxDNV9NV1BwSnZpN1h1X21vN0oxN01SSHNEeEZQemh0ZmJvblFzeXAya3BZZ0NDRjI2Rmwwdl9CclB5VGVaVnNSbGh3?oc=5\"
+        target=\"_blank\"&gt;AAPL Stock Q3 Forecast: 4 Things to Watch When Apple
+        Reports Earnings on July 31&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>$AAPL Q3 analysis flags margin pressure
+        and EPS support concerns, as a $490M China sales settlement - TradingView</title><link>https://news.google.com/rss/articles/CBMi7gFBVV95cUxPTEFxQlJlQkNCUC14TlFzQXlLSFRnVHA0SnU5UGJDeFNZQ1FPYTlybXppYTg2Ml9DeFRZRURtMnBrTG92YlR2N3k5X0I4bmdXV0k3QWwwTDlPSDctX21zSUJJVDQtWHI2N0Y4RDZPVUlQYUpoMlNRUGdjOXMyZWY5MS1uUjVKU3BydTJUX1NBdENPOWZ6TWRyU0gxSktQUkxkQUZyZVNvMl9HOUQ0b0VaWWN1eW91elVaenotai1EUFRrVFJtOG5aTnppMFV3ZjlGNmJCYWVIbmZGVFBGcXQtMENnX1g3TUlBdndWYzd3?oc=5</link><guid
+        isPermaLink=\"false\">CBMi7gFBVV95cUxPTEFxQlJlQkNCUC14TlFzQXlLSFRnVHA0SnU5UGJDeFNZQ1FPYTlybXppYTg2Ml9DeFRZRURtMnBrTG92YlR2N3k5X0I4bmdXV0k3QWwwTDlPSDctX21zSUJJVDQtWHI2N0Y4RDZPVUlQYUpoMlNRUGdjOXMyZWY5MS1uUjVKU3BydTJUX1NBdENPOWZ6TWRyU0gxSktQUkxkQUZyZVNvMl9HOUQ0b0VaWWN1eW91elVaenotai1EUFRrVFJtOG5aTnppMFV3ZjlGNmJCYWVIbmZGVFBGcXQtMENnX1g3TUlBdndWYzd3</guid><pubDate>Thu,
+        14 Aug 2025 11:38:25 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi7gFBVV95cUxPTEFxQlJlQkNCUC14TlFzQXlLSFRnVHA0SnU5UGJDeFNZQ1FPYTlybXppYTg2Ml9DeFRZRURtMnBrTG92YlR2N3k5X0I4bmdXV0k3QWwwTDlPSDctX21zSUJJVDQtWHI2N0Y4RDZPVUlQYUpoMlNRUGdjOXMyZWY5MS1uUjVKU3BydTJUX1NBdENPOWZ6TWRyU0gxSktQUkxkQUZyZVNvMl9HOUQ0b0VaWWN1eW91elVaenotai1EUFRrVFJtOG5aTnppMFV3ZjlGNmJCYWVIbmZGVFBGcXQtMENnX1g3TUlBdndWYzd3?oc=5\"
+        target=\"_blank\"&gt;$AAPL Q3 analysis flags margin pressure and EPS support
+        concerns, as a $490M China sales settlement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>Apple
+        reports biggest revenue growth since December 2021 - CNBC</title><link>https://news.google.com/rss/articles/CBMie0FVX3lxTE1pLVBUN25LREp1Y1hqMjVfZUlOWllzNUFaZEJmWVdfSXozWDV5c2F5NW9uYnBXb3FDd0V6M01RVmpWaXJVQjQtY1J4TmE2Rzl0bnpHdDNhX1dKWF9GRWI2Ni1KZm40RF82LXdQdXlEaXZ6Y0hWRVNOUzFaY9IBgAFBVV95cUxNMzVkTGQyd0NINmhGM0JfX1RLTWVOV3NPai1BcnFlRGtmaXltUnNEdHpXU1Q5QmpoWmlDYUZlY2RNb000VnRGUjZVd09xNHdZNFRyZlpaS1h0ancyZG9sRktRRGFkaXRPbnhiWHZBZWc5RG1ENWpXaWpaME5OQVFtWg?oc=5</link><guid
+        isPermaLink=\"false\">CBMie0FVX3lxTE1pLVBUN25LREp1Y1hqMjVfZUlOWllzNUFaZEJmWVdfSXozWDV5c2F5NW9uYnBXb3FDd0V6M01RVmpWaXJVQjQtY1J4TmE2Rzl0bnpHdDNhX1dKWF9GRWI2Ni1KZm40RF82LXdQdXlEaXZ6Y0hWRVNOUzFaY9IBgAFBVV95cUxNMzVkTGQyd0NINmhGM0JfX1RLTWVOV3NPai1BcnFlRGtmaXltUnNEdHpXU1Q5QmpoWmlDYUZlY2RNb000VnRGUjZVd09xNHdZNFRyZlpaS1h0ancyZG9sRktRRGFkaXRPbnhiWHZBZWc5RG1ENWpXaWpaME5OQVFtWg</guid><pubDate>Thu,
+        31 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1pLVBUN25LREp1Y1hqMjVfZUlOWllzNUFaZEJmWVdfSXozWDV5c2F5NW9uYnBXb3FDd0V6M01RVmpWaXJVQjQtY1J4TmE2Rzl0bnpHdDNhX1dKWF9GRWI2Ni1KZm40RF82LXdQdXlEaXZ6Y0hWRVNOUzFaY9IBgAFBVV95cUxNMzVkTGQyd0NINmhGM0JfX1RLTWVOV3NPai1BcnFlRGtmaXltUnNEdHpXU1Q5QmpoWmlDYUZlY2RNb000VnRGUjZVd09xNHdZNFRyZlpaS1h0ancyZG9sRktRRGFkaXRPbnhiWHZBZWc5RG1ENWpXaWpaME5OQVFtWg?oc=5\"
+        target=\"_blank\"&gt;Apple reports biggest revenue growth since December 2021&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source url=\"https://www.cnbc.com\">CNBC</source></item><item><title>Apple
+        (AAPL) Confirms $100 Billion U.S. Investment After White House Tease - Yahoo
+        Finance</title><link>https://news.google.com/rss/articles/CBMigwFBVV95cUxPTVA0N2tjaC16YlQzMXZJVlpIcnZQWHBTbi1jRVFQT3RyaDFGQWRXVnZtdkZDNTlFbmR0X3NBR19GWnZ2dDBZWXllRjRfc01fMzlRZTQ4WnZheS1hUzlidXVncFlnNldoNTM5SGIxd0MtQmZfbHZ0UHR4eHFsR2k0QjlsNA?oc=5</link><guid
+        isPermaLink=\"false\">CBMigwFBVV95cUxPTVA0N2tjaC16YlQzMXZJVlpIcnZQWHBTbi1jRVFQT3RyaDFGQWRXVnZtdkZDNTlFbmR0X3NBR19GWnZ2dDBZWXllRjRfc01fMzlRZTQ4WnZheS1hUzlidXVncFlnNldoNTM5SGIxd0MtQmZfbHZ0UHR4eHFsR2k0QjlsNA</guid><pubDate>Fri,
+        08 Aug 2025 18:05:03 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPTVA0N2tjaC16YlQzMXZJVlpIcnZQWHBTbi1jRVFQT3RyaDFGQWRXVnZtdkZDNTlFbmR0X3NBR19GWnZ2dDBZWXllRjRfc01fMzlRZTQ4WnZheS1hUzlidXVncFlnNldoNTM5SGIxd0MtQmZfbHZ0UHR4eHFsR2k0QjlsNA?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Confirms $100 Billion U.S. Investment After
+        White House Tease&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>AAPL: Musk\u2019s Antitrust Threat Raises
+        New Risks \u2014 But $490M China Sales Settlement Still Lingers - TradingView</title><link>https://news.google.com/rss/articles/CBMi5wFBVV95cUxNY0J2TkZnTERJbGEtRjRJRUd1TmFBNGNMcUU2MzNuZFZtaVRFU1VPUzV3NWdkRzVycUItTmdSWk9SanFOc0Y4OFNqb21JaElvZWJzamlBZjc2dXhTeTR4cG1tN2tNOTY5UEppZzV1S1FaR1VTazNRYzBSS2stSWF6cUZhSmFXQTdQUjN3RzdSTk93bXFQeVQyWXZqMmdqa2ROaVNKZUNFaEdHUF9pVkdhakdJRUszQUNpWHA0clVIS28zQmtKUVc5WjY4V0xQSmlud0paRy02NkFRTVQwT3E1RkVZOWJwUTg?oc=5</link><guid
+        isPermaLink=\"false\">CBMi5wFBVV95cUxNY0J2TkZnTERJbGEtRjRJRUd1TmFBNGNMcUU2MzNuZFZtaVRFU1VPUzV3NWdkRzVycUItTmdSWk9SanFOc0Y4OFNqb21JaElvZWJzamlBZjc2dXhTeTR4cG1tN2tNOTY5UEppZzV1S1FaR1VTazNRYzBSS2stSWF6cUZhSmFXQTdQUjN3RzdSTk93bXFQeVQyWXZqMmdqa2ROaVNKZUNFaEdHUF9pVkdhakdJRUszQUNpWHA0clVIS28zQmtKUVc5WjY4V0xQSmlud0paRy02NkFRTVQwT3E1RkVZOWJwUTg</guid><pubDate>Thu,
+        14 Aug 2025 11:19:43 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi5wFBVV95cUxNY0J2TkZnTERJbGEtRjRJRUd1TmFBNGNMcUU2MzNuZFZtaVRFU1VPUzV3NWdkRzVycUItTmdSWk9SanFOc0Y4OFNqb21JaElvZWJzamlBZjc2dXhTeTR4cG1tN2tNOTY5UEppZzV1S1FaR1VTazNRYzBSS2stSWF6cUZhSmFXQTdQUjN3RzdSTk93bXFQeVQyWXZqMmdqa2ROaVNKZUNFaEdHUF9pVkdhakdJRUszQUNpWHA0clVIS28zQmtKUVc5WjY4V0xQSmlud0paRy02NkFRTVQwT3E1RkVZOWJwUTg?oc=5\"
+        target=\"_blank\"&gt;AAPL: Musk\u2019s Antitrust Threat Raises New Risks \u2014
+        But $490M China Sales Settlement Still Lingers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TradingView&lt;/font&gt;</description><source url=\"https://www.tradingview.com\">TradingView</source></item><item><title>Apple
+        plans to release slate of new AI-powered products: report (AAPL:NASDAQ) -
+        Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMiogFBVV95cUxQblpYTEQ5SFEyU01xWldHalQwTnlmWHdkQURnLXRkMlNBdXRTX0NGTFRIeHhmV0drSEI0MHlTazZ1aUF6Q2x6aXgyY010eVJFSS0zeWtNNzEtRnlkUFVENjZZaEpOdFlGQ1E3VmRpT3F5M1NtZHJaeGE3Y1BNNEVjMzRmOGhSOVE3NndJei1jUFpmSlJrMGFIQ2JUbzcyNEd1Rmc?oc=5</link><guid
+        isPermaLink=\"false\">CBMiogFBVV95cUxQblpYTEQ5SFEyU01xWldHalQwTnlmWHdkQURnLXRkMlNBdXRTX0NGTFRIeHhmV0drSEI0MHlTazZ1aUF6Q2x6aXgyY010eVJFSS0zeWtNNzEtRnlkUFVENjZZaEpOdFlGQ1E3VmRpT3F5M1NtZHJaeGE3Y1BNNEVjMzRmOGhSOVE3NndJei1jUFpmSlJrMGFIQ2JUbzcyNEd1Rmc</guid><pubDate>Wed,
+        13 Aug 2025 19:20:51 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQblpYTEQ5SFEyU01xWldHalQwTnlmWHdkQURnLXRkMlNBdXRTX0NGTFRIeHhmV0drSEI0MHlTazZ1aUF6Q2x6aXgyY010eVJFSS0zeWtNNzEtRnlkUFVENjZZaEpOdFlGQ1E3VmRpT3F5M1NtZHJaeGE3Y1BNNEVjMzRmOGhSOVE3NndJei1jUFpmSlJrMGFIQ2JUbzcyNEd1Rmc?oc=5\"
+        target=\"_blank\"&gt;Apple plans to release slate of new AI-powered products:
+        report (AAPL:NASDAQ)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Apple (AAPL) Faces Google Deal Fallout\u2014Should
+        Investors Be Worried? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE5xZnlJekNEYjdtVWROXy1JbTBsT3Z6R25TdkhUZ0VzMTZhUmZyZnVTTUZSWHBEbWVtRkdROG5CVVhJSTRRdEpKM01sOF9rYzhyVUZrcXhfLTl5N2w0ejV5RGVkWWNpRFdRTUZwcHZPLU0xR3hFR19BQ2JsNXdPWVU?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE5xZnlJekNEYjdtVWROXy1JbTBsT3Z6R25TdkhUZ0VzMTZhUmZyZnVTTUZSWHBEbWVtRkdROG5CVVhJSTRRdEpKM01sOF9rYzhyVUZrcXhfLTl5N2w0ejV5RGVkWWNpRFdRTUZwcHZPLU0xR3hFR19BQ2JsNXdPWVU</guid><pubDate>Wed,
+        30 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5xZnlJekNEYjdtVWROXy1JbTBsT3Z6R25TdkhUZ0VzMTZhUmZyZnVTTUZSWHBEbWVtRkdROG5CVVhJSTRRdEpKM01sOF9rYzhyVUZrcXhfLTl5N2w0ejV5RGVkWWNpRFdRTUZwcHZPLU0xR3hFR19BQ2JsNXdPWVU?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Faces Google Deal Fallout\u2014Should Investors
+        Be Worried?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple Stock (AAPL) Pops as Trump Vows
+        100% Tariff Relief for US Makers - TipRanks</title><link>https://news.google.com/rss/articles/CBMingFBVV95cUxQSEJhUmY5NFZSV1ZOQll5WGFjOFZLanFWbkhYZm1FRk9ha3J0UmZtLWlVSnhvM21lTE9oMkJhOWdPVUtjU1BuOFdEMHh1SGN1T2x2Ry1fbEtrT0swSFpQRkJjeG83SFFyX0ZKZ1BrOU44d1FDWTQzS0VJc09ncEhWRUdBVF9YYTZ2cVN3S0FDLWExeUhEVGszZ3phcVBBdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMingFBVV95cUxQSEJhUmY5NFZSV1ZOQll5WGFjOFZLanFWbkhYZm1FRk9ha3J0UmZtLWlVSnhvM21lTE9oMkJhOWdPVUtjU1BuOFdEMHh1SGN1T2x2Ry1fbEtrT0swSFpQRkJjeG83SFFyX0ZKZ1BrOU44d1FDWTQzS0VJc09ncEhWRUdBVF9YYTZ2cVN3S0FDLWExeUhEVGszZ3phcVBBdw</guid><pubDate>Fri,
+        08 Aug 2025 06:50:09 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQSEJhUmY5NFZSV1ZOQll5WGFjOFZLanFWbkhYZm1FRk9ha3J0UmZtLWlVSnhvM21lTE9oMkJhOWdPVUtjU1BuOFdEMHh1SGN1T2x2Ry1fbEtrT0swSFpQRkJjeG83SFFyX0ZKZ1BrOU44d1FDWTQzS0VJc09ncEhWRUdBVF9YYTZ2cVN3S0FDLWExeUhEVGszZ3phcVBBdw?oc=5\"
+        target=\"_blank\"&gt;Apple Stock (AAPL) Pops as Trump Vows 100% Tariff Relief
+        for US Makers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>Apple
+        Q3: Clearer Signs Of Long-Term Weakness Emerge (NASDAQ:AAPL) - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMilwFBVV95cUxPamdONnBiRmNVQXBQSFJVX3h1QmFnRGp0VGhUOGgyblJ5NVZaemh1bk1rdmJGU25WWHl2U3lkLVVyTzBOVXhKUzkzZEVWbWZCT2JVLWYwbEdLcFJVWTJRT0lEY2RvNzdnOHRSR3NuOHlSWTNhWkV6T2NUcFduM3pzeVRQYmVVT2NMVEVCV2RobTV2eUtZWFZB?oc=5</link><guid
+        isPermaLink=\"false\">CBMilwFBVV95cUxPamdONnBiRmNVQXBQSFJVX3h1QmFnRGp0VGhUOGgyblJ5NVZaemh1bk1rdmJGU25WWHl2U3lkLVVyTzBOVXhKUzkzZEVWbWZCT2JVLWYwbEdLcFJVWTJRT0lEY2RvNzdnOHRSR3NuOHlSWTNhWkV6T2NUcFduM3pzeVRQYmVVT2NMVEVCV2RobTV2eUtZWFZB</guid><pubDate>Wed,
+        13 Aug 2025 12:45:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPamdONnBiRmNVQXBQSFJVX3h1QmFnRGp0VGhUOGgyblJ5NVZaemh1bk1rdmJGU25WWHl2U3lkLVVyTzBOVXhKUzkzZEVWbWZCT2JVLWYwbEdLcFJVWTJRT0lEY2RvNzdnOHRSR3NuOHlSWTNhWkV6T2NUcFduM3pzeVRQYmVVT2NMVEVCV2RobTV2eUtZWFZB?oc=5\"
+        target=\"_blank\"&gt;Apple Q3: Clearer Signs Of Long-Term Weakness Emerge
+        (NASDAQ:AAPL)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Apple (NASDAQ:AAPL) Reports Strong Q2 -
+        Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMihAFBVV95cUxQc1lXNnBib2thTnRLR3c3a3lFU2RrVzk2SUExSkw1WWpyRlpKWGVNMHotQ2dKdE5SWVJPcTdRbUxMMnFyNW9ZMDNTMFg3OEpJNENhRVZEbDFVMzJzWVVhellsUkxndGNWQVVsM292NlI5blFqTWFXMnVYb2FkV3ZSWXRhZkI?oc=5</link><guid
+        isPermaLink=\"false\">CBMihAFBVV95cUxQc1lXNnBib2thTnRLR3c3a3lFU2RrVzk2SUExSkw1WWpyRlpKWGVNMHotQ2dKdE5SWVJPcTdRbUxMMnFyNW9ZMDNTMFg3OEpJNENhRVZEbDFVMzJzWVVhellsUkxndGNWQVVsM292NlI5blFqTWFXMnVYb2FkV3ZSWXRhZkI</guid><pubDate>Thu,
+        31 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxQc1lXNnBib2thTnRLR3c3a3lFU2RrVzk2SUExSkw1WWpyRlpKWGVNMHotQ2dKdE5SWVJPcTdRbUxMMnFyNW9ZMDNTMFg3OEpJNENhRVZEbDFVMzJzWVVhellsUkxndGNWQVVsM292NlI5blFqTWFXMnVYb2FkV3ZSWXRhZkI?oc=5\"
+        target=\"_blank\"&gt;Apple (NASDAQ:AAPL) Reports Strong Q2&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple's AI Momentum Is Building -- Here's
+        What It Means for Investors - The Motley Fool</title><link>https://news.google.com/rss/articles/CBMimAFBVV95cUxQRlMwVkp6LW9SU24xMV9wMV9VQUdmZW85OWtPWWNNMG5qOXl5dm1fNkpOUkRuNVV0Vy1meS0ySTRhQlRuTDdqa015RTZsN01saHFFUUFwV0kxWVhLWXJZM3dMc3l0WFV3SG5TMnMzdkZqRmdPUklxRTVLM1BGZHFXVmZVWjBCeTk3bllQaDFoMzJPUXlkWXZNaA?oc=5</link><guid
+        isPermaLink=\"false\">CBMimAFBVV95cUxQRlMwVkp6LW9SU24xMV9wMV9VQUdmZW85OWtPWWNNMG5qOXl5dm1fNkpOUkRuNVV0Vy1meS0ySTRhQlRuTDdqa015RTZsN01saHFFUUFwV0kxWVhLWXJZM3dMc3l0WFV3SG5TMnMzdkZqRmdPUklxRTVLM1BGZHFXVmZVWjBCeTk3bllQaDFoMzJPUXlkWXZNaA</guid><pubDate>Sat,
+        09 Aug 2025 17:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQRlMwVkp6LW9SU24xMV9wMV9VQUdmZW85OWtPWWNNMG5qOXl5dm1fNkpOUkRuNVV0Vy1meS0ySTRhQlRuTDdqa015RTZsN01saHFFUUFwV0kxWVhLWXJZM3dMc3l0WFV3SG5TMnMzdkZqRmdPUklxRTVLM1BGZHFXVmZVWjBCeTk3bllQaDFoMzJPUXlkWXZNaA?oc=5\"
+        target=\"_blank\"&gt;Apple's AI Momentum Is Building -- Here's What It Means
+        for Investors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;The
+        Motley Fool&lt;/font&gt;</description><source url=\"https://www.fool.com\">The
+        Motley Fool</source></item><item><title>NVDA, AAPL, and TSLA Among the Stocks
+        Norway\u2019s $1.9T Wealth Fund Bought in Q2 - TipRanks</title><link>https://news.google.com/rss/articles/CBMipgFBVV95cUxPbTRvLTR3WFNUOW1OQ0M0R1NLdU9aNDBsd2VZdlhXLWJSMGdwVEhTQ05wYWYzQ1N3STBDejNEQnYtVXJ6di1kMDA4S3BlcjFOVkR6NVJXSlZycXlMQjUwLTRVMHRaS29CWUtXVmV6eFNEQTFBdnBlRGdfaXU5LWE0VmV0ZTdCOE0xYkxHUFNHSlNyTzgybXMzY3RqcTQxcXdYYkpMUVNR?oc=5</link><guid
+        isPermaLink=\"false\">CBMipgFBVV95cUxPbTRvLTR3WFNUOW1OQ0M0R1NLdU9aNDBsd2VZdlhXLWJSMGdwVEhTQ05wYWYzQ1N3STBDejNEQnYtVXJ6di1kMDA4S3BlcjFOVkR6NVJXSlZycXlMQjUwLTRVMHRaS29CWUtXVmV6eFNEQTFBdnBlRGdfaXU5LWE0VmV0ZTdCOE0xYkxHUFNHSlNyTzgybXMzY3RqcTQxcXdYYkpMUVNR</guid><pubDate>Tue,
+        12 Aug 2025 19:17:57 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPbTRvLTR3WFNUOW1OQ0M0R1NLdU9aNDBsd2VZdlhXLWJSMGdwVEhTQ05wYWYzQ1N3STBDejNEQnYtVXJ6di1kMDA4S3BlcjFOVkR6NVJXSlZycXlMQjUwLTRVMHRaS29CWUtXVmV6eFNEQTFBdnBlRGdfaXU5LWE0VmV0ZTdCOE0xYkxHUFNHSlNyTzgybXMzY3RqcTQxcXdYYkpMUVNR?oc=5\"
+        target=\"_blank\"&gt;NVDA, AAPL, and TSLA Among the Stocks Norway\u2019s $1.9T
+        Wealth Fund Bought in Q2&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>Apple
+        Inc. (AAPL) Might Be The Largest Taxpayer In America, Says Jim Cramer - Yahoo
+        Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE0wWnhIeGtBc3E2bVVPUzh2TXpCUEpKQ1gyNW5mTzNkY2tZbXdnYVFTVkpUQlRqZjVyLVZnRG80VUYxS2FKYUFSZXdORFBrbmNtc25xbWlENUJrS0FqaTNKcnFCVGpIVGEtQ1YyREQzeG5icG90LTJIdHlCX0pJOFU?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE0wWnhIeGtBc3E2bVVPUzh2TXpCUEpKQ1gyNW5mTzNkY2tZbXdnYVFTVkpUQlRqZjVyLVZnRG80VUYxS2FKYUFSZXdORFBrbmNtc25xbWlENUJrS0FqaTNKcnFCVGpIVGEtQ1YyREQzeG5icG90LTJIdHlCX0pJOFU</guid><pubDate>Fri,
+        08 Aug 2025 19:35:49 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE0wWnhIeGtBc3E2bVVPUzh2TXpCUEpKQ1gyNW5mTzNkY2tZbXdnYVFTVkpUQlRqZjVyLVZnRG80VUYxS2FKYUFSZXdORFBrbmNtc25xbWlENUJrS0FqaTNKcnFCVGpIVGEtQ1YyREQzeG5icG90LTJIdHlCX0pJOFU?oc=5\"
+        target=\"_blank\"&gt;Apple Inc. (AAPL) Might Be The Largest Taxpayer In America,
+        Says Jim Cramer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple Stock (AAPL) Surges on New $100B
+        U.S. Investment Drive - TipRanks</title><link>https://news.google.com/rss/articles/CBMijwFBVV95cUxQeXNwanRaMF9pU0FqaF9GQkZwYWp3UU9ZcU0zeG1lUzE4MFZSMjlBZ2FUUXRWdUYxUzUzY0E4d3Z4M1RkZ05PSk5ObzZDQ3pVSUhmQWE2Z1YwRERBREIydFB0NUR3SzVucHo0TzdVTWhybmdxQmczTURSdUhrUDh6bDA4R2JLMWpYUmt0Y2Q5SQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMijwFBVV95cUxQeXNwanRaMF9pU0FqaF9GQkZwYWp3UU9ZcU0zeG1lUzE4MFZSMjlBZ2FUUXRWdUYxUzUzY0E4d3Z4M1RkZ05PSk5ObzZDQ3pVSUhmQWE2Z1YwRERBREIydFB0NUR3SzVucHo0TzdVTWhybmdxQmczTURSdUhrUDh6bDA4R2JLMWpYUmt0Y2Q5SQ</guid><pubDate>Wed,
+        06 Aug 2025 14:48:55 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQeXNwanRaMF9pU0FqaF9GQkZwYWp3UU9ZcU0zeG1lUzE4MFZSMjlBZ2FUUXRWdUYxUzUzY0E4d3Z4M1RkZ05PSk5ObzZDQ3pVSUhmQWE2Z1YwRERBREIydFB0NUR3SzVucHo0TzdVTWhybmdxQmczTURSdUhrUDh6bDA4R2JLMWpYUmt0Y2Q5SQ?oc=5\"
+        target=\"_blank\"&gt;Apple Stock (AAPL) Surges on New $100B U.S. Investment
+        Drive&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>What's
+        Going On With Semiconductor Stocks Today - Apple (NASDAQ:AAPL), Advanced Micro
+        Devices (NASDAQ:AMD) - Benzinga</title><link>https://news.google.com/rss/articles/CBMi2wFBVV95cUxQXzYyNXU2dU5wdWpQQTFNbW00MG1RbVVGbG5LNTFwdmlrbElJaDd6YWlIMVI5djlKWElPVXpzWGZsLTlRazgyMXNUSmxCN3M0QV80RDNrXzlRV0lJNTQ5Wjdud1kwZEJTTUFDTVBLcW95bFNyQWNPT0xzanZtMjBSZW5icUplVGVwa1ZuUWlvT2VYZmZlR1I2ajVla1FmMHAxeFE1ZW5idFdoN3ltMWZqbE1PODN4ZkhjLWs4MWxzOUxRUnR3S3NJcnBaVTJseEdpME9mVzlseFZUdEk?oc=5</link><guid
+        isPermaLink=\"false\">CBMi2wFBVV95cUxQXzYyNXU2dU5wdWpQQTFNbW00MG1RbVVGbG5LNTFwdmlrbElJaDd6YWlIMVI5djlKWElPVXpzWGZsLTlRazgyMXNUSmxCN3M0QV80RDNrXzlRV0lJNTQ5Wjdud1kwZEJTTUFDTVBLcW95bFNyQWNPT0xzanZtMjBSZW5icUplVGVwa1ZuUWlvT2VYZmZlR1I2ajVla1FmMHAxeFE1ZW5idFdoN3ltMWZqbE1PODN4ZkhjLWs4MWxzOUxRUnR3S3NJcnBaVTJseEdpME9mVzlseFZUdEk</guid><pubDate>Thu,
+        14 Aug 2025 15:08:12 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQXzYyNXU2dU5wdWpQQTFNbW00MG1RbVVGbG5LNTFwdmlrbElJaDd6YWlIMVI5djlKWElPVXpzWGZsLTlRazgyMXNUSmxCN3M0QV80RDNrXzlRV0lJNTQ5Wjdud1kwZEJTTUFDTVBLcW95bFNyQWNPT0xzanZtMjBSZW5icUplVGVwa1ZuUWlvT2VYZmZlR1I2ajVla1FmMHAxeFE1ZW5idFdoN3ltMWZqbE1PODN4ZkhjLWs4MWxzOUxRUnR3S3NJcnBaVTJseEdpME9mVzlseFZUdEk?oc=5\"
+        target=\"_blank\"&gt;What's Going On With Semiconductor Stocks Today - Apple
+        (NASDAQ:AAPL), Advanced Micro Devices (NASDAQ:AMD)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Benzinga&lt;/font&gt;</description><source url=\"https://www.benzinga.com\">Benzinga</source></item><item><title>APPLE
+        STOCK: Lose Money on Your Apple Inc. (NASDAQ:AAPL) - GlobeNewswire</title><link>https://news.google.com/rss/articles/CBMimgJBVV95cUxPWE1PT2hKWnRteE9hcHA4VjRQaV9XWjAtd1U1Y1hNMjh3M2ZRUy1iVVFHZy0tcWQ2MW5BaUJQRGthUFdCTW90TnBNbDIwR21EMm1UUVAwb2o1VkotRGZHR1VmREhOeS1ULXM4RHIyekxoanVoTHl3bUVTbDRUcDZlR2t0RDczSVNTSmd2YmpKNlRLbXdiTXNDNjRzQ0lncW4tR19HMG9SNUctZnQyemlkN0h2cldEbkFNZ3JjQkUzUEZqQkdubm9XTmFiNjhnbjBXRkdTVEY1SmE2cVUwQkxKQ1lHdTIwZ3ZrTGdGTjBGRG1SWS1aMTRYTFFrZWtxM3lEajEwRzE4bXlrZEJuUHRscGV1eWhwNV9ldFE?oc=5</link><guid
+        isPermaLink=\"false\">CBMimgJBVV95cUxPWE1PT2hKWnRteE9hcHA4VjRQaV9XWjAtd1U1Y1hNMjh3M2ZRUy1iVVFHZy0tcWQ2MW5BaUJQRGthUFdCTW90TnBNbDIwR21EMm1UUVAwb2o1VkotRGZHR1VmREhOeS1ULXM4RHIyekxoanVoTHl3bUVTbDRUcDZlR2t0RDczSVNTSmd2YmpKNlRLbXdiTXNDNjRzQ0lncW4tR19HMG9SNUctZnQyemlkN0h2cldEbkFNZ3JjQkUzUEZqQkdubm9XTmFiNjhnbjBXRkdTVEY1SmE2cVUwQkxKQ1lHdTIwZ3ZrTGdGTjBGRG1SWS1aMTRYTFFrZWtxM3lEajEwRzE4bXlrZEJuUHRscGV1eWhwNV9ldFE</guid><pubDate>Wed,
+        13 Aug 2025 12:30:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMimgJBVV95cUxPWE1PT2hKWnRteE9hcHA4VjRQaV9XWjAtd1U1Y1hNMjh3M2ZRUy1iVVFHZy0tcWQ2MW5BaUJQRGthUFdCTW90TnBNbDIwR21EMm1UUVAwb2o1VkotRGZHR1VmREhOeS1ULXM4RHIyekxoanVoTHl3bUVTbDRUcDZlR2t0RDczSVNTSmd2YmpKNlRLbXdiTXNDNjRzQ0lncW4tR19HMG9SNUctZnQyemlkN0h2cldEbkFNZ3JjQkUzUEZqQkdubm9XTmFiNjhnbjBXRkdTVEY1SmE2cVUwQkxKQ1lHdTIwZ3ZrTGdGTjBGRG1SWS1aMTRYTFFrZWtxM3lEajEwRzE4bXlrZEJuUHRscGV1eWhwNV9ldFE?oc=5\"
+        target=\"_blank\"&gt;APPLE STOCK: Lose Money on Your Apple Inc. (NASDAQ:AAPL)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;GlobeNewswire&lt;/font&gt;</description><source url=\"https://www.globenewswire.com\">GlobeNewswire</source></item><item><title>As
+        Elon Musk Lashes Out At Apple, How Should You Play TSLA And AAPL Stock? -
+        Barchart.com</title><link>https://news.google.com/rss/articles/CBMiuAFBVV95cUxNS1dVdFhXeExuVkJLS1U2UXQyRVc1MDZiczBxVmJnYnVweVl3dDBUUEFfS0E0SUhEdWVnbkNuWENlMVpUaWsxdWRRbjF2VWcwU1VCYjE1OElua1UzWjZ0Z19PU0JHRklQN1B0M1F2b2o0QzQ5aVNUeUxQWUp0S3lBU1IyT0RyNHpaaVhLblFpelFtd3hGQ1Q2UDJjSzZmTEdQb0pHQTBzbFBvR3hoNWFpWDBjR0M2SUcz?oc=5</link><guid
+        isPermaLink=\"false\">CBMiuAFBVV95cUxNS1dVdFhXeExuVkJLS1U2UXQyRVc1MDZiczBxVmJnYnVweVl3dDBUUEFfS0E0SUhEdWVnbkNuWENlMVpUaWsxdWRRbjF2VWcwU1VCYjE1OElua1UzWjZ0Z19PU0JHRklQN1B0M1F2b2o0QzQ5aVNUeUxQWUp0S3lBU1IyT0RyNHpaaVhLblFpelFtd3hGQ1Q2UDJjSzZmTEdQb0pHQTBzbFBvR3hoNWFpWDBjR0M2SUcz</guid><pubDate>Wed,
+        13 Aug 2025 14:38:51 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNS1dVdFhXeExuVkJLS1U2UXQyRVc1MDZiczBxVmJnYnVweVl3dDBUUEFfS0E0SUhEdWVnbkNuWENlMVpUaWsxdWRRbjF2VWcwU1VCYjE1OElua1UzWjZ0Z19PU0JHRklQN1B0M1F2b2o0QzQ5aVNUeUxQWUp0S3lBU1IyT0RyNHpaaVhLblFpelFtd3hGQ1Q2UDJjSzZmTEdQb0pHQTBzbFBvR3hoNWFpWDBjR0M2SUcz?oc=5\"
+        target=\"_blank\"&gt;As Elon Musk Lashes Out At Apple, How Should You Play
+        TSLA And AAPL Stock?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barchart.com&lt;/font&gt;</description><source
+        url=\"https://www.barchart.com\">Barchart.com</source></item><item><title>Apple
+        And Cook Are Back In Trump\u2019s Good Books: How Should You Play AAPL Stock
+        Here? - Barchart.com</title><link>https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbmNQWUhzUGpyOVdYamlQRmdFVjdjSUZ1bnpWUTg4WVFGREptYXI0bEI0aFZhVGlEbU5TLUdNOFhzcnRiLXFRWWxoX0kzRl81WlBsdjRlVXFqTHBQanNBVVU1dTRXbEtwZ0JHWXRoWWRhUlY1d2JVU1NFbUpOZ2IzYUN5M1ZtVEFucnEtVWpaUVZNRFp0LXdMU2hSSnl4TV9Obm5Kd0YzcW94NHJnREZlOEU4Rjk1eGZkR0p5cGdsWE13M0E?oc=5</link><guid
+        isPermaLink=\"false\">CBMiwwFBVV95cUxQbmNQWUhzUGpyOVdYamlQRmdFVjdjSUZ1bnpWUTg4WVFGREptYXI0bEI0aFZhVGlEbU5TLUdNOFhzcnRiLXFRWWxoX0kzRl81WlBsdjRlVXFqTHBQanNBVVU1dTRXbEtwZ0JHWXRoWWRhUlY1d2JVU1NFbUpOZ2IzYUN5M1ZtVEFucnEtVWpaUVZNRFp0LXdMU2hSSnl4TV9Obm5Kd0YzcW94NHJnREZlOEU4Rjk1eGZkR0p5cGdsWE13M0E</guid><pubDate>Mon,
+        11 Aug 2025 17:19:53 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbmNQWUhzUGpyOVdYamlQRmdFVjdjSUZ1bnpWUTg4WVFGREptYXI0bEI0aFZhVGlEbU5TLUdNOFhzcnRiLXFRWWxoX0kzRl81WlBsdjRlVXFqTHBQanNBVVU1dTRXbEtwZ0JHWXRoWWRhUlY1d2JVU1NFbUpOZ2IzYUN5M1ZtVEFucnEtVWpaUVZNRFp0LXdMU2hSSnl4TV9Obm5Kd0YzcW94NHJnREZlOEU4Rjk1eGZkR0p5cGdsWE13M0E?oc=5\"
+        target=\"_blank\"&gt;Apple And Cook Are Back In Trump\u2019s Good Books: How
+        Should You Play AAPL Stock Here?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barchart.com&lt;/font&gt;</description><source
+        url=\"https://www.barchart.com\">Barchart.com</source></item><item><title>What
+        to Expect from Apple\u2019s (AAPL) Fall Launch Event this Year - TipRanks</title><link>https://news.google.com/rss/articles/CBMikwFBVV95cUxNSjFhRGRFbktURmQ1XzNVWXRvOVdyRG5zaW1xdVBCdFE3RlB2SjR6OUxId0VaQVR0b2VnaWVRWE9NT0Y3eS12bUx5a3RZenJTVTM4T2pXdk0tamg0Vkp6dUR0aVFRS1VQOUN1elBnNl9qNjBOb3p6Vm5SelBoUko1TEF6ZFBzbEVzSER3akRyT1JvenM?oc=5</link><guid
+        isPermaLink=\"false\">CBMikwFBVV95cUxNSjFhRGRFbktURmQ1XzNVWXRvOVdyRG5zaW1xdVBCdFE3RlB2SjR6OUxId0VaQVR0b2VnaWVRWE9NT0Y3eS12bUx5a3RZenJTVTM4T2pXdk0tamg0Vkp6dUR0aVFRS1VQOUN1elBnNl9qNjBOb3p6Vm5SelBoUko1TEF6ZFBzbEVzSER3akRyT1JvenM</guid><pubDate>Mon,
+        11 Aug 2025 22:02:26 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNSjFhRGRFbktURmQ1XzNVWXRvOVdyRG5zaW1xdVBCdFE3RlB2SjR6OUxId0VaQVR0b2VnaWVRWE9NT0Y3eS12bUx5a3RZenJTVTM4T2pXdk0tamg0Vkp6dUR0aVFRS1VQOUN1elBnNl9qNjBOb3p6Vm5SelBoUko1TEF6ZFBzbEVzSER3akRyT1JvenM?oc=5\"
+        target=\"_blank\"&gt;What to Expect from Apple\u2019s (AAPL) Fall Launch Event
+        this Year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>Apple
+        Stock (AAPL) Feels the Weight of its Price Tag as Earnings Loom - TipRanks</title><link>https://news.google.com/rss/articles/CBMingFBVV95cUxPVWtZMnVOVnphWUROamI3SERVdGRJVFQ0c01WMFYtWkpyXzNQX2lKc0tHUTFQdm5qYjhWczlmLU0zbi1lUktITmJMbmF1QVc2UVc1WW9TUmt0eXEwc0p3UTdEYW5KSDBIb3lWWFFEMGN1eDJ3cVJQT0prT2NYUVlieXU3ckJtbjByRG9MTlBIZkc5dGpwaktGaXlsN2tiZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMingFBVV95cUxPVWtZMnVOVnphWUROamI3SERVdGRJVFQ0c01WMFYtWkpyXzNQX2lKc0tHUTFQdm5qYjhWczlmLU0zbi1lUktITmJMbmF1QVc2UVc1WW9TUmt0eXEwc0p3UTdEYW5KSDBIb3lWWFFEMGN1eDJ3cVJQT0prT2NYUVlieXU3ckJtbjByRG9MTlBIZkc5dGpwaktGaXlsN2tiZw</guid><pubDate>Wed,
+        30 Jul 2025 23:31:54 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPVWtZMnVOVnphWUROamI3SERVdGRJVFQ0c01WMFYtWkpyXzNQX2lKc0tHUTFQdm5qYjhWczlmLU0zbi1lUktITmJMbmF1QVc2UVc1WW9TUmt0eXEwc0p3UTdEYW5KSDBIb3lWWFFEMGN1eDJ3cVJQT0prT2NYUVlieXU3ckJtbjByRG9MTlBIZkc5dGpwaktGaXlsN2tiZw?oc=5\"
+        target=\"_blank\"&gt;Apple Stock (AAPL) Feels the Weight of its Price Tag
+        as Earnings Loom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>Apple
+        (AAPL) iPhone Production Soars as India Gains Prominence Amid Slowing U.S.
+        Demand - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMihwFBVV95cUxQZkI1emhQSnhMZVRZZUVmc1l0ZFlGSGdkcTZMYmFHUXo2dkFHWHpQSTVuc1R2UkdKaDNlclNjS0dOQV9QV3FLYWRKR1A5b0FkQUphYjFUSmw2SFhSQmtsaU9kTEVIWmxMejJlUVNhWnN1ei1WMmpmSE1qMnd6cjVQMGN2anNld1E?oc=5</link><guid
+        isPermaLink=\"false\">CBMihwFBVV95cUxQZkI1emhQSnhMZVRZZUVmc1l0ZFlGSGdkcTZMYmFHUXo2dkFHWHpQSTVuc1R2UkdKaDNlclNjS0dOQV9QV3FLYWRKR1A5b0FkQUphYjFUSmw2SFhSQmtsaU9kTEVIWmxMejJlUVNhWnN1ei1WMmpmSE1qMnd6cjVQMGN2anNld1E</guid><pubDate>Sun,
+        20 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxQZkI1emhQSnhMZVRZZUVmc1l0ZFlGSGdkcTZMYmFHUXo2dkFHWHpQSTVuc1R2UkdKaDNlclNjS0dOQV9QV3FLYWRKR1A5b0FkQUphYjFUSmw2SFhSQmtsaU9kTEVIWmxMejJlUVNhWnN1ei1WMmpmSE1qMnd6cjVQMGN2anNld1E?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) iPhone Production Soars as India Gains Prominence
+        Amid Slowing U.S. Demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>What To Expect From Apple\u2019s (AAPL)
+        Q2 Earnings - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMigAFBVV95cUxPMXA1cUhuX2N4bG5EZmxROXdxUGNNRzVNTHpvSUhNM3VPVHZUcGF5ZnF4RHoySjJlNGxmcmpjdXRLVVMyWnAwTl9sZlR5R1E3WWlESFVuZlVMb01TdVU1Nkx0MDJmbUVFX3FCM2xfYWVBS3dfa0RZMTYwMzllSmVNOQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMigAFBVV95cUxPMXA1cUhuX2N4bG5EZmxROXdxUGNNRzVNTHpvSUhNM3VPVHZUcGF5ZnF4RHoySjJlNGxmcmpjdXRLVVMyWnAwTl9sZlR5R1E3WWlESFVuZlVMb01TdVU1Nkx0MDJmbUVFX3FCM2xfYWVBS3dfa0RZMTYwMzllSmVNOQ</guid><pubDate>Tue,
+        29 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxPMXA1cUhuX2N4bG5EZmxROXdxUGNNRzVNTHpvSUhNM3VPVHZUcGF5ZnF4RHoySjJlNGxmcmpjdXRLVVMyWnAwTl9sZlR5R1E3WWlESFVuZlVMb01TdVU1Nkx0MDJmbUVFX3FCM2xfYWVBS3dfa0RZMTYwMzllSmVNOQ?oc=5\"
+        target=\"_blank\"&gt;What To Expect From Apple\u2019s (AAPL) Q2 Earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple Inc. (AAPL)\u2019s \u201CGot Game,\u201D
+        Says Jim Cramer - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMieEFVX3lxTE42cTFoTF9DSmh6OU1LRXBzX2xNbVdsV0x2N3NtNGtzby1yajJCcU5VMDdXSDdjdkx2NDJCLUxCb21JaTF6WEFXTW1jUldCUjZKWWpzVXdfM0NPeXpYSGtaYU11MzBPWTc2RmdQeUFYcm9razNLMmVhQw?oc=5</link><guid
+        isPermaLink=\"false\">CBMieEFVX3lxTE42cTFoTF9DSmh6OU1LRXBzX2xNbVdsV0x2N3NtNGtzby1yajJCcU5VMDdXSDdjdkx2NDJCLUxCb21JaTF6WEFXTW1jUldCUjZKWWpzVXdfM0NPeXpYSGtaYU11MzBPWTc2RmdQeUFYcm9razNLMmVhQw</guid><pubDate>Mon,
+        21 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE42cTFoTF9DSmh6OU1LRXBzX2xNbVdsV0x2N3NtNGtzby1yajJCcU5VMDdXSDdjdkx2NDJCLUxCb21JaTF6WEFXTW1jUldCUjZKWWpzVXdfM0NPeXpYSGtaYU11MzBPWTc2RmdQeUFYcm9razNLMmVhQw?oc=5\"
+        target=\"_blank\"&gt;Apple Inc. (AAPL)\u2019s \u201CGot Game,\u201D Says Jim
+        Cramer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source
+        url=\"https://finance.yahoo.com\">Yahoo Finance</source></item><item><title>Musk
+        threatens legal action against Apple over alleged antitrust violations (AAPL:NASDAQ)
+        - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMiswFBVV95cUxPVnV2NkFmNS1uWl9IcmlQTGIyYlRISmJsQVRMN0lTdVJXckpWOXVRNnNNclhFOTVONkplSFdVTHg4WmlkNHBWS2p3Qi1ZdFpKTHRNOHQyMElZT0YzLUpiWldKaDhEdVVjb0xoTmRBMVAxM09sUGpCME4xZ00tTmo3ZnF4dFBwb3dYa0ZVaXdGZkdWSkcwRU5HN1FQSC00UXYxa1Z1TTJfMWY2U2VObGc1cHBDcw?oc=5</link><guid
+        isPermaLink=\"false\">CBMiswFBVV95cUxPVnV2NkFmNS1uWl9IcmlQTGIyYlRISmJsQVRMN0lTdVJXckpWOXVRNnNNclhFOTVONkplSFdVTHg4WmlkNHBWS2p3Qi1ZdFpKTHRNOHQyMElZT0YzLUpiWldKaDhEdVVjb0xoTmRBMVAxM09sUGpCME4xZ00tTmo3ZnF4dFBwb3dYa0ZVaXdGZkdWSkcwRU5HN1FQSC00UXYxa1Z1TTJfMWY2U2VObGc1cHBDcw</guid><pubDate>Tue,
+        12 Aug 2025 04:14:32 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPVnV2NkFmNS1uWl9IcmlQTGIyYlRISmJsQVRMN0lTdVJXckpWOXVRNnNNclhFOTVONkplSFdVTHg4WmlkNHBWS2p3Qi1ZdFpKTHRNOHQyMElZT0YzLUpiWldKaDhEdVVjb0xoTmRBMVAxM09sUGpCME4xZ00tTmo3ZnF4dFBwb3dYa0ZVaXdGZkdWSkcwRU5HN1FQSC00UXYxa1Z1TTJfMWY2U2VObGc1cHBDcw?oc=5\"
+        target=\"_blank\"&gt;Musk threatens legal action against Apple over alleged
+        antitrust violations (AAPL:NASDAQ)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Apple Inc. (AAPL): It\u2019s \u201COutrageous\u201D
+        To Say Tim Cook Should Leave, Says Jim Cramer - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMigAFBVV95cUxQdmxRdE4xcFRScUJSTE56U0RlSm5LaVVCOFlmRm0zd3hCQ1Vib3pGWEdONGJDYk9ZMF9KVTUyR1hMbW92NmZQVzl2d0ViZUE2WGVFNjJmZ1ZKYkNlRmtuY3ZxUHdwdTFNZHEwVlVLeUNpZ0pwY1N5cTNoYm52QzZyaQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMigAFBVV95cUxQdmxRdE4xcFRScUJSTE56U0RlSm5LaVVCOFlmRm0zd3hCQ1Vib3pGWEdONGJDYk9ZMF9KVTUyR1hMbW92NmZQVzl2d0ViZUE2WGVFNjJmZ1ZKYkNlRmtuY3ZxUHdwdTFNZHEwVlVLeUNpZ0pwY1N5cTNoYm52QzZyaQ</guid><pubDate>Tue,
+        15 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxQdmxRdE4xcFRScUJSTE56U0RlSm5LaVVCOFlmRm0zd3hCQ1Vib3pGWEdONGJDYk9ZMF9KVTUyR1hMbW92NmZQVzl2d0ViZUE2WGVFNjJmZ1ZKYkNlRmtuY3ZxUHdwdTFNZHEwVlVLeUNpZ0pwY1N5cTNoYm52QzZyaQ?oc=5\"
+        target=\"_blank\"&gt;Apple Inc. (AAPL): It\u2019s \u201COutrageous\u201D To
+        Say Tim Cook Should Leave, Says Jim Cramer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Upgrading Siri with AI-Powered
+        Apple Intent - Insider Monkey</title><link>https://news.google.com/rss/articles/CBMinwFBVV95cUxOcTdmaklieFdvTllMbnM2bzBLaEp3WFBZcWlLNTNnUHl5bUN0SUdxdkJXamhfaVNyc1NRNVZTNU1CWFFSSXNtXzVGb1lGak1IbDNxVldyME9NU2EzY3FKOEloNXpoY1VVTTNzazhfMFRQVHZpLVZzV04zWlA1WG80X0tlN09CQTZieC00NWhSWGw5c3N0dk1OSW0tZV9wc2fSAacBQVVfeXFMT1JrRVp3ZXNGNHNTMWh3a2RxQ3RtaEpGbkhERmVVcURyc3NEZUdRQVJuYXI4b044c1MtRG5UZ2hfaFVUY21XQUxjbExYeVJCTDB5azdBREF3NG8xdEJ5c1JudTNSRE5BTkhzMWlGdVJXenA2emFMZTFDMGhHMTBmdWJJNXNLLW4wX1RxLVBBdWp6LVMwQW5NWG5FQWtPaTlhU1lVdUFTRTg?oc=5</link><guid
+        isPermaLink=\"false\">CBMinwFBVV95cUxOcTdmaklieFdvTllMbnM2bzBLaEp3WFBZcWlLNTNnUHl5bUN0SUdxdkJXamhfaVNyc1NRNVZTNU1CWFFSSXNtXzVGb1lGak1IbDNxVldyME9NU2EzY3FKOEloNXpoY1VVTTNzazhfMFRQVHZpLVZzV04zWlA1WG80X0tlN09CQTZieC00NWhSWGw5c3N0dk1OSW0tZV9wc2fSAacBQVVfeXFMT1JrRVp3ZXNGNHNTMWh3a2RxQ3RtaEpGbkhERmVVcURyc3NEZUdRQVJuYXI4b044c1MtRG5UZ2hfaFVUY21XQUxjbExYeVJCTDB5azdBREF3NG8xdEJ5c1JudTNSRE5BTkhzMWlGdVJXenA2emFMZTFDMGhHMTBmdWJJNXNLLW4wX1RxLVBBdWp6LVMwQW5NWG5FQWtPaTlhU1lVdUFTRTg</guid><pubDate>Wed,
+        13 Aug 2025 19:38:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxOcTdmaklieFdvTllMbnM2bzBLaEp3WFBZcWlLNTNnUHl5bUN0SUdxdkJXamhfaVNyc1NRNVZTNU1CWFFSSXNtXzVGb1lGak1IbDNxVldyME9NU2EzY3FKOEloNXpoY1VVTTNzazhfMFRQVHZpLVZzV04zWlA1WG80X0tlN09CQTZieC00NWhSWGw5c3N0dk1OSW0tZV9wc2fSAacBQVVfeXFMT1JrRVp3ZXNGNHNTMWh3a2RxQ3RtaEpGbkhERmVVcURyc3NEZUdRQVJuYXI4b044c1MtRG5UZ2hfaFVUY21XQUxjbExYeVJCTDB5azdBREF3NG8xdEJ5c1JudTNSRE5BTkhzMWlGdVJXenA2emFMZTFDMGhHMTBmdWJJNXNLLW4wX1RxLVBBdWp6LVMwQW5NWG5FQWtPaTlhU1lVdUFTRTg?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Upgrading Siri with AI-Powered Apple Intent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Insider Monkey&lt;/font&gt;</description><source url=\"https://www.insidermonkey.com\">Insider
+        Monkey</source></item><item><title>What Analysts Think of Apple Stock Ahead
+        of Earnings - Investopedia</title><link>https://news.google.com/rss/articles/CBMiqwFBVV95cUxQams0bmRSc3hTdVBsQzlXcDkwY2xRQV9PMDAwV1V2Z2gxTlNwMjJBWi15eUdWNHl2ZUF5Y3l5S1ZiUGE4OEVwQTBpRXRGQzFtMFNvc1NQYXk2S0wtT1IwLUVkaFpENm9lVU5UaGw5TFdHRlhERHlBcW54WVgyeng4Z3Y1dThvMWtMeEpqakhjRlZ6TkFFRTI1cm1mQ3Jxd2NrMFFxeDQtbVpvWnc?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqwFBVV95cUxQams0bmRSc3hTdVBsQzlXcDkwY2xRQV9PMDAwV1V2Z2gxTlNwMjJBWi15eUdWNHl2ZUF5Y3l5S1ZiUGE4OEVwQTBpRXRGQzFtMFNvc1NQYXk2S0wtT1IwLUVkaFpENm9lVU5UaGw5TFdHRlhERHlBcW54WVgyeng4Z3Y1dThvMWtMeEpqakhjRlZ6TkFFRTI1cm1mQ3Jxd2NrMFFxeDQtbVpvWnc</guid><pubDate>Thu,
+        31 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQams0bmRSc3hTdVBsQzlXcDkwY2xRQV9PMDAwV1V2Z2gxTlNwMjJBWi15eUdWNHl2ZUF5Y3l5S1ZiUGE4OEVwQTBpRXRGQzFtMFNvc1NQYXk2S0wtT1IwLUVkaFpENm9lVU5UaGw5TFdHRlhERHlBcW54WVgyeng4Z3Y1dThvMWtMeEpqakhjRlZ6TkFFRTI1cm1mQ3Jxd2NrMFFxeDQtbVpvWnc?oc=5\"
+        target=\"_blank\"&gt;What Analysts Think of Apple Stock Ahead of Earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>Apple
+        (NASDAQ: AAPL) Stock Price Prediction and Forecast 2025-2030 (Aug 2025) -
+        24/7 Wall St.</title><link>https://news.google.com/rss/articles/CBMinwFBVV95cUxQX0NVZnM1Vi1Ha3FQbEpwSkJnNDRwVVh0akMtendWY0FJTlNjNmoyczVITUpPU0JoSzA4SF9yRmJSM2UyLW9La3ZoNXJvdm1yajNGUlJzckpVUUcyN2ZvT3pzdnUzMU5HRUc4Q0RHNkwzTVByYmtpaHF4cDhoWVhaV1NLQnNheXM4YkdQNDNLaXVXS0w3VUFCSGlCeWZSUzQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMinwFBVV95cUxQX0NVZnM1Vi1Ha3FQbEpwSkJnNDRwVVh0akMtendWY0FJTlNjNmoyczVITUpPU0JoSzA4SF9yRmJSM2UyLW9La3ZoNXJvdm1yajNGUlJzckpVUUcyN2ZvT3pzdnUzMU5HRUc4Q0RHNkwzTVByYmtpaHF4cDhoWVhaV1NLQnNheXM4YkdQNDNLaXVXS0w3VUFCSGlCeWZSUzQ</guid><pubDate>Thu,
+        07 Aug 2025 11:35:20 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQX0NVZnM1Vi1Ha3FQbEpwSkJnNDRwVVh0akMtendWY0FJTlNjNmoyczVITUpPU0JoSzA4SF9yRmJSM2UyLW9La3ZoNXJvdm1yajNGUlJzckpVUUcyN2ZvT3pzdnUzMU5HRUc4Q0RHNkwzTVByYmtpaHF4cDhoWVhaV1NLQnNheXM4YkdQNDNLaXVXS0w3VUFCSGlCeWZSUzQ?oc=5\"
+        target=\"_blank\"&gt;Apple (NASDAQ: AAPL) Stock Price Prediction and Forecast
+        2025-2030 (Aug 2025)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;24/7
+        Wall St.&lt;/font&gt;</description><source url=\"https://247wallst.com\">24/7
+        Wall St.</source></item><item><title>Stocks making the biggest moves midday:
+        Apple, Viasat, McDonald's, Grocery Outlet and more - CNBC</title><link>https://news.google.com/rss/articles/CBMilwFBVV95cUxPd3FULU5nQ1MzWUgwVUE1azZuZDczb2JBeGNYZk5qMGZoS0JnSHV6bzFybnFhcWtiSkVQd2hscmxIWGhoQjd3dGlZRTZGZUtyTmZiZlAyelhybjZsZXNzYWsyT2s4bDJ1ZDc4Q29ucW9LcUNwYUVBY1ZmZUMwd05nQ1dkMnFzVnVZSlV0Y0xFUVd4cWVGT1Jz?oc=5</link><guid
+        isPermaLink=\"false\">CBMilwFBVV95cUxPd3FULU5nQ1MzWUgwVUE1azZuZDczb2JBeGNYZk5qMGZoS0JnSHV6bzFybnFhcWtiSkVQd2hscmxIWGhoQjd3dGlZRTZGZUtyTmZiZlAyelhybjZsZXNzYWsyT2s4bDJ1ZDc4Q29ucW9LcUNwYUVBY1ZmZUMwd05nQ1dkMnFzVnVZSlV0Y0xFUVd4cWVGT1Jz</guid><pubDate>Wed,
+        06 Aug 2025 16:41:24 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPd3FULU5nQ1MzWUgwVUE1azZuZDczb2JBeGNYZk5qMGZoS0JnSHV6bzFybnFhcWtiSkVQd2hscmxIWGhoQjd3dGlZRTZGZUtyTmZiZlAyelhybjZsZXNzYWsyT2s4bDJ1ZDc4Q29ucW9LcUNwYUVBY1ZmZUMwd05nQ1dkMnFzVnVZSlV0Y0xFUVd4cWVGT1Jz?oc=5\"
+        target=\"_blank\"&gt;Stocks making the biggest moves midday: Apple, Viasat,
+        McDonald's, Grocery Outlet and more&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source url=\"https://www.cnbc.com\">CNBC</source></item><item><title>JPMorgan
+        Bumps Apple (AAPL) PT to $250, Keeps \u2018Overweight\u2019 - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE1sNmE3ZlJWaGN0NngtWDJPcEtBaTVWQ2VtQUFyY3ptNF9JaXBMdjhpNGlIeXRTcjlleHFnS3JNcWhOUmdVNVhzNnRGTzdJOGlVN3RSVzNqZ29tZWNpa3ZUNndYTnV4dFA2SVdHQXVtUW56X2hIOGFQaUhYRnBobk0?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE1sNmE3ZlJWaGN0NngtWDJPcEtBaTVWQ2VtQUFyY3ptNF9JaXBMdjhpNGlIeXRTcjlleHFnS3JNcWhOUmdVNVhzNnRGTzdJOGlVN3RSVzNqZ29tZWNpa3ZUNndYTnV4dFA2SVdHQXVtUW56X2hIOGFQaUhYRnBobk0</guid><pubDate>Sat,
+        19 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE1sNmE3ZlJWaGN0NngtWDJPcEtBaTVWQ2VtQUFyY3ptNF9JaXBMdjhpNGlIeXRTcjlleHFnS3JNcWhOUmdVNVhzNnRGTzdJOGlVN3RSVzNqZ29tZWNpa3ZUNndYTnV4dFA2SVdHQXVtUW56X2hIOGFQaUhYRnBobk0?oc=5\"
+        target=\"_blank\"&gt;JPMorgan Bumps Apple (AAPL) PT to $250, Keeps \u2018Overweight\u2019&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Melius Raises Apple (AAPL) PT to $260,
+        Cites Upcoming iPhone Cycles - Insider Monkey</title><link>https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZjZLQnREN3M4b0pfaHZ2bXpKQ2pFb29YTUp6ak4zZWxHREJBWTRLZGtRel9RUUczeDNJRndsbVFKRFBnbTgyVGNVcno3WTd3VmMtUm5TSllUZ1djTlFJY0FEQU16RzF1V294LWZMOGl1blZRd2RhZjdnLTBCSUpnb2dTRlp0MjdISEMxWjVTbWdodzQxdUVCb3FMZjFIdGxtaUtlUl9SUThjR2vSAbMBQVVfeXFMUE91ZG5ETnlyOWRPSlFMVlZXVFc1elZRNldPZ08tNFFidG1ka3FLeE83ZlJXN1pnN0Vvdk1BWXY0TDlEc2hFeERZYjU3NkdYNHg4TmxqOWt2NlozdlBqTXV1cklOcDBBN2R0cm9ZVHk1VmM3aDRlRDI2MmFyUTZNdDYwWkRwSTdBTzB4TjJxcEpJVnEwcHBNaE0wREVDQkVKdUpBZ3dia0RlNDRNMFo4UUdSUUk?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqwFBVV95cUxNZjZLQnREN3M4b0pfaHZ2bXpKQ2pFb29YTUp6ak4zZWxHREJBWTRLZGtRel9RUUczeDNJRndsbVFKRFBnbTgyVGNVcno3WTd3VmMtUm5TSllUZ1djTlFJY0FEQU16RzF1V294LWZMOGl1blZRd2RhZjdnLTBCSUpnb2dTRlp0MjdISEMxWjVTbWdodzQxdUVCb3FMZjFIdGxtaUtlUl9SUThjR2vSAbMBQVVfeXFMUE91ZG5ETnlyOWRPSlFMVlZXVFc1elZRNldPZ08tNFFidG1ka3FLeE83ZlJXN1pnN0Vvdk1BWXY0TDlEc2hFeERZYjU3NkdYNHg4TmxqOWt2NlozdlBqTXV1cklOcDBBN2R0cm9ZVHk1VmM3aDRlRDI2MmFyUTZNdDYwWkRwSTdBTzB4TjJxcEpJVnEwcHBNaE0wREVDQkVKdUpBZ3dia0RlNDRNMFo4UUdSUUk</guid><pubDate>Wed,
+        13 Aug 2025 18:51:37 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZjZLQnREN3M4b0pfaHZ2bXpKQ2pFb29YTUp6ak4zZWxHREJBWTRLZGtRel9RUUczeDNJRndsbVFKRFBnbTgyVGNVcno3WTd3VmMtUm5TSllUZ1djTlFJY0FEQU16RzF1V294LWZMOGl1blZRd2RhZjdnLTBCSUpnb2dTRlp0MjdISEMxWjVTbWdodzQxdUVCb3FMZjFIdGxtaUtlUl9SUThjR2vSAbMBQVVfeXFMUE91ZG5ETnlyOWRPSlFMVlZXVFc1elZRNldPZ08tNFFidG1ka3FLeE83ZlJXN1pnN0Vvdk1BWXY0TDlEc2hFeERZYjU3NkdYNHg4TmxqOWt2NlozdlBqTXV1cklOcDBBN2R0cm9ZVHk1VmM3aDRlRDI2MmFyUTZNdDYwWkRwSTdBTzB4TjJxcEpJVnEwcHBNaE0wREVDQkVKdUpBZ3dia0RlNDRNMFo4UUdSUUk?oc=5\"
+        target=\"_blank\"&gt;Melius Raises Apple (AAPL) PT to $260, Cites Upcoming
+        iPhone Cycles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Insider
+        Monkey&lt;/font&gt;</description><source url=\"https://www.insidermonkey.com\">Insider
+        Monkey</source></item><item><title>Do You Believe in Apple\u2019s (AAPL) Long-Term
+        Compelling Value Proposition? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE1BMGMzdU9xSF9sTTMtYW1XRTlQbm45RFI2Rkt5X2RyU3hYcTNZQ1ZwSldtRmM5bFdhRHVxSW8yRDRSZGVoWWNMLVNxTEdPMzEweE91NXlqeGtHUUkyM0tQSWJGZUUtZG5lSUg0VE9Kekt3WmFkSV82TFFrSFFGams?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE1BMGMzdU9xSF9sTTMtYW1XRTlQbm45RFI2Rkt5X2RyU3hYcTNZQ1ZwSldtRmM5bFdhRHVxSW8yRDRSZGVoWWNMLVNxTEdPMzEweE91NXlqeGtHUUkyM0tQSWJGZUUtZG5lSUg0VE9Kekt3WmFkSV82TFFrSFFGams</guid><pubDate>Tue,
+        05 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE1BMGMzdU9xSF9sTTMtYW1XRTlQbm45RFI2Rkt5X2RyU3hYcTNZQ1ZwSldtRmM5bFdhRHVxSW8yRDRSZGVoWWNMLVNxTEdPMzEweE91NXlqeGtHUUkyM0tQSWJGZUUtZG5lSUg0VE9Kekt3WmFkSV82TFFrSFFGams?oc=5\"
+        target=\"_blank\"&gt;Do You Believe in Apple\u2019s (AAPL) Long-Term Compelling
+        Value Proposition?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Live: Apple (Nasdaq: AAPL) Blows Out Earnings
+        - But Will Shares Soar? - 24/7 Wall St.</title><link>https://news.google.com/rss/articles/CBMingFBVV95cUxNeTdUSTNZNHZncV9Vc1FoZE9vaC1VTzBCR00zWDVBUmd4dFZzSUdqOXFXcGpSWkFXLUdrYUZYcVdrbXZTVnBXc2dNbV9TM2lTU0JTaXNyS25iZ2lBWi1IYXF2MUxtbXlFa3ZZSU5zWFpRQjZhaHNuamFGRHRWelJlU1JkZXdRM3FIZDNCcUdzODFmWS1ZRUdTeE9TamNWQQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMingFBVV95cUxNeTdUSTNZNHZncV9Vc1FoZE9vaC1VTzBCR00zWDVBUmd4dFZzSUdqOXFXcGpSWkFXLUdrYUZYcVdrbXZTVnBXc2dNbV9TM2lTU0JTaXNyS25iZ2lBWi1IYXF2MUxtbXlFa3ZZSU5zWFpRQjZhaHNuamFGRHRWelJlU1JkZXdRM3FIZDNCcUdzODFmWS1ZRUdTeE9TamNWQQ</guid><pubDate>Thu,
+        31 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNeTdUSTNZNHZncV9Vc1FoZE9vaC1VTzBCR00zWDVBUmd4dFZzSUdqOXFXcGpSWkFXLUdrYUZYcVdrbXZTVnBXc2dNbV9TM2lTU0JTaXNyS25iZ2lBWi1IYXF2MUxtbXlFa3ZZSU5zWFpRQjZhaHNuamFGRHRWelJlU1JkZXdRM3FIZDNCcUdzODFmWS1ZRUdTeE9TamNWQQ?oc=5\"
+        target=\"_blank\"&gt;Live: Apple (Nasdaq: AAPL) Blows Out Earnings - But Will
+        Shares Soar?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;24/7
+        Wall St.&lt;/font&gt;</description><source url=\"https://247wallst.com\">24/7
+        Wall St.</source></item><item><title>Apple\u2019s Siri delay is said to mask
+        bigger AI ambitions behind the scenes (AAPL:NASDAQ) - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMirwFBVV95cUxOaktEUjU2MlRWSXk5b0FBQ2ttS3ZxOU5KM0hEMnc0Q3luZmpHZlVaQWlqRi13WjU3YWpybTZlcG9JVFQ3OWtiX3A0TS1ZM1VjblpkTGUtcEgzdDhVRHRRRElDQllxTDVYSmc3MlB3NW5xU1prNkQ4N2RwVHp6VWxJa2lwZzNtcHJyTnMwb3NYaHU1Y2JJZXNaMWlVc0J4MkN1THc1SF8xYVRjTlN2cDVv?oc=5</link><guid
+        isPermaLink=\"false\">CBMirwFBVV95cUxOaktEUjU2MlRWSXk5b0FBQ2ttS3ZxOU5KM0hEMnc0Q3luZmpHZlVaQWlqRi13WjU3YWpybTZlcG9JVFQ3OWtiX3A0TS1ZM1VjblpkTGUtcEgzdDhVRHRRRElDQllxTDVYSmc3MlB3NW5xU1prNkQ4N2RwVHp6VWxJa2lwZzNtcHJyTnMwb3NYaHU1Y2JJZXNaMWlVc0J4MkN1THc1SF8xYVRjTlN2cDVv</guid><pubDate>Sun,
+        10 Aug 2025 20:33:50 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOaktEUjU2MlRWSXk5b0FBQ2ttS3ZxOU5KM0hEMnc0Q3luZmpHZlVaQWlqRi13WjU3YWpybTZlcG9JVFQ3OWtiX3A0TS1ZM1VjblpkTGUtcEgzdDhVRHRRRElDQllxTDVYSmc3MlB3NW5xU1prNkQ4N2RwVHp6VWxJa2lwZzNtcHJyTnMwb3NYaHU1Y2JJZXNaMWlVc0J4MkN1THc1SF8xYVRjTlN2cDVv?oc=5\"
+        target=\"_blank\"&gt;Apple\u2019s Siri delay is said to mask bigger AI ambitions
+        behind the scenes (AAPL:NASDAQ)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Buy, Sell or Hold Apple Stock? Key Tips
+        Ahead of Q3 Earnings - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMie0FVX3lxTE9NRjhPZTNobUNydkotQzVOV0FKOVktTHVwX3ZwRzlCYll3UWQ4YTZzbnJER21iM0dkRUNsRVdVVDVWSGE5MFVMOS16a2pnNDlGSnpfbzJYX09Ob3MwQkZjZHZXbkQ1UUNHQ0haZGRkWmJkMlFkSnNsanVJQQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMie0FVX3lxTE9NRjhPZTNobUNydkotQzVOV0FKOVktTHVwX3ZwRzlCYll3UWQ4YTZzbnJER21iM0dkRUNsRVdVVDVWSGE5MFVMOS16a2pnNDlGSnpfbzJYX09Ob3MwQkZjZHZXbkQ1UUNHQ0haZGRkWmJkMlFkSnNsanVJQQ</guid><pubDate>Mon,
+        28 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE9NRjhPZTNobUNydkotQzVOV0FKOVktTHVwX3ZwRzlCYll3UWQ4YTZzbnJER21iM0dkRUNsRVdVVDVWSGE5MFVMOS16a2pnNDlGSnpfbzJYX09Ob3MwQkZjZHZXbkQ1UUNHQ0haZGRkWmJkMlFkSnNsanVJQQ?oc=5\"
+        target=\"_blank\"&gt;Buy, Sell or Hold Apple Stock? Key Tips Ahead of Q3 Earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Daiwa Sticks With Apple (AAPL), Citing
+        AI as Key to Multi-Year Growth - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiggFBVV95cUxQeUVhSFlTNHBOSzJsdU92X3JTNThueWtOekZZdVZDMUtwNVlvaEg1M0JOMmkwWUxfTVFDbWtmVTM3MzBYc0loMFZzMlI5akdtcUJFdzBuRUlXZnFLRDMybWJBOE1VUDRQVVhqNkstUzM5U20xUDlZa01RWkpNZDFrZzdn?oc=5</link><guid
+        isPermaLink=\"false\">CBMiggFBVV95cUxQeUVhSFlTNHBOSzJsdU92X3JTNThueWtOekZZdVZDMUtwNVlvaEg1M0JOMmkwWUxfTVFDbWtmVTM3MzBYc0loMFZzMlI5akdtcUJFdzBuRUlXZnFLRDMybWJBOE1VUDRQVVhqNkstUzM5U20xUDlZa01RWkpNZDFrZzdn</guid><pubDate>Fri,
+        08 Aug 2025 20:01:58 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxQeUVhSFlTNHBOSzJsdU92X3JTNThueWtOekZZdVZDMUtwNVlvaEg1M0JOMmkwWUxfTVFDbWtmVTM3MzBYc0loMFZzMlI5akdtcUJFdzBuRUlXZnFLRDMybWJBOE1VUDRQVVhqNkstUzM5U20xUDlZa01RWkpNZDFrZzdn?oc=5\"
+        target=\"_blank\"&gt;Daiwa Sticks With Apple (AAPL), Citing AI as Key to Multi-Year
+        Growth&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source
+        url=\"https://finance.yahoo.com\">Yahoo Finance</source></item><item><title>SA
+        analyst upgrades/downgrades: V, TSLA, AAPL, ACB - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMiiwFBVV95cUxPX0FaTGJqUVRjOXM2bjlfUTA4SFAzTUplSXp5UzVMTWVVMnNxaWhDX1IzcTNheWhyTEhCbk1pdC1kQnVIaEZrSW0xVnd3emZ1R2J2YW9fdEdNTlZPTjBfTTJER3FYenNhUEZ1UE5EOGhIcTJVLTFqaXVnWW9sRHR5NHd5eDljcDdHZWow?oc=5</link><guid
+        isPermaLink=\"false\">CBMiiwFBVV95cUxPX0FaTGJqUVRjOXM2bjlfUTA4SFAzTUplSXp5UzVMTWVVMnNxaWhDX1IzcTNheWhyTEhCbk1pdC1kQnVIaEZrSW0xVnd3emZ1R2J2YW9fdEdNTlZPTjBfTTJER3FYenNhUEZ1UE5EOGhIcTJVLTFqaXVnWW9sRHR5NHd5eDljcDdHZWow</guid><pubDate>Mon,
+        11 Aug 2025 16:07:31 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiiwFBVV95cUxPX0FaTGJqUVRjOXM2bjlfUTA4SFAzTUplSXp5UzVMTWVVMnNxaWhDX1IzcTNheWhyTEhCbk1pdC1kQnVIaEZrSW0xVnd3emZ1R2J2YW9fdEdNTlZPTjBfTTJER3FYenNhUEZ1UE5EOGhIcTJVLTFqaXVnWW9sRHR5NHd5eDljcDdHZWow?oc=5\"
+        target=\"_blank\"&gt;SA analyst upgrades/downgrades: V, TSLA, AAPL, ACB&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Seeking Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>S&amp;P 500 Eyes New High on Fed Cut Odds;
+        TSLA, AAPL Jump - NAI500</title><link>https://news.google.com/rss/articles/CBMijgFBVV95cUxNbmhaTkx0WmlZaklqM0poX25hR0g4OVF3RW9SaUtnb3lPUFBVSWZKVVRLOGdlSmFfc21qd2stUm1yQkxhMTF6b2VGLWtRR0x0QVdFVzZOakwzV2d5enJ6bl9FbEF4cXEzM1prOW5hVXFOVjdUa1pMNmFRT19hRnpKUll3VXcwSHBYRlI4UlJB?oc=5</link><guid
+        isPermaLink=\"false\">CBMijgFBVV95cUxNbmhaTkx0WmlZaklqM0poX25hR0g4OVF3RW9SaUtnb3lPUFBVSWZKVVRLOGdlSmFfc21qd2stUm1yQkxhMTF6b2VGLWtRR0x0QVdFVzZOakwzV2d5enJ6bl9FbEF4cXEzM1prOW5hVXFOVjdUa1pMNmFRT19hRnpKUll3VXcwSHBYRlI4UlJB</guid><pubDate>Wed,
+        13 Aug 2025 13:48:33 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxNbmhaTkx0WmlZaklqM0poX25hR0g4OVF3RW9SaUtnb3lPUFBVSWZKVVRLOGdlSmFfc21qd2stUm1yQkxhMTF6b2VGLWtRR0x0QVdFVzZOakwzV2d5enJ6bl9FbEF4cXEzM1prOW5hVXFOVjdUa1pMNmFRT19hRnpKUll3VXcwSHBYRlI4UlJB?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Eyes New High on Fed Cut Odds; TSLA, AAPL
+        Jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;NAI500&lt;/font&gt;</description><source
+        url=\"https://nai500.com\">NAI500</source></item><item><title>Apple (AAPL)
+        Analysts Stay Positive Ahead of Earnings, But AI Clarity Still Needed - Yahoo
+        Finance</title><link>https://news.google.com/rss/articles/CBMihgFBVV95cUxOOEFVNlpJLU5yY3ZhZXJsLXM1MGNOUU55aU9zeVpUQnRfRjgtZzRrY3J3Vm5FMHBhZzIzZzBNRDFKMGw4bUkxMmczbVVLZnhSNlFvZFo1Rzd5b0VwOGQyU0p5YkZ4M0FSTGdZRkhPb2xVZTRaZ1dJMGVTRjhNdTBGdnIzUlpZUQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMihgFBVV95cUxOOEFVNlpJLU5yY3ZhZXJsLXM1MGNOUU55aU9zeVpUQnRfRjgtZzRrY3J3Vm5FMHBhZzIzZzBNRDFKMGw4bUkxMmczbVVLZnhSNlFvZFo1Rzd5b0VwOGQyU0p5YkZ4M0FSTGdZRkhPb2xVZTRaZ1dJMGVTRjhNdTBGdnIzUlpZUQ</guid><pubDate>Tue,
+        22 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxOOEFVNlpJLU5yY3ZhZXJsLXM1MGNOUU55aU9zeVpUQnRfRjgtZzRrY3J3Vm5FMHBhZzIzZzBNRDFKMGw4bUkxMmczbVVLZnhSNlFvZFo1Rzd5b0VwOGQyU0p5YkZ4M0FSTGdZRkhPb2xVZTRaZ1dJMGVTRjhNdTBGdnIzUlpZUQ?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Analysts Stay Positive Ahead of Earnings,
+        But AI Clarity Still Needed&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Is Trending Stock Apple Inc. (AAPL) a
+        Buy Now? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMigAFBVV95cUxNUDZaU3RHX0hkTjFYMUxqdmpnTVN6N0RfUWtueEMzVE43YVRZLTV3a3h5WXRZczNCVFhmYzBONG5NaXdMaGhXMXpHRU82aGdLc2UwRFEtc0lKZnd2a2lubWUzRmlDR05yeURIb0tlRU5QQ0hpLTJFWG90WjB2T1M0bA?oc=5</link><guid
+        isPermaLink=\"false\">CBMigAFBVV95cUxNUDZaU3RHX0hkTjFYMUxqdmpnTVN6N0RfUWtueEMzVE43YVRZLTV3a3h5WXRZczNCVFhmYzBONG5NaXdMaGhXMXpHRU82aGdLc2UwRFEtc0lKZnd2a2lubWUzRmlDR05yeURIb0tlRU5QQ0hpLTJFWG90WjB2T1M0bA</guid><pubDate>Tue,
+        05 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxNUDZaU3RHX0hkTjFYMUxqdmpnTVN6N0RfUWtueEMzVE43YVRZLTV3a3h5WXRZczNCVFhmYzBONG5NaXdMaGhXMXpHRU82aGdLc2UwRFEtc0lKZnd2a2lubWUzRmlDR05yeURIb0tlRU5QQ0hpLTJFWG90WjB2T1M0bA?oc=5\"
+        target=\"_blank\"&gt;Is Trending Stock Apple Inc. (AAPL) a Buy Now?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>The Most Important Thing for Apple Stock
+        (AAPL) Investors to Watch in 2025 - The Motley Fool</title><link>https://news.google.com/rss/articles/CBMilwFBVV95cUxNRkU5aWtDVU1zV0RxelhjTGswei1BRFg4QXZzWlZ4YmRrc2R0WFV3RFhwZVlPb3dzU211U1dZTTQtUWFVcW5kN1p5QXpKQ191SzlkV0Q0S2VNT2xUUWEzTjNrVHNTVTRyWlBRSEY2ZzVVOFBRd19jWi1od0RMTldHcXplZFdRcDRZSi1WNlR4eWI3YlNBcF9z?oc=5</link><guid
+        isPermaLink=\"false\">CBMilwFBVV95cUxNRkU5aWtDVU1zV0RxelhjTGswei1BRFg4QXZzWlZ4YmRrc2R0WFV3RFhwZVlPb3dzU211U1dZTTQtUWFVcW5kN1p5QXpKQ191SzlkV0Q0S2VNT2xUUWEzTjNrVHNTVTRyWlBRSEY2ZzVVOFBRd19jWi1od0RMTldHcXplZFdRcDRZSi1WNlR4eWI3YlNBcF9z</guid><pubDate>Mon,
+        28 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNRkU5aWtDVU1zV0RxelhjTGswei1BRFg4QXZzWlZ4YmRrc2R0WFV3RFhwZVlPb3dzU211U1dZTTQtUWFVcW5kN1p5QXpKQ191SzlkV0Q0S2VNT2xUUWEzTjNrVHNTVTRyWlBRSEY2ZzVVOFBRd19jWi1od0RMTldHcXplZFdRcDRZSi1WNlR4eWI3YlNBcF9z?oc=5\"
+        target=\"_blank\"&gt;The Most Important Thing for Apple Stock (AAPL) Investors
+        to Watch in 2025&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;The
+        Motley Fool&lt;/font&gt;</description><source url=\"https://www.fool.com\">The
+        Motley Fool</source></item><item><title>Apple Stock Forecast: As Critics Call
+        for Cook to Step Down, How Bad Are Things Really for AAPL? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMihgFBVV95cUxNdU56UDYzY2VoV3FsRmszbHBCM3BtUmdCYjlsWGNkUDJUNTY5c3Fqc0xRZlNiWWpiQ09jeHVmMWhIc0NETkVhdm4tTTVPN2d2dGJOVTh1dGtHd1dBMVpGMVltOFB5OVNtU0VpeWx5WlE5dmFqckotT2NEUFJoQmpIMlczMnNBZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMihgFBVV95cUxNdU56UDYzY2VoV3FsRmszbHBCM3BtUmdCYjlsWGNkUDJUNTY5c3Fqc0xRZlNiWWpiQ09jeHVmMWhIc0NETkVhdm4tTTVPN2d2dGJOVTh1dGtHd1dBMVpGMVltOFB5OVNtU0VpeWx5WlE5dmFqckotT2NEUFJoQmpIMlczMnNBZw</guid><pubDate>Mon,
+        21 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxNdU56UDYzY2VoV3FsRmszbHBCM3BtUmdCYjlsWGNkUDJUNTY5c3Fqc0xRZlNiWWpiQ09jeHVmMWhIc0NETkVhdm4tTTVPN2d2dGJOVTh1dGtHd1dBMVpGMVltOFB5OVNtU0VpeWx5WlE5dmFqckotT2NEUFJoQmpIMlczMnNBZw?oc=5\"
+        target=\"_blank\"&gt;Apple Stock Forecast: As Critics Call for Cook to Step
+        Down, How Bad Are Things Really for AAPL?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple Stock (AAPL) Surges 9% in Five Days
+        | Q3 Earnings &amp; Growth - News and Statistics - IndexBox</title><link>https://news.google.com/rss/articles/CBMijAFBVV95cUxQVUpMZlZBTlFwaGlfYjF0Q1RkWlIzY2FFMkVtTkRZTmNXRDI3QWl6WUY5WjlJeVVzeXZXZWVpWlJscDU3MHpfTWJtN2lNcmRmUkk2cHpLalhDMy1ST0V0SndpLVN3NmVOcGZkR0RqQkdDZ1EyeEFfaGtOcWNFV2FYdkdfSkF0VEFWVDhaMQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMijAFBVV95cUxQVUpMZlZBTlFwaGlfYjF0Q1RkWlIzY2FFMkVtTkRZTmNXRDI3QWl6WUY5WjlJeVVzeXZXZWVpWlJscDU3MHpfTWJtN2lNcmRmUkk2cHpLalhDMy1ST0V0SndpLVN3NmVOcGZkR0RqQkdDZ1EyeEFfaGtOcWNFV2FYdkdfSkF0VEFWVDhaMQ</guid><pubDate>Wed,
+        13 Aug 2025 19:22:21 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxQVUpMZlZBTlFwaGlfYjF0Q1RkWlIzY2FFMkVtTkRZTmNXRDI3QWl6WUY5WjlJeVVzeXZXZWVpWlJscDU3MHpfTWJtN2lNcmRmUkk2cHpLalhDMy1ST0V0SndpLVN3NmVOcGZkR0RqQkdDZ1EyeEFfaGtOcWNFV2FYdkdfSkF0VEFWVDhaMQ?oc=5\"
+        target=\"_blank\"&gt;Apple Stock (AAPL) Surges 9% in Five Days | Q3 Earnings
+        &amp; Growth - News and Statistics&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;IndexBox&lt;/font&gt;</description><source
+        url=\"https://www.indexbox.io\">IndexBox</source></item><item><title>Apple's
+        $100 Billion Move To Fortify America's Walled Garden - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMinwFBVV95cUxQVFJmU1hNbnotWEVQbWZWcDNNSGI4TmQyUmozcW9aR0tuazVNdS1lTlZmN09CaXhzRy11Tml0WnV0S3R5bC1Hd3Z3akxxeDV4anl1am5vV2YyVXZsWVpqd252SVd5aG91UllLdmFzeWtCN2JSY3M0SHY5TjgxaDBQNjl2S3JYOEpWZ3VycTBZVVNFTldNeUpMcElSeVRlVXM?oc=5</link><guid
+        isPermaLink=\"false\">CBMinwFBVV95cUxQVFJmU1hNbnotWEVQbWZWcDNNSGI4TmQyUmozcW9aR0tuazVNdS1lTlZmN09CaXhzRy11Tml0WnV0S3R5bC1Hd3Z3akxxeDV4anl1am5vV2YyVXZsWVpqd252SVd5aG91UllLdmFzeWtCN2JSY3M0SHY5TjgxaDBQNjl2S3JYOEpWZ3VycTBZVVNFTldNeUpMcElSeVRlVXM</guid><pubDate>Sun,
+        10 Aug 2025 10:11:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxQVFJmU1hNbnotWEVQbWZWcDNNSGI4TmQyUmozcW9aR0tuazVNdS1lTlZmN09CaXhzRy11Tml0WnV0S3R5bC1Hd3Z3akxxeDV4anl1am5vV2YyVXZsWVpqd252SVd5aG91UllLdmFzeWtCN2JSY3M0SHY5TjgxaDBQNjl2S3JYOEpWZ3VycTBZVVNFTldNeUpMcElSeVRlVXM?oc=5\"
+        target=\"_blank\"&gt;Apple's $100 Billion Move To Fortify America's Walled
+        Garden&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Why Apple (AAPL) Shares Are Climbing Today
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiggFBVV95cUxOMkFlVUpDRGRsWnFUdGp4MjdSTTllWmVUS1ViWmZEX2dvOENqTmZlSW5ralVBYUZoZmFmbnROTVN5UVdiWVlIem85LVgwV24zMjU4RnBaUTh6eHdVam5GSnEycW5CT05NMGJ0ajUtT1lzMGpOUHc2QmxwWk1jdTFZenVn?oc=5</link><guid
+        isPermaLink=\"false\">CBMiggFBVV95cUxOMkFlVUpDRGRsWnFUdGp4MjdSTTllWmVUS1ViWmZEX2dvOENqTmZlSW5ralVBYUZoZmFmbnROTVN5UVdiWVlIem85LVgwV24zMjU4RnBaUTh6eHdVam5GSnEycW5CT05NMGJ0ajUtT1lzMGpOUHc2QmxwWk1jdTFZenVn</guid><pubDate>Wed,
+        06 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxOMkFlVUpDRGRsWnFUdGp4MjdSTTllWmVUS1ViWmZEX2dvOENqTmZlSW5ralVBYUZoZmFmbnROTVN5UVdiWVlIem85LVgwV24zMjU4RnBaUTh6eHdVam5GSnEycW5CT05NMGJ0ajUtT1lzMGpOUHc2QmxwWk1jdTFZenVn?oc=5\"
+        target=\"_blank\"&gt;Why Apple (AAPL) Shares Are Climbing Today&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Gene Munster Explains Two Potential Growth
+        Catalysts for Apple (AAPL) Stock - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUF8wdlhENWdLeW9oVWphV2h1LUhaVmR6X2dsb2oxSWlrTUNFbDNVWjlPb2VDSlNkM3RaRnhRX3ZSaWVlOHRYVHhtX2RvUVJHWWJMX3hZQ2I5R2NzSE1LaHdZbjFMa3VpRTJMNV9SUzE1T19EYjRnVk1GMnF0aERVRG9oOWJjYlFL?oc=5</link><guid
+        isPermaLink=\"false\">CBMiiAFBVV95cUxNUF8wdlhENWdLeW9oVWphV2h1LUhaVmR6X2dsb2oxSWlrTUNFbDNVWjlPb2VDSlNkM3RaRnhRX3ZSaWVlOHRYVHhtX2RvUVJHWWJMX3hZQ2I5R2NzSE1LaHdZbjFMa3VpRTJMNV9SUzE1T19EYjRnVk1GMnF0aERVRG9oOWJjYlFL</guid><pubDate>Thu,
+        10 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUF8wdlhENWdLeW9oVWphV2h1LUhaVmR6X2dsb2oxSWlrTUNFbDNVWjlPb2VDSlNkM3RaRnhRX3ZSaWVlOHRYVHhtX2RvUVJHWWJMX3hZQ2I5R2NzSE1LaHdZbjFMa3VpRTJMNV9SUzE1T19EYjRnVk1GMnF0aERVRG9oOWJjYlFL?oc=5\"
+        target=\"_blank\"&gt;Gene Munster Explains Two Potential Growth Catalysts
+        for Apple (AAPL) Stock&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Weekly Option Windfall: Trading AAPL Options
+        Ahead of iPhone Upgrade Cycle - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiiAFBVV95cUxPLWhOMWE0eHdGR2d2N21OanJvVlNXckNwUEE1RXAxWVlmaDNoVUdEMTluWE1mODMzTWxMTWthdVRfdG8xVlZ4VTJMYlFvY3V0YjdzVWN0d0VqTExvdWJBdGZkZVRscXhMRVQzb21MVFVISDVOU2VUUDVZbUN0b1ZSQ2VsY24waDV1?oc=5</link><guid
+        isPermaLink=\"false\">CBMiiAFBVV95cUxPLWhOMWE0eHdGR2d2N21OanJvVlNXckNwUEE1RXAxWVlmaDNoVUdEMTluWE1mODMzTWxMTWthdVRfdG8xVlZ4VTJMYlFvY3V0YjdzVWN0d0VqTExvdWJBdGZkZVRscXhMRVQzb21MVFVISDVOU2VUUDVZbUN0b1ZSQ2VsY24waDV1</guid><pubDate>Fri,
+        08 Aug 2025 15:09:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxPLWhOMWE0eHdGR2d2N21OanJvVlNXckNwUEE1RXAxWVlmaDNoVUdEMTluWE1mODMzTWxMTWthdVRfdG8xVlZ4VTJMYlFvY3V0YjdzVWN0d0VqTExvdWJBdGZkZVRscXhMRVQzb21MVFVISDVOU2VUUDVZbUN0b1ZSQ2VsY24waDV1?oc=5\"
+        target=\"_blank\"&gt;Weekly Option Windfall: Trading AAPL Options Ahead of
+        iPhone Upgrade Cycle&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Stock Slides as Market Rises:
+        Facts to Know Before You Trade - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiggFBVV95cUxPa1ZCVlJLNDlBck54ZERpT3pUcmhJaDdWdjhINDZyX2JBV0RNY2FYUVlXREc2WUh1T2NzZWtEaEthOF8zcklIYTdVSzVodEpCckNoRW13bDFadl9DVEI3VnZRcTJWTWZ3cVVfS3BoM3R0a0JhRGdna2V3a2F1SkVsUXRB?oc=5</link><guid
+        isPermaLink=\"false\">CBMiggFBVV95cUxPa1ZCVlJLNDlBck54ZERpT3pUcmhJaDdWdjhINDZyX2JBV0RNY2FYUVlXREc2WUh1T2NzZWtEaEthOF8zcklIYTdVSzVodEpCckNoRW13bDFadl9DVEI3VnZRcTJWTWZ3cVVfS3BoM3R0a0JhRGdna2V3a2F1SkVsUXRB</guid><pubDate>Mon,
+        14 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPa1ZCVlJLNDlBck54ZERpT3pUcmhJaDdWdjhINDZyX2JBV0RNY2FYUVlXREc2WUh1T2NzZWtEaEthOF8zcklIYTdVSzVodEpCckNoRW13bDFadl9DVEI3VnZRcTJWTWZ3cVVfS3BoM3R0a0JhRGdna2V3a2F1SkVsUXRB?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Stock Slides as Market Rises: Facts to Know
+        Before You Trade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) May Take a $10B Hit From
+        Google Ruling, Yet Analyst Sees Upside - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMid0FVX3lxTE1sWmRpczBjWU43N09XMnZ1dzFkTEZEc0Q4WHJzRy1UTDRlZUZHLU9DdWluV2dRSnJPVXRMNng5MkFSck85SjNacXhPdlk2TzJybXVVdWhtbGVHQmM2MGdHamxRWUF2NjhKTlFuOGx2VHdCcFFOSnFv?oc=5</link><guid
+        isPermaLink=\"false\">CBMid0FVX3lxTE1sWmRpczBjWU43N09XMnZ1dzFkTEZEc0Q4WHJzRy1UTDRlZUZHLU9DdWluV2dRSnJPVXRMNng5MkFSck85SjNacXhPdlk2TzJybXVVdWhtbGVHQmM2MGdHamxRWUF2NjhKTlFuOGx2VHdCcFFOSnFv</guid><pubDate>Tue,
+        05 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE1sWmRpczBjWU43N09XMnZ1dzFkTEZEc0Q4WHJzRy1UTDRlZUZHLU9DdWluV2dRSnJPVXRMNng5MkFSck85SjNacXhPdlk2TzJybXVVdWhtbGVHQmM2MGdHamxRWUF2NjhKTlFuOGx2VHdCcFFOSnFv?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) May Take a $10B Hit From Google Ruling,
+        Yet Analyst Sees Upside&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Shares Skyrocket, What You
+        Need To Know - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMihAFBVV95cUxNdGlDcVRwdUJ6bU9DbC1nZlVsbUpGeHZ5enJTdWpfN3FOVkl5Q1FobE1aY1ZUR2JSdzBWRjlXaDJ6YXlNUWhwNUlRX29seDhhdC1tZG11MmU5U3VWOTJXMmRaTUI1NTl0ampZOXdaQXRXOV9iVEhueW9YeENkd0lpSFRkcVQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMihAFBVV95cUxNdGlDcVRwdUJ6bU9DbC1nZlVsbUpGeHZ5enJTdWpfN3FOVkl5Q1FobE1aY1ZUR2JSdzBWRjlXaDJ6YXlNUWhwNUlRX29seDhhdC1tZG11MmU5U3VWOTJXMmRaTUI1NTl0ampZOXdaQXRXOV9iVEhueW9YeENkd0lpSFRkcVQ</guid><pubDate>Wed,
+        06 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxNdGlDcVRwdUJ6bU9DbC1nZlVsbUpGeHZ5enJTdWpfN3FOVkl5Q1FobE1aY1ZUR2JSdzBWRjlXaDJ6YXlNUWhwNUlRX29seDhhdC1tZG11MmU5U3VWOTJXMmRaTUI1NTl0ampZOXdaQXRXOV9iVEhueW9YeENkd0lpSFRkcVQ?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Shares Skyrocket, What You Need To Know&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Reiterated as Hold by Jefferies
+        Amid iPhone 17 Price Hike Expectations - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiigFBVV95cUxOb3Zyek5LQjZMSFdPc0xDNTJldnYyaFgtQ3ZUMUdES2dybVlpNHh3NUlFeTZMaVQxaWREZ2NYVVVsQTJza1YxY3hsU04yMWZpeXBmN3luNTUxY3VHMGNPaDRyYy1BY3FNUFVwYlRIc3NiMVFCcGVxTWpCakRaZEs0YlppMlVpYllUY1E?oc=5</link><guid
+        isPermaLink=\"false\">CBMiigFBVV95cUxOb3Zyek5LQjZMSFdPc0xDNTJldnYyaFgtQ3ZUMUdES2dybVlpNHh3NUlFeTZMaVQxaWREZ2NYVVVsQTJza1YxY3hsU04yMWZpeXBmN3luNTUxY3VHMGNPaDRyYy1BY3FNUFVwYlRIc3NiMVFCcGVxTWpCakRaZEs0YlppMlVpYllUY1E</guid><pubDate>Tue,
+        05 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxOb3Zyek5LQjZMSFdPc0xDNTJldnYyaFgtQ3ZUMUdES2dybVlpNHh3NUlFeTZMaVQxaWREZ2NYVVVsQTJza1YxY3hsU04yMWZpeXBmN3luNTUxY3VHMGNPaDRyYy1BY3FNUFVwYlRIc3NiMVFCcGVxTWpCakRaZEs0YlppMlVpYllUY1E?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Reiterated as Hold by Jefferies Amid iPhone
+        17 Price Hike Expectations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) Fell Amid Investor Concerns
+        Over AI Development - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMigAFBVV95cUxOcm1TbjdZN3lBYzVfOHBITmJJS05xTFA1RkpWY09jMGR1d1VtclFmZWVEMWlvWHRra0VQanh3WkxPMVpyVG00c3JwdmVibTFITG9GZ2t2WnMweHZ3Vng2T2dnZExqMGg2dlZKQzFLVno3Yk1xaEswcUVITVF3c0hXNA?oc=5</link><guid
+        isPermaLink=\"false\">CBMigAFBVV95cUxOcm1TbjdZN3lBYzVfOHBITmJJS05xTFA1RkpWY09jMGR1d1VtclFmZWVEMWlvWHRra0VQanh3WkxPMVpyVG00c3JwdmVibTFITG9GZ2t2WnMweHZ3Vng2T2dnZExqMGg2dlZKQzFLVno3Yk1xaEswcUVITVF3c0hXNA</guid><pubDate>Fri,
+        18 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxOcm1TbjdZN3lBYzVfOHBITmJJS05xTFA1RkpWY09jMGR1d1VtclFmZWVEMWlvWHRra0VQanh3WkxPMVpyVG00c3JwdmVibTFITG9GZ2t2WnMweHZ3Vng2T2dnZExqMGg2dlZKQzFLVno3Yk1xaEswcUVITVF3c0hXNA?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) Fell Amid Investor Concerns Over AI Development&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>UBS Keeps Neutral on Apple (AAPL), Sees
+        iPhone Demand Drop in June - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTFAtWmc2bUN5MWR1ZnpGOFVGLURmRzBHemZBN0NWemRLZTJ3bXNFSlkxTmYzOXJlMXJiY3ViTXBPa3hRWWxIVU5RaEhzcEZzdVJvY2dKS05uQTRucmxaaGppM09STE5oWHdkS3kxZ1h2SG1NTVlJeHpfMWtDMFFDVGM?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTFAtWmc2bUN5MWR1ZnpGOFVGLURmRzBHemZBN0NWemRLZTJ3bXNFSlkxTmYzOXJlMXJiY3ViTXBPa3hRWWxIVU5RaEhzcEZzdVJvY2dKS05uQTRucmxaaGppM09STE5oWHdkS3kxZ1h2SG1NTVlJeHpfMWtDMFFDVGM</guid><pubDate>Wed,
+        30 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTFAtWmc2bUN5MWR1ZnpGOFVGLURmRzBHemZBN0NWemRLZTJ3bXNFSlkxTmYzOXJlMXJiY3ViTXBPa3hRWWxIVU5RaEhzcEZzdVJvY2dKS05uQTRucmxaaGppM09STE5oWHdkS3kxZ1h2SG1NTVlJeHpfMWtDMFFDVGM?oc=5\"
+        target=\"_blank\"&gt;UBS Keeps Neutral on Apple (AAPL), Sees iPhone Demand
+        Drop in June&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>AAPL Investors Have Opportunity to Lead
+        Apple Inc. Securities Fraud Lawsuit - Morningstar</title><link>https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQ2ZWYURLWGZ4ZlpPbmk4dTFlZmNTNnBxOVNtbFBSMTkya29pQlV4V0VyUDdndVJZcU1jU2huQUszaEFQU2owZU1LeFRoTjlibkF3dm1TZDlQMW1QNm1Dc0VvaTVVM3F0cWRFd0l2U3JxZFRrM1MzSnZLT2ZzZXkwaFZKZFZBbXpmX09mODhndGVHbW91QzdOOHdaMW04REp2cm5idHlDMEctRFViOGVTZGVfbnRlQTRVa0F4WnVhY1JaUEV5blVFVnl4Z3ZEeksx?oc=5</link><guid
+        isPermaLink=\"false\">CBMi0AFBVV95cUxPQ2ZWYURLWGZ4ZlpPbmk4dTFlZmNTNnBxOVNtbFBSMTkya29pQlV4V0VyUDdndVJZcU1jU2huQUszaEFQU2owZU1LeFRoTjlibkF3dm1TZDlQMW1QNm1Dc0VvaTVVM3F0cWRFd0l2U3JxZFRrM1MzSnZLT2ZzZXkwaFZKZFZBbXpmX09mODhndGVHbW91QzdOOHdaMW04REp2cm5idHlDMEctRFViOGVTZGVfbnRlQTRVa0F4WnVhY1JaUEV5blVFVnl4Z3ZEeksx</guid><pubDate>Mon,
+        28 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQ2ZWYURLWGZ4ZlpPbmk4dTFlZmNTNnBxOVNtbFBSMTkya29pQlV4V0VyUDdndVJZcU1jU2huQUszaEFQU2owZU1LeFRoTjlibkF3dm1TZDlQMW1QNm1Dc0VvaTVVM3F0cWRFd0l2U3JxZFRrM1MzSnZLT2ZzZXkwaFZKZFZBbXpmX09mODhndGVHbW91QzdOOHdaMW04REp2cm5idHlDMEctRFViOGVTZGVfbnRlQTRVa0F4WnVhY1JaUEV5blVFVnl4Z3ZEeksx?oc=5\"
+        target=\"_blank\"&gt;AAPL Investors Have Opportunity to Lead Apple Inc. Securities
+        Fraud Lawsuit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Morningstar&lt;/font&gt;</description><source
+        url=\"https://www.morningstar.com\">Morningstar</source></item><item><title>Is
+        Apple Stock 'Dead Money' in July 2025? Watch This AAPL Options Indicator Now.
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMifkFVX3lxTFBzVjNnZ2NuUUtOdk1qdndOTVJfRzFPM0ZQaks4WVkxdnItaXVnb01LU0RZUllJQnpfQzNPeGJEdGJnc1E4NUVmc3FqR0dodFRQNUlvUlVMSXh0ZkZ4ZzVnY1FnTHE4TWE2cHdPZm5aVWw2a1ByV0lTNS1zeUwwQQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMifkFVX3lxTFBzVjNnZ2NuUUtOdk1qdndOTVJfRzFPM0ZQaks4WVkxdnItaXVnb01LU0RZUllJQnpfQzNPeGJEdGJnc1E4NUVmc3FqR0dodFRQNUlvUlVMSXh0ZkZ4ZzVnY1FnTHE4TWE2cHdPZm5aVWw2a1ByV0lTNS1zeUwwQQ</guid><pubDate>Tue,
+        01 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTFBzVjNnZ2NuUUtOdk1qdndOTVJfRzFPM0ZQaks4WVkxdnItaXVnb01LU0RZUllJQnpfQzNPeGJEdGJnc1E4NUVmc3FqR0dodFRQNUlvUlVMSXh0ZkZ4ZzVnY1FnTHE4TWE2cHdPZm5aVWw2a1ByV0lTNS1zeUwwQQ?oc=5\"
+        target=\"_blank\"&gt;Is Apple Stock 'Dead Money' in July 2025? Watch This
+        AAPL Options Indicator Now.&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple (AAPL) International Revenue in
+        Focus: Trends and Expectations - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMijAFBVV95cUxNVHdwWnc1WWFQbUt5aDY5cVJkODk5WU5COTlGRTR5RjFZUzgzZlMtVHRrdGpQMkFLVnI5d2xHTmJmMXhvbmhyMlViWC0xWFRST1FuNDBhNGJlRUpjU1YxYmltZ1I4S1BBc09KN2FuNFNPSmZYeWtYRzlqOGhWT1FGN25fLUpRVmhKZWlSWA?oc=5</link><guid
+        isPermaLink=\"false\">CBMijAFBVV95cUxNVHdwWnc1WWFQbUt5aDY5cVJkODk5WU5COTlGRTR5RjFZUzgzZlMtVHRrdGpQMkFLVnI5d2xHTmJmMXhvbmhyMlViWC0xWFRST1FuNDBhNGJlRUpjU1YxYmltZ1I4S1BBc09KN2FuNFNPSmZYeWtYRzlqOGhWT1FGN25fLUpRVmhKZWlSWA</guid><pubDate>Mon,
+        04 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMijAFBVV95cUxNVHdwWnc1WWFQbUt5aDY5cVJkODk5WU5COTlGRTR5RjFZUzgzZlMtVHRrdGpQMkFLVnI5d2xHTmJmMXhvbmhyMlViWC0xWFRST1FuNDBhNGJlRUpjU1YxYmltZ1I4S1BBc09KN2FuNFNPSmZYeWtYRzlqOGhWT1FGN25fLUpRVmhKZWlSWA?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) International Revenue in Focus: Trends and
+        Expectations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Why Investors Should Reconsider Buying
+        the Dip on Apple Stock (AAPL) - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRjdIVllKaV9EMTFfRV93WnBnZUNzd05PZ2VmeVpHVWkzbkFzZUpNWnpaVHRiX0VmR3owb2U3RkVMdGt4dV9rdGdCdUxCMlFsRzF2aTB0eU96OTI5N2VfOWdKMXo0NWtIdGhuTTR0MDZZaDE0U1JGNkIyUHdSMkI5OXJoRkl5cEst?oc=5</link><guid
+        isPermaLink=\"false\">CBMiiAFBVV95cUxPRjdIVllKaV9EMTFfRV93WnBnZUNzd05PZ2VmeVpHVWkzbkFzZUpNWnpaVHRiX0VmR3owb2U3RkVMdGt4dV9rdGdCdUxCMlFsRzF2aTB0eU96OTI5N2VfOWdKMXo0NWtIdGhuTTR0MDZZaDE0U1JGNkIyUHdSMkI5OXJoRkl5cEst</guid><pubDate>Tue,
+        24 Jun 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxPRjdIVllKaV9EMTFfRV93WnBnZUNzd05PZ2VmeVpHVWkzbkFzZUpNWnpaVHRiX0VmR3owb2U3RkVMdGt4dV9rdGdCdUxCMlFsRzF2aTB0eU96OTI5N2VfOWdKMXo0NWtIdGhuTTR0MDZZaDE0U1JGNkIyUHdSMkI5OXJoRkl5cEst?oc=5\"
+        target=\"_blank\"&gt;Why Investors Should Reconsider Buying the Dip on Apple
+        Stock (AAPL)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Analyst Says Apple (AAPL) Will Have Problems
+        in Second Half of 2025 - \u2018They Still Don\u2019t Have AI Strategy\u2019
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMihAFBVV95cUxQcjVsWTN3NTZmTS1DMXFxZjlmcHVyVDM0YmdUNDlvWFJsQ3ZUTzh0eE1SNmR3czE1OW5fTWRmbG9aSGtSbV9nNlJ3Y2xtY3hQWU11MUp5dTVyRFd2Ykd5YllYRk5QSEVqNm9Rclp5a1U5aWotbnJacmJ0ZDB0dlhPTlc3OFI?oc=5</link><guid
+        isPermaLink=\"false\">CBMihAFBVV95cUxQcjVsWTN3NTZmTS1DMXFxZjlmcHVyVDM0YmdUNDlvWFJsQ3ZUTzh0eE1SNmR3czE1OW5fTWRmbG9aSGtSbV9nNlJ3Y2xtY3hQWU11MUp5dTVyRFd2Ykd5YllYRk5QSEVqNm9Rclp5a1U5aWotbnJacmJ0ZDB0dlhPTlc3OFI</guid><pubDate>Fri,
+        18 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxQcjVsWTN3NTZmTS1DMXFxZjlmcHVyVDM0YmdUNDlvWFJsQ3ZUTzh0eE1SNmR3czE1OW5fTWRmbG9aSGtSbV9nNlJ3Y2xtY3hQWU11MUp5dTVyRFd2Ykd5YllYRk5QSEVqNm9Rclp5a1U5aWotbnJacmJ0ZDB0dlhPTlc3OFI?oc=5\"
+        target=\"_blank\"&gt;Analyst Says Apple (AAPL) Will Have Problems in Second
+        Half of 2025 - \u2018They Still Don\u2019t Have AI Strategy\u2019&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Apple Inc (AAPL) Q3 2025 Earnings Call
+        Highlights: Record Revenue and Strategic AI Investments - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMid0FVX3lxTE9hY2hVci1yNlpEdlEtOFlJZGVkNUNQOThTQ1ZvTTF6NXE4NmlZX1lYclB0alRPb2dnTlNRdEJxRlZRb0p0UVdVUXcySjZYZlNpVW5ydUMtM1FSU29CZFM5RDFwWmtRVDMwQ3d2MmotdUdkVUw4UmZZ?oc=5</link><guid
+        isPermaLink=\"false\">CBMid0FVX3lxTE9hY2hVci1yNlpEdlEtOFlJZGVkNUNQOThTQ1ZvTTF6NXE4NmlZX1lYclB0alRPb2dnTlNRdEJxRlZRb0p0UVdVUXcySjZYZlNpVW5ydUMtM1FSU29CZFM5RDFwWmtRVDMwQ3d2MmotdUdkVUw4UmZZ</guid><pubDate>Fri,
+        01 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE9hY2hVci1yNlpEdlEtOFlJZGVkNUNQOThTQ1ZvTTF6NXE4NmlZX1lYclB0alRPb2dnTlNRdEJxRlZRb0p0UVdVUXcySjZYZlNpVW5ydUMtM1FSU29CZFM5RDFwWmtRVDMwQ3d2MmotdUdkVUw4UmZZ?oc=5\"
+        target=\"_blank\"&gt;Apple Inc (AAPL) Q3 2025 Earnings Call Highlights: Record
+        Revenue and Strategic AI Investments&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>AAPL: Apple Stock Jumps as China iPhone
+        Sales Drive Blowout Q3 - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE9LTm5MRm1MUkQwVXZHaTN1SjRGTlA0dWtKVVg5dWJNOThldDJsVDI3ajcxekE4NE1TajQ4bnhPcDJwTUJJSDlCYjJKaDI2a0J5M2oxY0J6OGlkTDNNZlJGYkl1QWJqV0s0cGhOdV9qTlNna21vXy1JV2VOUjlGaUE?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE9LTm5MRm1MUkQwVXZHaTN1SjRGTlA0dWtKVVg5dWJNOThldDJsVDI3ajcxekE4NE1TajQ4bnhPcDJwTUJJSDlCYjJKaDI2a0J5M2oxY0J6OGlkTDNNZlJGYkl1QWJqV0s0cGhOdV9qTlNna21vXy1JV2VOUjlGaUE</guid><pubDate>Fri,
+        01 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE9LTm5MRm1MUkQwVXZHaTN1SjRGTlA0dWtKVVg5dWJNOThldDJsVDI3ajcxekE4NE1TajQ4bnhPcDJwTUJJSDlCYjJKaDI2a0J5M2oxY0J6OGlkTDNNZlJGYkl1QWJqV0s0cGhOdV9qTlNna21vXy1JV2VOUjlGaUE?oc=5\"
+        target=\"_blank\"&gt;AAPL: Apple Stock Jumps as China iPhone Sales Drive Blowout
+        Q3&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source
+        url=\"https://finance.yahoo.com\">Yahoo Finance</source></item><item><title>Apple
+        (AAPL) $240 PT, Buy \u2014 Citi Sees Tariff Boost Now, AI Risks Later - Yahoo
+        Finance</title><link>https://news.google.com/rss/articles/CBMidkFVX3lxTE04aE5LSlNtbXFnZmRhbEpfbllOeFlZZXdGTUtLRENqTFBraU9FMTZ1MHNQejdIbjhzZW5OYnlJOGozeTYzOTVsZXI3eFN4TmVndXJHWlZYbzZvNTkxblBZTGp1TFdmQzF4enNtWm1TUkRkT3B1Y1E?oc=5</link><guid
+        isPermaLink=\"false\">CBMidkFVX3lxTE04aE5LSlNtbXFnZmRhbEpfbllOeFlZZXdGTUtLRENqTFBraU9FMTZ1MHNQejdIbjhzZW5OYnlJOGozeTYzOTVsZXI3eFN4TmVndXJHWlZYbzZvNTkxblBZTGp1TFdmQzF4enNtWm1TUkRkT3B1Y1E</guid><pubDate>Mon,
+        14 Jul 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE04aE5LSlNtbXFnZmRhbEpfbllOeFlZZXdGTUtLRENqTFBraU9FMTZ1MHNQejdIbjhzZW5OYnlJOGozeTYzOTVsZXI3eFN4TmVndXJHWlZYbzZvNTkxblBZTGp1TFdmQzF4enNtWm1TUkRkT3B1Y1E?oc=5\"
+        target=\"_blank\"&gt;Apple (AAPL) $240 PT, Buy \u2014 Citi Sees Tariff Boost
+        Now, AI Risks Later&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item></channel></rss>"
+    headers:
+      Accept-CH:
+      - Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List,
+        Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform,
+        Sec-CH-UA-Platform-Version
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - script-src 'report-sample' 'nonce-IfYzYmey9_c8jprk2yD6NQ' 'unsafe-inline';object-src
+        'none';base-uri 'self';report-uri /_/DotsSplashUi/cspreport;worker-src 'self'
+      - 'script-src ''unsafe-inline'' ''unsafe-eval'' blob: data: ''self'' https://apis.google.com
+        https://ssl.gstatic.com https://www.google.com https://www.googletagmanager.com
+        https://www.gstatic.com https://www.google-analytics.com https://www.google.com/tools/feedback/
+        https://www.gstatic.com/feedback/js/ https://www.gstatic.com/inproduct_help/
+        https://www.gstatic.com/support/content/ https://www.gstatic.com/uservoice/feedback/client/web/live/
+        https://www.gstatic.com/uservoice/surveys/resources/prod/js/survey/ https://support.google.com/inapp/
+        https://youtube.com https://www.youtube.com https://youtube.googleapis.com
+        https://*.ytimg.com https://ajax.googleapis.com https://www.googleapis.com/appsmarket/v2/installedApps/;report-uri
+        /_/DotsSplashUi/cspreport/allowlist'
+      - require-trusted-types-for 'script';report-uri /_/DotsSplashUi/cspreport
+      Content-Type:
+      - application/xml; charset=utf-8
+      Cross-Origin-Opener-Policy:
+      - same-origin-allow-popups
+      Cross-Origin-Resource-Policy:
+      - same-site
+      Date:
+      - Fri, 15 Aug 2025 06:31:41 GMT
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Permissions-Policy:
+      - ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*,
+        ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*
+      Pragma:
+      - no-cache
+      Server:
+      - ESF
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+      reporting-endpoints:
+      - default="/_/DotsSplashUi/web-reports?context=eJzjCtDikmLw15Bi-LRjBmvrzXOsk4HYUOESqz0QX06_xFokcYW1AYg_Vd1gFai-wZrEfpO1AIjXbLzFuhmII6fcZU0AYs61d1kFgFiIm-Psit9H2ARmTDifoKSclF8Yn5JfUlxckJNYnFGcWlSWWhRvZGBkamBhaKRnaBhfYAAAXsIy5g"
+    status:
+      code: 200
+      message: OK
+version: 1

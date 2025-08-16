@@ -1,0 +1,294 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.4
+    method: GET
+    uri: https://news.google.com/articles/CBMiWWh0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyNC8wMS8xNS90ZXN0LWFydGljbGUv0gEA
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-CH:
+      - Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List,
+        Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform,
+        Sec-CH-UA-Platform-Version
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - require-trusted-types-for 'script';report-uri /_/DotsSplashUi/cspreport
+      - script-src 'nonce-hn-ireJ0p9BUApZSkL8LBA' 'unsafe-inline';object-src 'none';base-uri
+        'self';report-uri /_/DotsSplashUi/cspreport;worker-src 'self'
+      Content-Type:
+      - application/binary
+      Cross-Origin-Opener-Policy:
+      - same-origin-allow-popups
+      Cross-Origin-Resource-Policy:
+      - same-site
+      Date:
+      - Fri, 15 Aug 2025 06:49:38 GMT
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Location:
+      - https://news.google.com/articles/CBMiWWh0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyNC8wMS8xNS90ZXN0LWFydGljbGUv0gEA?hl=en-US&gl=US&ceid=US:en
+      P3P:
+      - CP="This is not a P3P policy! See g.co/p3phelp for more info."
+      Permissions-Policy:
+      - ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*,
+        ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*
+      Pragma:
+      - no-cache
+      Server:
+      - ESF
+      Set-Cookie:
+      - __Secure-ENID=28.SE=NuFrV4jca9sKfqb4N32JHSWRTI4XFq8OJzShVcY-Zyb3fBjS--y7LnQW6KqUepbWj3bTW8iLpt_Qk6V3XnOlGN5JmZaRM7ROSPkU_TQRnWp2qHr_vQd9O5BBqsdBdzq7PDP0rynaUZSxSOqyc278Zxvo2FkXCdnwNdz7uyzP7vXDzZ4i_OIjzEHnOs6mGlciH5luQANxl02Cl8Mlul_a3iC96iBJF-vIAH_naSzZ380wSAgr;
+        expires=Mon, 14-Sep-2026 23:07:56 GMT; path=/; domain=.google.com; Secure;
+        HttpOnly; SameSite=lax
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 302
+      message: Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.4
+    method: GET
+    uri: https://news.google.com/articles/CBMiWWh0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyNC8wMS8xNS90ZXN0LWFydGljbGUv0gEA?hl=en-US&gl=US&ceid=US:en
+  response:
+    body:
+      string: "<html lang=\"en\" dir=ltr><meta charset=utf-8><meta name=viewport content=\"initial-scale=1,
+        minimum-scale=1, width=device-width\"><title>Error 400 (Bad Request)!!1</title><style
+        nonce=\"uBoAVq0-lw9CiuC0AU4jFw\">*{margin:0;padding:0}html,code{font:15px/22px
+        arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{color:#222;text-align:unset;margin:7%
+        auto 0;max-width:390px;min-height:180px;padding:30px 0 15px;}* > body{background:url(//www.google.com/images/errors/robot.png)
+        100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}pre{white-space:pre-wrap;}ins{color:#777;text-decoration:none}a
+        img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png)
+        no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png)
+        no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png)
+        0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png)
+        no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}</style><main
+        id=\"af-error-container\" role=\"main\"><a href=//www.google.com><span id=logo
+        aria-label=Google role=img></span></a><p><b>400.</b> <ins>That\u2019s an error.</ins><p>The
+        server cannot process the request because it is malformed. It should not be
+        retried. <ins>That\u2019s all we know.</ins></main>"
+    headers:
+      Accept-CH:
+      - Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List,
+        Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform,
+        Sec-CH-UA-Platform-Version
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - require-trusted-types-for 'script';report-uri /_/DotsSplashUi/cspreport
+      - script-src 'nonce-6HYv0m7e9MRqwvl7UsJ96A' 'unsafe-inline';object-src 'none';base-uri
+        'self';report-uri /_/DotsSplashUi/cspreport;worker-src 'self'
+      Content-Type:
+      - text/html; charset=utf-8
+      Cross-Origin-Opener-Policy:
+      - same-origin-allow-popups
+      Date:
+      - Fri, 15 Aug 2025 06:49:38 GMT
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      P3P:
+      - CP="This is not a P3P policy! See g.co/p3phelp for more info."
+      Permissions-Policy:
+      - ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*,
+        ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*
+      Pragma:
+      - no-cache
+      Server:
+      - ESF
+      Set-Cookie:
+      - __Secure-ENID=28.SE=UFK_Wrb5sB7Xf90myOqix8foPQhqjAkRYdb3Vl_WUBwfSQwJfxo-AmvtanRD19WyPNwLZ0ZKhZ0p59JqGNJ_t4I_zXjD1KY1iZ8wurNS0YXNIWXXIIJF5Ud_FOLEn0aevp7i8iyDvPlnTvoMe7FsrlTkuO2YkR8h8BnWhrw7MSTdfpHjxDHhm6RmCNDZI2x7nAEeFxYooIrsNX38NUlipC99PPc9WAoCaOuSXkZD40T2gEi9;
+        expires=Mon, 14-Sep-2026 23:07:56 GMT; path=/; domain=.google.com; Secure;
+        HttpOnly; SameSite=lax
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.4
+    method: GET
+    uri: https://news.google.com/rss/articles/CBMiWWh0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyNC8wMS8xNS90ZXN0LWFydGljbGUv0gEA
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-CH:
+      - Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List,
+        Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform,
+        Sec-CH-UA-Platform-Version
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - require-trusted-types-for 'script';report-uri /_/DotsSplashUi/cspreport
+      - script-src 'nonce-S4qfa4HafLOIAOQRa6GVWA' 'unsafe-inline';object-src 'none';base-uri
+        'self';report-uri /_/DotsSplashUi/cspreport;worker-src 'self'
+      Content-Type:
+      - application/binary
+      Cross-Origin-Opener-Policy:
+      - same-origin-allow-popups
+      Cross-Origin-Resource-Policy:
+      - same-site
+      Date:
+      - Fri, 15 Aug 2025 06:49:38 GMT
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Location:
+      - https://news.google.com/rss/articles/CBMiWWh0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyNC8wMS8xNS90ZXN0LWFydGljbGUv0gEA?hl=en-US&gl=US&ceid=US:en
+      P3P:
+      - CP="This is not a P3P policy! See g.co/p3phelp for more info."
+      Permissions-Policy:
+      - ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*,
+        ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*
+      Pragma:
+      - no-cache
+      Server:
+      - ESF
+      Set-Cookie:
+      - __Secure-ENID=28.SE=G9TN-Rmut0xqCJ-1W1Z7eKw8O5TJYZi4VHe1fodYU3xIjHhAo8cQpZWnxL3a4-yFCHLWh76t7rzKREhV_VigEJ9dA0YxK1AKrvhEjX8_Reejv_DYKu7XdUqCdKG2laU3VZ2WQ0328eHvvFftv11eqrudg6fqqKbprmM4Za8COX6NoAJg4wJctk5pTR5iseLmXwo3O1fOW4q1Q8DZOW8JMlTR8H4zUDAmneg-bcto_sM4EIjO;
+        expires=Mon, 14-Sep-2026 23:07:56 GMT; path=/; domain=.google.com; Secure;
+        HttpOnly; SameSite=lax
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 302
+      message: Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.4
+    method: GET
+    uri: https://news.google.com/rss/articles/CBMiWWh0dHBzOi8vdGVjaGNydW5jaC5jb20vMjAyNC8wMS8xNS90ZXN0LWFydGljbGUv0gEA?hl=en-US&gl=US&ceid=US:en
+  response:
+    body:
+      string: "<html lang=\"en\" dir=ltr><meta charset=utf-8><meta name=viewport content=\"initial-scale=1,
+        minimum-scale=1, width=device-width\"><title>Error 400 (Bad Request)!!1</title><style
+        nonce=\"8yabolaq0jc_VJ2B_zNcdQ\">*{margin:0;padding:0}html,code{font:15px/22px
+        arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{color:#222;text-align:unset;margin:7%
+        auto 0;max-width:390px;min-height:180px;padding:30px 0 15px;}* > body{background:url(//www.google.com/images/errors/robot.png)
+        100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}pre{white-space:pre-wrap;}ins{color:#777;text-decoration:none}a
+        img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png)
+        no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png)
+        no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png)
+        0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png)
+        no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}</style><main
+        id=\"af-error-container\" role=\"main\"><a href=//www.google.com><span id=logo
+        aria-label=Google role=img></span></a><p><b>400.</b> <ins>That\u2019s an error.</ins><p>The
+        server cannot process the request because it is malformed. It should not be
+        retried. <ins>That\u2019s all we know.</ins></main>"
+    headers:
+      Accept-CH:
+      - Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List,
+        Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform,
+        Sec-CH-UA-Platform-Version
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - require-trusted-types-for 'script';report-uri /_/DotsSplashUi/cspreport
+      - script-src 'nonce-6c8FQcHEVnouqKMg6rg4GA' 'unsafe-inline';object-src 'none';base-uri
+        'self';report-uri /_/DotsSplashUi/cspreport;worker-src 'self'
+      Content-Type:
+      - text/html; charset=utf-8
+      Cross-Origin-Opener-Policy:
+      - same-origin-allow-popups
+      Date:
+      - Fri, 15 Aug 2025 06:49:38 GMT
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      P3P:
+      - CP="This is not a P3P policy! See g.co/p3phelp for more info."
+      Permissions-Policy:
+      - ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*,
+        ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*
+      Pragma:
+      - no-cache
+      Server:
+      - ESF
+      Set-Cookie:
+      - __Secure-ENID=28.SE=Ifi8vFZiT94RwkqbSJYDJn1VMYWujEN6mREP6OD8JgvNjSal6x8tZKaANMut7s-YTzuWjsnCA8IuHKeAnF2_cexQF5qxKGmUkfDnU5Larmho1Tb6_YvxkoZNdcMndCjNpge6GaWEBvOB7OQC8Rc7U3xSG_Yh60_PRPs2kfwJUz3cBm-LxeDRQeLZX25-CyYZFB6ntCX6VOWkH5-tDPAdSDxr9IPf7yWmyZ4V2ov3g0pYcAw5;
+        expires=Mon, 14-Sep-2026 23:07:56 GMT; path=/; domain=.google.com; Secure;
+        HttpOnly; SameSite=lax
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 400
+      message: Bad Request
+version: 1

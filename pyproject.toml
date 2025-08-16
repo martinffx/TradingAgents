@@ -34,6 +34,9 @@ dependencies = [
     "yfinance>=0.2.63",
     "TA-Lib>=0.4.28",
     "newspaper4k>=0.9.3",
+    "lxml-html-clean>=0.4.0",
+    "googlenewsdecoder>=0.1.7",
+    "nltk>=3.9.1",
 ]
 
 [project.optional-dependencies]
@@ -55,14 +58,7 @@ build-backend = "setuptools.build_meta"
 [tool.ruff]
 line-length = 88
 target-version = "py310"
-extend-exclude = [
-    "migrations",
-    "venv",
-    ".venv",
-    "build",
-    "dist",
-    "*.egg-info",
-]
+extend-exclude = ["migrations", "venv", ".venv", "build", "dist", "*.egg-info"]
 
 [tool.ruff.lint]
 select = [
@@ -78,16 +74,16 @@ select = [
     "TCH", # flake8-type-checking
 ]
 ignore = [
-    "E501",  # line too long, handled by formatter
-    "B008",  # do not perform function calls in argument defaults
-    "C901",  # too complex
+    "E501",   # line too long, handled by formatter
+    "B008",   # do not perform function calls in argument defaults
+    "C901",   # too complex
     "ARG002", # unused method argument
     "ARG001", # unused function argument
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F401"]  # unused imports in __init__.py
-"tests/**/*" = ["ARG", "SIM"]  # test files can be more flexible
+"__init__.py" = ["F401"]      # unused imports in __init__.py
+"tests/**/*" = ["ARG", "SIM"] # test files can be more flexible
 
 [tool.ruff.lint.isort]
 known-first-party = ["tradingagents", "cli"]

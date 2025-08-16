@@ -1,0 +1,751 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/91.0.4472.124 Safari/537.36
+    method: GET
+    uri: https://news.google.com/rss/search?q=S%26P%20500&hl=en-US&gl=US&ceid=US:en
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><rss version=\"2.0\"
+        xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><generator>NFE/5.0</generator><title>\"S&amp;P
+        500\" - Google News</title><link>https://news.google.com/search?q=S%26P+500&amp;hl=en-US&amp;gl=US&amp;ceid=US:en</link><language>en-US</language><webMaster>news-webmaster@google.com</webMaster><copyright>Copyright
+        \xA9 2025 Google. All rights reserved. This XML feed is made available solely
+        for the purpose of rendering Google News results within a personal feed reader
+        for personal, non-commercial use. Any other use of the feed is expressly prohibited.
+        By accessing this feed or using these results in any manner whatsoever, you
+        agree to be bound by the foregoing restrictions.</copyright><lastBuildDate>Fri,
+        15 Aug 2025 06:31:42 GMT</lastBuildDate><image><title>Google News</title><url>https://lh3.googleusercontent.com/-DR60l-K8vnyi99NZovm9HlXyZwQ85GMDxiwJWzoasZYCUrPuUM_P_4Rb7ei03j-0nRs0c4F=w256</url><link>https://news.google.com/</link><height>256</height><width>256</width></image><description>Google
+        News</description><item><title>Stock market today: S&amp;P 500 ekes out third
+        straight record as markets shrug off hot inflation - uk.finance.yahoo.com</title><link>https://news.google.com/rss/articles/CBMizAFBVV95cUxQUG5fbUxsa1Y3NUtGNmVTblhFU3dmcnFxYU5YckRkYzFlNG9zQWxsVnlRWXZmR0JzclIxNkpTaDV5dVFOUTh1QmxMWVdEYVB1ZkZ2OGxzTW5BNmZDTGNwNHlQXzRTRjBhbVlwSVZ1OS1fb0E3SHprOXJ6MTdISnFhR2U5bG5ESVVBdFl5Uzl3cnV6Y1pSRnU3d0E1SkdXdWw4UkRvNXFuWWpZU3ZlQ2lEWGpkS3dxNnp1WU45VkhqVTRHRHhrTjgwRk5mQkk?oc=5</link><guid
+        isPermaLink=\"false\">CBMizAFBVV95cUxQUG5fbUxsa1Y3NUtGNmVTblhFU3dmcnFxYU5YckRkYzFlNG9zQWxsVnlRWXZmR0JzclIxNkpTaDV5dVFOUTh1QmxMWVdEYVB1ZkZ2OGxzTW5BNmZDTGNwNHlQXzRTRjBhbVlwSVZ1OS1fb0E3SHprOXJ6MTdISnFhR2U5bG5ESVVBdFl5Uzl3cnV6Y1pSRnU3d0E1SkdXdWw4UkRvNXFuWWpZU3ZlQ2lEWGpkS3dxNnp1WU45VkhqVTRHRHhrTjgwRk5mQkk</guid><pubDate>Thu,
+        14 Aug 2025 20:01:21 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQUG5fbUxsa1Y3NUtGNmVTblhFU3dmcnFxYU5YckRkYzFlNG9zQWxsVnlRWXZmR0JzclIxNkpTaDV5dVFOUTh1QmxMWVdEYVB1ZkZ2OGxzTW5BNmZDTGNwNHlQXzRTRjBhbVlwSVZ1OS1fb0E3SHprOXJ6MTdISnFhR2U5bG5ESVVBdFl5Uzl3cnV6Y1pSRnU3d0E1SkdXdWw4UkRvNXFuWWpZU3ZlQ2lEWGpkS3dxNnp1WU45VkhqVTRHRHhrTjgwRk5mQkk?oc=5\"
+        target=\"_blank\"&gt;Stock market today: S&amp;P 500 ekes out third straight
+        record as markets shrug off hot inflation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;uk.finance.yahoo.com&lt;/font&gt;</description><source
+        url=\"https://uk.finance.yahoo.com\">uk.finance.yahoo.com</source></item><item><title>As
+        Tech Stocks Rally, Risk Rises. Why Energy and Healthcare Could Be Options.
+        - Barron's</title><link>https://news.google.com/rss/articles/CBMihgFBVV95cUxPUTFYYXg2VGIwTVgycUFQZmk2Q1d5ZHppNFpLNG1ydmxEMzRqSTF1V1M2ZW11THlsN0l1WGlkcjZOTk9XM3cxNHRWMDBXM0UxV3loTk9wYk84ZWlmYVplUXZjYU9fNkRiQ3J0MS1Ia3RVY0d5OEFPNjl4Z0hTSFdSanJRdUVOdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMihgFBVV95cUxPUTFYYXg2VGIwTVgycUFQZmk2Q1d5ZHppNFpLNG1ydmxEMzRqSTF1V1M2ZW11THlsN0l1WGlkcjZOTk9XM3cxNHRWMDBXM0UxV3loTk9wYk84ZWlmYVplUXZjYU9fNkRiQ3J0MS1Ia3RVY0d5OEFPNjl4Z0hTSFdSanJRdUVOdw</guid><pubDate>Fri,
+        15 Aug 2025 05:30:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxPUTFYYXg2VGIwTVgycUFQZmk2Q1d5ZHppNFpLNG1ydmxEMzRqSTF1V1M2ZW11THlsN0l1WGlkcjZOTk9XM3cxNHRWMDBXM0UxV3loTk9wYk84ZWlmYVplUXZjYU9fNkRiQ3J0MS1Ia3RVY0d5OEFPNjl4Z0hTSFdSanJRdUVOdw?oc=5\"
+        target=\"_blank\"&gt;As Tech Stocks Rally, Risk Rises. Why Energy and Healthcare
+        Could Be Options.&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barron's&lt;/font&gt;</description><source
+        url=\"https://www.barrons.com\">Barron's</source></item><item><title>5 stocks
+        to buy as the S&amp;P 500 nears record highs, plus updates on 26 other names
+        - CNBC</title><link>https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOHozYlI0NndZQzAyeXotUEwtMWpEWXRLNUdTUlpjVGNnSVEzYTF2OG41NUQ1WDNudzk0YXBvLWoyazJxRHFoSmtRdURyMUthQUo5N0RvN2dfTGQ5WnRhR1BURXBLS1NsdllLUTVRd2pES3h0LWFtYURzUlJXZ1hBeXYyM0RkUG9ES05mNHhhUG5kbGI0aFRIRVkyQnZ1XzIzSVZLa1prNmh1dw?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqgFBVV95cUxOOHozYlI0NndZQzAyeXotUEwtMWpEWXRLNUdTUlpjVGNnSVEzYTF2OG41NUQ1WDNudzk0YXBvLWoyazJxRHFoSmtRdURyMUthQUo5N0RvN2dfTGQ5WnRhR1BURXBLS1NsdllLUTVRd2pES3h0LWFtYURzUlJXZ1hBeXYyM0RkUG9ES05mNHhhUG5kbGI0aFRIRVkyQnZ1XzIzSVZLa1prNmh1dw</guid><pubDate>Thu,
+        14 Aug 2025 19:29:27 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOHozYlI0NndZQzAyeXotUEwtMWpEWXRLNUdTUlpjVGNnSVEzYTF2OG41NUQ1WDNudzk0YXBvLWoyazJxRHFoSmtRdURyMUthQUo5N0RvN2dfTGQ5WnRhR1BURXBLS1NsdllLUTVRd2pES3h0LWFtYURzUlJXZ1hBeXYyM0RkUG9ES05mNHhhUG5kbGI0aFRIRVkyQnZ1XzIzSVZLa1prNmh1dw?oc=5\"
+        target=\"_blank\"&gt;5 stocks to buy as the S&amp;P 500 nears record highs,
+        plus updates on 26 other names&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source
+        url=\"https://www.cnbc.com\">CNBC</source></item><item><title>S&amp;P 500,
+        Nasdaq hit new closing highs on rate cut hopes - Reuters</title><link>https://news.google.com/rss/articles/CBMimwFBVV95cUxQalVya21PcEM5cmI1TGtKczJhTTB1dE0yTVpXVjlKSmdxc3duQVgzNU9kemtiUUhraUk0YVdjVkprc29OdUtvWDlkYkl4bkFTVEV5R2d1SGpCcVJ6blVMWmpBTW5pZ3paY3hHdkNWME9EOWNnRjNkcXBOaXZVNnpqcDNHMDJXbDRINmRhLWY5N1AxQkFnM3RTWDVZWQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMimwFBVV95cUxQalVya21PcEM5cmI1TGtKczJhTTB1dE0yTVpXVjlKSmdxc3duQVgzNU9kemtiUUhraUk0YVdjVkprc29OdUtvWDlkYkl4bkFTVEV5R2d1SGpCcVJ6blVMWmpBTW5pZ3paY3hHdkNWME9EOWNnRjNkcXBOaXZVNnpqcDNHMDJXbDRINmRhLWY5N1AxQkFnM3RTWDVZWQ</guid><pubDate>Wed,
+        13 Aug 2025 22:37:20 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQalVya21PcEM5cmI1TGtKczJhTTB1dE0yTVpXVjlKSmdxc3duQVgzNU9kemtiUUhraUk0YVdjVkprc29OdUtvWDlkYkl4bkFTVEV5R2d1SGpCcVJ6blVMWmpBTW5pZ3paY3hHdkNWME9EOWNnRjNkcXBOaXZVNnpqcDNHMDJXbDRINmRhLWY5N1AxQkFnM3RTWDVZWQ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq hit new closing highs on rate cut
+        hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>S&amp;P
+        500 Gains and Losses Today: Intel Extends Winning Streak; Tapestry Stock Plunges
+        - Investopedia</title><link>https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMzk4ekhlOGItUlRCS1hTUHVBdnhqTm83a2Exck1rX09wVmtsTjZYR2JlYzB1NEYya014UWcwMGY1bUJ0X2JaemhFWEpHX3N5SHQtcWFJTGZXQ0dGb1Y1aVh0UnU2YkwzU1BkaTJJSXNxQUoxMS1tTkJQcWtabmNwZ1FtUkxPZnJpMmtOT3BMZnpuazlpZXA1YVQtd19oRzR3eHRrY29hZFg5WTB3WGhLVWplTGgxenI4UHpJVW9mQzF0UQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMiwgFBVV95cUxPMzk4ekhlOGItUlRCS1hTUHVBdnhqTm83a2Exck1rX09wVmtsTjZYR2JlYzB1NEYya014UWcwMGY1bUJ0X2JaemhFWEpHX3N5SHQtcWFJTGZXQ0dGb1Y1aVh0UnU2YkwzU1BkaTJJSXNxQUoxMS1tTkJQcWtabmNwZ1FtUkxPZnJpMmtOT3BMZnpuazlpZXA1YVQtd19oRzR3eHRrY29hZFg5WTB3WGhLVWplTGgxenI4UHpJVW9mQzF0UQ</guid><pubDate>Thu,
+        14 Aug 2025 21:28:21 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMzk4ekhlOGItUlRCS1hTUHVBdnhqTm83a2Exck1rX09wVmtsTjZYR2JlYzB1NEYya014UWcwMGY1bUJ0X2JaemhFWEpHX3N5SHQtcWFJTGZXQ0dGb1Y1aVh0UnU2YkwzU1BkaTJJSXNxQUoxMS1tTkJQcWtabmNwZ1FtUkxPZnJpMmtOT3BMZnpuazlpZXA1YVQtd19oRzR3eHRrY29hZFg5WTB3WGhLVWplTGgxenI4UHpJVW9mQzF0UQ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Gains and Losses Today: Intel Extends Winning
+        Streak; Tapestry Stock Plunges&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source
+        url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>Enough
+        Is Enough: AI Is Driving Us To Sell Our S&amp;P 500 Position - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMmp6UkxhUEM3VldpRmxONUFBUy02OUxnTzN1UWM2RzNYZHJaWHNoT3hJY3RtekdGeFBQeU5SOXFTV3NhNG9zTkFUeW5fOWdZN3JLRE5fX1lsQXMtY0dlOGUtNURTSXkxbHFvcENvRW5sZWIwaFNNNWlsemZEOWlVU1hJbnZTdjZYMl9Zc21aUzIxTG9Rb2ZEYkF4ZEtzTDg5UDFNSHI1MXU2SWc?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqwFBVV95cUxPMmp6UkxhUEM3VldpRmxONUFBUy02OUxnTzN1UWM2RzNYZHJaWHNoT3hJY3RtekdGeFBQeU5SOXFTV3NhNG9zTkFUeW5fOWdZN3JLRE5fX1lsQXMtY0dlOGUtNURTSXkxbHFvcENvRW5sZWIwaFNNNWlsemZEOWlVU1hJbnZTdjZYMl9Zc21aUzIxTG9Rb2ZEYkF4ZEtzTDg5UDFNSHI1MXU2SWc</guid><pubDate>Wed,
+        13 Aug 2025 13:26:44 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMmp6UkxhUEM3VldpRmxONUFBUy02OUxnTzN1UWM2RzNYZHJaWHNoT3hJY3RtekdGeFBQeU5SOXFTV3NhNG9zTkFUeW5fOWdZN3JLRE5fX1lsQXMtY0dlOGUtNURTSXkxbHFvcENvRW5sZWIwaFNNNWlsemZEOWlVU1hJbnZTdjZYMl9Zc21aUzIxTG9Rb2ZEYkF4ZEtzTDg5UDFNSHI1MXU2SWc?oc=5\"
+        target=\"_blank\"&gt;Enough Is Enough: AI Is Driving Us To Sell Our S&amp;P
+        500 Position&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Even at an All-Time High, The Vanguard S&amp;P
+        500 ETF Isn't as Expensive as It Seems - The Motley Fool</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE1HM3h5ZFlZSXVUSUx4RHhIM2JZSXNQYmxvQmR4RDdaZkFLUFQ4WjdGM1ZrbUIxUVc5WGhLaXpWd3VydXVnZ3EtV25nN3EtZ2RYNWp2WUpmRTc1NXF1Q1NTOHA1ZnR1dlBfYVp6NFF1cEF1bVpTalhvZl9RSWVkdGs?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE1HM3h5ZFlZSXVUSUx4RHhIM2JZSXNQYmxvQmR4RDdaZkFLUFQ4WjdGM1ZrbUIxUVc5WGhLaXpWd3VydXVnZ3EtV25nN3EtZ2RYNWp2WUpmRTc1NXF1Q1NTOHA1ZnR1dlBfYVp6NFF1cEF1bVpTalhvZl9RSWVkdGs</guid><pubDate>Thu,
+        14 Aug 2025 19:22:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE1HM3h5ZFlZSXVUSUx4RHhIM2JZSXNQYmxvQmR4RDdaZkFLUFQ4WjdGM1ZrbUIxUVc5WGhLaXpWd3VydXVnZ3EtV25nN3EtZ2RYNWp2WUpmRTc1NXF1Q1NTOHA1ZnR1dlBfYVp6NFF1cEF1bVpTalhvZl9RSWVkdGs?oc=5\"
+        target=\"_blank\"&gt;Even at an All-Time High, The Vanguard S&amp;P 500 ETF
+        Isn't as Expensive as It Seems&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;The
+        Motley Fool&lt;/font&gt;</description><source url=\"https://www.fool.com\">The
+        Motley Fool</source></item><item><title>Stock Market for Aug. 14, 2025: S&amp;P
+        500 logs fresh record, Dow and Nasdaq end lower following hot PPI reading;
+        small caps decline - MarketWatch</title><link>https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTEFVek9iWW1tTDljdVZuaFcxNGxwY2V3QUF2LW8xcVBRSUY4YlQ3djVrY0tWSjlVc1BIM1ZvVDdWUmFCUWRVM0syNGVkQ2k3aEdvQWgwek1hbUZmTklIOEhZbURpNDVodnhSdVp5QXBHNzR4ekd2ZE5GSTFqQUxxTXlwajVCNkd0bm9DWjNJSHJxWFZ5RkFRS0pQNjFrSW1PbGxBTl9YY0VJRjB2Z3c3d1h0bDk0Zm0xdHVXRkxsYzFvUGJLSkExYXJlMUh6RDI3T1dsUWhKemg?oc=5</link><guid
+        isPermaLink=\"false\">CBMi2AFBVV95cUxNTEFVek9iWW1tTDljdVZuaFcxNGxwY2V3QUF2LW8xcVBRSUY4YlQ3djVrY0tWSjlVc1BIM1ZvVDdWUmFCUWRVM0syNGVkQ2k3aEdvQWgwek1hbUZmTklIOEhZbURpNDVodnhSdVp5QXBHNzR4ekd2ZE5GSTFqQUxxTXlwajVCNkd0bm9DWjNJSHJxWFZ5RkFRS0pQNjFrSW1PbGxBTl9YY0VJRjB2Z3c3d1h0bDk0Zm0xdHVXRkxsYzFvUGJLSkExYXJlMUh6RDI3T1dsUWhKemg</guid><pubDate>Thu,
+        14 Aug 2025 21:27:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxNTEFVek9iWW1tTDljdVZuaFcxNGxwY2V3QUF2LW8xcVBRSUY4YlQ3djVrY0tWSjlVc1BIM1ZvVDdWUmFCUWRVM0syNGVkQ2k3aEdvQWgwek1hbUZmTklIOEhZbURpNDVodnhSdVp5QXBHNzR4ekd2ZE5GSTFqQUxxTXlwajVCNkd0bm9DWjNJSHJxWFZ5RkFRS0pQNjFrSW1PbGxBTl9YY0VJRjB2Z3c3d1h0bDk0Zm0xdHVXRkxsYzFvUGJLSkExYXJlMUh6RDI3T1dsUWhKemg?oc=5\"
+        target=\"_blank\"&gt;Stock Market for Aug. 14, 2025: S&amp;P 500 logs fresh
+        record, Dow and Nasdaq end lower following hot PPI reading; small caps decline&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>S&amp;P
+        500 Margins at Risk as Producer Costs Outrun Consumer Prices - Bloomberg.com</title><link>https://news.google.com/rss/articles/CBMitgFBVV95cUxOX3czRk1RV0toemxralpaSUFUYVJYVnFpeWNldV9GLXVYMGhYNjVNM3RMWlRES3ZxaS13SUQ4ZkdubnJzSFE5c3pDVUc5UzVjcXYwTFdoUkpkUmFDaGdJeDgzdmRJNkZydEE3V012S0JVOFdYc09PajBYZk5XSmt4QVctLUdGUzMzOVJ6Z2JBY3gzRUQ5bzlsZTl0ZkhOR2lhaXJEd242WDhhTVliQ25nakNkMXZuZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMitgFBVV95cUxOX3czRk1RV0toemxralpaSUFUYVJYVnFpeWNldV9GLXVYMGhYNjVNM3RMWlRES3ZxaS13SUQ4ZkdubnJzSFE5c3pDVUc5UzVjcXYwTFdoUkpkUmFDaGdJeDgzdmRJNkZydEE3V012S0JVOFdYc09PajBYZk5XSmt4QVctLUdGUzMzOVJ6Z2JBY3gzRUQ5bzlsZTl0ZkhOR2lhaXJEd242WDhhTVliQ25nakNkMXZuZw</guid><pubDate>Thu,
+        14 Aug 2025 15:22:13 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOX3czRk1RV0toemxralpaSUFUYVJYVnFpeWNldV9GLXVYMGhYNjVNM3RMWlRES3ZxaS13SUQ4ZkdubnJzSFE5c3pDVUc5UzVjcXYwTFdoUkpkUmFDaGdJeDgzdmRJNkZydEE3V012S0JVOFdYc09PajBYZk5XSmt4QVctLUdGUzMzOVJ6Z2JBY3gzRUQ5bzlsZTl0ZkhOR2lhaXJEd242WDhhTVliQ25nakNkMXZuZw?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Margins at Risk as Producer Costs Outrun
+        Consumer Prices&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Bloomberg.com&lt;/font&gt;</description><source
+        url=\"https://www.bloomberg.com\">Bloomberg.com</source></item><item><title>Goldman
+        Sachs says the risk of stock-market decline has suddenly spiked - Business
+        Insider</title><link>https://news.google.com/rss/articles/CBMiuAFBVV95cUxQa3JQTEdCR25jZkxGVmdpZjVWaHBDTHlUYllnSUpWSjUySVNmYi1ZMm9zT0ZvQjJYaDczcmhHTUpFU0xlQV9MS0N3MnhZSlVDeGdwNXRqRVBsYTdNdjdFd0ZMVUJFZTFqcy1rZjJtRk9DOVYyMnYyZjdKcFFzMVZVMjBlZ3RHMG4zd0p2WjFHbU80UGtBX3E1b01TblJ5QlJuQjZ4WHRPa01SaTlYQjJnS3RKZWJkeHp5?oc=5</link><guid
+        isPermaLink=\"false\">CBMiuAFBVV95cUxQa3JQTEdCR25jZkxGVmdpZjVWaHBDTHlUYllnSUpWSjUySVNmYi1ZMm9zT0ZvQjJYaDczcmhHTUpFU0xlQV9MS0N3MnhZSlVDeGdwNXRqRVBsYTdNdjdFd0ZMVUJFZTFqcy1rZjJtRk9DOVYyMnYyZjdKcFFzMVZVMjBlZ3RHMG4zd0p2WjFHbU80UGtBX3E1b01TblJ5QlJuQjZ4WHRPa01SaTlYQjJnS3RKZWJkeHp5</guid><pubDate>Thu,
+        14 Aug 2025 17:20:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQa3JQTEdCR25jZkxGVmdpZjVWaHBDTHlUYllnSUpWSjUySVNmYi1ZMm9zT0ZvQjJYaDczcmhHTUpFU0xlQV9MS0N3MnhZSlVDeGdwNXRqRVBsYTdNdjdFd0ZMVUJFZTFqcy1rZjJtRk9DOVYyMnYyZjdKcFFzMVZVMjBlZ3RHMG4zd0p2WjFHbU80UGtBX3E1b01TblJ5QlJuQjZ4WHRPa01SaTlYQjJnS3RKZWJkeHp5?oc=5\"
+        target=\"_blank\"&gt;Goldman Sachs says the risk of stock-market decline has
+        suddenly spiked&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Business
+        Insider&lt;/font&gt;</description><source url=\"https://www.businessinsider.com\">Business
+        Insider</source></item><item><title>Stock market today: Dow, S&amp;P 500,
+        Nasdaq hit pause as hot PPI inflation data cools rate-cut rally - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZk9VdFlPNWFfYjV4QVdKVDNpeXdEQV9Ua3JhT1RkN0RSOFVSa0J5LWxkMS1ZUlJvSFR3TllKYTBaMGllcGg4Q2pNZ0VnRnJzSlQ5d3R0c1k5LTdkQ213Q2ZMMS1iLUtUMTVqUDZPRlFuTzVsUXlWMEhRQ1ppUDhENXNfTmpTdmh2WGZIbGZZMmotbUhmYTU2bmtCSDZ2emhIRER1cVhBbGVCQW5RZzg3TmZNUS1neVVKdjhnWHpOb2hyUVRDR3RmeHUwTFdxYk5qYThGU0I4SmlHZkNH?oc=5</link><guid
+        isPermaLink=\"false\">CBMi3AFBVV95cUxPZk9VdFlPNWFfYjV4QVdKVDNpeXdEQV9Ua3JhT1RkN0RSOFVSa0J5LWxkMS1ZUlJvSFR3TllKYTBaMGllcGg4Q2pNZ0VnRnJzSlQ5d3R0c1k5LTdkQ213Q2ZMMS1iLUtUMTVqUDZPRlFuTzVsUXlWMEhRQ1ppUDhENXNfTmpTdmh2WGZIbGZZMmotbUhmYTU2bmtCSDZ2emhIRER1cVhBbGVCQW5RZzg3TmZNUS1neVVKdjhnWHpOb2hyUVRDR3RmeHUwTFdxYk5qYThGU0I4SmlHZkNH</guid><pubDate>Thu,
+        14 Aug 2025 20:22:48 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZk9VdFlPNWFfYjV4QVdKVDNpeXdEQV9Ua3JhT1RkN0RSOFVSa0J5LWxkMS1ZUlJvSFR3TllKYTBaMGllcGg4Q2pNZ0VnRnJzSlQ5d3R0c1k5LTdkQ213Q2ZMMS1iLUtUMTVqUDZPRlFuTzVsUXlWMEhRQ1ppUDhENXNfTmpTdmh2WGZIbGZZMmotbUhmYTU2bmtCSDZ2emhIRER1cVhBbGVCQW5RZzg3TmZNUS1neVVKdjhnWHpOb2hyUVRDR3RmeHUwTFdxYk5qYThGU0I4SmlHZkNH?oc=5\"
+        target=\"_blank\"&gt;Stock market today: Dow, S&amp;P 500, Nasdaq hit pause
+        as hot PPI inflation data cools rate-cut rally&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>S&amp;P 500, Nasdaq retreat from record
+        rally after hot producer inflation data - Reuters</title><link>https://news.google.com/rss/articles/CBMiswFBVV95cUxPRms2UUxKRlkwQWdWci05dHVvWlNYaGRYczEtc01lZjJxWExndnAyMzh2WDNMVWdYNmdIWV9Yem9seGE2dTFwTjZKTV9VaVFRX05xNHVwNmJZdFNCaGlpaUY1clNta2lyemdMRG5VZTBuWUJmalJWRHFZWUgxdVlUa1NGakF1bTdfdktVdGlwenVRVUtwaDdITDBLcnR6VmdpaW5ONy1RUXJwUkVJUzFQZ1ljWQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMiswFBVV95cUxPRms2UUxKRlkwQWdWci05dHVvWlNYaGRYczEtc01lZjJxWExndnAyMzh2WDNMVWdYNmdIWV9Yem9seGE2dTFwTjZKTV9VaVFRX05xNHVwNmJZdFNCaGlpaUY1clNta2lyemdMRG5VZTBuWUJmalJWRHFZWUgxdVlUa1NGakF1bTdfdktVdGlwenVRVUtwaDdITDBLcnR6VmdpaW5ONy1RUXJwUkVJUzFQZ1ljWQ</guid><pubDate>Thu,
+        14 Aug 2025 13:33:04 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPRms2UUxKRlkwQWdWci05dHVvWlNYaGRYczEtc01lZjJxWExndnAyMzh2WDNMVWdYNmdIWV9Yem9seGE2dTFwTjZKTV9VaVFRX05xNHVwNmJZdFNCaGlpaUY1clNta2lyemdMRG5VZTBuWUJmalJWRHFZWUgxdVlUa1NGakF1bTdfdktVdGlwenVRVUtwaDdITDBLcnR6VmdpaW5ONy1RUXJwUkVJUzFQZ1ljWQ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq retreat from record rally after hot
+        producer inflation data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>S&amp;P
+        500 futures are little changed after benchmark notches another all-time high:
+        Live updates - CNBC</title><link>https://news.google.com/rss/articles/CBMieEFVX3lxTFBNMlZGM1p3anRpWDN3MlZoRHg4Q1g0UG1kZnhZNUdnMW44eUFTeTVEdm95aEtuQUduajVHYWlISjViRkI0ZTRtRDFUcnBzRWsxMk8tQjF4V0gtWjhvTmVyaDBDQ0lHZV9BMTJZUE8tUFZQWDlXSnphYdIBfkFVX3lxTE40c0FNOWc2ZnVCb1l1WTN5V3R4LVVra3BBZkY1eHpRS3hENy1GTHJIZnBzY2hiYTR3eXpXZzFkVDdUNWFtb3JiQW52a29zZkVyWjBsQWViSE4xU3lmSThNWHhVUnhNc3NLdHF2X0Y5WDRKeHZTX2NXOU1JVlJTUQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMieEFVX3lxTFBNMlZGM1p3anRpWDN3MlZoRHg4Q1g0UG1kZnhZNUdnMW44eUFTeTVEdm95aEtuQUduajVHYWlISjViRkI0ZTRtRDFUcnBzRWsxMk8tQjF4V0gtWjhvTmVyaDBDQ0lHZV9BMTJZUE8tUFZQWDlXSnphYdIBfkFVX3lxTE40c0FNOWc2ZnVCb1l1WTN5V3R4LVVra3BBZkY1eHpRS3hENy1GTHJIZnBzY2hiYTR3eXpXZzFkVDdUNWFtb3JiQW52a29zZkVyWjBsQWViSE4xU3lmSThNWHhVUnhNc3NLdHF2X0Y5WDRKeHZTX2NXOU1JVlJTUQ</guid><pubDate>Thu,
+        14 Aug 2025 23:54:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTFBNMlZGM1p3anRpWDN3MlZoRHg4Q1g0UG1kZnhZNUdnMW44eUFTeTVEdm95aEtuQUduajVHYWlISjViRkI0ZTRtRDFUcnBzRWsxMk8tQjF4V0gtWjhvTmVyaDBDQ0lHZV9BMTJZUE8tUFZQWDlXSnphYdIBfkFVX3lxTE40c0FNOWc2ZnVCb1l1WTN5V3R4LVVra3BBZkY1eHpRS3hENy1GTHJIZnBzY2hiYTR3eXpXZzFkVDdUNWFtb3JiQW52a29zZkVyWjBsQWViSE4xU3lmSThNWHhVUnhNc3NLdHF2X0Y5WDRKeHZTX2NXOU1JVlJTUQ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 futures are little changed after benchmark
+        notches another all-time high: Live updates&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source url=\"https://www.cnbc.com\">CNBC</source></item><item><title>Stock
+        Market News From Aug. 14, 2025: S&amp;P 500 Ekes Out Record After Hot PPI
+        Report - Barron's</title><link>https://news.google.com/rss/articles/CBMidkFVX3lxTE0zZVRKVkc0bDVNbGdEOHpzUlAtaC0tYlF0R1gxeE1FWXNzc3BtaTJYVXpqalFzb3JZNjdDa1FURE5lQ0JXYktzNnNLUkJLWHFXR1ZkUzdRZFprOWpIeFZkV0l0SmIycDB6bXVha3JZVFlTVjVfSkE?oc=5</link><guid
+        isPermaLink=\"false\">CBMidkFVX3lxTE0zZVRKVkc0bDVNbGdEOHpzUlAtaC0tYlF0R1gxeE1FWXNzc3BtaTJYVXpqalFzb3JZNjdDa1FURE5lQ0JXYktzNnNLUkJLWHFXR1ZkUzdRZFprOWpIeFZkV0l0SmIycDB6bXVha3JZVFlTVjVfSkE</guid><pubDate>Thu,
+        14 Aug 2025 21:20:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE0zZVRKVkc0bDVNbGdEOHpzUlAtaC0tYlF0R1gxeE1FWXNzc3BtaTJYVXpqalFzb3JZNjdDa1FURE5lQ0JXYktzNnNLUkJLWHFXR1ZkUzdRZFprOWpIeFZkV0l0SmIycDB6bXVha3JZVFlTVjVfSkE?oc=5\"
+        target=\"_blank\"&gt;Stock Market News From Aug. 14, 2025: S&amp;P 500 Ekes
+        Out Record After Hot PPI Report&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barron's&lt;/font&gt;</description><source
+        url=\"https://www.barrons.com\">Barron's</source></item><item><title>Stock
+        Market Live August 14: Wholesale Inflation Rises, S&amp;P 500 (VOO) Falls
+        - 24/7 Wall St.</title><link>https://news.google.com/rss/articles/CBMitAFBVV95cUxPNGo0aVdZdW9FdHVpS2hHbVdOR2dkVEpBRmRZclgtblJCdDdOS1YxQ2VIZEM1ZFc1cDBoSE1MeHFWdEdSbnJTSk1pVC1BSjM3MEMzVU1sc21MUlE1MVlQV1dzZ0pqQnduRkJaa0hxbDZZc05sMjBUZmdrMWh6SnZhQ2kyTEg4MTlSM2RyZXgyU1lMTktlVU1ob29wRjNLSGFBSHZROUpjeWM4NTF6UEdZS05SVkE?oc=5</link><guid
+        isPermaLink=\"false\">CBMitAFBVV95cUxPNGo0aVdZdW9FdHVpS2hHbVdOR2dkVEpBRmRZclgtblJCdDdOS1YxQ2VIZEM1ZFc1cDBoSE1MeHFWdEdSbnJTSk1pVC1BSjM3MEMzVU1sc21MUlE1MVlQV1dzZ0pqQnduRkJaa0hxbDZZc05sMjBUZmdrMWh6SnZhQ2kyTEg4MTlSM2RyZXgyU1lMTktlVU1ob29wRjNLSGFBSHZROUpjeWM4NTF6UEdZS05SVkE</guid><pubDate>Thu,
+        14 Aug 2025 13:03:48 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPNGo0aVdZdW9FdHVpS2hHbVdOR2dkVEpBRmRZclgtblJCdDdOS1YxQ2VIZEM1ZFc1cDBoSE1MeHFWdEdSbnJTSk1pVC1BSjM3MEMzVU1sc21MUlE1MVlQV1dzZ0pqQnduRkJaa0hxbDZZc05sMjBUZmdrMWh6SnZhQ2kyTEg4MTlSM2RyZXgyU1lMTktlVU1ob29wRjNLSGFBSHZROUpjeWM4NTF6UEdZS05SVkE?oc=5\"
+        target=\"_blank\"&gt;Stock Market Live August 14: Wholesale Inflation Rises,
+        S&amp;P 500 (VOO) Falls&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;24/7
+        Wall St.&lt;/font&gt;</description><source url=\"https://247wallst.com\">24/7
+        Wall St.</source></item><item><title>Wall Street ends flat, but S&amp;P hits
+        another closing high as rate-cut bets waver - Reuters</title><link>https://news.google.com/rss/articles/CBMitgFBVV95cUxPczVGd2F5QnU0Wk5ZazBia1ZzQm1oaUlUNWdoemx2Z1FxUjdlODVUQ09ja01ZNnY1NFhsQmc2Q19QVXlFVnNDSlhUUnYxM0xzWl9NQ0pDeVBvbVZ2UEZYWUcwQ24wSV94b1lJLTdMRElIX3VkNTFLVk9iSU8zY0F6V3lkakctN2dabF9zbGhBZHN0YXJBdGlxdjNwck1PRF9US09pbHQxZ3U1WGJiRFU0djRCeUlEdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMitgFBVV95cUxPczVGd2F5QnU0Wk5ZazBia1ZzQm1oaUlUNWdoemx2Z1FxUjdlODVUQ09ja01ZNnY1NFhsQmc2Q19QVXlFVnNDSlhUUnYxM0xzWl9NQ0pDeVBvbVZ2UEZYWUcwQ24wSV94b1lJLTdMRElIX3VkNTFLVk9iSU8zY0F6V3lkakctN2dabF9zbGhBZHN0YXJBdGlxdjNwck1PRF9US09pbHQxZ3U1WGJiRFU0djRCeUlEdw</guid><pubDate>Thu,
+        14 Aug 2025 22:43:26 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPczVGd2F5QnU0Wk5ZazBia1ZzQm1oaUlUNWdoemx2Z1FxUjdlODVUQ09ja01ZNnY1NFhsQmc2Q19QVXlFVnNDSlhUUnYxM0xzWl9NQ0pDeVBvbVZ2UEZYWUcwQ24wSV94b1lJLTdMRElIX3VkNTFLVk9iSU8zY0F6V3lkakctN2dabF9zbGhBZHN0YXJBdGlxdjNwck1PRF9US09pbHQxZ3U1WGJiRFU0djRCeUlEdw?oc=5\"
+        target=\"_blank\"&gt;Wall Street ends flat, but S&amp;P hits another closing
+        high as rate-cut bets waver&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>S&amp;P
+        500 ekes out a third day of gains as traders shake off a hot inflation report:
+        Live updates - CNBC</title><link>https://news.google.com/rss/articles/CBMid0FVX3lxTE9BaTNqMVcxdmhmVXJBZ1d1TEFWSkE2OE9oRmdGVU56eVpmR0ZydmpGVUlHbFo5cGJhZERSQy1Wc054YnZfMnVGV2ZhWUZlU3p1WFhyQUs5NzA5WEt3MFN3ajRFQ3NCMWFjQm83WUQ3cjU0dkNPUExr0gF8QVVfeXFMT3JzUVZWWDQ5RUxyb0xqZnV4SkVOemhadDFKcktoQXNXZk9ETW41T055R2FlYkEyZWlsNGJUVmxlMk1RZ3Y5TnJUckJncDBSUlZ3R29Kb2VlX3l0N0dxM3FOQjZ6T1lIN3phdVE5dGoyUFhtOUJpOGdLT2RFcw?oc=5</link><guid
+        isPermaLink=\"false\">CBMid0FVX3lxTE9BaTNqMVcxdmhmVXJBZ1d1TEFWSkE2OE9oRmdGVU56eVpmR0ZydmpGVUlHbFo5cGJhZERSQy1Wc054YnZfMnVGV2ZhWUZlU3p1WFhyQUs5NzA5WEt3MFN3ajRFQ3NCMWFjQm83WUQ3cjU0dkNPUExr0gF8QVVfeXFMT3JzUVZWWDQ5RUxyb0xqZnV4SkVOemhadDFKcktoQXNXZk9ETW41T055R2FlYkEyZWlsNGJUVmxlMk1RZ3Y5TnJUckJncDBSUlZ3R29Kb2VlX3l0N0dxM3FOQjZ6T1lIN3phdVE5dGoyUFhtOUJpOGdLT2RFcw</guid><pubDate>Thu,
+        14 Aug 2025 20:38:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE9BaTNqMVcxdmhmVXJBZ1d1TEFWSkE2OE9oRmdGVU56eVpmR0ZydmpGVUlHbFo5cGJhZERSQy1Wc054YnZfMnVGV2ZhWUZlU3p1WFhyQUs5NzA5WEt3MFN3ajRFQ3NCMWFjQm83WUQ3cjU0dkNPUExr0gF8QVVfeXFMT3JzUVZWWDQ5RUxyb0xqZnV4SkVOemhadDFKcktoQXNXZk9ETW41T055R2FlYkEyZWlsNGJUVmxlMk1RZ3Y5TnJUckJncDBSUlZ3R29Kb2VlX3l0N0dxM3FOQjZ6T1lIN3phdVE5dGoyUFhtOUJpOGdLT2RFcw?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 ekes out a third day of gains as traders
+        shake off a hot inflation report: Live updates&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source url=\"https://www.cnbc.com\">CNBC</source></item><item><title>Stock
+        market today: Dow, S&amp;P 500, Nasdaq wobble after PPI inflation comes in
+        much hotter than expected - uk.finance.yahoo.com</title><link>https://news.google.com/rss/articles/CBMiwgFBVV95cUxPYm1vWEtKNTd0aWNYdEtTN0l1SlVlcWNKa093aGc0bm9hMDZKLUg0YXZIbThlT2JFOEJ5Vk9UTUhtcU9ic21QcFdBYXVvWEcwVnNUaC1kZjNHOXpMdnZWa2Fzd1oxQmdneVpGWlphTnJRMlVmT29MdV9iNDB6N2VFTEdvOFhVMkFaNUUxLV9NSzJVNHg4dEgyQWRVcFJZT3ZHN200NFFHSFRBMGFYRTZIZTROTXVVT0duNGhsUnQ2MDFrUQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMiwgFBVV95cUxPYm1vWEtKNTd0aWNYdEtTN0l1SlVlcWNKa093aGc0bm9hMDZKLUg0YXZIbThlT2JFOEJ5Vk9UTUhtcU9ic21QcFdBYXVvWEcwVnNUaC1kZjNHOXpMdnZWa2Fzd1oxQmdneVpGWlphTnJRMlVmT29MdV9iNDB6N2VFTEdvOFhVMkFaNUUxLV9NSzJVNHg4dEgyQWRVcFJZT3ZHN200NFFHSFRBMGFYRTZIZTROTXVVT0duNGhsUnQ2MDFrUQ</guid><pubDate>Thu,
+        14 Aug 2025 17:27:08 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPYm1vWEtKNTd0aWNYdEtTN0l1SlVlcWNKa093aGc0bm9hMDZKLUg0YXZIbThlT2JFOEJ5Vk9UTUhtcU9ic21QcFdBYXVvWEcwVnNUaC1kZjNHOXpMdnZWa2Fzd1oxQmdneVpGWlphTnJRMlVmT29MdV9iNDB6N2VFTEdvOFhVMkFaNUUxLV9NSzJVNHg4dEgyQWRVcFJZT3ZHN200NFFHSFRBMGFYRTZIZTROTXVVT0duNGhsUnQ2MDFrUQ?oc=5\"
+        target=\"_blank\"&gt;Stock market today: Dow, S&amp;P 500, Nasdaq wobble after
+        PPI inflation comes in much hotter than expected&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;uk.finance.yahoo.com&lt;/font&gt;</description><source
+        url=\"https://uk.finance.yahoo.com\">uk.finance.yahoo.com</source></item><item><title>Stock
+        market today: Dow jumps 450 points as S&amp;P 500, Nasdaq log back-to-back
+        records on surging Fed rate cut bets - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMi8wFBVV95cUxNOE85VlMySUdnR19yRzhycnM0cE1DTEdEcTlFMnJYeVpxdFNMNUs2cjNtOVJhcWFZWnZxa1VnaktZLWdzRkhLYUZSVFM5OURPenJMLVZrVHY5YURQdktOSTFROFVKU0tZZWVIQ01Jc09zVlFmRGd4eTl1NzJQNWU1QkJvV29GZzRMWDNXbVE0RXhWTmdLaU1raGp6RjZ6YldHMmhkczBKSU9MUXdrMVhpdHlUMW5aZHhPOUxndmpkZEs5VzljT1F1dHhrZjZwdmZocllzd3lncVhJOHdkUU9rcUJ1eGM5Z0plOE5UWndXTVNlOTA?oc=5</link><guid
+        isPermaLink=\"false\">CBMi8wFBVV95cUxNOE85VlMySUdnR19yRzhycnM0cE1DTEdEcTlFMnJYeVpxdFNMNUs2cjNtOVJhcWFZWnZxa1VnaktZLWdzRkhLYUZSVFM5OURPenJMLVZrVHY5YURQdktOSTFROFVKU0tZZWVIQ01Jc09zVlFmRGd4eTl1NzJQNWU1QkJvV29GZzRMWDNXbVE0RXhWTmdLaU1raGp6RjZ6YldHMmhkczBKSU9MUXdrMVhpdHlUMW5aZHhPOUxndmpkZEs5VzljT1F1dHhrZjZwdmZocllzd3lncVhJOHdkUU9rcUJ1eGM5Z0plOE5UWndXTVNlOTA</guid><pubDate>Wed,
+        13 Aug 2025 21:12:02 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi8wFBVV95cUxNOE85VlMySUdnR19yRzhycnM0cE1DTEdEcTlFMnJYeVpxdFNMNUs2cjNtOVJhcWFZWnZxa1VnaktZLWdzRkhLYUZSVFM5OURPenJMLVZrVHY5YURQdktOSTFROFVKU0tZZWVIQ01Jc09zVlFmRGd4eTl1NzJQNWU1QkJvV29GZzRMWDNXbVE0RXhWTmdLaU1raGp6RjZ6YldHMmhkczBKSU9MUXdrMVhpdHlUMW5aZHhPOUxndmpkZEs5VzljT1F1dHhrZjZwdmZocllzd3lncVhJOHdkUU9rcUJ1eGM5Z0plOE5UWndXTVNlOTA?oc=5\"
+        target=\"_blank\"&gt;Stock market today: Dow jumps 450 points as S&amp;P 500,
+        Nasdaq log back-to-back records on surging Fed rate cut bets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>S&amp;P 500, Nasdaq end at record closing
+        highs as moderate inflation lifts rate hopes - Reuters</title><link>https://news.google.com/rss/articles/CBMiuwFBVV95cUxNX0RBazdGWThGR2ZxalYzT1hSbk1uVzB3RXVXcWxqd1Q2VjlVSURKdFA2Ym1HMVFzb1hBWkVkTmNhZ1RoZHpvUm1sY2ktLXJjZnB3VFVReUdRQ2NiVFdlbFRkUHpnc2JKV3JVbl9JaTRlNHBYWFdUSHNXTFUyLVZyNGo3YUZ4Nm9pTzN6SzdjMUlvVFRQYVRFWWNWSmZPMk1sZm1lQlpRRHhTUkpINno3SGF5SjRHazlveUlJ?oc=5</link><guid
+        isPermaLink=\"false\">CBMiuwFBVV95cUxNX0RBazdGWThGR2ZxalYzT1hSbk1uVzB3RXVXcWxqd1Q2VjlVSURKdFA2Ym1HMVFzb1hBWkVkTmNhZ1RoZHpvUm1sY2ktLXJjZnB3VFVReUdRQ2NiVFdlbFRkUHpnc2JKV3JVbl9JaTRlNHBYWFdUSHNXTFUyLVZyNGo3YUZ4Nm9pTzN6SzdjMUlvVFRQYVRFWWNWSmZPMk1sZm1lQlpRRHhTUkpINno3SGF5SjRHazlveUlJ</guid><pubDate>Tue,
+        12 Aug 2025 22:32:54 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNX0RBazdGWThGR2ZxalYzT1hSbk1uVzB3RXVXcWxqd1Q2VjlVSURKdFA2Ym1HMVFzb1hBWkVkTmNhZ1RoZHpvUm1sY2ktLXJjZnB3VFVReUdRQ2NiVFdlbFRkUHpnc2JKV3JVbl9JaTRlNHBYWFdUSHNXTFUyLVZyNGo3YUZ4Nm9pTzN6SzdjMUlvVFRQYVRFWWNWSmZPMk1sZm1lQlpRRHhTUkpINno3SGF5SjRHazlveUlJ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq end at record closing highs as moderate
+        inflation lifts rate hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>Citigroup,
+        UBS lift S&amp;P 500 year-end targets echoing Wall Street peers - Reuters</title><link>https://news.google.com/rss/articles/CBMiswFBVV95cUxPTXZHZGNYM3Y5bkxPOUVRUmcwSUZ2VGJubEMzM1AzNVNaZ01FUTJpNHZnNXJIcVVNc042N2xKWXdycVNGSWkwRUhmclNwNkNZckZkNHRVeUVaOVpCYU1YWTBPaDNQemNrN25NRXZFTFd5blprbUs3U05NaEtYbFdwaFYxSnBqRHB3OHFobDVwMHRVRXBlb2x2dUtrczFHY1VyTGJpbUVtck9oXzgwRHpkUDZZUQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMiswFBVV95cUxPTXZHZGNYM3Y5bkxPOUVRUmcwSUZ2VGJubEMzM1AzNVNaZ01FUTJpNHZnNXJIcVVNc042N2xKWXdycVNGSWkwRUhmclNwNkNZckZkNHRVeUVaOVpCYU1YWTBPaDNQemNrN25NRXZFTFd5blprbUs3U05NaEtYbFdwaFYxSnBqRHB3OHFobDVwMHRVRXBlb2x2dUtrczFHY1VyTGJpbUVtck9oXzgwRHpkUDZZUQ</guid><pubDate>Mon,
+        11 Aug 2025 14:24:37 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPTXZHZGNYM3Y5bkxPOUVRUmcwSUZ2VGJubEMzM1AzNVNaZ01FUTJpNHZnNXJIcVVNc042N2xKWXdycVNGSWkwRUhmclNwNkNZckZkNHRVeUVaOVpCYU1YWTBPaDNQemNrN25NRXZFTFd5blprbUs3U05NaEtYbFdwaFYxSnBqRHB3OHFobDVwMHRVRXBlb2x2dUtrczFHY1VyTGJpbUVtck9oXzgwRHpkUDZZUQ?oc=5\"
+        target=\"_blank\"&gt;Citigroup, UBS lift S&amp;P 500 year-end targets echoing
+        Wall Street peers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>Stock
+        market today: S&amp;P 500 closes above 6,400 for first time as rate cut bets
+        jump after CPI inflation report - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMi7wFBVV95cUxOY01HeVMwcUk3WlVJNHItWmd4QXZGZklrcTBHMURsUlQ4R2pUUXFzRkRyaEZyRkVwMmwzUy1MYjdFR3B3LUh6T3pyc3hQaXhnOU5LdTBjUUZtTGpEMmZ3TmhHYmtwYVhxaDk1XzVoTF9XX252RnhZSjJHbDFudWM5d0x5cV80YzR3eWF4R0staHhaN28wV3l5bDFkXzgzeHhHZ1ZNaTVjY0RqbjZwb2x4QjJLRVlwNXh4VmxSWlRMOVR0Z2dSUmtnckpmdmkySnhzX2F0X0hSNnBRWDBTZ0FrT0lyQldnZV9NRzdIU0h1Yw?oc=5</link><guid
+        isPermaLink=\"false\">CBMi7wFBVV95cUxOY01HeVMwcUk3WlVJNHItWmd4QXZGZklrcTBHMURsUlQ4R2pUUXFzRkRyaEZyRkVwMmwzUy1MYjdFR3B3LUh6T3pyc3hQaXhnOU5LdTBjUUZtTGpEMmZ3TmhHYmtwYVhxaDk1XzVoTF9XX252RnhZSjJHbDFudWM5d0x5cV80YzR3eWF4R0staHhaN28wV3l5bDFkXzgzeHhHZ1ZNaTVjY0RqbjZwb2x4QjJLRVlwNXh4VmxSWlRMOVR0Z2dSUmtnckpmdmkySnhzX2F0X0hSNnBRWDBTZ0FrT0lyQldnZV9NRzdIU0h1Yw</guid><pubDate>Tue,
+        12 Aug 2025 20:07:32 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi7wFBVV95cUxOY01HeVMwcUk3WlVJNHItWmd4QXZGZklrcTBHMURsUlQ4R2pUUXFzRkRyaEZyRkVwMmwzUy1MYjdFR3B3LUh6T3pyc3hQaXhnOU5LdTBjUUZtTGpEMmZ3TmhHYmtwYVhxaDk1XzVoTF9XX252RnhZSjJHbDFudWM5d0x5cV80YzR3eWF4R0staHhaN28wV3l5bDFkXzgzeHhHZ1ZNaTVjY0RqbjZwb2x4QjJLRVlwNXh4VmxSWlRMOVR0Z2dSUmtnckpmdmkySnhzX2F0X0hSNnBRWDBTZ0FrT0lyQldnZV9NRzdIU0h1Yw?oc=5\"
+        target=\"_blank\"&gt;Stock market today: S&amp;P 500 closes above 6,400 for
+        first time as rate cut bets jump after CPI inflation report&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Our top 3 gainers and laggards over the
+        past month as the S&amp;P 500 hits record highs - CNBC</title><link>https://news.google.com/rss/articles/CBMipAFBVV95cUxNbE02SGlHRUU4X0hkM3pWTG5hV1RHTFgya1N4bXZJa0pzS2F5M3d2aDJ5WGl3N2xTRXo1UHFxZ3VXa3VEMVB2a3lReWtCckNObTFGRDdMOUNpZnEzbUxvbjVpdFJqOWRadDNXdUN6LUpfYXlKMkV6SXJObVJtemtKX3ZmaFNnSk5rV0pJcEJnOHpKN1RzOFNPbzR4RE1QUlV0RmNXUQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMipAFBVV95cUxNbE02SGlHRUU4X0hkM3pWTG5hV1RHTFgya1N4bXZJa0pzS2F5M3d2aDJ5WGl3N2xTRXo1UHFxZ3VXa3VEMVB2a3lReWtCckNObTFGRDdMOUNpZnEzbUxvbjVpdFJqOWRadDNXdUN6LUpfYXlKMkV6SXJObVJtemtKX3ZmaFNnSk5rV0pJcEJnOHpKN1RzOFNPbzR4RE1QUlV0RmNXUQ</guid><pubDate>Thu,
+        14 Aug 2025 13:52:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxNbE02SGlHRUU4X0hkM3pWTG5hV1RHTFgya1N4bXZJa0pzS2F5M3d2aDJ5WGl3N2xTRXo1UHFxZ3VXa3VEMVB2a3lReWtCckNObTFGRDdMOUNpZnEzbUxvbjVpdFJqOWRadDNXdUN6LUpfYXlKMkV6SXJObVJtemtKX3ZmaFNnSk5rV0pJcEJnOHpKN1RzOFNPbzR4RE1QUlV0RmNXUQ?oc=5\"
+        target=\"_blank\"&gt;Our top 3 gainers and laggards over the past month as
+        the S&amp;P 500 hits record highs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source
+        url=\"https://www.cnbc.com\">CNBC</source></item><item><title>Markets News,
+        Aug. 14, 2025: Stock Rally Stumbles as Inflation Report Tempers Rate-Cut Hopes;
+        Dow Slips, S&amp;P Ticks Higher for 3rd Straight Record Close - Investopedia</title><link>https://news.google.com/rss/articles/CBMieEFVX3lxTFAzQWdPNUlickRLWjlENnpqdE85M1BNRmowd25hQndSV3lRQUhBSVR4bUx5MEVRbFc3el9taUlDX2dLSWQ2T2FncUNybGRkNXg4cWxjemk2dmIxTGZzMGtlcVZqQWFWRkk1eDNrdkdzeUxuLXFqeHB3VA?oc=5</link><guid
+        isPermaLink=\"false\">CBMieEFVX3lxTFAzQWdPNUlickRLWjlENnpqdE85M1BNRmowd25hQndSV3lRQUhBSVR4bUx5MEVRbFc3el9taUlDX2dLSWQ2T2FncUNybGRkNXg4cWxjemk2dmIxTGZzMGtlcVZqQWFWRkk1eDNrdkdzeUxuLXFqeHB3VA</guid><pubDate>Thu,
+        14 Aug 2025 21:57:26 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTFAzQWdPNUlickRLWjlENnpqdE85M1BNRmowd25hQndSV3lRQUhBSVR4bUx5MEVRbFc3el9taUlDX2dLSWQ2T2FncUNybGRkNXg4cWxjemk2dmIxTGZzMGtlcVZqQWFWRkk1eDNrdkdzeUxuLXFqeHB3VA?oc=5\"
+        target=\"_blank\"&gt;Markets News, Aug. 14, 2025: Stock Rally Stumbles as
+        Inflation Report Tempers Rate-Cut Hopes; Dow Slips, S&amp;P Ticks Higher for
+        3rd Straight Record Close&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source
+        url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>As
+        the S&amp;P 500 ends above 6,400 for the first time, here are a few reasons
+        for caution - MarketWatch</title><link>https://news.google.com/rss/articles/CBMixwFBVV95cUxOUW5HWHNpcDNBYmZETzlZODYtcEUxSkN3X0RoOUtWWkV4eTVHMnRIRFl5UGlCZF9VazdQODdsYWhaSTdOQ0liaHRnUXJiZjAza3BZeHI4NHE4bjRMSERQc3FoclhqWkYycmloQTFVdHZZd0N5TnA5Z29jbHBtYmdmREZYMkJ1U1BOckF4bVp4eHVIZzlJMVJXaFFvOURpTUlHcW9ZajBhdE5HVTE3eHd3bGhlMEZ6d0xkZURPWjZ4RTlwUnVWakFB?oc=5</link><guid
+        isPermaLink=\"false\">CBMixwFBVV95cUxOUW5HWHNpcDNBYmZETzlZODYtcEUxSkN3X0RoOUtWWkV4eTVHMnRIRFl5UGlCZF9VazdQODdsYWhaSTdOQ0liaHRnUXJiZjAza3BZeHI4NHE4bjRMSERQc3FoclhqWkYycmloQTFVdHZZd0N5TnA5Z29jbHBtYmdmREZYMkJ1U1BOckF4bVp4eHVIZzlJMVJXaFFvOURpTUlHcW9ZajBhdE5HVTE3eHd3bGhlMEZ6d0xkZURPWjZ4RTlwUnVWakFB</guid><pubDate>Tue,
+        12 Aug 2025 21:18:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOUW5HWHNpcDNBYmZETzlZODYtcEUxSkN3X0RoOUtWWkV4eTVHMnRIRFl5UGlCZF9VazdQODdsYWhaSTdOQ0liaHRnUXJiZjAza3BZeHI4NHE4bjRMSERQc3FoclhqWkYycmloQTFVdHZZd0N5TnA5Z29jbHBtYmdmREZYMkJ1U1BOckF4bVp4eHVIZzlJMVJXaFFvOURpTUlHcW9ZajBhdE5HVTE3eHd3bGhlMEZ6d0xkZURPWjZ4RTlwUnVWakFB?oc=5\"
+        target=\"_blank\"&gt;As the S&amp;P 500 ends above 6,400 for the first time,
+        here are a few reasons for caution&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source
+        url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>S&amp;P
+        500 tiptoes to fresh record close, Dow and Nasdaq finish lower - MarketWatch</title><link>https://news.google.com/rss/articles/CBMi7gJBVV95cUxQU3c4blQ3VU11TmQ2VUVROWZweWF2NmxxVWpyZDBBRUVhZmhSdUFYUkJnMkNWbGVkS3ZYZG56NDJRMF9TVmIwUjFxeEpvMklhRzl5cW1aZ2dHUTAycHJQbk9pbDU0Q25xYUxvY2Y0SXZ5X0tKSFlSUUpYcXZUTjRVZXNQWUIwWThvelN3UnRlQ0hSdVQyTnBhSHJqRjJzcFdSRU5yc1NjX1NTNFk3SnJFOFFzdnpfVEN2bHhzX3JyLS1nMDY5SzZlbEV0eERpV2hKNkJYMHlFenNLVm5ZMFV4Mm9SeDdQcWRESTlhaGp6c3FZMGlGX1V4NG1TeHlJRlBmMXFMTlZIUUFzMnVlM2wwdU96cGVNNW9JcGpBc2xEYnB6bUVqSmhLYng4b0JkV3R3X2txRHNPZ1VRYlN2bE03S1pqVEVvNkt5WG9hZktvRnZhSy0zb19sYUlDaGZwU3JnVTIzV0c5MlAwZ0RqZ1E?oc=5</link><guid
+        isPermaLink=\"false\">CBMi7gJBVV95cUxQU3c4blQ3VU11TmQ2VUVROWZweWF2NmxxVWpyZDBBRUVhZmhSdUFYUkJnMkNWbGVkS3ZYZG56NDJRMF9TVmIwUjFxeEpvMklhRzl5cW1aZ2dHUTAycHJQbk9pbDU0Q25xYUxvY2Y0SXZ5X0tKSFlSUUpYcXZUTjRVZXNQWUIwWThvelN3UnRlQ0hSdVQyTnBhSHJqRjJzcFdSRU5yc1NjX1NTNFk3SnJFOFFzdnpfVEN2bHhzX3JyLS1nMDY5SzZlbEV0eERpV2hKNkJYMHlFenNLVm5ZMFV4Mm9SeDdQcWRESTlhaGp6c3FZMGlGX1V4NG1TeHlJRlBmMXFMTlZIUUFzMnVlM2wwdU96cGVNNW9JcGpBc2xEYnB6bUVqSmhLYng4b0JkV3R3X2txRHNPZ1VRYlN2bE03S1pqVEVvNkt5WG9hZktvRnZhSy0zb19sYUlDaGZwU3JnVTIzV0c5MlAwZ0RqZ1E</guid><pubDate>Thu,
+        14 Aug 2025 20:05:35 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi7gJBVV95cUxQU3c4blQ3VU11TmQ2VUVROWZweWF2NmxxVWpyZDBBRUVhZmhSdUFYUkJnMkNWbGVkS3ZYZG56NDJRMF9TVmIwUjFxeEpvMklhRzl5cW1aZ2dHUTAycHJQbk9pbDU0Q25xYUxvY2Y0SXZ5X0tKSFlSUUpYcXZUTjRVZXNQWUIwWThvelN3UnRlQ0hSdVQyTnBhSHJqRjJzcFdSRU5yc1NjX1NTNFk3SnJFOFFzdnpfVEN2bHhzX3JyLS1nMDY5SzZlbEV0eERpV2hKNkJYMHlFenNLVm5ZMFV4Mm9SeDdQcWRESTlhaGp6c3FZMGlGX1V4NG1TeHlJRlBmMXFMTlZIUUFzMnVlM2wwdU96cGVNNW9JcGpBc2xEYnB6bUVqSmhLYng4b0JkV3R3X2txRHNPZ1VRYlN2bE03S1pqVEVvNkt5WG9hZktvRnZhSy0zb19sYUlDaGZwU3JnVTIzV0c5MlAwZ0RqZ1E?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 tiptoes to fresh record close, Dow and Nasdaq
+        finish lower&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source
+        url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>Markets
+        News, Aug. 12, 2025: S&amp;P 500, Nasdaq Close at Record Highs as Stocks Surge
+        After CPI Report Boosts Rate-Cut Hopes - Investopedia</title><link>https://news.google.com/rss/articles/CBMib0FVX3lxTE16VG1PS0R0cmt6OFBsUnY2clJMb3dYUDcxYVpqUk9VaWVvSEZtV3RPOXpYZm5Dd0ZOc0gyUmhCcDEzaGtPVmpnZ1hlQWdlWGxJSENtbmVMMWY3N2MzWGRzQjVZbExaX1RFUnJzQm9Vdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMib0FVX3lxTE16VG1PS0R0cmt6OFBsUnY2clJMb3dYUDcxYVpqUk9VaWVvSEZtV3RPOXpYZm5Dd0ZOc0gyUmhCcDEzaGtPVmpnZ1hlQWdlWGxJSENtbmVMMWY3N2MzWGRzQjVZbExaX1RFUnJzQm9Vdw</guid><pubDate>Tue,
+        12 Aug 2025 22:20:10 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE16VG1PS0R0cmt6OFBsUnY2clJMb3dYUDcxYVpqUk9VaWVvSEZtV3RPOXpYZm5Dd0ZOc0gyUmhCcDEzaGtPVmpnZ1hlQWdlWGxJSENtbmVMMWY3N2MzWGRzQjVZbExaX1RFUnJzQm9Vdw?oc=5\"
+        target=\"_blank\"&gt;Markets News, Aug. 12, 2025: S&amp;P 500, Nasdaq Close
+        at Record Highs as Stocks Surge After CPI Report Boosts Rate-Cut Hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>S&amp;P
+        500 decliners outnumber gainers by nearly 4 to 1 - MarketWatch</title><link>https://news.google.com/rss/articles/CBMiwgJBVV95cUxNWDVURm54VjZKeTFFQTJNODh1dGtoVFlMWU9CWU5NVGc4R0Y3dUVnNHhHZHJMS1B2M2pXN3VNc19HQVFwRVVCMEF3WHpfc2JMOXpYT3Mwbk5qdkt3dnI5MXozS0lfUkd6aU40bS1EYk0tcXhjSlBzSXZtbDJMaFpTd0FNUzVRMW5WNFg3UXB6N2c2UW83dVZWWEVUQlpMaHZaaUVUNDh2eEtpa3FUX0tnMjVXMTJJZkFzVDYyMzZBcHo1My03djdOZlJIRFBPTFZmemREZ3dfRTM0OWRZT1hDOE52dWJjVi1tQXFJUDd2Ym9YMzJnZEJoOGZwZUdLN1NRSGZRWUIyODhEb0ItbVRwbVQ2WkFTX2RaWTJxWUd5YUJ6dWZ6SzdobEF5M3J4czNKNEx2c2xTakx3WkNDMThjUFB3?oc=5</link><guid
+        isPermaLink=\"false\">CBMiwgJBVV95cUxNWDVURm54VjZKeTFFQTJNODh1dGtoVFlMWU9CWU5NVGc4R0Y3dUVnNHhHZHJMS1B2M2pXN3VNc19HQVFwRVVCMEF3WHpfc2JMOXpYT3Mwbk5qdkt3dnI5MXozS0lfUkd6aU40bS1EYk0tcXhjSlBzSXZtbDJMaFpTd0FNUzVRMW5WNFg3UXB6N2c2UW83dVZWWEVUQlpMaHZaaUVUNDh2eEtpa3FUX0tnMjVXMTJJZkFzVDYyMzZBcHo1My03djdOZlJIRFBPTFZmemREZ3dfRTM0OWRZT1hDOE52dWJjVi1tQXFJUDd2Ym9YMzJnZEJoOGZwZUdLN1NRSGZRWUIyODhEb0ItbVRwbVQ2WkFTX2RaWTJxWUd5YUJ6dWZ6SzdobEF5M3J4czNKNEx2c2xTakx3WkNDMThjUFB3</guid><pubDate>Thu,
+        14 Aug 2025 16:02:03 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiwgJBVV95cUxNWDVURm54VjZKeTFFQTJNODh1dGtoVFlMWU9CWU5NVGc4R0Y3dUVnNHhHZHJMS1B2M2pXN3VNc19HQVFwRVVCMEF3WHpfc2JMOXpYT3Mwbk5qdkt3dnI5MXozS0lfUkd6aU40bS1EYk0tcXhjSlBzSXZtbDJMaFpTd0FNUzVRMW5WNFg3UXB6N2c2UW83dVZWWEVUQlpMaHZaaUVUNDh2eEtpa3FUX0tnMjVXMTJJZkFzVDYyMzZBcHo1My03djdOZlJIRFBPTFZmemREZ3dfRTM0OWRZT1hDOE52dWJjVi1tQXFJUDd2Ym9YMzJnZEJoOGZwZUdLN1NRSGZRWUIyODhEb0ItbVRwbVQ2WkFTX2RaWTJxWUd5YUJ6dWZ6SzdobEF5M3J4czNKNEx2c2xTakx3WkNDMThjUFB3?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 decliners outnumber gainers by nearly 4 to
+        1&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source
+        url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>Can
+        Stocks Keep Rising? Here Are Cases For\u2014And Against\u2014More Gains for
+        the S&amp;P 500 - Investopedia</title><link>https://news.google.com/rss/articles/CBMirwFBVV95cUxNalJaN25LMVRZMHdDczBfZFhqTk1hRFhtMkFmTFFFNVYweFladjlwVjBESmdxS1BHMzczRmlRZGFPcWZsZi1iV3g4TjJzODd0MnFpTUxwazRfY25QX1J3X2Q0ODZENUxHZlEyQjBLbGFreHRjRVNVMDRiRVZmU2YtLTRGRWF3bFFwUERNSFNsRzNCVS1xOFpGV051a2V2MUlBV0lIVVVMdVBRckxjdXQw?oc=5</link><guid
+        isPermaLink=\"false\">CBMirwFBVV95cUxNalJaN25LMVRZMHdDczBfZFhqTk1hRFhtMkFmTFFFNVYweFladjlwVjBESmdxS1BHMzczRmlRZGFPcWZsZi1iV3g4TjJzODd0MnFpTUxwazRfY25QX1J3X2Q0ODZENUxHZlEyQjBLbGFreHRjRVNVMDRiRVZmU2YtLTRGRWF3bFFwUERNSFNsRzNCVS1xOFpGV051a2V2MUlBV0lIVVVMdVBRckxjdXQw</guid><pubDate>Thu,
+        14 Aug 2025 17:07:27 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNalJaN25LMVRZMHdDczBfZFhqTk1hRFhtMkFmTFFFNVYweFladjlwVjBESmdxS1BHMzczRmlRZGFPcWZsZi1iV3g4TjJzODd0MnFpTUxwazRfY25QX1J3X2Q0ODZENUxHZlEyQjBLbGFreHRjRVNVMDRiRVZmU2YtLTRGRWF3bFFwUERNSFNsRzNCVS1xOFpGV051a2V2MUlBV0lIVVVMdVBRckxjdXQw?oc=5\"
+        target=\"_blank\"&gt;Can Stocks Keep Rising? Here Are Cases For\u2014And Against\u2014More
+        Gains for the S&amp;P 500&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source
+        url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>Markets
+        News, Aug. 13, 2025: S&amp;P 500, Nasdaq Hit New Highs as Stock Market Rally
+        Continues; Dow Nears First Record Since December - Investopedia</title><link>https://news.google.com/rss/articles/CBMib0FVX3lxTFBhcXM5endrOTU3Wml5dDNEQUtoWUJEdkoycE11bnhWSHpxV3VRRWF4WkxYbkhTV2tRWDFBZGI5SHo3cjJhWHBYcWdZdWNCTzFqYkNfTmczNTBSRFp2N3RHNEU2eVFmLWVqRjdxYXkydw?oc=5</link><guid
+        isPermaLink=\"false\">CBMib0FVX3lxTFBhcXM5endrOTU3Wml5dDNEQUtoWUJEdkoycE11bnhWSHpxV3VRRWF4WkxYbkhTV2tRWDFBZGI5SHo3cjJhWHBYcWdZdWNCTzFqYkNfTmczNTBSRFp2N3RHNEU2eVFmLWVqRjdxYXkydw</guid><pubDate>Wed,
+        13 Aug 2025 22:24:53 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTFBhcXM5endrOTU3Wml5dDNEQUtoWUJEdkoycE11bnhWSHpxV3VRRWF4WkxYbkhTV2tRWDFBZGI5SHo3cjJhWHBYcWdZdWNCTzFqYkNfTmczNTBSRFp2N3RHNEU2eVFmLWVqRjdxYXkydw?oc=5\"
+        target=\"_blank\"&gt;Markets News, Aug. 13, 2025: S&amp;P 500, Nasdaq Hit
+        New Highs as Stock Market Rally Continues; Dow Nears First Record Since December&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>Citi
+        Strategists Raise S&amp;P 500 Target on Resilient Earnings - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMigwFBVV95cUxNM2w3TWlEcGV0bkFFdHg2U3pkMmlPQTc4QXBDN09pNlBUMTRpYS0yb1J4Qm9BM200d0VrVkF0bTVtLWNZdjBOZEJzNlZfdGR6WlY3R0oxR3dHYlQzZU5WRll4QmZwQzhiX3EtQnhqcmIzNUhrRERjQ1FoeGppT0RzVzBYQQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMigwFBVV95cUxNM2w3TWlEcGV0bkFFdHg2U3pkMmlPQTc4QXBDN09pNlBUMTRpYS0yb1J4Qm9BM200d0VrVkF0bTVtLWNZdjBOZEJzNlZfdGR6WlY3R0oxR3dHYlQzZU5WRll4QmZwQzhiX3EtQnhqcmIzNUhrRERjQ1FoeGppT0RzVzBYQQ</guid><pubDate>Mon,
+        11 Aug 2025 11:10:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxNM2w3TWlEcGV0bkFFdHg2U3pkMmlPQTc4QXBDN09pNlBUMTRpYS0yb1J4Qm9BM200d0VrVkF0bTVtLWNZdjBOZEJzNlZfdGR6WlY3R0oxR3dHYlQzZU5WRll4QmZwQzhiX3EtQnhqcmIzNUhrRERjQ1FoeGppT0RzVzBYQQ?oc=5\"
+        target=\"_blank\"&gt;Citi Strategists Raise S&amp;P 500 Target on Resilient
+        Earnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>U.S. Equities at a Crossroads: S&amp;P
+        500's All-Time High Amid Mixed Market Signals - AInvest</title><link>https://news.google.com/rss/articles/CBMikwFBVV95cUxPSkpobUluWkVCZUlzeUduMEdhazJxSFVvNEZSRWNxM1g1OGdVMnU1RjBYMVUxWmdpdGstbVRXbmhmYzJSZy1TeEs0bi1hcnZHS2dOLTROLUIya3UxUG5UbmF4bmxDd3JwQkxublhBZk1SaHp5WEtYQnZNaFRGYzNUMTNnUmR4ck5pUkVXdkU5OVNwOWM?oc=5</link><guid
+        isPermaLink=\"false\">CBMikwFBVV95cUxPSkpobUluWkVCZUlzeUduMEdhazJxSFVvNEZSRWNxM1g1OGdVMnU1RjBYMVUxWmdpdGstbVRXbmhmYzJSZy1TeEs0bi1hcnZHS2dOLTROLUIya3UxUG5UbmF4bmxDd3JwQkxublhBZk1SaHp5WEtYQnZNaFRGYzNUMTNnUmR4ck5pUkVXdkU5OVNwOWM</guid><pubDate>Fri,
+        15 Aug 2025 04:29:43 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPSkpobUluWkVCZUlzeUduMEdhazJxSFVvNEZSRWNxM1g1OGdVMnU1RjBYMVUxWmdpdGstbVRXbmhmYzJSZy1TeEs0bi1hcnZHS2dOLTROLUIya3UxUG5UbmF4bmxDd3JwQkxublhBZk1SaHp5WEtYQnZNaFRGYzNUMTNnUmR4ck5pUkVXdkU5OVNwOWM?oc=5\"
+        target=\"_blank\"&gt;U.S. Equities at a Crossroads: S&amp;P 500's All-Time
+        High Amid Mixed Market Signals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;AInvest&lt;/font&gt;</description><source
+        url=\"https://www.ainvest.com\">AInvest</source></item><item><title>Dow rallies
+        400 points for a second day, S&amp;P 500 closes at another record high - CNBC</title><link>https://news.google.com/rss/articles/CBMid0FVX3lxTFA0VVJxeVZMNG1yZ2JnTjJac0hzVDcyVlhLNnp0Z0dLVFBLTzNRc2ZqVklrQjRZek8tSHJBQTRmN0RoTGVwblhUVTRkalUxNWVMZjRsY3VnZEV5U3Y0dVkxYzRYX09QSVBrZmRWX3hwbVNBbmdMV2tn0gF8QVVfeXFMTzhqVGYzcUdGdFg1TDhEQkJFS1RzLW5aWWh5SjJaRVBvUGg3TjhPVmhVQy1fa0Q0eVJQMzVUbm5IMjVqUXlPdll3ajhmRVFaaXdfaE5Kbi1vQ3ZuR1JTa0twbGJRRVF5WThDaURzeGxSZEJUUHVidjlibDNLSw?oc=5</link><guid
+        isPermaLink=\"false\">CBMid0FVX3lxTFA0VVJxeVZMNG1yZ2JnTjJac0hzVDcyVlhLNnp0Z0dLVFBLTzNRc2ZqVklrQjRZek8tSHJBQTRmN0RoTGVwblhUVTRkalUxNWVMZjRsY3VnZEV5U3Y0dVkxYzRYX09QSVBrZmRWX3hwbVNBbmdMV2tn0gF8QVVfeXFMTzhqVGYzcUdGdFg1TDhEQkJFS1RzLW5aWWh5SjJaRVBvUGg3TjhPVmhVQy1fa0Q0eVJQMzVUbm5IMjVqUXlPdll3ajhmRVFaaXdfaE5Kbi1vQ3ZuR1JTa0twbGJRRVF5WThDaURzeGxSZEJUUHVidjlibDNLSw</guid><pubDate>Wed,
+        13 Aug 2025 20:03:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTFA0VVJxeVZMNG1yZ2JnTjJac0hzVDcyVlhLNnp0Z0dLVFBLTzNRc2ZqVklrQjRZek8tSHJBQTRmN0RoTGVwblhUVTRkalUxNWVMZjRsY3VnZEV5U3Y0dVkxYzRYX09QSVBrZmRWX3hwbVNBbmdMV2tn0gF8QVVfeXFMTzhqVGYzcUdGdFg1TDhEQkJFS1RzLW5aWWh5SjJaRVBvUGg3TjhPVmhVQy1fa0Q0eVJQMzVUbm5IMjVqUXlPdll3ajhmRVFaaXdfaE5Kbi1vQ3ZuR1JTa0twbGJRRVF5WThDaURzeGxSZEJUUHVidjlibDNLSw?oc=5\"
+        target=\"_blank\"&gt;Dow rallies 400 points for a second day, S&amp;P 500
+        closes at another record high&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source
+        url=\"https://www.cnbc.com\">CNBC</source></item><item><title>Even at an All-Time
+        High, The Vanguard S&amp;P 500 ETF Isn't as Expensive as It Seems - Mitrade</title><link>https://news.google.com/rss/articles/CBMigwFBVV95cUxOOUFUcDVxWmhBdVNnYlVZaXU3dWNKamllZi1VRGpITVAzak5sZmdOa0lYTjJQN3U1S05XaFR3V1hONzhveWdSQzJJeUw3VDVJY2pTSDQzcF9jVGFMWExxX2M0N1l6X2F0TDhXdHZlTU1kbGt4RU1VcFQ1YkVEdzNKX1Bocw?oc=5</link><guid
+        isPermaLink=\"false\">CBMigwFBVV95cUxOOUFUcDVxWmhBdVNnYlVZaXU3dWNKamllZi1VRGpITVAzak5sZmdOa0lYTjJQN3U1S05XaFR3V1hONzhveWdSQzJJeUw3VDVJY2pTSDQzcF9jVGFMWExxX2M0N1l6X2F0TDhXdHZlTU1kbGt4RU1VcFQ1YkVEdzNKX1Bocw</guid><pubDate>Thu,
+        14 Aug 2025 19:52:52 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOOUFUcDVxWmhBdVNnYlVZaXU3dWNKamllZi1VRGpITVAzak5sZmdOa0lYTjJQN3U1S05XaFR3V1hONzhveWdSQzJJeUw3VDVJY2pTSDQzcF9jVGFMWExxX2M0N1l6X2F0TDhXdHZlTU1kbGt4RU1VcFQ1YkVEdzNKX1Bocw?oc=5\"
+        target=\"_blank\"&gt;Even at an All-Time High, The Vanguard S&amp;P 500 ETF
+        Isn't as Expensive as It Seems&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Mitrade&lt;/font&gt;</description><source
+        url=\"https://www.mitrade.com\">Mitrade</source></item><item><title>Stock
+        Market News From Aug. 12, 2025: S&amp;P 500, Nasdaq Hit Closing Highs - Barron's</title><link>https://news.google.com/rss/articles/CBMidkFVX3lxTE5ETDBNN3pPajVvOFBDOTBvZTdaTHI5QTZSSzg4R2Z6clljdFFDTGM4bm4zTEstR2hBWXVaNUVubklTOVRfUWxNNmItbFl4NUd2dEcxNmFXZXhDaTY3Z2FtYkFoS2RHZXgyRGZueEdSdk1mNnh5b0E?oc=5</link><guid
+        isPermaLink=\"false\">CBMidkFVX3lxTE5ETDBNN3pPajVvOFBDOTBvZTdaTHI5QTZSSzg4R2Z6clljdFFDTGM4bm4zTEstR2hBWXVaNUVubklTOVRfUWxNNmItbFl4NUd2dEcxNmFXZXhDaTY3Z2FtYkFoS2RHZXgyRGZueEdSdk1mNnh5b0E</guid><pubDate>Tue,
+        12 Aug 2025 22:51:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE5ETDBNN3pPajVvOFBDOTBvZTdaTHI5QTZSSzg4R2Z6clljdFFDTGM4bm4zTEstR2hBWXVaNUVubklTOVRfUWxNNmItbFl4NUd2dEcxNmFXZXhDaTY3Z2FtYkFoS2RHZXgyRGZueEdSdk1mNnh5b0E?oc=5\"
+        target=\"_blank\"&gt;Stock Market News From Aug. 12, 2025: S&amp;P 500, Nasdaq
+        Hit Closing Highs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barron's&lt;/font&gt;</description><source
+        url=\"https://www.barrons.com\">Barron's</source></item><item><title>US stock
+        market cuts losses late in day to end near unchanged. Only S&amp;P 500 ekes
+        out gain - USA Today</title><link>https://news.google.com/rss/articles/CBMitwFBVV95cUxPSjNYRWl2N2dORkVFcXV5WWNjX0JzN2JEdVM4ZTFLQ2lUTFFZY2hIc096SkFMbU1jNnRNZVNzT0hjcDdLSm9GVWRDbkIyaC1kX05kdmQ4Um05S2dZdURaeDVEcnV2aE8wQjJDSjNtWjlIcXdDeTJ6Z1k3d2FWbEJvTk5KalFEYWxIYXY5Y3VUb3BBWldHSENzaW9NTE04ZnFGNHBhWHRnVWZKU2NCZVM2LTZtSU10aGM?oc=5</link><guid
+        isPermaLink=\"false\">CBMitwFBVV95cUxPSjNYRWl2N2dORkVFcXV5WWNjX0JzN2JEdVM4ZTFLQ2lUTFFZY2hIc096SkFMbU1jNnRNZVNzT0hjcDdLSm9GVWRDbkIyaC1kX05kdmQ4Um05S2dZdURaeDVEcnV2aE8wQjJDSjNtWjlIcXdDeTJ6Z1k3d2FWbEJvTk5KalFEYWxIYXY5Y3VUb3BBWldHSENzaW9NTE04ZnFGNHBhWHRnVWZKU2NCZVM2LTZtSU10aGM</guid><pubDate>Thu,
+        14 Aug 2025 17:19:42 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPSjNYRWl2N2dORkVFcXV5WWNjX0JzN2JEdVM4ZTFLQ2lUTFFZY2hIc096SkFMbU1jNnRNZVNzT0hjcDdLSm9GVWRDbkIyaC1kX05kdmQ4Um05S2dZdURaeDVEcnV2aE8wQjJDSjNtWjlIcXdDeTJ6Z1k3d2FWbEJvTk5KalFEYWxIYXY5Y3VUb3BBWldHSENzaW9NTE04ZnFGNHBhWHRnVWZKU2NCZVM2LTZtSU10aGM?oc=5\"
+        target=\"_blank\"&gt;US stock market cuts losses late in day to end near unchanged.
+        Only S&amp;P 500 ekes out gain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;USA
+        Today&lt;/font&gt;</description><source url=\"https://www.usatoday.com\">USA
+        Today</source></item><item><title>S&amp;P 500, Nasdaq retreat from record
+        rally after hot producer inflation data - MSN</title><link>https://news.google.com/rss/articles/CBMixAFBVV95cUxPSzFiMHhDbmwzV0tlQUZ5YkVOdUdQNFRQT21rcUZzUFJyU0hWUHBLcmZlQ1hsdVBmRlNVSzhzSXBpOE5XdGdFSE1qVUhzSXN4cGplUEgxMkkwWGc0U3laUkZzeG9wRF9Dc1pMQkpCTmF0RlRyM2hRTTYzaVdaR0xHeHNsX2tpdW5TSkg4QmpMcDNnZFdndm5oYzNsREkwNHVNbWxGakdqWktTTldkMVZVZEtJY1U0cGV2SHg1WDd2SklOLWRO?oc=5</link><guid
+        isPermaLink=\"false\">CBMixAFBVV95cUxPSzFiMHhDbmwzV0tlQUZ5YkVOdUdQNFRQT21rcUZzUFJyU0hWUHBLcmZlQ1hsdVBmRlNVSzhzSXBpOE5XdGdFSE1qVUhzSXN4cGplUEgxMkkwWGc0U3laUkZzeG9wRF9Dc1pMQkpCTmF0RlRyM2hRTTYzaVdaR0xHeHNsX2tpdW5TSkg4QmpMcDNnZFdndm5oYzNsREkwNHVNbWxGakdqWktTTldkMVZVZEtJY1U0cGV2SHg1WDd2SklOLWRO</guid><pubDate>Fri,
+        15 Aug 2025 01:40:56 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPSzFiMHhDbmwzV0tlQUZ5YkVOdUdQNFRQT21rcUZzUFJyU0hWUHBLcmZlQ1hsdVBmRlNVSzhzSXBpOE5XdGdFSE1qVUhzSXN4cGplUEgxMkkwWGc0U3laUkZzeG9wRF9Dc1pMQkpCTmF0RlRyM2hRTTYzaVdaR0xHeHNsX2tpdW5TSkg4QmpMcDNnZFdndm5oYzNsREkwNHVNbWxGakdqWktTTldkMVZVZEtJY1U0cGV2SHg1WDd2SklOLWRO?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq retreat from record rally after hot
+        producer inflation data&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;MSN&lt;/font&gt;</description><source
+        url=\"https://www.msn.com\">MSN</source></item><item><title>Citigroup raises
+        S&amp;P 500 forecast thanks to strong earnings, tax bill benefits - CNBC</title><link>https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZHlrZnVVd1lObF9DZkVlZzZkYjh0bjZQVTZiMnl1bkhEMmVRVWtpZ1RrRTFKLXF2U0dkYjlLSExhbnpacXdrT1ZCemswczNYbTZhY2R5X1FsSDlfd2prQk9wS3h6Y09paGVUZDlJUVg2RWNZaDkwQXhzUUYyTG5qTW1wZ0U3d2dBbC1vMkZOTFVzd1R2c1hyWGJzcEVENWNhdW50ZGpaZy1Wblk?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqwFBVV95cUxOZHlrZnVVd1lObF9DZkVlZzZkYjh0bjZQVTZiMnl1bkhEMmVRVWtpZ1RrRTFKLXF2U0dkYjlLSExhbnpacXdrT1ZCemswczNYbTZhY2R5X1FsSDlfd2prQk9wS3h6Y09paGVUZDlJUVg2RWNZaDkwQXhzUUYyTG5qTW1wZ0U3d2dBbC1vMkZOTFVzd1R2c1hyWGJzcEVENWNhdW50ZGpaZy1Wblk</guid><pubDate>Mon,
+        11 Aug 2025 13:22:38 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZHlrZnVVd1lObF9DZkVlZzZkYjh0bjZQVTZiMnl1bkhEMmVRVWtpZ1RrRTFKLXF2U0dkYjlLSExhbnpacXdrT1ZCemswczNYbTZhY2R5X1FsSDlfd2prQk9wS3h6Y09paGVUZDlJUVg2RWNZaDkwQXhzUUYyTG5qTW1wZ0U3d2dBbC1vMkZOTFVzd1R2c1hyWGJzcEVENWNhdW50ZGpaZy1Wblk?oc=5\"
+        target=\"_blank\"&gt;Citigroup raises S&amp;P 500 forecast thanks to strong
+        earnings, tax bill benefits&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source
+        url=\"https://www.cnbc.com\">CNBC</source></item><item><title>Berkshire\u2019s
+        surprise UnitedHealth stake sends UNH up 7% as S&amp;P 500 logs third straight
+        gain - Cryptopolitan</title><link>https://news.google.com/rss/articles/CBMiekFVX3lxTE5LcWJUN1ZKUnotYThTMDRIU2U4NS1DcE9YT2pjQmJqcmd0eFM0MGpKUkhUNjJqQlRGMExYRUpreVowaHl6dTFFUHY5NVhLVmh5emNaWHZfcVlRTVVkMXd2TC0tSEN5bG9SdVNyTjBhdnEzSmkzTTZfSXhn?oc=5</link><guid
+        isPermaLink=\"false\">CBMiekFVX3lxTE5LcWJUN1ZKUnotYThTMDRIU2U4NS1DcE9YT2pjQmJqcmd0eFM0MGpKUkhUNjJqQlRGMExYRUpreVowaHl6dTFFUHY5NVhLVmh5emNaWHZfcVlRTVVkMXd2TC0tSEN5bG9SdVNyTjBhdnEzSmkzTTZfSXhn</guid><pubDate>Thu,
+        14 Aug 2025 22:45:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5LcWJUN1ZKUnotYThTMDRIU2U4NS1DcE9YT2pjQmJqcmd0eFM0MGpKUkhUNjJqQlRGMExYRUpreVowaHl6dTFFUHY5NVhLVmh5emNaWHZfcVlRTVVkMXd2TC0tSEN5bG9SdVNyTjBhdnEzSmkzTTZfSXhn?oc=5\"
+        target=\"_blank\"&gt;Berkshire\u2019s surprise UnitedHealth stake sends UNH
+        up 7% as S&amp;P 500 logs third straight gain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Cryptopolitan&lt;/font&gt;</description><source url=\"https://www.cryptopolitan.com\">Cryptopolitan</source></item><item><title>S&amp;P
+        500 Ripe for a Pullback as Market Liquidity and Volatility Converge - Investing.com</title><link>https://news.google.com/rss/articles/CBMijgFBVV95cUxNOEdnU0lvVDEwcF9jcDFUdWNlRTJiSV9tMlk5X1dYYWEzcTF3U3c2MlRmaU8xTkRxemY4bHRvY3g5ZWM2aWZUcWxXNzVEbThVNzhJM3VCTGtJZS1OVWVNdkczQWVuWWN6eUpRbF9wdExvWWN6bHlocWQyS2ZpcXJiXzhDX1RIMy02NlJIdHp3?oc=5</link><guid
+        isPermaLink=\"false\">CBMijgFBVV95cUxNOEdnU0lvVDEwcF9jcDFUdWNlRTJiSV9tMlk5X1dYYWEzcTF3U3c2MlRmaU8xTkRxemY4bHRvY3g5ZWM2aWZUcWxXNzVEbThVNzhJM3VCTGtJZS1OVWVNdkczQWVuWWN6eUpRbF9wdExvWWN6bHlocWQyS2ZpcXJiXzhDX1RIMy02NlJIdHp3</guid><pubDate>Fri,
+        15 Aug 2025 04:07:30 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxNOEdnU0lvVDEwcF9jcDFUdWNlRTJiSV9tMlk5X1dYYWEzcTF3U3c2MlRmaU8xTkRxemY4bHRvY3g5ZWM2aWZUcWxXNzVEbThVNzhJM3VCTGtJZS1OVWVNdkczQWVuWWN6eUpRbF9wdExvWWN6bHlocWQyS2ZpcXJiXzhDX1RIMy02NlJIdHp3?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Ripe for a Pullback as Market Liquidity and
+        Volatility Converge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Investing.com&lt;/font&gt;</description><source
+        url=\"https://www.investing.com\">Investing.com</source></item><item><title>S&amp;P
+        500, Nasdaq back in the green as Big Tech rides to the rescue - MarketWatch</title><link>https://news.google.com/rss/articles/CBMi0gJBVV95cUxNd1JlMlYzYmlBZlY0bzh2dGZCZWRBYUhzY0dZeFVrSW95NlBmb0h5Y2txQ2FZOHJicVJ4d015bTQ5cDJxdVRRTHNJb0psU1lFX1BmR3M0MkNUNElrNWg5WmY5Z0xadE00bHBrd2dkekRIeEMxRjVtNDlwNThyb1RQWElQV1RFc2pVSkg3aE9WTmdFZmdVWXNrWjRTRVBqS0gwN1Frd0VjTkJMZGM0aWNFb283aURPQTBVd1ZkRFB2ZDNUUUtXMkk4RklGa3RfaGRuSXRUbFhKVktCM25mMDhzWDdyaFdXY0hGWDBqeEFTQXEtc2w4c1U4elZrdEd6WndnMjNaVDRXTDM1ZHo4TUNaTHp3czBwMVl2Nmhobm5LUXlrRE1iZDh1S2ZqWmZnS0tnakN6dDEtQ0k1NnlHblJGVUF1X0NuSXNXdXpJZEFwUUFhZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMi0gJBVV95cUxNd1JlMlYzYmlBZlY0bzh2dGZCZWRBYUhzY0dZeFVrSW95NlBmb0h5Y2txQ2FZOHJicVJ4d015bTQ5cDJxdVRRTHNJb0psU1lFX1BmR3M0MkNUNElrNWg5WmY5Z0xadE00bHBrd2dkekRIeEMxRjVtNDlwNThyb1RQWElQV1RFc2pVSkg3aE9WTmdFZmdVWXNrWjRTRVBqS0gwN1Frd0VjTkJMZGM0aWNFb283aURPQTBVd1ZkRFB2ZDNUUUtXMkk4RklGa3RfaGRuSXRUbFhKVktCM25mMDhzWDdyaFdXY0hGWDBqeEFTQXEtc2w4c1U4elZrdEd6WndnMjNaVDRXTDM1ZHo4TUNaTHp3czBwMVl2Nmhobm5LUXlrRE1iZDh1S2ZqWmZnS0tnakN6dDEtQ0k1NnlHblJGVUF1X0NuSXNXdXpJZEFwUUFhZw</guid><pubDate>Thu,
+        14 Aug 2025 15:00:06 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi0gJBVV95cUxNd1JlMlYzYmlBZlY0bzh2dGZCZWRBYUhzY0dZeFVrSW95NlBmb0h5Y2txQ2FZOHJicVJ4d015bTQ5cDJxdVRRTHNJb0psU1lFX1BmR3M0MkNUNElrNWg5WmY5Z0xadE00bHBrd2dkekRIeEMxRjVtNDlwNThyb1RQWElQV1RFc2pVSkg3aE9WTmdFZmdVWXNrWjRTRVBqS0gwN1Frd0VjTkJMZGM0aWNFb283aURPQTBVd1ZkRFB2ZDNUUUtXMkk4RklGa3RfaGRuSXRUbFhKVktCM25mMDhzWDdyaFdXY0hGWDBqeEFTQXEtc2w4c1U4elZrdEd6WndnMjNaVDRXTDM1ZHo4TUNaTHp3czBwMVl2Nmhobm5LUXlrRE1iZDh1S2ZqWmZnS0tnakN6dDEtQ0k1NnlHblJGVUF1X0NuSXNXdXpJZEFwUUFhZw?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq back in the green as Big Tech rides
+        to the rescue&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source
+        url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>IPO
+        performance vs. S&amp;P 500 since April market low? It's not even close -
+        CNBC</title><link>https://news.google.com/rss/articles/CBMihAFBVV95cUxQMWxzOHFtVEdtbmJ1NEEydi1jTzkzN2VjUWZnMmdCWEFiOXlDcnRPQkRYUktTMWZpcWV2eFFOWDF3ZmxXZUVMX0plcVdSS0ZmS0EwS21JSDdqcUNWaFl2ZExNZm9GWmYzS3owYW5yQTcyRldiT2thNmtCOXlfMDFSUEp4YkvSAYoBQVVfeXFMT0ZCU28wVzJuZUVfOVJ3RFYzM1BfMWVBSVN6M3hjZ1FTT1FQZjd2TGEtQmdpbUpRaXVyV1ZHemZTVGk3SXhRZm1TNHBKYzJaS2F4MF9ueGw4MVM5akdXNGg3M3FRZDZhcDlINGg2b0t5MXdhYkJ4bFFzRFg3ZXBxQ2ZXalVGTW5oV293?oc=5</link><guid
+        isPermaLink=\"false\">CBMihAFBVV95cUxQMWxzOHFtVEdtbmJ1NEEydi1jTzkzN2VjUWZnMmdCWEFiOXlDcnRPQkRYUktTMWZpcWV2eFFOWDF3ZmxXZUVMX0plcVdSS0ZmS0EwS21JSDdqcUNWaFl2ZExNZm9GWmYzS3owYW5yQTcyRldiT2thNmtCOXlfMDFSUEp4YkvSAYoBQVVfeXFMT0ZCU28wVzJuZUVfOVJ3RFYzM1BfMWVBSVN6M3hjZ1FTT1FQZjd2TGEtQmdpbUpRaXVyV1ZHemZTVGk3SXhRZm1TNHBKYzJaS2F4MF9ueGw4MVM5akdXNGg3M3FRZDZhcDlINGg2b0t5MXdhYkJ4bFFzRFg3ZXBxQ2ZXalVGTW5oV293</guid><pubDate>Tue,
+        12 Aug 2025 15:10:26 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihAFBVV95cUxQMWxzOHFtVEdtbmJ1NEEydi1jTzkzN2VjUWZnMmdCWEFiOXlDcnRPQkRYUktTMWZpcWV2eFFOWDF3ZmxXZUVMX0plcVdSS0ZmS0EwS21JSDdqcUNWaFl2ZExNZm9GWmYzS3owYW5yQTcyRldiT2thNmtCOXlfMDFSUEp4YkvSAYoBQVVfeXFMT0ZCU28wVzJuZUVfOVJ3RFYzM1BfMWVBSVN6M3hjZ1FTT1FQZjd2TGEtQmdpbUpRaXVyV1ZHemZTVGk3SXhRZm1TNHBKYzJaS2F4MF9ueGw4MVM5akdXNGg3M3FRZDZhcDlINGg2b0t5MXdhYkJ4bFFzRFg3ZXBxQ2ZXalVGTW5oV293?oc=5\"
+        target=\"_blank\"&gt;IPO performance vs. S&amp;P 500 since April market low?
+        It's not even close&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source
+        url=\"https://www.cnbc.com\">CNBC</source></item><item><title>S&amp;P 500,
+        Nasdaq close at fresh record highs - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMie0FVX3lxTE05VHl5UDF0MGF6V2F3Y1hHVkdDYkQxdmZMVDhaQlNMU0xPY1A1SWNsTE9PUDYtU1gyeTFrS3BpT09pZDRpZ04zOXZNZTAwSzV3anh1YUhRTi11NlRFLWcwWlUxSWM3cWpVbE9naWpOM2VBRUZGZUM5ZEV2WQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMie0FVX3lxTE05VHl5UDF0MGF6V2F3Y1hHVkdDYkQxdmZMVDhaQlNMU0xPY1A1SWNsTE9PUDYtU1gyeTFrS3BpT09pZDRpZ04zOXZNZTAwSzV3anh1YUhRTi11NlRFLWcwWlUxSWM3cWpVbE9naWpOM2VBRUZGZUM5ZEV2WQ</guid><pubDate>Tue,
+        12 Aug 2025 20:14:45 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE05VHl5UDF0MGF6V2F3Y1hHVkdDYkQxdmZMVDhaQlNMU0xPY1A1SWNsTE9PUDYtU1gyeTFrS3BpT09pZDRpZ04zOXZNZTAwSzV3anh1YUhRTi11NlRFLWcwWlUxSWM3cWpVbE9naWpOM2VBRUZGZUM5ZEV2WQ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq close at fresh record highs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Here's how much the stock market could
+        drop during the weakest time of the year, according to top strategists. -
+        Business Insider</title><link>https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUktTRERTdWdSd0hsZlpJRUVRTkFkekJXQS1hOHFKRW8weHMzUDRNQ3BvS3M2RGxNQmJvOTNYbDRiQ3dRUlRVODVXOUJEVDRLVGdlTzdJa3liUkVMbnppTEl1bkdqY2VHNGFDaGRjWUw5SWRoN0t4STdXN004WFZsaFVTUm16OWNkMDY4Wlg2SDAxUktDbHRSYWVYYVZabzdFVkZFVGlEX2NBcW5heTdDeWVRVWZzNnp5?oc=5</link><guid
+        isPermaLink=\"false\">CBMiuAFBVV95cUxNUktTRERTdWdSd0hsZlpJRUVRTkFkekJXQS1hOHFKRW8weHMzUDRNQ3BvS3M2RGxNQmJvOTNYbDRiQ3dRUlRVODVXOUJEVDRLVGdlTzdJa3liUkVMbnppTEl1bkdqY2VHNGFDaGRjWUw5SWRoN0t4STdXN004WFZsaFVTUm16OWNkMDY4Wlg2SDAxUktDbHRSYWVYYVZabzdFVkZFVGlEX2NBcW5heTdDeWVRVWZzNnp5</guid><pubDate>Tue,
+        12 Aug 2025 15:06:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUktTRERTdWdSd0hsZlpJRUVRTkFkekJXQS1hOHFKRW8weHMzUDRNQ3BvS3M2RGxNQmJvOTNYbDRiQ3dRUlRVODVXOUJEVDRLVGdlTzdJa3liUkVMbnppTEl1bkdqY2VHNGFDaGRjWUw5SWRoN0t4STdXN004WFZsaFVTUm16OWNkMDY4Wlg2SDAxUktDbHRSYWVYYVZabzdFVkZFVGlEX2NBcW5heTdDeWVRVWZzNnp5?oc=5\"
+        target=\"_blank\"&gt;Here's how much the stock market could drop during the
+        weakest time of the year, according to top strategists.&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Business Insider&lt;/font&gt;</description><source url=\"https://www.businessinsider.com\">Business
+        Insider</source></item><item><title>Stock market today: Dow, S&amp;P 500,
+        Nasdaq slump with key inflation report on deck - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMixgFBVV95cUxQMVJtbld1d0FoNWRzelN6Wk4wRXZObEZvSTNWZEN6WHBZUzlwajAxOUc1RUc4ekhZZUYxTDJhMWVrandaRjdDamVCOTR2OGttcGVUNlozVGFOdTRNVlBtSWVmTTdvZFB5YnZxR0NIRU1YQm5SaDlDdld6YTQtWUlQaF9ETzJtdHFSSG5FU3lOOGdXZ196SExwb2t2a1JLUnpBMHpqbWJWRnRkYVJOZWwyNnFjcjd5Y0J5V2N5bFZkdkkwSVVWVWc?oc=5</link><guid
+        isPermaLink=\"false\">CBMixgFBVV95cUxQMVJtbld1d0FoNWRzelN6Wk4wRXZObEZvSTNWZEN6WHBZUzlwajAxOUc1RUc4ekhZZUYxTDJhMWVrandaRjdDamVCOTR2OGttcGVUNlozVGFOdTRNVlBtSWVmTTdvZFB5YnZxR0NIRU1YQm5SaDlDdld6YTQtWUlQaF9ETzJtdHFSSG5FU3lOOGdXZ196SExwb2t2a1JLUnpBMHpqbWJWRnRkYVJOZWwyNnFjcjd5Y0J5V2N5bFZkdkkwSVVWVWc</guid><pubDate>Mon,
+        11 Aug 2025 20:15:50 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQMVJtbld1d0FoNWRzelN6Wk4wRXZObEZvSTNWZEN6WHBZUzlwajAxOUc1RUc4ekhZZUYxTDJhMWVrandaRjdDamVCOTR2OGttcGVUNlozVGFOdTRNVlBtSWVmTTdvZFB5YnZxR0NIRU1YQm5SaDlDdld6YTQtWUlQaF9ETzJtdHFSSG5FU3lOOGdXZ196SExwb2t2a1JLUnpBMHpqbWJWRnRkYVJOZWwyNnFjcjd5Y0J5V2N5bFZkdkkwSVVWVWc?oc=5\"
+        target=\"_blank\"&gt;Stock market today: Dow, S&amp;P 500, Nasdaq slump with
+        key inflation report on deck&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>S&amp;P 500 Gains and Losses Today: Index
+        Hits Record High as Expectations of a Rate Cut Rise - Investopedia</title><link>https://news.google.com/rss/articles/CBMiygFBVV95cUxNM0YwLUdDUnpMUm84Z25yd1R4X0ZXbEVSUWlrVWNSNGxVZlp4ckxSVnMxSzM5anhRbWZLNTNVVER0QV9KZ2hGb0dQbEF1ampCcVp5VEg2WWh3Skk0NU1YdG5XNTdTY0F2c045aEtpRzZDLUVvMzgwQklZLVZyM0lCRzdoN3dFeXlrcWp1SV9mN3h0eUl2dHJKcnhjOEtqWUhFRjE3aUs4VHlDSmprRlFrdW5XcTEtbUItU3R0bDVtM0pZeVR2N1pBalZ3?oc=5</link><guid
+        isPermaLink=\"false\">CBMiygFBVV95cUxNM0YwLUdDUnpMUm84Z25yd1R4X0ZXbEVSUWlrVWNSNGxVZlp4ckxSVnMxSzM5anhRbWZLNTNVVER0QV9KZ2hGb0dQbEF1ampCcVp5VEg2WWh3Skk0NU1YdG5XNTdTY0F2c045aEtpRzZDLUVvMzgwQklZLVZyM0lCRzdoN3dFeXlrcWp1SV9mN3h0eUl2dHJKcnhjOEtqWUhFRjE3aUs4VHlDSmprRlFrdW5XcTEtbUItU3R0bDVtM0pZeVR2N1pBalZ3</guid><pubDate>Tue,
+        12 Aug 2025 21:25:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNM0YwLUdDUnpMUm84Z25yd1R4X0ZXbEVSUWlrVWNSNGxVZlp4ckxSVnMxSzM5anhRbWZLNTNVVER0QV9KZ2hGb0dQbEF1ampCcVp5VEg2WWh3Skk0NU1YdG5XNTdTY0F2c045aEtpRzZDLUVvMzgwQklZLVZyM0lCRzdoN3dFeXlrcWp1SV9mN3h0eUl2dHJKcnhjOEtqWUhFRjE3aUs4VHlDSmprRlFrdW5XcTEtbUItU3R0bDVtM0pZeVR2N1pBalZ3?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Gains and Losses Today: Index Hits Record
+        High as Expectations of a Rate Cut Rise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>Stock
+        Market News, Aug. 12, 2025: Dow ends up over 480 points, S&amp;P 500 and Nasdaq
+        score fresh records as CPI report matches expectations and investors anticipate
+        Fed rate cuts - MarketWatch</title><link>https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZmNTNExtUWVxcWFfay1reG9Rd1lCR3R6Q2dYZTB1RGZnWEd2bm1OdU5vRnpqcGtoRkplSGFXMUQ2STZZTndtZmFDN0U1Y0YtbURyWEJjb2hGdWIzVkJxc00tTUZIQ1NCVnd6clQtTkNWaVVfSzRRamdEYll2SlU0RXJNUDJoMm5tNjU2bHFHNUNRNWJSdy1fNnVLWW16RVFkcU0xU3Vsd2cyWnhvMDVJQ19zclJhc0FCbE5WUEpkSEJqV0c2dkQ0MmlGSWJhaGlhcVMtOFR1MA?oc=5</link><guid
+        isPermaLink=\"false\">CBMi1wFBVV95cUxQZmNTNExtUWVxcWFfay1reG9Rd1lCR3R6Q2dYZTB1RGZnWEd2bm1OdU5vRnpqcGtoRkplSGFXMUQ2STZZTndtZmFDN0U1Y0YtbURyWEJjb2hGdWIzVkJxc00tTUZIQ1NCVnd6clQtTkNWaVVfSzRRamdEYll2SlU0RXJNUDJoMm5tNjU2bHFHNUNRNWJSdy1fNnVLWW16RVFkcU0xU3Vsd2cyWnhvMDVJQ19zclJhc0FCbE5WUEpkSEJqV0c2dkQ0MmlGSWJhaGlhcVMtOFR1MA</guid><pubDate>Tue,
+        12 Aug 2025 20:41:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxQZmNTNExtUWVxcWFfay1reG9Rd1lCR3R6Q2dYZTB1RGZnWEd2bm1OdU5vRnpqcGtoRkplSGFXMUQ2STZZTndtZmFDN0U1Y0YtbURyWEJjb2hGdWIzVkJxc00tTUZIQ1NCVnd6clQtTkNWaVVfSzRRamdEYll2SlU0RXJNUDJoMm5tNjU2bHFHNUNRNWJSdy1fNnVLWW16RVFkcU0xU3Vsd2cyWnhvMDVJQ19zclJhc0FCbE5WUEpkSEJqV0c2dkQ0MmlGSWJhaGlhcVMtOFR1MA?oc=5\"
+        target=\"_blank\"&gt;Stock Market News, Aug. 12, 2025: Dow ends up over 480
+        points, S&amp;P 500 and Nasdaq score fresh records as CPI report matches expectations
+        and investors anticipate Fed rate cuts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>America\u2019s
+        massive \u2018money illusion\u2019 is setting the S&amp;P 500 up for a correction
+        as stagflation takes hold, top analysts say - Fortune</title><link>https://news.google.com/rss/articles/CBMipgFBVV95cUxPOTZWYXU4eDZjUWNRZmJSNExHVHI3QWp2ZC1abGttYUpLVkNyQTlONmtsOGI4RFh0aEp0WlliZVJ2VHNOWUtIb3ZOb0lzMWxDNGZxT29MZzY2VFI5bUNQS1hXaHc2dTNqVDg4ekJiZTdMcXA1SDdrYll6c0d5eWRfc0VFeXhTMUpRaC01Wk9FQWs3RV9pSWxPUWRqZko2cmJ1UUxERXZR?oc=5</link><guid
+        isPermaLink=\"false\">CBMipgFBVV95cUxPOTZWYXU4eDZjUWNRZmJSNExHVHI3QWp2ZC1abGttYUpLVkNyQTlONmtsOGI4RFh0aEp0WlliZVJ2VHNOWUtIb3ZOb0lzMWxDNGZxT29MZzY2VFI5bUNQS1hXaHc2dTNqVDg4ekJiZTdMcXA1SDdrYll6c0d5eWRfc0VFeXhTMUpRaC01Wk9FQWs3RV9pSWxPUWRqZko2cmJ1UUxERXZR</guid><pubDate>Mon,
+        11 Aug 2025 17:57:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPOTZWYXU4eDZjUWNRZmJSNExHVHI3QWp2ZC1abGttYUpLVkNyQTlONmtsOGI4RFh0aEp0WlliZVJ2VHNOWUtIb3ZOb0lzMWxDNGZxT29MZzY2VFI5bUNQS1hXaHc2dTNqVDg4ekJiZTdMcXA1SDdrYll6c0d5eWRfc0VFeXhTMUpRaC01Wk9FQWs3RV9pSWxPUWRqZko2cmJ1UUxERXZR?oc=5\"
+        target=\"_blank\"&gt;America\u2019s massive \u2018money illusion\u2019 is
+        setting the S&amp;P 500 up for a correction as stagflation takes hold, top
+        analysts say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Fortune&lt;/font&gt;</description><source
+        url=\"https://fortune.com\">Fortune</source></item><item><title>Hot PPI Inflation
+        Cools Big Fed Rate-Cut Hopes; S&amp;P 500 Falls - Investor's Business Daily</title><link>https://news.google.com/rss/articles/CBMinAFBVV95cUxPYWdNcXBxeDI4cG9IN0FOamY5VUswVDA3Z3VzSmM5RTdkR05MQ0FkQkpsaTI0TEg4TWtXclJHeExab3d4SXhQZ2psMDBVMVJMUkp6cDdQemNnVW54ZkFlUHFMcHZSdG9hY2dwNlBTdHBxSmFIdm5Sc1BYb1MwSjdtckxVeVVKYk5ZWHZmYmJqczQxRF9kQ3h6S0Y2UnU?oc=5</link><guid
+        isPermaLink=\"false\">CBMinAFBVV95cUxPYWdNcXBxeDI4cG9IN0FOamY5VUswVDA3Z3VzSmM5RTdkR05MQ0FkQkpsaTI0TEg4TWtXclJHeExab3d4SXhQZ2psMDBVMVJMUkp6cDdQemNnVW54ZkFlUHFMcHZSdG9hY2dwNlBTdHBxSmFIdm5Sc1BYb1MwSjdtckxVeVVKYk5ZWHZmYmJqczQxRF9kQ3h6S0Y2UnU</guid><pubDate>Thu,
+        14 Aug 2025 13:39:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPYWdNcXBxeDI4cG9IN0FOamY5VUswVDA3Z3VzSmM5RTdkR05MQ0FkQkpsaTI0TEg4TWtXclJHeExab3d4SXhQZ2psMDBVMVJMUkp6cDdQemNnVW54ZkFlUHFMcHZSdG9hY2dwNlBTdHBxSmFIdm5Sc1BYb1MwSjdtckxVeVVKYk5ZWHZmYmJqczQxRF9kQ3h6S0Y2UnU?oc=5\"
+        target=\"_blank\"&gt;Hot PPI Inflation Cools Big Fed Rate-Cut Hopes; S&amp;P
+        500 Falls&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Investor's
+        Business Daily&lt;/font&gt;</description><source url=\"https://www.investors.com\">Investor's
+        Business Daily</source></item><item><title>An economic reset is underway which
+        will drive the S&amp;P 500 to 7,500 next spring, one strategist says - MarketWatch</title><link>https://news.google.com/rss/articles/CBMi2gFBVV95cUxOUFJXVDBIaDVCRS1XNl9GOU40dUVDWU9hNUV3NGtENkRWbTB1dkFOaGphUHROaVg0aTByZHduM2E5cThfbGc0aDBKTTg0cHVQdHNsX2tLTW40ZU1EZDFWVnIwQkNKYmtuX1VDZW45eXJTcVY3Z3lCbjRpQWRCTloxLU80Ym5BV3JWa1BxVXpmU3ZnUXROZnRVTTdVSkdsa091TFc3b2I3bVZTM2VnOEI1RmNVemo2LU5zM1VvQWFpNzY1ZER5ZjZ6cEV0dksyOG9OaGF0Qm1VX011QQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMi2gFBVV95cUxOUFJXVDBIaDVCRS1XNl9GOU40dUVDWU9hNUV3NGtENkRWbTB1dkFOaGphUHROaVg0aTByZHduM2E5cThfbGc0aDBKTTg0cHVQdHNsX2tLTW40ZU1EZDFWVnIwQkNKYmtuX1VDZW45eXJTcVY3Z3lCbjRpQWRCTloxLU80Ym5BV3JWa1BxVXpmU3ZnUXROZnRVTTdVSkdsa091TFc3b2I3bVZTM2VnOEI1RmNVemo2LU5zM1VvQWFpNzY1ZER5ZjZ6cEV0dksyOG9OaGF0Qm1VX011QQ</guid><pubDate>Wed,
+        13 Aug 2025 10:54:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxOUFJXVDBIaDVCRS1XNl9GOU40dUVDWU9hNUV3NGtENkRWbTB1dkFOaGphUHROaVg0aTByZHduM2E5cThfbGc0aDBKTTg0cHVQdHNsX2tLTW40ZU1EZDFWVnIwQkNKYmtuX1VDZW45eXJTcVY3Z3lCbjRpQWRCTloxLU80Ym5BV3JWa1BxVXpmU3ZnUXROZnRVTTdVSkdsa091TFc3b2I3bVZTM2VnOEI1RmNVemo2LU5zM1VvQWFpNzY1ZER5ZjZ6cEV0dksyOG9OaGF0Qm1VX011QQ?oc=5\"
+        target=\"_blank\"&gt;An economic reset is underway which will drive the S&amp;P
+        500 to 7,500 next spring, one strategist says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>Wall
+        Street Skeptic Barry Bannister Sees 15% Decline for S&amp;P 500 - Barron's</title><link>https://news.google.com/rss/articles/CBMiggFBVV95cUxPN3hjMHFKblJSQlNUV3huT0ItVkNyQXVZU2pHLWdRc0JVWUN0cVpDYjFrajJUdU5nM3gxMFZQV1JjMVdrSzZReFl1dDhIYUplelprc3BGdTdiVEJUNXZiY255UWdIRHFub3o2M3g0MUlYUUN2VFJybDlZM2RXU1d1cjR3?oc=5</link><guid
+        isPermaLink=\"false\">CBMiggFBVV95cUxPN3hjMHFKblJSQlNUV3huT0ItVkNyQXVZU2pHLWdRc0JVWUN0cVpDYjFrajJUdU5nM3gxMFZQV1JjMVdrSzZReFl1dDhIYUplelprc3BGdTdiVEJUNXZiY255UWdIRHFub3o2M3g0MUlYUUN2VFJybDlZM2RXU1d1cjR3</guid><pubDate>Mon,
+        11 Aug 2025 18:23:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPN3hjMHFKblJSQlNUV3huT0ItVkNyQXVZU2pHLWdRc0JVWUN0cVpDYjFrajJUdU5nM3gxMFZQV1JjMVdrSzZReFl1dDhIYUplelprc3BGdTdiVEJUNXZiY255UWdIRHFub3o2M3g0MUlYUUN2VFJybDlZM2RXU1d1cjR3?oc=5\"
+        target=\"_blank\"&gt;Wall Street Skeptic Barry Bannister Sees 15% Decline
+        for S&amp;P 500&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barron's&lt;/font&gt;</description><source
+        url=\"https://www.barrons.com\">Barron's</source></item><item><title>Extreme
+        Concentration in the S&amp;P 500 Continues - Apollo Academy</title><link>https://news.google.com/rss/articles/CBMiggFBVV95cUxPZXdxTFRzM1pfcVloczVmSTFTZEx5WThUTFpncGhjOF9TWnBVN21VYjZTOXV0OFcyTGVkRGs0Qmd2OXpReXI4bHQ1d1pGM2tCc2N1aS1ZdzE1UXRHN1k4VkFYVlZNVWZQVHdvbDkzbkJxZWNpOFJIRlpINldtelhPNy1B?oc=5</link><guid
+        isPermaLink=\"false\">CBMiggFBVV95cUxPZXdxTFRzM1pfcVloczVmSTFTZEx5WThUTFpncGhjOF9TWnBVN21VYjZTOXV0OFcyTGVkRGs0Qmd2OXpReXI4bHQ1d1pGM2tCc2N1aS1ZdzE1UXRHN1k4VkFYVlZNVWZQVHdvbDkzbkJxZWNpOFJIRlpINldtelhPNy1B</guid><pubDate>Fri,
+        08 Aug 2025 10:37:33 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPZXdxTFRzM1pfcVloczVmSTFTZEx5WThUTFpncGhjOF9TWnBVN21VYjZTOXV0OFcyTGVkRGs0Qmd2OXpReXI4bHQ1d1pGM2tCc2N1aS1ZdzE1UXRHN1k4VkFYVlZNVWZQVHdvbDkzbkJxZWNpOFJIRlpINldtelhPNy1B?oc=5\"
+        target=\"_blank\"&gt;Extreme Concentration in the S&amp;P 500 Continues&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Apollo Academy&lt;/font&gt;</description><source url=\"https://www.apolloacademy.com\">Apollo
+        Academy</source></item><item><title>Stock market today: Dow, S&amp;P 500,
+        Nasdaq futures climb as Wall Street digests July inflation report - Yahoo
+        Finance</title><link>https://news.google.com/rss/articles/CBMi6wFBVV95cUxQNVRKVy1BdndfMmRoSWh4dDdDOEV1eFhHdnpteHpNNWRvNTd4dGJ4ME5fWVljWGk3NldkYzhKdDduMHgtb3k5bTA5Z2dZRHo2cExGMHVldTZkY3RzSk9sYlJUWVVKaTNBeGZjU0lUc205WXhkTVoyNFJIQi1TWXBJMmp2SHk3N3J3eXR1cmVtTWxoLU1UeXZOMVVmQmtzcFo5SDV4cGtEU0hsbzl5aGMtSDlWNGRDVjYxYjZBcGxMbVFJU2tNWFlMSDFxQXlzZEZWZ1lyWkV3T3o4RTFTRl95bXJENHBCeVI1Q3lj?oc=5</link><guid
+        isPermaLink=\"false\">CBMi6wFBVV95cUxQNVRKVy1BdndfMmRoSWh4dDdDOEV1eFhHdnpteHpNNWRvNTd4dGJ4ME5fWVljWGk3NldkYzhKdDduMHgtb3k5bTA5Z2dZRHo2cExGMHVldTZkY3RzSk9sYlJUWVVKaTNBeGZjU0lUc205WXhkTVoyNFJIQi1TWXBJMmp2SHk3N3J3eXR1cmVtTWxoLU1UeXZOMVVmQmtzcFo5SDV4cGtEU0hsbzl5aGMtSDlWNGRDVjYxYjZBcGxMbVFJU2tNWFlMSDFxQXlzZEZWZ1lyWkV3T3o4RTFTRl95bXJENHBCeVI1Q3lj</guid><pubDate>Tue,
+        12 Aug 2025 12:46:51 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxQNVRKVy1BdndfMmRoSWh4dDdDOEV1eFhHdnpteHpNNWRvNTd4dGJ4ME5fWVljWGk3NldkYzhKdDduMHgtb3k5bTA5Z2dZRHo2cExGMHVldTZkY3RzSk9sYlJUWVVKaTNBeGZjU0lUc205WXhkTVoyNFJIQi1TWXBJMmp2SHk3N3J3eXR1cmVtTWxoLU1UeXZOMVVmQmtzcFo5SDV4cGtEU0hsbzl5aGMtSDlWNGRDVjYxYjZBcGxMbVFJU2tNWFlMSDFxQXlzZEZWZ1lyWkV3T3o4RTFTRl95bXJENHBCeVI1Q3lj?oc=5\"
+        target=\"_blank\"&gt;Stock market today: Dow, S&amp;P 500, Nasdaq futures
+        climb as Wall Street digests July inflation report&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>The S&amp;P 500 is on the cusp of another
+        record. How long can this bull keep dodging danger? - CNBC</title><link>https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNV9td0xNMTVYeEFkSFQ5eU1YLXJCeDhQeW9hUzNLMkZxRWJYYWQ1QnhEbklEMG44XzRLUDUxb1p2b3kwOHNrQW1RUHZkXzIxN1hFVEN2a2NuLXIyLW5sbXBEcmJ2TVF4NlFmQ2VDMzlFRjFZamdPVE9sNFR0NzJlSEdVdmpqS2lEdzQ0Q2l3QjNhOXhONDcxRC1talBnZkY5VF9wd3FVa3NLd0FQUWppOFpKLUdDTkJNUzN3TDNZQ0U?oc=5</link><guid
+        isPermaLink=\"false\">CBMiwAFBVV95cUxQNV9td0xNMTVYeEFkSFQ5eU1YLXJCeDhQeW9hUzNLMkZxRWJYYWQ1QnhEbklEMG44XzRLUDUxb1p2b3kwOHNrQW1RUHZkXzIxN1hFVEN2a2NuLXIyLW5sbXBEcmJ2TVF4NlFmQ2VDMzlFRjFZamdPVE9sNFR0NzJlSEdVdmpqS2lEdzQ0Q2l3QjNhOXhONDcxRC1talBnZkY5VF9wd3FVa3NLd0FQUWppOFpKLUdDTkJNUzN3TDNZQ0U</guid><pubDate>Sat,
+        09 Aug 2025 11:58:08 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNV9td0xNMTVYeEFkSFQ5eU1YLXJCeDhQeW9hUzNLMkZxRWJYYWQ1QnhEbklEMG44XzRLUDUxb1p2b3kwOHNrQW1RUHZkXzIxN1hFVEN2a2NuLXIyLW5sbXBEcmJ2TVF4NlFmQ2VDMzlFRjFZamdPVE9sNFR0NzJlSEdVdmpqS2lEdzQ0Q2l3QjNhOXhONDcxRC1talBnZkY5VF9wd3FVa3NLd0FQUWppOFpKLUdDTkJNUzN3TDNZQ0U?oc=5\"
+        target=\"_blank\"&gt;The S&amp;P 500 is on the cusp of another record. How
+        long can this bull keep dodging danger?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source url=\"https://www.cnbc.com\">CNBC</source></item><item><title>S&amp;P
+        500: Investors Score Big On 9 Stocks Analysts Say Will Turn Around Soon -
+        Investor's Business Daily</title><link>https://news.google.com/rss/articles/CBMivAFBVV95cUxOd3ZUVnhjcXQwc3JTRGFMOTRZdlpRNERSVTBKUXhKTThycXFad2R1eF9GS0pKdWZDdmdNbk5Yb3dZRzRxci1yTmlvQmE3WmdPYmptTnR1bVFCb014WVg2NHBEYW1ENWNhRUhoRDVxbExBSVRSYkI3TmV6SWhZNVJKMlNfSDhOSUdwSXVuMzVvYzk2aFBjM2hERTQ3TE8weUpUeUNuOXBJUjI5aFVHWnFXcnJXbDJueGdCakViMw?oc=5</link><guid
+        isPermaLink=\"false\">CBMivAFBVV95cUxOd3ZUVnhjcXQwc3JTRGFMOTRZdlpRNERSVTBKUXhKTThycXFad2R1eF9GS0pKdWZDdmdNbk5Yb3dZRzRxci1yTmlvQmE3WmdPYmptTnR1bVFCb014WVg2NHBEYW1ENWNhRUhoRDVxbExBSVRSYkI3TmV6SWhZNVJKMlNfSDhOSUdwSXVuMzVvYzk2aFBjM2hERTQ3TE8weUpUeUNuOXBJUjI5aFVHWnFXcnJXbDJueGdCakViMw</guid><pubDate>Mon,
+        11 Aug 2025 12:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOd3ZUVnhjcXQwc3JTRGFMOTRZdlpRNERSVTBKUXhKTThycXFad2R1eF9GS0pKdWZDdmdNbk5Yb3dZRzRxci1yTmlvQmE3WmdPYmptTnR1bVFCb014WVg2NHBEYW1ENWNhRUhoRDVxbExBSVRSYkI3TmV6SWhZNVJKMlNfSDhOSUdwSXVuMzVvYzk2aFBjM2hERTQ3TE8weUpUeUNuOXBJUjI5aFVHWnFXcnJXbDJueGdCakViMw?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500: Investors Score Big On 9 Stocks Analysts
+        Say Will Turn Around Soon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Investor's
+        Business Daily&lt;/font&gt;</description><source url=\"https://www.investors.com\">Investor's
+        Business Daily</source></item><item><title>S&amp;P 500 Closes At Record High
+        Despite Rate-Cut Doubts - \u5BCC\u9014\u725B\u725B</title><link>https://news.google.com/rss/articles/CBMikAFBVV95cUxPQVRxR0xGakR2WF8wVWFVQ1ZHWHpzdkRNdWhxYklTSXFvOFFkQjR3OTdIZXVYQXNDdWtzZEppZlhMblVwUzNuRkhONnUzb2MxSDBMSDdLT1FLLVlRR2RKVWVRX0hCRjk0cmpLdGJUbFVINW5wOWpMWVgxNG5zNnVHR09XYXY0ZnNvczdwdHNiOWc?oc=5</link><guid
+        isPermaLink=\"false\">CBMikAFBVV95cUxPQVRxR0xGakR2WF8wVWFVQ1ZHWHpzdkRNdWhxYklTSXFvOFFkQjR3OTdIZXVYQXNDdWtzZEppZlhMblVwUzNuRkhONnUzb2MxSDBMSDdLT1FLLVlRR2RKVWVRX0hCRjk0cmpLdGJUbFVINW5wOWpMWVgxNG5zNnVHR09XYXY0ZnNvczdwdHNiOWc</guid><pubDate>Fri,
+        15 Aug 2025 00:40:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxPQVRxR0xGakR2WF8wVWFVQ1ZHWHpzdkRNdWhxYklTSXFvOFFkQjR3OTdIZXVYQXNDdWtzZEppZlhMblVwUzNuRkhONnUzb2MxSDBMSDdLT1FLLVlRR2RKVWVRX0hCRjk0cmpLdGJUbFVINW5wOWpMWVgxNG5zNnVHR09XYXY0ZnNvczdwdHNiOWc?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Closes At Record High Despite Rate-Cut Doubts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;\u5BCC\u9014\u725B\u725B&lt;/font&gt;</description><source
+        url=\"https://news.futunn.com\">\u5BCC\u9014\u725B\u725B</source></item><item><title>MARA
+        Underperforms S&amp;P 500 as $690M Volume Ranks 133rd in Daily Liquidity -
+        AInvest</title><link>https://news.google.com/rss/articles/CBMingFBVV95cUxPS0VqOE1aT1NHWFBPWGNXek1UeUd2eE5fOGdXd2YxRFNlUzBTS091UEF6dGtQNmxheTRCdHJGMUJ0WXE5SUwxT2FOLXJwOVdkOFNHdjRlU1M1aXozUUMtNXE1WUl0UEJaTmVhUkROQUdPMXNrcUFXdjVyWXFCaWtocGlKZ0RMOU5XQ0hzNUg0S21ZV01RTUdOMEFGYm4wdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMingFBVV95cUxPS0VqOE1aT1NHWFBPWGNXek1UeUd2eE5fOGdXd2YxRFNlUzBTS091UEF6dGtQNmxheTRCdHJGMUJ0WXE5SUwxT2FOLXJwOVdkOFNHdjRlU1M1aXozUUMtNXE1WUl0UEJaTmVhUkROQUdPMXNrcUFXdjVyWXFCaWtocGlKZ0RMOU5XQ0hzNUg0S21ZV01RTUdOMEFGYm4wdw</guid><pubDate>Fri,
+        15 Aug 2025 01:53:02 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPS0VqOE1aT1NHWFBPWGNXek1UeUd2eE5fOGdXd2YxRFNlUzBTS091UEF6dGtQNmxheTRCdHJGMUJ0WXE5SUwxT2FOLXJwOVdkOFNHdjRlU1M1aXozUUMtNXE1WUl0UEJaTmVhUkROQUdPMXNrcUFXdjVyWXFCaWtocGlKZ0RMOU5XQ0hzNUg0S21ZV01RTUdOMEFGYm4wdw?oc=5\"
+        target=\"_blank\"&gt;MARA Underperforms S&amp;P 500 as $690M Volume Ranks
+        133rd in Daily Liquidity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;AInvest&lt;/font&gt;</description><source
+        url=\"https://www.ainvest.com\">AInvest</source></item><item><title>Dow Slips
+        11, Nasdaq Dips 2, S&amp;P 500 Adds 2 - TV News Check</title><link>https://news.google.com/rss/articles/CBMiigFBVV95cUxQNl8yN1M2MVl3S1p1c19SLUVlOF9xTW9JOC1IdXFZSjdBX09FN2x5cmpHek9rMVBjRzllVm1wMVdwOGFDejgwTmw4SEZNVWRmdmI1eUozbjFsUnZDSEFGTnRFUUdmeXZzcThJTnZ1bUlTdFFWWTJpdWllaEJCRFhId05EQ1VSR0txS0E?oc=5</link><guid
+        isPermaLink=\"false\">CBMiigFBVV95cUxQNl8yN1M2MVl3S1p1c19SLUVlOF9xTW9JOC1IdXFZSjdBX09FN2x5cmpHek9rMVBjRzllVm1wMVdwOGFDejgwTmw4SEZNVWRmdmI1eUozbjFsUnZDSEFGTnRFUUdmeXZzcThJTnZ1bUlTdFFWWTJpdWllaEJCRFhId05EQ1VSR0txS0E</guid><pubDate>Thu,
+        14 Aug 2025 20:30:32 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxQNl8yN1M2MVl3S1p1c19SLUVlOF9xTW9JOC1IdXFZSjdBX09FN2x5cmpHek9rMVBjRzllVm1wMVdwOGFDejgwTmw4SEZNVWRmdmI1eUozbjFsUnZDSEFGTnRFUUdmeXZzcThJTnZ1bUlTdFFWWTJpdWllaEJCRFhId05EQ1VSR0txS0E?oc=5\"
+        target=\"_blank\"&gt;Dow Slips 11, Nasdaq Dips 2, S&amp;P 500 Adds 2&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;TV News Check&lt;/font&gt;</description><source url=\"https://tvnewscheck.com\">TV
+        News Check</source></item><item><title>3 S&amp;P 500 Stocks We Find Risky
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMidEFVX3lxTE5ncDU1TjRIdjNzR1ZNa1dMaEpXbXdrcnpxRWxrZ05abjJwWm10UmRvbXlTSjZsMFRGbUhpRS1zZG9kQXd3eFIxc1RybVJVODUyRmxiRVV3cFVxWWFGMmwwNy14aTJjb01neExBVGNST3BSUzN0?oc=5</link><guid
+        isPermaLink=\"false\">CBMidEFVX3lxTE5ncDU1TjRIdjNzR1ZNa1dMaEpXbXdrcnpxRWxrZ05abjJwWm10UmRvbXlTSjZsMFRGbUhpRS1zZG9kQXd3eFIxc1RybVJVODUyRmxiRVV3cFVxWWFGMmwwNy14aTJjb01neExBVGNST3BSUzN0</guid><pubDate>Thu,
+        14 Aug 2025 09:54:51 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidEFVX3lxTE5ncDU1TjRIdjNzR1ZNa1dMaEpXbXdrcnpxRWxrZ05abjJwWm10UmRvbXlTSjZsMFRGbUhpRS1zZG9kQXd3eFIxc1RybVJVODUyRmxiRVV3cFVxWWFGMmwwNy14aTJjb01neExBVGNST3BSUzN0?oc=5\"
+        target=\"_blank\"&gt;3 S&amp;P 500 Stocks We Find Risky&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>S&amp;P 500's Homerun/Strikeout Scenario,
+        And How I'm Positioning For It (SPX) - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMiqAFBVV95cUxOLXhUTGlFRDN2YXJoUzJXeHZiSTVEY19wcVM2VV8wT1VvVjhRMTRVTW1VREMtRmRBbllfT2tBU1pHbGo4cm52OFJ5Yi11bF9TOTQ2Ty1EVW5uZ1VURTlXcEptdlh6ek1rYUY2MWl5UFR2UUFiR2txR3U4WDAxeWV4NzZwUjJobVdITU83ZldEUVdHZzdzcldGVDdwQWZSaWNqajlUVC1QOVU?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqAFBVV95cUxOLXhUTGlFRDN2YXJoUzJXeHZiSTVEY19wcVM2VV8wT1VvVjhRMTRVTW1VREMtRmRBbllfT2tBU1pHbGo4cm52OFJ5Yi11bF9TOTQ2Ty1EVW5uZ1VURTlXcEptdlh6ek1rYUY2MWl5UFR2UUFiR2txR3U4WDAxeWV4NzZwUjJobVdITU83ZldEUVdHZzdzcldGVDdwQWZSaWNqajlUVC1QOVU</guid><pubDate>Thu,
+        14 Aug 2025 15:46:21 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOLXhUTGlFRDN2YXJoUzJXeHZiSTVEY19wcVM2VV8wT1VvVjhRMTRVTW1VREMtRmRBbllfT2tBU1pHbGo4cm52OFJ5Yi11bF9TOTQ2Ty1EVW5uZ1VURTlXcEptdlh6ek1rYUY2MWl5UFR2UUFiR2txR3U4WDAxeWV4NzZwUjJobVdITU83ZldEUVdHZzdzcldGVDdwQWZSaWNqajlUVC1QOVU?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500's Homerun/Strikeout Scenario, And How I'm
+        Positioning For It (SPX)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Wall Street movers: 15 S&amp;P 500 stocks
+        leading the market rally - Seeking Alpha</title><link>https://news.google.com/rss/articles/CBMipgFBVV95cUxNUmtQMU5qMEpRVnhCNzlDUTdNbl9kLXdXekhpdkdmT0dQNG9yZGh3Zjd3NnVtVlZ3ZExhUDlabjBibDVSRU1fRmw2N3k4c2g2V2MwYV91LWtCSnpwR1g2WG80S0M2Y2Z0cnQ3SWd3REpaR2x2Z0YxU25LVGZDUmdDWGFrLUowZ3ZGcy1pcnJUdWtic3dPVlFuVm5ubDhZOUU2bG5va1d3?oc=5</link><guid
+        isPermaLink=\"false\">CBMipgFBVV95cUxNUmtQMU5qMEpRVnhCNzlDUTdNbl9kLXdXekhpdkdmT0dQNG9yZGh3Zjd3NnVtVlZ3ZExhUDlabjBibDVSRU1fRmw2N3k4c2g2V2MwYV91LWtCSnpwR1g2WG80S0M2Y2Z0cnQ3SWd3REpaR2x2Z0YxU25LVGZDUmdDWGFrLUowZ3ZGcy1pcnJUdWtic3dPVlFuVm5ubDhZOUU2bG5va1d3</guid><pubDate>Thu,
+        14 Aug 2025 17:32:58 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNUmtQMU5qMEpRVnhCNzlDUTdNbl9kLXdXekhpdkdmT0dQNG9yZGh3Zjd3NnVtVlZ3ZExhUDlabjBibDVSRU1fRmw2N3k4c2g2V2MwYV91LWtCSnpwR1g2WG80S0M2Y2Z0cnQ3SWd3REpaR2x2Z0YxU25LVGZDUmdDWGFrLUowZ3ZGcy1pcnJUdWtic3dPVlFuVm5ubDhZOUU2bG5va1d3?oc=5\"
+        target=\"_blank\"&gt;Wall Street movers: 15 S&amp;P 500 stocks leading the
+        market rally&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>U.S. Stock Futures Mixed After S&amp;P 500\u2019s
+        Record Streak - TipRanks</title><link>https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcTFpcno2WU50U2R1Z0xPMTJxNlVJdXR6V3FyWTVzbHM2ZURYT3M3UFRMQURUUWRITXFmNllNZlNtM1VEQm5scmpOSXMwM1Z3SENwSFNiWHFXYm5tbDd3bHpMa3RBX1BDMVR6a2dVT0cwd1lYMEN3b2F3UHh0VkVUczlHcnZHQmNr?oc=5</link><guid
+        isPermaLink=\"false\">CBMiiAFBVV95cUxQcTFpcno2WU50U2R1Z0xPMTJxNlVJdXR6V3FyWTVzbHM2ZURYT3M3UFRMQURUUWRITXFmNllNZlNtM1VEQm5scmpOSXMwM1Z3SENwSFNiWHFXYm5tbDd3bHpMa3RBX1BDMVR6a2dVT0cwd1lYMEN3b2F3UHh0VkVUczlHcnZHQmNr</guid><pubDate>Thu,
+        14 Aug 2025 23:11:56 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcTFpcno2WU50U2R1Z0xPMTJxNlVJdXR6V3FyWTVzbHM2ZURYT3M3UFRMQURUUWRITXFmNllNZlNtM1VEQm5scmpOSXMwM1Z3SENwSFNiWHFXYm5tbDd3bHpMa3RBX1BDMVR6a2dVT0cwd1lYMEN3b2F3UHh0VkVUczlHcnZHQmNr?oc=5\"
+        target=\"_blank\"&gt;U.S. Stock Futures Mixed After S&amp;P 500\u2019s Record
+        Streak&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TipRanks&lt;/font&gt;</description><source
+        url=\"https://www.tipranks.com\">TipRanks</source></item><item><title>Markets
+        News, Aug. 11, 2025: Stocks Slip Ahead of CPI Inflation Report; Nasdaq Retreats
+        From Record High - Investopedia</title><link>https://news.google.com/rss/articles/CBMib0FVX3lxTE9nR2dib2llOHoyVVBlbmhrVUdWUnBfZWFjYWFLTE1FLS00RjdxOG5PQlp0cWZucUk5a082X0tHYVNWSm1wdUNHcGNtVHV1NmlhQk1sYkVWSmNZbzdfLVdBRmU0WGw2NHRqV3d3dE9lMA?oc=5</link><guid
+        isPermaLink=\"false\">CBMib0FVX3lxTE9nR2dib2llOHoyVVBlbmhrVUdWUnBfZWFjYWFLTE1FLS00RjdxOG5PQlp0cWZucUk5a082X0tHYVNWSm1wdUNHcGNtVHV1NmlhQk1sYkVWSmNZbzdfLVdBRmU0WGw2NHRqV3d3dE9lMA</guid><pubDate>Mon,
+        11 Aug 2025 22:11:01 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE9nR2dib2llOHoyVVBlbmhrVUdWUnBfZWFjYWFLTE1FLS00RjdxOG5PQlp0cWZucUk5a082X0tHYVNWSm1wdUNHcGNtVHV1NmlhQk1sYkVWSmNZbzdfLVdBRmU0WGw2NHRqV3d3dE9lMA?oc=5\"
+        target=\"_blank\"&gt;Markets News, Aug. 11, 2025: Stocks Slip Ahead of CPI
+        Inflation Report; Nasdaq Retreats From Record High&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>The
+        entire stock market is being carried by these four AI stocks - MarketWatch</title><link>https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUmlNWEVLV25tek9oSWNraHZJZlB0aXRDLUpJQ0dHRkFDLTJyc2FsWnNhUU5kZWZqeENYOHRydUpmVl9XWlZ4VC0wTm9QR1FON2YzOWU3R2dySmRDbldpaTRpeGdvWkx3dXN6TF9EeGRsNXNPWVJsZkc1UGVFYVdMQnF4aUpJV2thX0lHdTB3R0NjQzBmdE14NFU3OVM4c20tTmRNV21xaTI5a0k?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqwFBVV95cUxQUmlNWEVLV25tek9oSWNraHZJZlB0aXRDLUpJQ0dHRkFDLTJyc2FsWnNhUU5kZWZqeENYOHRydUpmVl9XWlZ4VC0wTm9QR1FON2YzOWU3R2dySmRDbldpaTRpeGdvWkx3dXN6TF9EeGRsNXNPWVJsZkc1UGVFYVdMQnF4aUpJV2thX0lHdTB3R0NjQzBmdE14NFU3OVM4c20tTmRNV21xaTI5a0k</guid><pubDate>Thu,
+        14 Aug 2025 14:41:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUmlNWEVLV25tek9oSWNraHZJZlB0aXRDLUpJQ0dHRkFDLTJyc2FsWnNhUU5kZWZqeENYOHRydUpmVl9XWlZ4VC0wTm9QR1FON2YzOWU3R2dySmRDbldpaTRpeGdvWkx3dXN6TF9EeGRsNXNPWVJsZkc1UGVFYVdMQnF4aUpJV2thX0lHdTB3R0NjQzBmdE14NFU3OVM4c20tTmRNV21xaTI5a0k?oc=5\"
+        target=\"_blank\"&gt;The entire stock market is being carried by these four
+        AI stocks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source
+        url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>Earnings
+        live: Applied Materials stock falls on Q4 guidance, Quantum Computing sinks
+        - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbjlSam40SUoyU2ZoUFcxZEt4YXNNWW9uazBpZGwyWTduNUVwUzZkbVdXWEpjUGlMZU83bWpIVjdGZ1dUclp4OHd3UW1DMGFQRFd1U3Z3N1RHLURWOEtieC13Y2s4T2ZNS1hXekxDLURzRTN4VmdkYWNqZmxZdi1oOFN6R1c3c3U4VkRacU8tUWZjMkFkMkNIenZ3VHR6Z0lHVUpmMVA0ZEozVzRWUUViN0o4NVA3a2RxSndIVTZldWd6ZVlRTkc1RWNFY210ZnFSaFRLM3Zn?oc=5</link><guid
+        isPermaLink=\"false\">CBMi1gFBVV95cUxQbjlSam40SUoyU2ZoUFcxZEt4YXNNWW9uazBpZGwyWTduNUVwUzZkbVdXWEpjUGlMZU83bWpIVjdGZ1dUclp4OHd3UW1DMGFQRFd1U3Z3N1RHLURWOEtieC13Y2s4T2ZNS1hXekxDLURzRTN4VmdkYWNqZmxZdi1oOFN6R1c3c3U4VkRacU8tUWZjMkFkMkNIenZ3VHR6Z0lHVUpmMVA0ZEozVzRWUUViN0o4NVA3a2RxSndIVTZldWd6ZVlRTkc1RWNFY210ZnFSaFRLM3Zn</guid><pubDate>Thu,
+        14 Aug 2025 21:18:05 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQbjlSam40SUoyU2ZoUFcxZEt4YXNNWW9uazBpZGwyWTduNUVwUzZkbVdXWEpjUGlMZU83bWpIVjdGZ1dUclp4OHd3UW1DMGFQRFd1U3Z3N1RHLURWOEtieC13Y2s4T2ZNS1hXekxDLURzRTN4VmdkYWNqZmxZdi1oOFN6R1c3c3U4VkRacU8tUWZjMkFkMkNIenZ3VHR6Z0lHVUpmMVA0ZEozVzRWUUViN0o4NVA3a2RxSndIVTZldWd6ZVlRTkc1RWNFY210ZnFSaFRLM3Zn?oc=5\"
+        target=\"_blank\"&gt;Earnings live: Applied Materials stock falls on Q4 guidance,
+        Quantum Computing sinks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Forget SPY: These 2 Dividend ETFs Beat
+        the S&amp;P 500 - 24/7 Wall St.</title><link>https://news.google.com/rss/articles/CBMilwFBVV95cUxPem9TdEZPOFRvTUlYZWJpU1l2d0dXdDdWSXplS0JnUGV5WWFEZ0xEZGEydEJsMHE4MlFvRUprcDN2Q09yR3NLVjBDbEdxRVdaTVVpcjAtZklUZTNRVkpqRktacHFENWh1WmF0U1lSdWtPTWNpZHMzTERzeTJBZ1oyRGdrUk10c25hZERyZURpc3M5R1F5MG5r?oc=5</link><guid
+        isPermaLink=\"false\">CBMilwFBVV95cUxPem9TdEZPOFRvTUlYZWJpU1l2d0dXdDdWSXplS0JnUGV5WWFEZ0xEZGEydEJsMHE4MlFvRUprcDN2Q09yR3NLVjBDbEdxRVdaTVVpcjAtZklUZTNRVkpqRktacHFENWh1WmF0U1lSdWtPTWNpZHMzTERzeTJBZ1oyRGdrUk10c25hZERyZURpc3M5R1F5MG5r</guid><pubDate>Thu,
+        14 Aug 2025 17:09:36 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPem9TdEZPOFRvTUlYZWJpU1l2d0dXdDdWSXplS0JnUGV5WWFEZ0xEZGEydEJsMHE4MlFvRUprcDN2Q09yR3NLVjBDbEdxRVdaTVVpcjAtZklUZTNRVkpqRktacHFENWh1WmF0U1lSdWtPTWNpZHMzTERzeTJBZ1oyRGdrUk10c25hZERyZURpc3M5R1F5MG5r?oc=5\"
+        target=\"_blank\"&gt;Forget SPY: These 2 Dividend ETFs Beat the S&amp;P 500&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;24/7 Wall St.&lt;/font&gt;</description><source url=\"https://247wallst.com\">24/7
+        Wall St.</source></item><item><title>S&amp;P 500, Nasdaq hover near record
+        highs on September rate cut hopes - Reuters</title><link>https://news.google.com/rss/articles/CBMiqwFBVV95cUxOV093RU16b3ZwZS1LbHU0UnN3cDM5cHpPcFFpbHFWblc1S1ZCS3laSTk5OWtvRTJhTU03bTAxbTJLWnhBbkpBZi1tRF9CWngzVGY2V1UydlBsa0RWSzUwd2VzU0RES2ticHU2cWtQV2psc2lfeXVoc1YxMGpuVTRYV01ad2FNeUIyTGtIYkZmR1RzSlQ1YnlOOWgzUGZmM0xrcnZud1QzZmVraHM?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqwFBVV95cUxOV093RU16b3ZwZS1LbHU0UnN3cDM5cHpPcFFpbHFWblc1S1ZCS3laSTk5OWtvRTJhTU03bTAxbTJLWnhBbkpBZi1tRF9CWngzVGY2V1UydlBsa0RWSzUwd2VzU0RES2ticHU2cWtQV2psc2lfeXVoc1YxMGpuVTRYV01ad2FNeUIyTGtIYkZmR1RzSlQ1YnlOOWgzUGZmM0xrcnZud1QzZmVraHM</guid><pubDate>Wed,
+        13 Aug 2025 16:58:06 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOV093RU16b3ZwZS1LbHU0UnN3cDM5cHpPcFFpbHFWblc1S1ZCS3laSTk5OWtvRTJhTU03bTAxbTJLWnhBbkpBZi1tRF9CWngzVGY2V1UydlBsa0RWSzUwd2VzU0RES2ticHU2cWtQV2psc2lfeXVoc1YxMGpuVTRYV01ad2FNeUIyTGtIYkZmR1RzSlQ1YnlOOWgzUGZmM0xrcnZud1QzZmVraHM?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq hover near record highs on September
+        rate cut hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>Stock
+        market today: Dow, S&amp;P 500, Nasdaq futures steady with Wall Street looking
+        for more records - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcHdnZzFhdlh6REptRjdaelB3TE1TWkoySng0RzJMWmdyVV9RcnZCZ19qV2pNdC1xOWdYbW9FS3czaTlkVW1yRjBBZHNIT1JidG40NF80NzNFMy0zRU1WV2xja2Z3YTVUV2VlMm95bzNGVHM3NnlTRUdYYXp6Nnpld011aWhLTXJGa096Wlk0YWtJS2lKQUNyS3ZiM2JDeTdWa19zRXV6a3B6OFhha29RcldzcG9GYWV3NWMtUGx2Z1J3QS1lM01rclNPOGgxejJCWjhnR1pwQUtuaEhT?oc=5</link><guid
+        isPermaLink=\"false\">CBMi3AFBVV95cUxQcHdnZzFhdlh6REptRjdaelB3TE1TWkoySng0RzJMWmdyVV9RcnZCZ19qV2pNdC1xOWdYbW9FS3czaTlkVW1yRjBBZHNIT1JidG40NF80NzNFMy0zRU1WV2xja2Z3YTVUV2VlMm95bzNGVHM3NnlTRUdYYXp6Nnpld011aWhLTXJGa096Wlk0YWtJS2lKQUNyS3ZiM2JDeTdWa19zRXV6a3B6OFhha29RcldzcG9GYWV3NWMtUGx2Z1J3QS1lM01rclNPOGgxejJCWjhnR1pwQUtuaEhT</guid><pubDate>Mon,
+        11 Aug 2025 12:50:38 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcHdnZzFhdlh6REptRjdaelB3TE1TWkoySng0RzJMWmdyVV9RcnZCZ19qV2pNdC1xOWdYbW9FS3czaTlkVW1yRjBBZHNIT1JidG40NF80NzNFMy0zRU1WV2xja2Z3YTVUV2VlMm95bzNGVHM3NnlTRUdYYXp6Nnpld011aWhLTXJGa096Wlk0YWtJS2lKQUNyS3ZiM2JDeTdWa19zRXV6a3B6OFhha29RcldzcG9GYWV3NWMtUGx2Z1J3QS1lM01rclNPOGgxejJCWjhnR1pwQUtuaEhT?oc=5\"
+        target=\"_blank\"&gt;Stock market today: Dow, S&amp;P 500, Nasdaq futures
+        steady with Wall Street looking for more records&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>Essential Intelligence | S&amp;P Global
+        - S&amp;P Global</title><link>https://news.google.com/rss/articles/CBMiQEFVX3lxTE9XT2FTRVdkSEVuUzFYTTJGTTNMNlhnM3NvT2tlWFFZaUQ3aGpMckM0SGl2TE4tdjg1UXU5ck5feFc?oc=5</link><guid
+        isPermaLink=\"false\">CBMiQEFVX3lxTE9XT2FTRVdkSEVuUzFYTTJGTTNMNlhnM3NvT2tlWFFZaUQ3aGpMckM0SGl2TE4tdjg1UXU5ck5feFc</guid><pubDate>Mon,
+        11 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiQEFVX3lxTE9XT2FTRVdkSEVuUzFYTTJGTTNMNlhnM3NvT2tlWFFZaUQ3aGpMckM0SGl2TE4tdjg1UXU5ck5feFc?oc=5\"
+        target=\"_blank\"&gt;Essential Intelligence | S&amp;P Global&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;S&amp;P Global&lt;/font&gt;</description><source url=\"https://www.spglobal.com\">S&amp;P
+        Global</source></item><item><title>S&amp;P 500 Movers: TPR, AMZN - Nasdaq</title><link>https://news.google.com/rss/articles/CBMiZEFVX3lxTE9wQkp3T1VBeld5bEdMNk00Z25RcjdOaElwbWZHMTZEWlAyV0ZFZ0dzRlRSTzRiZ1U4QmNUSWhFU0pBUDgzdTJsaHN6M3lBdWhqLVlSVm4zT0VCdXdKZXlfd3ZQakw?oc=5</link><guid
+        isPermaLink=\"false\">CBMiZEFVX3lxTE9wQkp3T1VBeld5bEdMNk00Z25RcjdOaElwbWZHMTZEWlAyV0ZFZ0dzRlRSTzRiZ1U4QmNUSWhFU0pBUDgzdTJsaHN6M3lBdWhqLVlSVm4zT0VCdXdKZXlfd3ZQakw</guid><pubDate>Thu,
+        14 Aug 2025 16:59:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE9wQkp3T1VBeld5bEdMNk00Z25RcjdOaElwbWZHMTZEWlAyV0ZFZ0dzRlRSTzRiZ1U4QmNUSWhFU0pBUDgzdTJsaHN6M3lBdWhqLVlSVm4zT0VCdXdKZXlfd3ZQakw?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Movers: TPR, AMZN&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Nasdaq&lt;/font&gt;</description><source url=\"https://www.nasdaq.com\">Nasdaq</source></item><item><title>S&amp;P
+        500 Gains &amp; Losses Today: Amazon Expands Same-Day Food Deliveries, Hitting
+        Kroger, DoorDash - Investopedia</title><link>https://news.google.com/rss/articles/CBMi0gFBVV95cUxQRWFtQjJZcXBtQzUxdml4NmZ2MGY1QUI4Y3VDYTluRWprVWZIdHpDWExjMDNuR0FRaTdLSk0yZktDODFIWnZLeldrRTV0aThra1h5czVMYkp3dnRTNEt3c25XalJydW5UcldHenY3VHBuZkh5Qnk0ZlFnWk1HRF9abFFGS285TV9CTzVTbDk3M2M0WDZCaFY3U0g0N0lVWW9GLXQwUXhiVzN5bk9oc1BaTFV0dnZXRk85N0dyUEdkZlNpcDRwQ2o0b2xkQWlFV3BHeWc?oc=5</link><guid
+        isPermaLink=\"false\">CBMi0gFBVV95cUxQRWFtQjJZcXBtQzUxdml4NmZ2MGY1QUI4Y3VDYTluRWprVWZIdHpDWExjMDNuR0FRaTdLSk0yZktDODFIWnZLeldrRTV0aThra1h5czVMYkp3dnRTNEt3c25XalJydW5UcldHenY3VHBuZkh5Qnk0ZlFnWk1HRF9abFFGS285TV9CTzVTbDk3M2M0WDZCaFY3U0g0N0lVWW9GLXQwUXhiVzN5bk9oc1BaTFV0dnZXRk85N0dyUEdkZlNpcDRwQ2o0b2xkQWlFV3BHeWc</guid><pubDate>Wed,
+        13 Aug 2025 21:16:08 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQRWFtQjJZcXBtQzUxdml4NmZ2MGY1QUI4Y3VDYTluRWprVWZIdHpDWExjMDNuR0FRaTdLSk0yZktDODFIWnZLeldrRTV0aThra1h5czVMYkp3dnRTNEt3c25XalJydW5UcldHenY3VHBuZkh5Qnk0ZlFnWk1HRF9abFFGS285TV9CTzVTbDk3M2M0WDZCaFY3U0g0N0lVWW9GLXQwUXhiVzN5bk9oc1BaTFV0dnZXRk85N0dyUEdkZlNpcDRwQ2o0b2xkQWlFV3BHeWc?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Gains &amp; Losses Today: Amazon Expands
+        Same-Day Food Deliveries, Hitting Kroger, DoorDash&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Investopedia&lt;/font&gt;</description><source url=\"https://www.investopedia.com\">Investopedia</source></item><item><title>S&amp;P
+        500 Hits 6,400 on AI Boom: ETFs in Focus - Nasdaq</title><link>https://news.google.com/rss/articles/CBMidkFVX3lxTFAtdzRXMk4tR1poRHN1U0xzbWpGcjkwUExJcVl1RWhGVlRxd3lfWTM4d2I2ZVhGUU54SEFtUlRlaURCNXd1bFFvOWlrMEdIRGp1Y05YU3JNTnBabnhkY1VueUt4WHBXODhNNHN6d2ZWM1RlUWJ3RXc?oc=5</link><guid
+        isPermaLink=\"false\">CBMidkFVX3lxTFAtdzRXMk4tR1poRHN1U0xzbWpGcjkwUExJcVl1RWhGVlRxd3lfWTM4d2I2ZVhGUU54SEFtUlRlaURCNXd1bFFvOWlrMEdIRGp1Y05YU3JNTnBabnhkY1VueUt4WHBXODhNNHN6d2ZWM1RlUWJ3RXc</guid><pubDate>Thu,
+        14 Aug 2025 10:43:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTFAtdzRXMk4tR1poRHN1U0xzbWpGcjkwUExJcVl1RWhGVlRxd3lfWTM4d2I2ZVhGUU54SEFtUlRlaURCNXd1bFFvOWlrMEdIRGp1Y05YU3JNTnBabnhkY1VueUt4WHBXODhNNHN6d2ZWM1RlUWJ3RXc?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Hits 6,400 on AI Boom: ETFs in Focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Nasdaq&lt;/font&gt;</description><source url=\"https://www.nasdaq.com\">Nasdaq</source></item><item><title>UBS
+        Recommends Options Pair Trade to Ride S&amp;P 500\u2019s Grind Higher - Bloomberg.com</title><link>https://news.google.com/rss/articles/CBMitgFBVV95cUxONjQyc19oTTZpZFNsU0hHczBIYzZiSnlZQVoyd3NlSXNHZk1qSHFiRVFzNGFnZlhBYkJEMllDQ0hiV00xdVR2bFB3VzZoR3V4YzNZXzNMSGpxVnJIR2RBQVBLbklRd3ViN3JfWHNqOV8yTE1OVC1BSlBQajN5ZnRETngxamk2Y2NKUlFhZlByRDV2bzN0RnB5RDRqbTlKSGtoeXJVbDd6STd6SXp5WTJpQkN4VkJWQQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMitgFBVV95cUxONjQyc19oTTZpZFNsU0hHczBIYzZiSnlZQVoyd3NlSXNHZk1qSHFiRVFzNGFnZlhBYkJEMllDQ0hiV00xdVR2bFB3VzZoR3V4YzNZXzNMSGpxVnJIR2RBQVBLbklRd3ViN3JfWHNqOV8yTE1OVC1BSlBQajN5ZnRETngxamk2Y2NKUlFhZlByRDV2bzN0RnB5RDRqbTlKSGtoeXJVbDd6STd6SXp5WTJpQkN4VkJWQQ</guid><pubDate>Thu,
+        14 Aug 2025 09:30:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxONjQyc19oTTZpZFNsU0hHczBIYzZiSnlZQVoyd3NlSXNHZk1qSHFiRVFzNGFnZlhBYkJEMllDQ0hiV00xdVR2bFB3VzZoR3V4YzNZXzNMSGpxVnJIR2RBQVBLbklRd3ViN3JfWHNqOV8yTE1OVC1BSlBQajN5ZnRETngxamk2Y2NKUlFhZlByRDV2bzN0RnB5RDRqbTlKSGtoeXJVbDd6STd6SXp5WTJpQkN4VkJWQQ?oc=5\"
+        target=\"_blank\"&gt;UBS Recommends Options Pair Trade to Ride S&amp;P 500\u2019s
+        Grind Higher&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Bloomberg.com&lt;/font&gt;</description><source
+        url=\"https://www.bloomberg.com\">Bloomberg.com</source></item><item><title>Stock
+        Market News, Aug. 13, 2025: Dow logs back-to-back gain, S&amp;P 500 and Nasdaq
+        score fresh records on hopes for Fed rate cut - MarketWatch</title><link>https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUGtqNWdSSVA3TEc5UXNDSGdtT0d4TUo5YzVqZFU3VWxUbTg0WENZR213VjU2NDVjdWt1Wlh0UHI5ZHhuNXVmOTlIcTFHazdURDRLejJ5bEpMRGUtd1BQZmI5VVZ6cnQ3aDVjZ0YxbWFEdXBuZC03MTFZLVN6aUtPRU1NOEswTm44SkNtMElJa2tsc0hkRWZzM1JwLV9PSWxmclF3Wm44aTRLejJGcVVHX3JqRUZTMEpoMjIzMDJBSWI1a3RoQjFZY0pWbERxTnJQb055dmlR?oc=5</link><guid
+        isPermaLink=\"false\">CBMi1gFBVV95cUxQUGtqNWdSSVA3TEc5UXNDSGdtT0d4TUo5YzVqZFU3VWxUbTg0WENZR213VjU2NDVjdWt1Wlh0UHI5ZHhuNXVmOTlIcTFHazdURDRLejJ5bEpMRGUtd1BQZmI5VVZ6cnQ3aDVjZ0YxbWFEdXBuZC03MTFZLVN6aUtPRU1NOEswTm44SkNtMElJa2tsc0hkRWZzM1JwLV9PSWxmclF3Wm44aTRLejJGcVVHX3JqRUZTMEpoMjIzMDJBSWI1a3RoQjFZY0pWbERxTnJQb055dmlR</guid><pubDate>Wed,
+        13 Aug 2025 20:18:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQUGtqNWdSSVA3TEc5UXNDSGdtT0d4TUo5YzVqZFU3VWxUbTg0WENZR213VjU2NDVjdWt1Wlh0UHI5ZHhuNXVmOTlIcTFHazdURDRLejJ5bEpMRGUtd1BQZmI5VVZ6cnQ3aDVjZ0YxbWFEdXBuZC03MTFZLVN6aUtPRU1NOEswTm44SkNtMElJa2tsc0hkRWZzM1JwLV9PSWxmclF3Wm44aTRLejJGcVVHX3JqRUZTMEpoMjIzMDJBSWI1a3RoQjFZY0pWbERxTnJQb055dmlR?oc=5\"
+        target=\"_blank\"&gt;Stock Market News, Aug. 13, 2025: Dow logs back-to-back
+        gain, S&amp;P 500 and Nasdaq score fresh records on hopes for Fed rate cut&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>1
+        S&amp;P 500 Stock with Solid Fundamentals and 2 Facing Headwinds - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMic0FVX3lxTE1nbkZzekV6NEpZSzBMYlZ4WUVZMTBUY2xfVEpqNzRaR2dDdE84am4wVlBsQTdEamJJRUE0MF9MdXVFa2otbEhLWWpCVkFzV2sxWUZsYzVFSm50Mk5ITWEtNWFqNmphT3BoQ01IMTlNSVRsSFE?oc=5</link><guid
+        isPermaLink=\"false\">CBMic0FVX3lxTE1nbkZzekV6NEpZSzBMYlZ4WUVZMTBUY2xfVEpqNzRaR2dDdE84am4wVlBsQTdEamJJRUE0MF9MdXVFa2otbEhLWWpCVkFzV2sxWUZsYzVFSm50Mk5ITWEtNWFqNmphT3BoQ01IMTlNSVRsSFE</guid><pubDate>Thu,
+        14 Aug 2025 09:53:49 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE1nbkZzekV6NEpZSzBMYlZ4WUVZMTBUY2xfVEpqNzRaR2dDdE84am4wVlBsQTdEamJJRUE0MF9MdXVFa2otbEhLWWpCVkFzV2sxWUZsYzVFSm50Mk5ITWEtNWFqNmphT3BoQ01IMTlNSVRsSFE?oc=5\"
+        target=\"_blank\"&gt;1 S&amp;P 500 Stock with Solid Fundamentals and 2 Facing
+        Headwinds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>S&amp;P 500, Nasdaq both notch record
+        close as inflation report gives Fed green light to cut rates - CNBC</title><link>https://news.google.com/rss/articles/CBMieEFVX3lxTFBuRnhRa1dMUlcwd0NKN1hnZTNYYV9EVzRYTS1KbklXeE5QVThzUXBIZ25rdHUxVjRhUGh6Vm1BOW5wRXAyTG81VUdQLUYxY2daOTZSVTc2Y0tRU1JKOFoyZDhYajN5RzNNSEViaGE2RWRWbGdqSlA2eNIBfkFVX3lxTE84UW1MdGFyT21sUkFpNHYzSWM1bG9zZzJ4emxDZ0hYSGJjUktzdWs4SFlhekVOREE0ZXFna0xHUE02VFhLS0wxNDdoZ1YtbERVWGpLX0g1NUJqUEJNdWoyTWxWMzZNeDc3ZEhDTzVETmJIRGxVWE45ZFZCMHlkQQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMieEFVX3lxTFBuRnhRa1dMUlcwd0NKN1hnZTNYYV9EVzRYTS1KbklXeE5QVThzUXBIZ25rdHUxVjRhUGh6Vm1BOW5wRXAyTG81VUdQLUYxY2daOTZSVTc2Y0tRU1JKOFoyZDhYajN5RzNNSEViaGE2RWRWbGdqSlA2eNIBfkFVX3lxTE84UW1MdGFyT21sUkFpNHYzSWM1bG9zZzJ4emxDZ0hYSGJjUktzdWs4SFlhekVOREE0ZXFna0xHUE02VFhLS0wxNDdoZ1YtbERVWGpLX0g1NUJqUEJNdWoyTWxWMzZNeDc3ZEhDTzVETmJIRGxVWE45ZFZCMHlkQQ</guid><pubDate>Mon,
+        11 Aug 2025 22:06:55 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTFBuRnhRa1dMUlcwd0NKN1hnZTNYYV9EVzRYTS1KbklXeE5QVThzUXBIZ25rdHUxVjRhUGh6Vm1BOW5wRXAyTG81VUdQLUYxY2daOTZSVTc2Y0tRU1JKOFoyZDhYajN5RzNNSEViaGE2RWRWbGdqSlA2eNIBfkFVX3lxTE84UW1MdGFyT21sUkFpNHYzSWM1bG9zZzJ4emxDZ0hYSGJjUktzdWs4SFlhekVOREE0ZXFna0xHUE02VFhLS0wxNDdoZ1YtbERVWGpLX0g1NUJqUEJNdWoyTWxWMzZNeDc3ZEhDTzVETmJIRGxVWE45ZFZCMHlkQQ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq both notch record close as inflation
+        report gives Fed green light to cut rates&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;CNBC&lt;/font&gt;</description><source url=\"https://www.cnbc.com\">CNBC</source></item><item><title>S&amp;P
+        500, Nasdaq set to open at record highs on September rate cut hopes - Reuters</title><link>https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSmtsYVZ1RnNlYzRlWTUtOWhONm9NWXZhMDJTZ2t1V1lac29aVWxQUmdBUWpWRGJqaTJOajE1aVB5S0c4ZllYcnB4WENDMlNiRGhmYUZvZkZ0am5kQnNxUUZwaXJicnhFRGptc1RzNzdKTFo4Sng3Qm85MVJIUENpcU1XSDBremhyYmRNWnlmNHBOMi1zRXhwYkVyem13V25vVno0MzZhcG8?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqAFBVV95cUxPSmtsYVZ1RnNlYzRlWTUtOWhONm9NWXZhMDJTZ2t1V1lac29aVWxQUmdBUWpWRGJqaTJOajE1aVB5S0c4ZllYcnB4WENDMlNiRGhmYUZvZkZ0am5kQnNxUUZwaXJicnhFRGptc1RzNzdKTFo4Sng3Qm85MVJIUENpcU1XSDBremhyYmRNWnlmNHBOMi1zRXhwYkVyem13V25vVno0MzZhcG8</guid><pubDate>Wed,
+        13 Aug 2025 12:54:23 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSmtsYVZ1RnNlYzRlWTUtOWhONm9NWXZhMDJTZ2t1V1lac29aVWxQUmdBUWpWRGJqaTJOajE1aVB5S0c4ZllYcnB4WENDMlNiRGhmYUZvZkZ0am5kQnNxUUZwaXJicnhFRGptc1RzNzdKTFo4Sng3Qm85MVJIUENpcU1XSDBremhyYmRNWnlmNHBOMi1zRXhwYkVyem13V25vVno0MzZhcG8?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq set to open at record highs on September
+        rate cut hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>S&amp;P
+        500, Nasdaq rise to record highs on September rate cut hopes - Reuters</title><link>https://news.google.com/rss/articles/CBMisAFBVV95cUxOYUhBMkp5WTFRUWdxX2FmT3dkbXZ2MGVGSTA1MHRMUHVyUnJ6SWgxa3U2VjFiVDdhOC1UZm9RdENlS29hemZ2OUVmakptUDhDSzNTSkdmUm51SDUzSWN0VHc0SU1NTHI3czBTUVZ6cnNvUW1OX001aEZIWmlLTHlhbkp5eDNIN0hMaUhOcGtLYlI4MGNuVTNtaHBfQ08tX0dKemVwLW5Cc3YzNV9wUEF4VA?oc=5</link><guid
+        isPermaLink=\"false\">CBMisAFBVV95cUxOYUhBMkp5WTFRUWdxX2FmT3dkbXZ2MGVGSTA1MHRMUHVyUnJ6SWgxa3U2VjFiVDdhOC1UZm9RdENlS29hemZ2OUVmakptUDhDSzNTSkdmUm51SDUzSWN0VHc0SU1NTHI3czBTUVZ6cnNvUW1OX001aEZIWmlLTHlhbkp5eDNIN0hMaUhOcGtLYlI4MGNuVTNtaHBfQ08tX0dKemVwLW5Cc3YzNV9wUEF4VA</guid><pubDate>Wed,
+        13 Aug 2025 14:33:21 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOYUhBMkp5WTFRUWdxX2FmT3dkbXZ2MGVGSTA1MHRMUHVyUnJ6SWgxa3U2VjFiVDdhOC1UZm9RdENlS29hemZ2OUVmakptUDhDSzNTSkdmUm51SDUzSWN0VHc0SU1NTHI3czBTUVZ6cnNvUW1OX001aEZIWmlLTHlhbkp5eDNIN0hMaUhOcGtLYlI4MGNuVTNtaHBfQ08tX0dKemVwLW5Cc3YzNV9wUEF4VA?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq rise to record highs on September
+        rate cut hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>Stock
+        Market News Aug. 11, 2025: Dow ends 200 points lower, S&amp;P 500 falls, Nasdaq
+        snaps 3-day winning streak as Trump is reported to extend China tariff deadline;
+        CPI inflation data on deck - MarketWatch</title><link>https://news.google.com/rss/articles/CBMizgFBVV95cUxOZ3dUaWVLWGtpX3NDT2ppaTl6VUZKc2lSNWpBRUJNaDVpQU56RHBTcGFIbElIcWRLQjU1dVBBNkJ5R21HeXM0N3NLTW5kQU5tTVRJRWNUbXZUUXp0NWV6cUhkV2FNbVU1ZkJOZUpPY1o0cUZWRXJvNkhZbExTZjd4SWI1UU1tU1YtVWVUTkxuSHJnc2ZPVDFrVk50OWszVDA4aVpNVEJfbG0zOFJoT3RZbThaX3B0cmhwOHBGclhxUUlCR2pLUm9PRzFwdWZ5Zw?oc=5</link><guid
+        isPermaLink=\"false\">CBMizgFBVV95cUxOZ3dUaWVLWGtpX3NDT2ppaTl6VUZKc2lSNWpBRUJNaDVpQU56RHBTcGFIbElIcWRLQjU1dVBBNkJ5R21HeXM0N3NLTW5kQU5tTVRJRWNUbXZUUXp0NWV6cUhkV2FNbVU1ZkJOZUpPY1o0cUZWRXJvNkhZbExTZjd4SWI1UU1tU1YtVWVUTkxuSHJnc2ZPVDFrVk50OWszVDA4aVpNVEJfbG0zOFJoT3RZbThaX3B0cmhwOHBGclhxUUlCR2pLUm9PRzFwdWZ5Zw</guid><pubDate>Mon,
+        11 Aug 2025 20:24:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOZ3dUaWVLWGtpX3NDT2ppaTl6VUZKc2lSNWpBRUJNaDVpQU56RHBTcGFIbElIcWRLQjU1dVBBNkJ5R21HeXM0N3NLTW5kQU5tTVRJRWNUbXZUUXp0NWV6cUhkV2FNbVU1ZkJOZUpPY1o0cUZWRXJvNkhZbExTZjd4SWI1UU1tU1YtVWVUTkxuSHJnc2ZPVDFrVk50OWszVDA4aVpNVEJfbG0zOFJoT3RZbThaX3B0cmhwOHBGclhxUUlCR2pLUm9PRzFwdWZ5Zw?oc=5\"
+        target=\"_blank\"&gt;Stock Market News Aug. 11, 2025: Dow ends 200 points
+        lower, S&amp;P 500 falls, Nasdaq snaps 3-day winning streak as Trump is reported
+        to extend China tariff deadline; CPI inflation data on deck&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>Investors
+        were blindsided by July\u2019s hot PPI inflation reading. Why stocks mostly
+        shrugged it off. - MarketWatch</title><link>https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdDRHS3VreVloQTd2S0I5YzhhWkpDSXViUlpheGh6OXBVaktOa2ZPRGpzS2w3LVlxNkc4cU5PVzZBRVZfMDRrSy1Yb2xoVERDWmg0M0lkSDQ3eGNIT2lfbHZBaXFMeDgzUTN5alNkTkRBOVFRaTFyX2l2RlFZQWM2Vzl2X2UtUUNOU2x4ODJSSVFicnRHUXFiSjk0YWppOFd3TUR0Ri1IcEpUWTMwd0E0ekUwWXFZTU1samY4VXFjX21GZDVFYlhoN21saVRJbFdqdXk2ajhlMUNwTnJ2ODJrNEZ3?oc=5</link><guid
+        isPermaLink=\"false\">CBMi4gFBVV95cUxPdDRHS3VreVloQTd2S0I5YzhhWkpDSXViUlpheGh6OXBVaktOa2ZPRGpzS2w3LVlxNkc4cU5PVzZBRVZfMDRrSy1Yb2xoVERDWmg0M0lkSDQ3eGNIT2lfbHZBaXFMeDgzUTN5alNkTkRBOVFRaTFyX2l2RlFZQWM2Vzl2X2UtUUNOU2x4ODJSSVFicnRHUXFiSjk0YWppOFd3TUR0Ri1IcEpUWTMwd0E0ekUwWXFZTU1samY4VXFjX21GZDVFYlhoN21saVRJbFdqdXk2ajhlMUNwTnJ2ODJrNEZ3</guid><pubDate>Thu,
+        14 Aug 2025 19:31:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdDRHS3VreVloQTd2S0I5YzhhWkpDSXViUlpheGh6OXBVaktOa2ZPRGpzS2w3LVlxNkc4cU5PVzZBRVZfMDRrSy1Yb2xoVERDWmg0M0lkSDQ3eGNIT2lfbHZBaXFMeDgzUTN5alNkTkRBOVFRaTFyX2l2RlFZQWM2Vzl2X2UtUUNOU2x4ODJSSVFicnRHUXFiSjk0YWppOFd3TUR0Ri1IcEpUWTMwd0E0ekUwWXFZTU1samY4VXFjX21GZDVFYlhoN21saVRJbFdqdXk2ajhlMUNwTnJ2ODJrNEZ3?oc=5\"
+        target=\"_blank\"&gt;Investors were blindsided by July\u2019s hot PPI inflation
+        reading. Why stocks mostly shrugged it off.&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;MarketWatch&lt;/font&gt;</description><source url=\"https://www.marketwatch.com\">MarketWatch</source></item><item><title>S&amp;P
+        500, Nasdaq near record highs on rate cut hopes; Big Tech stocks weaken -
+        Reuters</title><link>https://news.google.com/rss/articles/CBMitAFBVV95cUxPaFFHVkN2Q2U3UzZ6Y1lxSUgwUG1fTjA3QWpUT0ctM0V2TExsS1ZNYlRILVFvaWhLVEdxY3oyQjh5SXJla1QwZko2eW15ODJnYkVMY09DUE1kQUdWWmtlT185Y2Z0QWZLNXZiN2FNaWt4VW12andRdXh4NDNIbmNJbnFDLUhJTnQ0VnNERU9CQllXUWJOY08tOFFleUxfUU1uMndINE1CSmZQeEdOSXpZQkdSdU0?oc=5</link><guid
+        isPermaLink=\"false\">CBMitAFBVV95cUxPaFFHVkN2Q2U3UzZ6Y1lxSUgwUG1fTjA3QWpUT0ctM0V2TExsS1ZNYlRILVFvaWhLVEdxY3oyQjh5SXJla1QwZko2eW15ODJnYkVMY09DUE1kQUdWWmtlT185Y2Z0QWZLNXZiN2FNaWt4VW12andRdXh4NDNIbmNJbnFDLUhJTnQ0VnNERU9CQllXUWJOY08tOFFleUxfUU1uMndINE1CSmZQeEdOSXpZQkdSdU0</guid><pubDate>Wed,
+        13 Aug 2025 19:10:25 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPaFFHVkN2Q2U3UzZ6Y1lxSUgwUG1fTjA3QWpUT0ctM0V2TExsS1ZNYlRILVFvaWhLVEdxY3oyQjh5SXJla1QwZko2eW15ODJnYkVMY09DUE1kQUdWWmtlT185Y2Z0QWZLNXZiN2FNaWt4VW12andRdXh4NDNIbmNJbnFDLUhJTnQ0VnNERU9CQllXUWJOY08tOFFleUxfUU1uMndINE1CSmZQeEdOSXpZQkdSdU0?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq near record highs on rate cut hopes;
+        Big Tech stocks weaken&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>S&amp;P
+        500, Nasdaq hit new closing highs on rate cut hopes - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMifkFVX3lxTE11eVliNmxVY2ZtUDV0RUpsamYtRWJJT01HbG0xZ0k5QXZNOFRtSndaNk5kN1dCVXVIbm1KV3BwdDRYU29sTHA5ZERBMG5mYVRGazMyMDl0TnA0bVU2Nm0xVlZqUnJlN1ZHQzdhbzRrZmhoOWNSUExzZ0thWjgtZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMifkFVX3lxTE11eVliNmxVY2ZtUDV0RUpsamYtRWJJT01HbG0xZ0k5QXZNOFRtSndaNk5kN1dCVXVIbm1KV3BwdDRYU29sTHA5ZERBMG5mYVRGazMyMDl0TnA0bVU2Nm0xVlZqUnJlN1ZHQzdhbzRrZmhoOWNSUExzZ0thWjgtZw</guid><pubDate>Wed,
+        13 Aug 2025 10:15:53 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE11eVliNmxVY2ZtUDV0RUpsamYtRWJJT01HbG0xZ0k5QXZNOFRtSndaNk5kN1dCVXVIbm1KV3BwdDRYU29sTHA5ZERBMG5mYVRGazMyMDl0TnA0bVU2Nm0xVlZqUnJlN1ZHQzdhbzRrZmhoOWNSUExzZ0thWjgtZw?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq hit new closing highs on rate cut
+        hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo Finance&lt;/font&gt;</description><source
+        url=\"https://finance.yahoo.com\">Yahoo Finance</source></item><item><title>S&amp;P
+        500 ETFs Hit Record Highs as Index Tops 6,400: What's Next? - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMidkFVX3lxTE1xOVd0UU1pS2p6UXFtS0s4ejFaUDg4UnlER0pQNndFR0l1TFhTYU1JYmpLeGJBdGxoV3ZUa21jS1hmYm53cWI4UWpnYURnb2x4WGx3cDlxWmd4LTZRcDRfdWZVTklNTlRFZUpIcHB5NXBXUjBOcHc?oc=5</link><guid
+        isPermaLink=\"false\">CBMidkFVX3lxTE1xOVd0UU1pS2p6UXFtS0s4ejFaUDg4UnlER0pQNndFR0l1TFhTYU1JYmpLeGJBdGxoV3ZUa21jS1hmYm53cWI4UWpnYURnb2x4WGx3cDlxWmd4LTZRcDRfdWZVTklNTlRFZUpIcHB5NXBXUjBOcHc</guid><pubDate>Wed,
+        13 Aug 2025 14:30:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1xOVd0UU1pS2p6UXFtS0s4ejFaUDg4UnlER0pQNndFR0l1TFhTYU1JYmpLeGJBdGxoV3ZUa21jS1hmYm53cWI4UWpnYURnb2x4WGx3cDlxWmd4LTZRcDRfdWZVTklNTlRFZUpIcHB5NXBXUjBOcHc?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 ETFs Hit Record Highs as Index Tops 6,400:
+        What's Next?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>S&amp;P 500, Nasdaq futures at record
+        highs on September rate cut hopes - Reuters</title><link>https://news.google.com/rss/articles/CBMipwFBVV95cUxQNERPejRjbmlQam1RamtvZ2toeEo3enJPR2ViNVRvSVo3aFVHckZjZ1VGNXZ2dDNjYllYLUpyS2NBdTFKMlc5SFNjR0JhNmVIa1dZVXp4aW8xSWdrWHJaVFQ4bU90WndsbkRDakMzZkE4WE4yR3BFaHJQdV9Ia3lPVDVEYUhFUWtvc1FpYmJWRC1IQzgwWXhjbVJtdE9iQ01GQ0hUZkhaZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMipwFBVV95cUxQNERPejRjbmlQam1RamtvZ2toeEo3enJPR2ViNVRvSVo3aFVHckZjZ1VGNXZ2dDNjYllYLUpyS2NBdTFKMlc5SFNjR0JhNmVIa1dZVXp4aW8xSWdrWHJaVFQ4bU90WndsbkRDakMzZkE4WE4yR3BFaHJQdV9Ia3lPVDVEYUhFUWtvc1FpYmJWRC1IQzgwWXhjbVJtdE9iQ01GQ0hUZkhaZw</guid><pubDate>Wed,
+        13 Aug 2025 11:35:32 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQNERPejRjbmlQam1RamtvZ2toeEo3enJPR2ViNVRvSVo3aFVHckZjZ1VGNXZ2dDNjYllYLUpyS2NBdTFKMlc5SFNjR0JhNmVIa1dZVXp4aW8xSWdrWHJaVFQ4bU90WndsbkRDakMzZkE4WE4yR3BFaHJQdV9Ia3lPVDVEYUhFUWtvc1FpYmJWRC1IQzgwWXhjbVJtdE9iQ01GQ0hUZkhaZw?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq futures at record highs on September
+        rate cut hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>Stock
+        Market News, Aug. 13, 2025: S&amp;P 500 Hits Another Closing High on Hopes
+        for Fed Rate Cut - The Wall Street Journal</title><link>https://news.google.com/rss/articles/CBMijANBVV95cUxPSTAwWThXakEzR3ZDYWVDT1NxaS0zUkZwOTBOcDhJbkpNNkdKRUxjc1NtaE00QkU3ZFVEN3V3YkdoMzhyRkpSRDJrdVE5Nkg4aXphUzRCZVJ4bmtLSmZUQTN4TjljLXZqY2IwU1ZxcUdMV2Uzc0wwNW43Z1AtNWdHeUNvNlljajN3Wm1HX2ZwMEtRNXE2ODFmLTE3VE5KSllCOEMzT3VFVGNYdVoxNV9jTkEwR3VYOV8tNk9iM0pQcG15d2Fma0ptRG9mbDRvTmJqVkVLNndWUW8wTHlQUUE5c1hqemFBVS1SdmY2MlB4cmtzVmZCSUp3UElzVEpjazBrSWFScERRdVowS3ZpZlBrMk5nMDliYnZNbE9hVGkzZG9XUDhtNHF1c0Mzc2NpSU5ZcDJ6ekR1SUlxaGxWdUpJMDRhaEZlRDhFWlZiZnp0bjBPWlJocGJncmU4OUxRTEtYQVBJWnJWbG9jcVpHTjdoOHlqNFVwZTNZOF9oVkc5MldmM2VKZzZXUkpVRDk?oc=5</link><guid
+        isPermaLink=\"false\">CBMijANBVV95cUxPSTAwWThXakEzR3ZDYWVDT1NxaS0zUkZwOTBOcDhJbkpNNkdKRUxjc1NtaE00QkU3ZFVEN3V3YkdoMzhyRkpSRDJrdVE5Nkg4aXphUzRCZVJ4bmtLSmZUQTN4TjljLXZqY2IwU1ZxcUdMV2Uzc0wwNW43Z1AtNWdHeUNvNlljajN3Wm1HX2ZwMEtRNXE2ODFmLTE3VE5KSllCOEMzT3VFVGNYdVoxNV9jTkEwR3VYOV8tNk9iM0pQcG15d2Fma0ptRG9mbDRvTmJqVkVLNndWUW8wTHlQUUE5c1hqemFBVS1SdmY2MlB4cmtzVmZCSUp3UElzVEpjazBrSWFScERRdVowS3ZpZlBrMk5nMDliYnZNbE9hVGkzZG9XUDhtNHF1c0Mzc2NpSU5ZcDJ6ekR1SUlxaGxWdUpJMDRhaEZlRDhFWlZiZnp0bjBPWlJocGJncmU4OUxRTEtYQVBJWnJWbG9jcVpHTjdoOHlqNFVwZTNZOF9oVkc5MldmM2VKZzZXUkpVRDk</guid><pubDate>Thu,
+        14 Aug 2025 08:01:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMijANBVV95cUxPSTAwWThXakEzR3ZDYWVDT1NxaS0zUkZwOTBOcDhJbkpNNkdKRUxjc1NtaE00QkU3ZFVEN3V3YkdoMzhyRkpSRDJrdVE5Nkg4aXphUzRCZVJ4bmtLSmZUQTN4TjljLXZqY2IwU1ZxcUdMV2Uzc0wwNW43Z1AtNWdHeUNvNlljajN3Wm1HX2ZwMEtRNXE2ODFmLTE3VE5KSllCOEMzT3VFVGNYdVoxNV9jTkEwR3VYOV8tNk9iM0pQcG15d2Fma0ptRG9mbDRvTmJqVkVLNndWUW8wTHlQUUE5c1hqemFBVS1SdmY2MlB4cmtzVmZCSUp3UElzVEpjazBrSWFScERRdVowS3ZpZlBrMk5nMDliYnZNbE9hVGkzZG9XUDhtNHF1c0Mzc2NpSU5ZcDJ6ekR1SUlxaGxWdUpJMDRhaEZlRDhFWlZiZnp0bjBPWlJocGJncmU4OUxRTEtYQVBJWnJWbG9jcVpHTjdoOHlqNFVwZTNZOF9oVkc5MldmM2VKZzZXUkpVRDk?oc=5\"
+        target=\"_blank\"&gt;Stock Market News, Aug. 13, 2025: S&amp;P 500 Hits Another
+        Closing High on Hopes for Fed Rate Cut&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;The Wall Street Journal&lt;/font&gt;</description><source
+        url=\"https://www.wsj.com\">The Wall Street Journal</source></item><item><title>S&amp;P
+        500, Nasdaq hit new closing highs on rate cut hopes - NBC News</title><link>https://news.google.com/rss/articles/CBMipAFBVV95cUxQZl9aVG9RZEFvb3pNR2wxMlJjeFhvSmRnNGNUc3JRVkxGbkRCZmxRVWxPdld2SGpmMlMyWnV6TDlkakE3UjFWSmtUNkJxTVBJdVpOVllTcUY1ZGR2UHlqQXkxUURuS1psM0ltRnY3aDBSVkNSLXZGbklDUEVlOGU2Vkk0VUJ4OTM2LVczTDVwVkplTF9sbkJwR0VmUjQ4NWFIVmM5QdIBVkFVX3lxTE1uUzlTUm9vbEVtcGVHc0sxcEhjYXgxNldrREhGbG5BWDc2bjZ4ZkRZZE9FSW9SZHRCbFhYNlloV3FVamlzaks3Ymxrd0NwUnBFcW84Z2pB?oc=5</link><guid
+        isPermaLink=\"false\">CBMipAFBVV95cUxQZl9aVG9RZEFvb3pNR2wxMlJjeFhvSmRnNGNUc3JRVkxGbkRCZmxRVWxPdld2SGpmMlMyWnV6TDlkakE3UjFWSmtUNkJxTVBJdVpOVllTcUY1ZGR2UHlqQXkxUURuS1psM0ltRnY3aDBSVkNSLXZGbklDUEVlOGU2Vkk0VUJ4OTM2LVczTDVwVkplTF9sbkJwR0VmUjQ4NWFIVmM5QdIBVkFVX3lxTE1uUzlTUm9vbEVtcGVHc0sxcEhjYXgxNldrREhGbG5BWDc2bjZ4ZkRZZE9FSW9SZHRCbFhYNlloV3FVamlzaks3Ymxrd0NwUnBFcW84Z2pB</guid><pubDate>Wed,
+        13 Aug 2025 20:35:50 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQZl9aVG9RZEFvb3pNR2wxMlJjeFhvSmRnNGNUc3JRVkxGbkRCZmxRVWxPdld2SGpmMlMyWnV6TDlkakE3UjFWSmtUNkJxTVBJdVpOVllTcUY1ZGR2UHlqQXkxUURuS1psM0ltRnY3aDBSVkNSLXZGbklDUEVlOGU2Vkk0VUJ4OTM2LVczTDVwVkplTF9sbkJwR0VmUjQ4NWFIVmM5QdIBVkFVX3lxTE1uUzlTUm9vbEVtcGVHc0sxcEhjYXgxNldrREhGbG5BWDc2bjZ4ZkRZZE9FSW9SZHRCbFhYNlloV3FVamlzaks3Ymxrd0NwUnBFcW84Z2pB?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq hit new closing highs on rate cut
+        hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;NBC News&lt;/font&gt;</description><source
+        url=\"https://www.nbcnews.com\">NBC News</source></item><item><title>How to
+        invest in the S&amp;P 500 - Fidelity</title><link>https://news.google.com/rss/articles/CBMihwFBVV95cUxNTXM3UGpLQUdiVUU1dWNjUHRpeHhxS0VNN1dTaEhMd1ZlejF6Z0xSMlN4M1ItQjRGZ2JDSXVJY3lsNEtQdEdMWEJrRkdtMWREbldKWVFXZWRSRGxxdzF3MlBVbTYwSHFpSXNqRzFOMnJ2UnRMSWtTOWM2UDljbnEydWFqSUtRYnc?oc=5</link><guid
+        isPermaLink=\"false\">CBMihwFBVV95cUxNTXM3UGpLQUdiVUU1dWNjUHRpeHhxS0VNN1dTaEhMd1ZlejF6Z0xSMlN4M1ItQjRGZ2JDSXVJY3lsNEtQdEdMWEJrRkdtMWREbldKWVFXZWRSRGxxdzF3MlBVbTYwSHFpSXNqRzFOMnJ2UnRMSWtTOWM2UDljbnEydWFqSUtRYnc</guid><pubDate>Mon,
+        04 Aug 2025 07:00:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxNTXM3UGpLQUdiVUU1dWNjUHRpeHhxS0VNN1dTaEhMd1ZlejF6Z0xSMlN4M1ItQjRGZ2JDSXVJY3lsNEtQdEdMWEJrRkdtMWREbldKWVFXZWRSRGxxdzF3MlBVbTYwSHFpSXNqRzFOMnJ2UnRMSWtTOWM2UDljbnEydWFqSUtRYnc?oc=5\"
+        target=\"_blank\"&gt;How to invest in the S&amp;P 500&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Fidelity&lt;/font&gt;</description><source url=\"https://www.fidelity.com\">Fidelity</source></item><item><title>S&amp;P
+        500's fresh record high: Why this bear expects a correction - Yahoo Finance</title><link>https://news.google.com/rss/articles/CBMie0FVX3lxTE5Ydm9CbVdwbnRhdkpWa3pfQ2M1ekVJZXJPbjk0MzhEM1E0dXc5VjFGM0hTWXdKNTBhSnUzUWhyS0xmeFpGbnRQUDJvcnEwTkgxRmFqU1l2Y2llNU9aakhId0lHb0J2SHozb2RuQkFSbXVOdDhQNXBZcHU5NA?oc=5</link><guid
+        isPermaLink=\"false\">CBMie0FVX3lxTE5Ydm9CbVdwbnRhdkpWa3pfQ2M1ekVJZXJPbjk0MzhEM1E0dXc5VjFGM0hTWXdKNTBhSnUzUWhyS0xmeFpGbnRQUDJvcnEwTkgxRmFqU1l2Y2llNU9aakhId0lHb0J2SHozb2RuQkFSbXVOdDhQNXBZcHU5NA</guid><pubDate>Wed,
+        13 Aug 2025 20:53:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE5Ydm9CbVdwbnRhdkpWa3pfQ2M1ekVJZXJPbjk0MzhEM1E0dXc5VjFGM0hTWXdKNTBhSnUzUWhyS0xmeFpGbnRQUDJvcnEwTkgxRmFqU1l2Y2llNU9aakhId0lHb0J2SHozb2RuQkFSbXVOdDhQNXBZcHU5NA?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500's fresh record high: Why this bear expects
+        a correction&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Yahoo
+        Finance&lt;/font&gt;</description><source url=\"https://finance.yahoo.com\">Yahoo
+        Finance</source></item><item><title>S&amp;P 500 Earnings Season Update: August
+        8, 2025 - FactSet Insight</title><link>https://news.google.com/rss/articles/CBMie0FVX3lxTE1ibmp5ZlRFUFVtOExBRWRKZzFQQ0FCQV9ReXFjZHo2b0xBZVNQXzNpT2gzNGVTNUQ3LTc1WjVfTlBjeklUaE1CaG5ORVRLMTNLR3pYSkVzYnNMLTh5NDB5UmtBWlZfUlZNYVJGOElPSkxBOHRMSkFyWU1YZ9IBiwFBVV95cUxPdHZaMzBoOUVXTzNJeGJaeHBWNDUyVldYX3lUZ1gyUVRhRzBDeENXY3h6MlpvYWRRd3RXOHM1Y3drRElNOFhFeW1JSko4Qnc3QVRzLUl1MTIwY1YzdkNERUc3bWkyV1RSX2lHUjU1Sk5adlpoNXZYNElHOERNcEVqVGkyZGR5amRld3pR?oc=5</link><guid
+        isPermaLink=\"false\">CBMie0FVX3lxTE1ibmp5ZlRFUFVtOExBRWRKZzFQQ0FCQV9ReXFjZHo2b0xBZVNQXzNpT2gzNGVTNUQ3LTc1WjVfTlBjeklUaE1CaG5ORVRLMTNLR3pYSkVzYnNMLTh5NDB5UmtBWlZfUlZNYVJGOElPSkxBOHRMSkFyWU1YZ9IBiwFBVV95cUxPdHZaMzBoOUVXTzNJeGJaeHBWNDUyVldYX3lUZ1gyUVRhRzBDeENXY3h6MlpvYWRRd3RXOHM1Y3drRElNOFhFeW1JSko4Qnc3QVRzLUl1MTIwY1YzdkNERUc3bWkyV1RSX2lHUjU1Sk5adlpoNXZYNElHOERNcEVqVGkyZGR5amRld3pR</guid><pubDate>Fri,
+        08 Aug 2025 18:56:15 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1ibmp5ZlRFUFVtOExBRWRKZzFQQ0FCQV9ReXFjZHo2b0xBZVNQXzNpT2gzNGVTNUQ3LTc1WjVfTlBjeklUaE1CaG5ORVRLMTNLR3pYSkVzYnNMLTh5NDB5UmtBWlZfUlZNYVJGOElPSkxBOHRMSkFyWU1YZ9IBiwFBVV95cUxPdHZaMzBoOUVXTzNJeGJaeHBWNDUyVldYX3lUZ1gyUVRhRzBDeENXY3h6MlpvYWRRd3RXOHM1Y3drRElNOFhFeW1JSko4Qnc3QVRzLUl1MTIwY1YzdkNERUc3bWkyV1RSX2lHUjU1Sk5adlpoNXZYNElHOERNcEVqVGkyZGR5amRld3pR?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Earnings Season Update: August 8, 2025&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;FactSet Insight&lt;/font&gt;</description><source url=\"https://insight.factset.com\">FactSet
+        Insight</source></item><item><title>S&amp;P 500, SPY, ES Gap Fill Strategy
+        and Statistics - Trade That Swing</title><link>https://news.google.com/rss/articles/CBMif0FVX3lxTE5pbGZ1OVQzMjhnc1JjTWpRRGt0S1d0TnZWMGYyU3RLb1V5R1BhSVZvZ3BheDVUWlY0d2ZuMXdJOHkzVFN3dTJRQXlwUXh5aU5kMElZVFJnMzNESDB4TFhCLUVwSlZaT3AwTTFKSFNmUDBuNXNMQmF4LTZPU3M0WFU?oc=5</link><guid
+        isPermaLink=\"false\">CBMif0FVX3lxTE5pbGZ1OVQzMjhnc1JjTWpRRGt0S1d0TnZWMGYyU3RLb1V5R1BhSVZvZ3BheDVUWlY0d2ZuMXdJOHkzVFN3dTJRQXlwUXh5aU5kMElZVFJnMzNESDB4TFhCLUVwSlZaT3AwTTFKSFNmUDBuNXNMQmF4LTZPU3M0WFU</guid><pubDate>Thu,
+        14 Aug 2025 16:55:43 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5pbGZ1OVQzMjhnc1JjTWpRRGt0S1d0TnZWMGYyU3RLb1V5R1BhSVZvZ3BheDVUWlY0d2ZuMXdJOHkzVFN3dTJRQXlwUXh5aU5kMElZVFJnMzNESDB4TFhCLUVwSlZaT3AwTTFKSFNmUDBuNXNMQmF4LTZPU3M0WFU?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, SPY, ES Gap Fill Strategy and Statistics&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;Trade That Swing&lt;/font&gt;</description><source url=\"https://tradethatswing.com\">Trade
+        That Swing</source></item><item><title>S&amp;P 500, Nasdaq Hit All-Time Highs
+        on AI Sector Surge - AInvest</title><link>https://news.google.com/rss/articles/CBMiggFBVV95cUxNU05HUGhiN3dVbFFPOTk1UWt5Z2RVTngzQ1ZySDZfbkRDS3o4ZXdNS2gtajRlcmwzNnVSdWNnQ2RXZWp4b1NiQnVmOUJnenRMSFlwNHlfWFRQaVRoQ3loRGd6T2laSFhYRDVob3AtWDJfWDhOTnV0LXBvSlEwZVhsMlZB?oc=5</link><guid
+        isPermaLink=\"false\">CBMiggFBVV95cUxNU05HUGhiN3dVbFFPOTk1UWt5Z2RVTngzQ1ZySDZfbkRDS3o4ZXdNS2gtajRlcmwzNnVSdWNnQ2RXZWp4b1NiQnVmOUJnenRMSFlwNHlfWFRQaVRoQ3loRGd6T2laSFhYRDVob3AtWDJfWDhOTnV0LXBvSlEwZVhsMlZB</guid><pubDate>Fri,
+        15 Aug 2025 01:33:09 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxNU05HUGhiN3dVbFFPOTk1UWt5Z2RVTngzQ1ZySDZfbkRDS3o4ZXdNS2gtajRlcmwzNnVSdWNnQ2RXZWp4b1NiQnVmOUJnenRMSFlwNHlfWFRQaVRoQ3loRGd6T2laSFhYRDVob3AtWDJfWDhOTnV0LXBvSlEwZVhsMlZB?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq Hit All-Time Highs on AI Sector Surge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;AInvest&lt;/font&gt;</description><source url=\"https://www.ainvest.com\">AInvest</source></item><item><title>United
+        and Delta Are S&amp;P 500\u2019s Top Stocks Today. Thank the Inflation Report.
+        - Barron's</title><link>https://news.google.com/rss/articles/CBMitgFBVV95cUxNTUFFdXM2TzlXMUpWc1djZ2lkRElKMlJ4cWdmUTZEWlBMVzVURGkwRWNXSll3R2JKUzRCbXo0WmtydkZKVFBZNWRyYThyOWo3bVRhc0JVZ3ZvYXhRUDhoRDZ0VDY0eTZjRV9RMDdfV1N5Mk9CVTJIVURycC0yZVpSYzFkT0lVSDhhS2JwY0Z4YW10Wlh0SnZKWVF3UUJocWxRb0xwQ2JqNFVKY0V6dzBjNnBuZ3Jvdw?oc=5</link><guid
+        isPermaLink=\"false\">CBMitgFBVV95cUxNTUFFdXM2TzlXMUpWc1djZ2lkRElKMlJ4cWdmUTZEWlBMVzVURGkwRWNXSll3R2JKUzRCbXo0WmtydkZKVFBZNWRyYThyOWo3bVRhc0JVZ3ZvYXhRUDhoRDZ0VDY0eTZjRV9RMDdfV1N5Mk9CVTJIVURycC0yZVpSYzFkT0lVSDhhS2JwY0Z4YW10Wlh0SnZKWVF3UUJocWxRb0xwQ2JqNFVKY0V6dzBjNnBuZ3Jvdw</guid><pubDate>Tue,
+        12 Aug 2025 16:36:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNTUFFdXM2TzlXMUpWc1djZ2lkRElKMlJ4cWdmUTZEWlBMVzVURGkwRWNXSll3R2JKUzRCbXo0WmtydkZKVFBZNWRyYThyOWo3bVRhc0JVZ3ZvYXhRUDhoRDZ0VDY0eTZjRV9RMDdfV1N5Mk9CVTJIVURycC0yZVpSYzFkT0lVSDhhS2JwY0Z4YW10Wlh0SnZKWVF3UUJocWxRb0xwQ2JqNFVKY0V6dzBjNnBuZ3Jvdw?oc=5\"
+        target=\"_blank\"&gt;United and Delta Are S&amp;P 500\u2019s Top Stocks Today.
+        Thank the Inflation Report.&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barron's&lt;/font&gt;</description><source
+        url=\"https://www.barrons.com\">Barron's</source></item><item><title>S&amp;P
+        500 ekes out another record close today - MSN</title><link>https://news.google.com/rss/articles/CBMiwAFBVV95cUxQZFBWZWZUYU1rTHc0N21jaVdZeTc1bTQ0WHJleDJfdXdXSm1FN3NsMUdRZko3U3VRUl9fSnFnSlJINDhaUm9YVS1nYWdMb1NrMXU2ZlkySVg1ZEpDSlM3cHliRjJLbGRES0xVNElKaFVieVVuZ1pUVjE1RHRhX1ZHTVFCMnZvLWUxbEVtaF9Od2lRalYyemNvVC1fNmRMOHlzMnJRejRUUHNaYjRmSmtDbjFwbjB1MEY3WmJPU2ZWZTc?oc=5</link><guid
+        isPermaLink=\"false\">CBMiwAFBVV95cUxQZFBWZWZUYU1rTHc0N21jaVdZeTc1bTQ0WHJleDJfdXdXSm1FN3NsMUdRZko3U3VRUl9fSnFnSlJINDhaUm9YVS1nYWdMb1NrMXU2ZlkySVg1ZEpDSlM3cHliRjJLbGRES0xVNElKaFVieVVuZ1pUVjE1RHRhX1ZHTVFCMnZvLWUxbEVtaF9Od2lRalYyemNvVC1fNmRMOHlzMnJRejRUUHNaYjRmSmtDbjFwbjB1MEY3WmJPU2ZWZTc</guid><pubDate>Thu,
+        14 Aug 2025 21:33:07 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQZFBWZWZUYU1rTHc0N21jaVdZeTc1bTQ0WHJleDJfdXdXSm1FN3NsMUdRZko3U3VRUl9fSnFnSlJINDhaUm9YVS1nYWdMb1NrMXU2ZlkySVg1ZEpDSlM3cHliRjJLbGRES0xVNElKaFVieVVuZ1pUVjE1RHRhX1ZHTVFCMnZvLWUxbEVtaF9Od2lRalYyemNvVC1fNmRMOHlzMnJRejRUUHNaYjRmSmtDbjFwbjB1MEY3WmJPU2ZWZTc?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 ekes out another record close today&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font
+        color=\"#6f6f6f\"&gt;MSN&lt;/font&gt;</description><source url=\"https://www.msn.com\">MSN</source></item><item><title>S&amp;P
+        500, Nasdaq at record highs as moderate inflation lifts rate hopes - Reuters</title><link>https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSjR2NFhtc01KT3p1M1ZqMFI0LVl6X1o3TGRwNTF4cno3WmI2Yzl2T2RSRGQ4QWlaNDBpZ2dXN051Mk9aWlhLUE5Ba0w5RThPX2Exak81UVpTUHlKejRoY0VFSDVCa3B0UFpNX0JMNmdJdzZyLVVPVW9nVDB3cUxKYlh0dW1QNmZqS0JvR2tIU1E5Y2hpYlhfS1lOb05hWmRpTEFXRUJLaXpISzQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqwFBVV95cUxNSjR2NFhtc01KT3p1M1ZqMFI0LVl6X1o3TGRwNTF4cno3WmI2Yzl2T2RSRGQ4QWlaNDBpZ2dXN051Mk9aWlhLUE5Ba0w5RThPX2Exak81UVpTUHlKejRoY0VFSDVCa3B0UFpNX0JMNmdJdzZyLVVPVW9nVDB3cUxKYlh0dW1QNmZqS0JvR2tIU1E5Y2hpYlhfS1lOb05hWmRpTEFXRUJLaXpISzQ</guid><pubDate>Tue,
+        12 Aug 2025 18:48:03 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSjR2NFhtc01KT3p1M1ZqMFI0LVl6X1o3TGRwNTF4cno3WmI2Yzl2T2RSRGQ4QWlaNDBpZ2dXN051Mk9aWlhLUE5Ba0w5RThPX2Exak81UVpTUHlKejRoY0VFSDVCa3B0UFpNX0JMNmdJdzZyLVVPVW9nVDB3cUxKYlh0dW1QNmZqS0JvR2tIU1E5Y2hpYlhfS1lOb05hWmRpTEFXRUJLaXpISzQ?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq at record highs as moderate inflation
+        lifts rate hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>S&amp;P
+        500, Nasdaq at record highs as inflation rises moderately in July - Reuters</title><link>https://news.google.com/rss/articles/CBMipgFBVV95cUxPbl9tWF9GZmVSRC1uMTkyTTFsMVJPN3VPN2ZldmUzUG0yQzUyZW45eWkxNGRWQlQyLVdBS0RfRzVsNXdPY3ZtY3IxWEZMV2x6eE01RlB0OGxKWjZuaFNsa2pkNm1OWkJ3aGhCUG5UdklEOWJpdE1TT0V5UzNBYVBJZmtiakhIWkhNU0s4bFc2bzRwNlJyRWpURi14a1FQc1FuWl9HY19n?oc=5</link><guid
+        isPermaLink=\"false\">CBMipgFBVV95cUxPbl9tWF9GZmVSRC1uMTkyTTFsMVJPN3VPN2ZldmUzUG0yQzUyZW45eWkxNGRWQlQyLVdBS0RfRzVsNXdPY3ZtY3IxWEZMV2x6eE01RlB0OGxKWjZuaFNsa2pkNm1OWkJ3aGhCUG5UdklEOWJpdE1TT0V5UzNBYVBJZmtiakhIWkhNU0s4bFc2bzRwNlJyRWpURi14a1FQc1FuWl9HY19n</guid><pubDate>Tue,
+        12 Aug 2025 16:30:24 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPbl9tWF9GZmVSRC1uMTkyTTFsMVJPN3VPN2ZldmUzUG0yQzUyZW45eWkxNGRWQlQyLVdBS0RfRzVsNXdPY3ZtY3IxWEZMV2x6eE01RlB0OGxKWjZuaFNsa2pkNm1OWkJ3aGhCUG5UdklEOWJpdE1TT0V5UzNBYVBJZmtiakhIWkhNU0s4bFc2bzRwNlJyRWpURi14a1FQc1FuWl9HY19n?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500, Nasdaq at record highs as inflation rises
+        moderately in July&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>S&amp;P
+        500 Futures Flat in Premarket Trading; Coherent, Tapestry Lag - Barron's</title><link>https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTTVnLWoxSTdRWjhVR1hkcUh3UHFNWHdmYVlZcHdnelJXZDkzQ1VqeWgyU2V6M1RzbzJIR2kya2FpSTdaTEIySmdPRkp6cWVmSGJRMG9wajhoaFVyd3lwU0t3eWl2SDhlanFNQWVjNGRnRmlYNWVWSHdLXzJOZXEtaUVkWklpS3lsdC02WUtRNEp1ZUhLRmFweXVoaEF2c2xPY282OG41ZGc?oc=5</link><guid
+        isPermaLink=\"false\">CBMiqAFBVV95cUxQTTVnLWoxSTdRWjhVR1hkcUh3UHFNWHdmYVlZcHdnelJXZDkzQ1VqeWgyU2V6M1RzbzJIR2kya2FpSTdaTEIySmdPRkp6cWVmSGJRMG9wajhoaFVyd3lwU0t3eWl2SDhlanFNQWVjNGRnRmlYNWVWSHdLXzJOZXEtaUVkWklpS3lsdC02WUtRNEp1ZUhLRmFweXVoaEF2c2xPY282OG41ZGc</guid><pubDate>Thu,
+        14 Aug 2025 11:30:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTTVnLWoxSTdRWjhVR1hkcUh3UHFNWHdmYVlZcHdnelJXZDkzQ1VqeWgyU2V6M1RzbzJIR2kya2FpSTdaTEIySmdPRkp6cWVmSGJRMG9wajhoaFVyd3lwU0t3eWl2SDhlanFNQWVjNGRnRmlYNWVWSHdLXzJOZXEtaUVkWklpS3lsdC02WUtRNEp1ZUhLRmFweXVoaEF2c2xPY282OG41ZGc?oc=5\"
+        target=\"_blank\"&gt;S&amp;P 500 Futures Flat in Premarket Trading; Coherent,
+        Tapestry Lag&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Barron's&lt;/font&gt;</description><source
+        url=\"https://www.barrons.com\">Barron's</source></item><item><title>What
+        To Do With These Three S&amp;P 500 Stocks After They Dropped By 10% - Seeking
+        Alpha</title><link>https://news.google.com/rss/articles/CBMimwFBVV95cUxOUXM1bEVMeHRPaGFYRkJnV29KVkttWFNENmlpTGlvSkNPZmd3QVFWNUdzTDVGUnpyNEkxQk1MVHNfRm1BQWNMTU5aamFTTGVjLWRoN2xhNi1yZjc4MklfZlN5V2dUTUdhVlJqMHFZMk1TWmE4aW00MnhPdGxRcGU3Mk5feHpHbUh3ZGF5ZklHSlVKVG9QNTNrRzEyZw?oc=5</link><guid
+        isPermaLink=\"false\">CBMimwFBVV95cUxOUXM1bEVMeHRPaGFYRkJnV29KVkttWFNENmlpTGlvSkNPZmd3QVFWNUdzTDVGUnpyNEkxQk1MVHNfRm1BQWNMTU5aamFTTGVjLWRoN2xhNi1yZjc4MklfZlN5V2dUTUdhVlJqMHFZMk1TWmE4aW00MnhPdGxRcGU3Mk5feHpHbUh3ZGF5ZklHSlVKVG9QNTNrRzEyZw</guid><pubDate>Wed,
+        13 Aug 2025 22:08:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOUXM1bEVMeHRPaGFYRkJnV29KVkttWFNENmlpTGlvSkNPZmd3QVFWNUdzTDVGUnpyNEkxQk1MVHNfRm1BQWNMTU5aamFTTGVjLWRoN2xhNi1yZjc4MklfZlN5V2dUTUdhVlJqMHFZMk1TWmE4aW00MnhPdGxRcGU3Mk5feHpHbUh3ZGF5ZklHSlVKVG9QNTNrRzEyZw?oc=5\"
+        target=\"_blank\"&gt;What To Do With These Three S&amp;P 500 Stocks After
+        They Dropped By 10%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Seeking
+        Alpha&lt;/font&gt;</description><source url=\"https://seekingalpha.com\">Seeking
+        Alpha</source></item><item><title>Potential Fed chair pick makes boldest call
+        yet on S&amp;P 500 rally - TheStreet</title><link>https://news.google.com/rss/articles/CBMipAFBVV95cUxQTlJ6bjNHQld2T3NHWGtUYVNoX1FtM1BhVWZxZTA3MlNJdU9Jb2NaMWVyaUM2NUkzaFNQM3lSelFfSWNFTHdJZ0VLM2FyXzB1RHZCT2hQZlZoRG9wLUpDclpoOE5DLWxYSVBaNGw2N25nWG5TTDlpU2liMEx0eVpFWUtraVdtcHBKQVJDUUplU1dsYi1vWWNoOGM1SW45TG84M2Ywcg?oc=5</link><guid
+        isPermaLink=\"false\">CBMipAFBVV95cUxQTlJ6bjNHQld2T3NHWGtUYVNoX1FtM1BhVWZxZTA3MlNJdU9Jb2NaMWVyaUM2NUkzaFNQM3lSelFfSWNFTHdJZ0VLM2FyXzB1RHZCT2hQZlZoRG9wLUpDclpoOE5DLWxYSVBaNGw2N25nWG5TTDlpU2liMEx0eVpFWUtraVdtcHBKQVJDUUplU1dsYi1vWWNoOGM1SW45TG84M2Ywcg</guid><pubDate>Thu,
+        14 Aug 2025 14:33:00 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxQTlJ6bjNHQld2T3NHWGtUYVNoX1FtM1BhVWZxZTA3MlNJdU9Jb2NaMWVyaUM2NUkzaFNQM3lSelFfSWNFTHdJZ0VLM2FyXzB1RHZCT2hQZlZoRG9wLUpDclpoOE5DLWxYSVBaNGw2N25nWG5TTDlpU2liMEx0eVpFWUtraVdtcHBKQVJDUUplU1dsYi1vWWNoOGM1SW45TG84M2Ywcg?oc=5\"
+        target=\"_blank\"&gt;Potential Fed chair pick makes boldest call yet on S&amp;P
+        500 rally&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;TheStreet&lt;/font&gt;</description><source
+        url=\"https://www.thestreet.com\">TheStreet</source></item><item><title>SNAPSHOT
+        S&amp;P 500, Nasdaq hit record highs at open on September rate cut hopes -
+        Reuters</title><link>https://news.google.com/rss/articles/CBMitAFBVV95cUxQQWpYWWlQcmZKbjktcVRCVE5HN0lUMGVHNW1VbnpUTTNZYWFGNmFLU2VRMkRRd1hDZG1adnNWUjd3dEUzUUotbjk4djZrWWNsRjlzSUhibzVudzdXaXUwZVZaNUc0ZEZLRlB5VHdUOHMtdEpfTGppakFBdW1aZ24yTTg0WHBKd1lXR1dsUUc0d3pyN0hUZU9tbUdIYWJEVmVEUElWeFBvc0V5aVBCX0NqcE5qTWU?oc=5</link><guid
+        isPermaLink=\"false\">CBMitAFBVV95cUxQQWpYWWlQcmZKbjktcVRCVE5HN0lUMGVHNW1VbnpUTTNZYWFGNmFLU2VRMkRRd1hDZG1adnNWUjd3dEUzUUotbjk4djZrWWNsRjlzSUhibzVudzdXaXUwZVZaNUc0ZEZLRlB5VHdUOHMtdEpfTGppakFBdW1aZ24yTTg0WHBKd1lXR1dsUUc0d3pyN0hUZU9tbUdIYWJEVmVEUElWeFBvc0V5aVBCX0NqcE5qTWU</guid><pubDate>Wed,
+        13 Aug 2025 13:36:53 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQQWpYWWlQcmZKbjktcVRCVE5HN0lUMGVHNW1VbnpUTTNZYWFGNmFLU2VRMkRRd1hDZG1adnNWUjd3dEUzUUotbjk4djZrWWNsRjlzSUhibzVudzdXaXUwZVZaNUc0ZEZLRlB5VHdUOHMtdEpfTGppakFBdW1aZ24yTTg0WHBKd1lXR1dsUUc0d3pyN0hUZU9tbUdIYWJEVmVEUElWeFBvc0V5aVBCX0NqcE5qTWU?oc=5\"
+        target=\"_blank\"&gt;SNAPSHOT S&amp;P 500, Nasdaq hit record highs at open
+        on September rate cut hopes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;</description><source
+        url=\"https://www.reuters.com\">Reuters</source></item><item><title>Market
+        Wrap | S&amp;P 500 rises as Powell hints at rate cuts Eli Lilly surges on
+        weight-loss drug news OneMedNet soars on funding round success - AInvest</title><link>https://news.google.com/rss/articles/CBMi5AFBVV95cUxONEF0NXRsTnYxbGlPRnRvSlJXNWtUOHQ0YnF5UkJwZGNUZjJZdDloczBGTzk0QlQ3LWdVMFdjUEJaNWpMclBiTFA1M3RWc1RpbjhxdUI1LWwzQnpRWndMUE91NGw0TUtuMjIydFhqTmZadE95VU5nZ2czcFU0SElpTzI4c1BKaVdqZmliQ1FPTVFVYjVkemFselFEbWdFblE0RGlzQ3U4eE1nR29ZSFBlMFdyVlRxc0JpN1pGVDBVOXlCZmxQZ0NOUzlEbVNMVnoxN3pobHFSWHF4MGx3bDYzMmRzcDQ?oc=5</link><guid
+        isPermaLink=\"false\">CBMi5AFBVV95cUxONEF0NXRsTnYxbGlPRnRvSlJXNWtUOHQ0YnF5UkJwZGNUZjJZdDloczBGTzk0QlQ3LWdVMFdjUEJaNWpMclBiTFA1M3RWc1RpbjhxdUI1LWwzQnpRWndMUE91NGw0TUtuMjIydFhqTmZadE95VU5nZ2czcFU0SElpTzI4c1BKaVdqZmliQ1FPTVFVYjVkemFselFEbWdFblE0RGlzQ3U4eE1nR29ZSFBlMFdyVlRxc0JpN1pGVDBVOXlCZmxQZ0NOUzlEbVNMVnoxN3pobHFSWHF4MGx3bDYzMmRzcDQ</guid><pubDate>Thu,
+        14 Aug 2025 22:01:11 GMT</pubDate><description>&lt;a href=\"https://news.google.com/rss/articles/CBMi5AFBVV95cUxONEF0NXRsTnYxbGlPRnRvSlJXNWtUOHQ0YnF5UkJwZGNUZjJZdDloczBGTzk0QlQ3LWdVMFdjUEJaNWpMclBiTFA1M3RWc1RpbjhxdUI1LWwzQnpRWndMUE91NGw0TUtuMjIydFhqTmZadE95VU5nZ2czcFU0SElpTzI4c1BKaVdqZmliQ1FPTVFVYjVkemFselFEbWdFblE0RGlzQ3U4eE1nR29ZSFBlMFdyVlRxc0JpN1pGVDBVOXlCZmxQZ0NOUzlEbVNMVnoxN3pobHFSWHF4MGx3bDYzMmRzcDQ?oc=5\"
+        target=\"_blank\"&gt;Market Wrap | S&amp;P 500 rises as Powell hints at rate
+        cuts Eli Lilly surges on weight-loss drug news OneMedNet soars on funding
+        round success&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;AInvest&lt;/font&gt;</description><source
+        url=\"https://www.ainvest.com\">AInvest</source></item></channel></rss>"
+    headers:
+      Accept-CH:
+      - Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List,
+        Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform,
+        Sec-CH-UA-Platform-Version
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - require-trusted-types-for 'script';report-uri /_/DotsSplashUi/cspreport
+      - script-src 'report-sample' 'nonce-7Ew5buX2QFZIVqSDTTcs0g' 'unsafe-inline';object-src
+        'none';base-uri 'self';report-uri /_/DotsSplashUi/cspreport;worker-src 'self'
+      - 'script-src ''unsafe-inline'' ''unsafe-eval'' blob: data: ''self'' https://apis.google.com
+        https://ssl.gstatic.com https://www.google.com https://www.googletagmanager.com
+        https://www.gstatic.com https://www.google-analytics.com https://www.google.com/tools/feedback/
+        https://www.gstatic.com/feedback/js/ https://www.gstatic.com/inproduct_help/
+        https://www.gstatic.com/support/content/ https://www.gstatic.com/uservoice/feedback/client/web/live/
+        https://www.gstatic.com/uservoice/surveys/resources/prod/js/survey/ https://support.google.com/inapp/
+        https://youtube.com https://www.youtube.com https://youtube.googleapis.com
+        https://*.ytimg.com https://ajax.googleapis.com https://www.googleapis.com/appsmarket/v2/installedApps/;report-uri
+        /_/DotsSplashUi/cspreport/allowlist'
+      Content-Type:
+      - application/xml; charset=utf-8
+      Cross-Origin-Opener-Policy:
+      - same-origin-allow-popups
+      Cross-Origin-Resource-Policy:
+      - same-site
+      Date:
+      - Fri, 15 Aug 2025 06:31:42 GMT
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Permissions-Policy:
+      - ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*,
+        ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*
+      Pragma:
+      - no-cache
+      Server:
+      - ESF
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-XSS-Protection:
+      - '0'
+      reporting-endpoints:
+      - default="/_/DotsSplashUi/web-reports?context=eJzjCtDikmJw1ZBi-LRjBmvrzXOsk4HYUOESqz0QX06_xFokcYW1AYg_Vd1gFai-wZrEfpO1AIh3bbzFehCII6fcZU0AYs61d1kFgFiIh-Pcit9H2ARW7Dz8mVFJOSm_MD4lv6S4uCAnsTijOLWoLLUo3sjAyNTAwtBIz9AwvsAAAKaoM7s"
+    status:
+      code: 200
+      message: OK
+version: 1
