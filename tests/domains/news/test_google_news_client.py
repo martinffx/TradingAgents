@@ -2,7 +2,7 @@
 Tests for Google News RSS feed client using pytest-vcr.
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 from unittest.mock import Mock, patch
 
 import feedparser
@@ -139,9 +139,9 @@ class TestGoogleNewsClient:
         mock_entry.id = "guid-456"
 
         # Should use current time as fallback
-        before = datetime.utcnow()
+        before = datetime.now(timezone.utc).replace(tzinfo=None)
         article = client._parse_feed_entry(mock_entry)
-        after = datetime.utcnow()
+        after = datetime.now(timezone.utc).replace(tzinfo=None)
 
         assert before <= article.published <= after
         assert article.title == "Breaking News"
@@ -259,7 +259,7 @@ class TestGoogleNewsClient:
                     GoogleNewsArticle(
                         title="Tech News",
                         link="https://tech.com",
-                        published=datetime.utcnow(),
+                        published=datetime.now(timezone.utc).replace(tzinfo=None),
                         summary="Tech summary",
                         source="TechSite",
                         guid="tech-1",
@@ -351,7 +351,7 @@ class TestIntegrationScenarios:
         successful_article = GoogleNewsArticle(
             title="Success",
             link="https://success.com",
-            published=datetime.utcnow(),
+            published=datetime.now(timezone.utc).replace(tzinfo=None),
             summary="Successful fetch",
             source="GoodSource",
             guid="success-1",

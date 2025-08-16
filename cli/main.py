@@ -2,6 +2,7 @@ import datetime
 from collections import deque
 from functools import wraps
 from pathlib import Path
+from typing import Literal, cast
 
 import typer
 from rich import box
@@ -16,6 +17,7 @@ from rich.spinner import Spinner
 from rich.table import Table
 from rich.text import Text
 
+from cli.models import AnalystType
 from cli.utils import (
     get_analysis_date,
     get_ticker,
@@ -39,6 +41,9 @@ app = typer.Typer(
 
 # Create a deque to store recent messages with a maximum length
 class MessageBuffer:
+    current_report: str | None
+    final_report: str | None
+
     def __init__(self, max_length=100):
         self.messages = deque(maxlen=max_length)
         self.tool_calls = deque(maxlen=max_length)
@@ -304,7 +309,7 @@ def update_display(layout, spinner_text=None):
         content_str = content
         if isinstance(content, list):
             # Handle list of content blocks (Anthropic format)
-            text_parts = []
+            text_parts: list[str] = []
             for item in content:
                 if isinstance(item, dict):
                     if item.get("type") == "text":
@@ -396,7 +401,7 @@ def update_display(layout, spinner_text=None):
     layout["footer"].update(Panel(stats_table, border_style="grey50"))
 
 
-def get_user_selections():
+def get_user_selections() -> dict[str, str | int | list[AnalystType]]:
     """Get all user selections before starting the analysis display."""
     # Display ASCII art welcome message
     with open("./cli/static/welcome.txt") as f:
@@ -698,7 +703,7 @@ def extract_content_string(content):
         return content
     elif isinstance(content, list):
         # Handle Anthropic's list format
-        text_parts = []
+        text_parts: list[str] = []
         for item in content:
             if isinstance(item, dict):
                 if item.get("type") == "text":
@@ -717,23 +722,51 @@ def run_analysis():
     selections = get_user_selections()
 
     # Create config with selected research depth
+    research_depth = selections["research_depth"]
+    shallow_thinker = selections["shallow_thinker"]
+    deep_thinker = selections["deep_thinker"]
+    backend_url = selections["backend_url"]
+    llm_provider = selections["llm_provider"]
+
     config = TradingAgentsConfig(
-        max_debate_rounds=selections["research_depth"],
-        max_risk_discuss_rounds=selections["research_depth"],
-        quick_think_llm=selections["shallow_thinker"],
-        deep_think_llm=selections["deep_thinker"],
-        backend_url=selections["backend_url"],
-        llm_provider=selections["llm_provider"].lower(),
+        max_debate_rounds=research_depth if isinstance(research_depth, int) else 1,
+        max_risk_discuss_rounds=research_depth
+        if isinstance(research_depth, int)
+        else 1,
+        quick_think_llm=shallow_thinker
+        if isinstance(shallow_thinker, str)
+        else "gpt-4o-mini",
+        deep_think_llm=deep_thinker if isinstance(deep_thinker, str) else "o4-mini",
+        backend_url=backend_url
+        if isinstance(backend_url, str)
+        else "https://api.openai.com/v1",
+        llm_provider=cast(
+            "Literal['openai', 'anthropic', 'google', 'ollama', 'openrouter']",
+            "openai"
+            if not isinstance(llm_provider, str)
+            else (
+                llm_provider.lower()
+                if llm_provider.lower()
+                in ["openai", "anthropic", "google", "ollama", "openrouter"]
+                else "openai"
+            ),
+        ),
     )
 
     # Initialize the graph
-    graph = TradingAgentsGraph(
-        [analyst.value for analyst in selections["analysts"]], config=config, debug=True
-    )
+    analysts_list = selections["analysts"]
+    if isinstance(analysts_list, list):
+        analyst_values = [analyst.value for analyst in analysts_list]
+    else:
+        analyst_values = []
+
+    graph = TradingAgentsGraph(analyst_values, config=config, debug=True)
 
     # Create result directory
     results_dir = (
-        Path(config.results_dir) / selections["ticker"] / selections["analysis_date"]
+        Path(config.results_dir)
+        / str(selections["ticker"])
+        / str(selections["analysis_date"])
     )
     results_dir.mkdir(parents=True, exist_ok=True)
     report_dir = results_dir / "reports"
@@ -805,9 +838,14 @@ def run_analysis():
         message_buffer.add_message(
             "System", f"Analysis date: {selections['analysis_date']}"
         )
+        analysts_list = selections["analysts"]
+        if isinstance(analysts_list, list):
+            analysts_str = ", ".join(analyst.value for analyst in analysts_list)
+        else:
+            analysts_str = "None"
         message_buffer.add_message(
             "System",
-            f"Selected analysts: {', '.join(analyst.value for analyst in selections['analysts'])}",
+            f"Selected analysts: {analysts_str}",
         )
         update_display(layout)
 
@@ -822,7 +860,11 @@ def run_analysis():
         message_buffer.final_report = None
 
         # Update agent status to in_progress for the first analyst
-        first_analyst = f"{selections['analysts'][0].value.capitalize()} Analyst"
+        analysts_list = selections["analysts"]
+        if isinstance(analysts_list, list) and len(analysts_list) > 0:
+            first_analyst = f"{analysts_list[0].value.capitalize()} Analyst"
+        else:
+            first_analyst = "Market Analyst"
         message_buffer.update_agent_status(first_analyst, "in_progress")
         update_display(layout)
 
@@ -834,7 +876,7 @@ def run_analysis():
 
         # Initialize state and get graph args
         init_agent_state = graph.propagator.create_initial_state(
-            selections["ticker"], selections["analysis_date"]
+            str(selections["ticker"]), str(selections["analysis_date"])
         )
         args = graph.propagator.get_graph_args()
 
@@ -877,7 +919,11 @@ def run_analysis():
                     )
                     message_buffer.update_agent_status("Market Analyst", "completed")
                     # Set next analyst to in_progress
-                    if "social" in selections["analysts"]:
+                    analysts_list = selections["analysts"]
+                    if (
+                        isinstance(analysts_list, list)
+                        and AnalystType.SOCIAL in analysts_list
+                    ):
                         message_buffer.update_agent_status(
                             "Social Analyst", "in_progress"
                         )
@@ -888,7 +934,11 @@ def run_analysis():
                     )
                     message_buffer.update_agent_status("Social Analyst", "completed")
                     # Set next analyst to in_progress
-                    if "news" in selections["analysts"]:
+                    analysts_list = selections["analysts"]
+                    if (
+                        isinstance(analysts_list, list)
+                        and AnalystType.NEWS in analysts_list
+                    ):
                         message_buffer.update_agent_status(
                             "News Analyst", "in_progress"
                         )
@@ -899,7 +949,11 @@ def run_analysis():
                     )
                     message_buffer.update_agent_status("News Analyst", "completed")
                     # Set next analyst to in_progress
-                    if "fundamentals" in selections["analysts"]:
+                    analysts_list = selections["analysts"]
+                    if (
+                        isinstance(analysts_list, list)
+                        and AnalystType.FUNDAMENTALS in analysts_list
+                    ):
                         message_buffer.update_agent_status(
                             "Fundamentals Analyst", "in_progress"
                         )

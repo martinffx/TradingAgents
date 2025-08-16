@@ -639,7 +639,7 @@ class NewsService:
             return []
 
         # Simple keyword extraction from titles
-        word_counts = {}
+        word_counts: dict[str, int] = {}
         stop_words = {
             "the",
             "a",
@@ -680,7 +680,10 @@ class NewsService:
                     # Clean word
                     word = "".join(c for c in word if c.isalnum())
                     if len(word) > 3 and word not in stop_words:
-                        word_counts[word] = word_counts.get(word, 0) + 1
+                        if word in word_counts:
+                            word_counts[word] += 1
+                        else:
+                            word_counts[word] = 1
 
         # Get top trending words
         trending = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)[:5]
