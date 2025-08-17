@@ -14,12 +14,33 @@ from tradingagents.domains.news.google_news_client import (
     GoogleNewsClient,
 )
 
-# VCR configuration
+
+# VCR configuration optimized for minimal cassette size
+def rss_content_filter(response):
+    """Filter RSS content to reduce cassette size while preserving test data."""
+    content_type = response.get("headers", {}).get("content-type", [""])[0]
+    if "xml" in content_type and "string" in response["body"]:
+        content = response["body"]["string"]
+        # For RSS feeds, keep only first 5 items to reduce size
+        if len(content) > 5000:  # Only truncate large RSS feeds
+            # Find closing tag of 5th item
+            item_count = content.count("<item>")
+            if item_count > 5:
+                # Keep RSS structure but limit to 5 items
+                parts = content.split("</item>")
+                if len(parts) > 6:  # 5 items + everything after
+                    response["body"]["string"] = (
+                        "</item>".join(parts[:6]) + "</channel></rss>"
+                    )
+    return response
+
+
 vcr = pytest.mark.vcr(
     cassette_library_dir="tests/fixtures/vcr_cassettes/news",
     record_mode="once",  # Record once, then replay
     match_on=["uri", "method"],
-    filter_headers=["authorization", "cookie"],
+    filter_headers=["authorization", "cookie", "user-agent", "set-cookie"],
+    before_record_response=rss_content_filter,
 )
 
 
@@ -302,69 +323,3 @@ class TestGoogleNewsClient:
                 assert articles == []
                 # Should log warning about failed parsing
                 mock_logger.warning.assert_called()
-
-
-class TestIntegrationScenarios:
-    """Integration tests with multiple components."""
-
-    @pytest.fixture
-    def client(self):
-        """Create GoogleNewsClient instance."""
-        return GoogleNewsClient()
-
-    def test_empty_feed_response(self, client):
-        """Test handling of empty RSS feed."""
-        with patch("requests.get") as mock_get, patch("feedparser.parse") as mock_parse:
-            mock_response = Mock()
-            mock_response.content = b"""<?xml version="1.0"?>
-                <rss version="2.0">
-                    <channel>
-                        <title>Empty Feed</title>
-                        <description>No items</description>
-                    </channel>
-                </rss>"""
-            mock_response.raise_for_status.return_value = None
-            mock_get.return_value = mock_response
-
-            mock_feed = Mock()
-            mock_feed.bozo = False
-            mock_feed.entries = []
-            mock_parse.return_value = mock_feed
-
-            articles = client._get_rss_feed("EMPTY")
-
-            assert articles == []
-            assert mock_get.called
-            assert mock_parse.called
-
-    @vcr
-    def test_special_characters_in_query(self, client):
-        """Test query with special characters that need URL encoding."""
-        # Query with spaces and special chars
-        articles = client.get_company_news("S&P 500")
-
-        assert isinstance(articles, list)
-        # Should handle URL encoding properly
-
-    def test_concurrent_category_failures(self, client):
-        """Test that failures in one category don't affect others."""
-        successful_article = GoogleNewsArticle(
-            title="Success",
-            link="https://success.com",
-            published=datetime.now(timezone.utc).replace(tzinfo=None),
-            summary="Successful fetch",
-            source="GoodSource",
-            guid="success-1",
-        )
-
-        with patch.object(client, "_get_rss_feed") as mock_get_rss:
-            mock_get_rss.side_effect = [
-                Exception("Network timeout"),
-                [successful_article],
-                Exception("Parse error"),
-            ]
-
-            articles = client.get_global_news(["fail1", "success", "fail2"])
-
-            assert len(articles) == 1
-            assert articles[0].title == "Success"

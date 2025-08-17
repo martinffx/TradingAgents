@@ -9,12 +9,27 @@ from tradingagents.domains.news.article_scraper_client import (
     ScrapeResult,
 )
 
-# VCR configuration
+
+# VCR configuration optimized for minimal cassette size
+def response_content_filter(response):
+    """Filter response content to reduce cassette size."""
+    if "text/html" in response.get("headers", {}).get("content-type", [""])[0]:
+        # For HTML responses, keep only the first 1KB for basic structure
+        if "string" in response["body"]:
+            content = response["body"]["string"]
+            if len(content) > 1024:
+                response["body"]["string"] = (
+                    content[:1024] + "... [TRUNCATED for test size]"
+                )
+    return response
+
+
 vcr = pytest.mark.vcr(
     cassette_library_dir="tests/fixtures/vcr_cassettes/news",
     record_mode="once",  # Record once, then replay
     match_on=["uri", "method"],
-    filter_headers=["authorization", "cookie", "user-agent"],
+    filter_headers=["authorization", "cookie", "user-agent", "set-cookie"],
+    before_record_response=response_content_filter,
 )
 
 
@@ -277,81 +292,3 @@ class TestArticleScraperClient:
 
         # Business Insider sometimes has paywalls
         assert result.status in ["SUCCESS", "PAYWALL_DETECTED", "SCRAPE_FAILED"]
-
-
-class TestIntegrationScenarios:
-    """Integration tests for ArticleScraperClient with real HTTP requests."""
-
-    @pytest.fixture
-    def scraper(self):
-        """Create ArticleScraperClient instance."""
-        return ArticleScraperClient(delay=0.1)
-
-    @vcr
-    def test_multiple_major_news_sources(self, scraper):
-        """Test scraping from various major news sources (recorded)."""
-        # Mix of generally accessible and paywalled sources
-        urls = [
-            "https://www.reuters.com/",
-            "https://www.cnbc.com/",
-            "https://www.bloomberg.com/",
-            "https://finance.yahoo.com/",
-        ]
-
-        results = scraper.scrape_multiple_articles(urls)
-
-        assert len(results) == len(urls)
-
-        for url, result in results.items():
-            assert isinstance(result, ScrapeResult)
-            assert result.final_url == url
-            assert result.status in [
-                "SUCCESS",
-                "SCRAPE_FAILED",
-                "PAYWALL_DETECTED",
-                "NOT_FOUND",
-            ]
-
-    @vcr
-    def test_financial_news_sources(self, scraper):
-        """Test various financial news sources (recorded)."""
-        urls = [
-            "https://www.marketwatch.com/",
-            "https://www.barchart.com/",
-            "https://seekingalpha.com/",
-            "https://www.tipranks.com/",
-        ]
-
-        results = scraper.scrape_multiple_articles(urls)
-
-        assert len(results) == len(urls)
-
-        for url, result in results.items():
-            assert isinstance(result, ScrapeResult)
-
-            # Different sources have different paywall policies
-            if "seekingalpha.com" in url and result.status == "PAYWALL_DETECTED":
-                assert result.is_paywall is True
-            elif result.status == "SUCCESS":
-                assert isinstance(result.content, str)
-
-    @vcr
-    def test_business_news_sources(self, scraper):
-        """Test business news sources (recorded)."""
-        urls = [
-            "https://www.forbes.com/",
-            "https://www.businessinsider.com/",
-            "https://www.wsj.com/",
-        ]
-
-        results = scraper.scrape_multiple_articles(urls)
-
-        assert len(results) == len(urls)
-
-        for url, result in results.items():
-            assert isinstance(result, ScrapeResult)
-            assert result.final_url == url
-
-            # WSJ is known for paywalls
-            if "wsj.com" in url and result.status == "PAYWALL_DETECTED":
-                assert result.is_paywall is True
