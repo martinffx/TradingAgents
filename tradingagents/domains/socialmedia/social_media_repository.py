@@ -57,6 +57,7 @@ class SocialRepository:
             data_dir: Base directory for social media data storage
             **kwargs: Additional configuration
         """
+        _ = kwargs  # Acknowledge unused parameter
         self.social_data_dir = Path(data_dir) / "social_data"
         self.social_data_dir.mkdir(parents=True, exist_ok=True)
 

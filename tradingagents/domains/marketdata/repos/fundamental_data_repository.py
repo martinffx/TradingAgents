@@ -50,6 +50,7 @@ class FundamentalDataRepository:
             data_dir: Base directory for fundamental data storage
             **kwargs: Additional configuration
         """
+        _ = kwargs  # Acknowledge unused parameter
         self.fundamental_data_dir = Path(data_dir) / "fundamental_data"
         self.fundamental_data_dir.mkdir(parents=True, exist_ok=True)
 

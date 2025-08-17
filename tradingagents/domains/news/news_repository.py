@@ -1,12 +1,34 @@
 """
-Repository for historical news data (cached files).
+Repository for historical news data (cached files and PostgreSQL).
 """
 
-import json
+from __future__ import annotations
+
+import builtins
 import logging
-from dataclasses import asdict, dataclass, field
-from datetime import date
-from pathlib import Path
+import uuid
+from dataclasses import dataclass, field
+from datetime import date, datetime
+
+from pgvector.sqlalchemy import Vector
+from sqlalchemy import (
+    JSON,
+    Date,
+    DateTime,
+    Float,
+    Index,
+    String,
+    Text,
+    and_,
+    func,
+    select,
+)
+from sqlalchemy.dialects.postgresql import UUID as PG_UUID
+from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm import Mapped, mapped_column
+from uuid_utils import uuid7
+
+from tradingagents.lib.database import Base, DatabaseManager
 
 logger = logging.getLogger(__name__)
 
@@ -27,276 +49,370 @@ class NewsArticle:
     author: str | None = None
     category: str | None = None
 
+    def to_entity(self, symbol: str | None = None) -> NewsArticleEntity:
+        """Convert NewsArticle dataclass to NewsArticleEntity SQLAlchemy model."""
+        return NewsArticleEntity(
+            headline=self.headline,
+            url=self.url,
+            source=self.source,
+            published_date=self.published_date,
+            summary=self.summary,
+            entities=self.entities if self.entities else None,
+            sentiment_score=self.sentiment_score,
+            author=self.author,
+            category=self.category,
+            symbol=symbol,
+        )
 
-@dataclass
-class NewsData:
-    """Container for news data with metadata."""
+    @staticmethod
+    def from_entity(entity: NewsArticleEntity) -> NewsArticle:
+        """Convert NewsArticleEntity SQLAlchemy model to NewsArticle dataclass."""
+        from typing import cast
 
-    query: str
-    date: date
-    source: str  # "finnhub", "google_news"
-    articles: list[NewsArticle]
+        return NewsArticle(
+            headline=cast("str", entity.headline),
+            url=cast("str", entity.url),
+            source=cast("str", entity.source),
+            published_date=cast("date", entity.published_date),
+            summary=cast("str | None", entity.summary),
+            entities=cast("list[str] | None", entity.entities) or [],
+            sentiment_score=cast("float | None", entity.sentiment_score),
+            author=cast("str | None", entity.author),
+            category=cast("str | None", entity.category),
+        )
+
+
+class NewsArticleEntity(Base):
+    """SQLAlchemy model for news articles with vector embedding support."""
+
+    __tablename__ = "news_articles"
+    __table_args__ = (
+        # Composite indexes for common query patterns
+        Index("idx_symbol_date", "symbol", "published_date"),
+        Index("idx_published_date", "published_date"),
+        Index("idx_url_unique", "url", unique=True),
+        # TimescaleDB will automatically create time-based partitions on published_date
+    )
+
+    # Primary key using UUID v7 for time-ordered identifiers
+    id: Mapped[uuid.UUID] = mapped_column(
+        PG_UUID(as_uuid=True), primary_key=True, default=uuid7
+    )
+
+    # Core article fields (matching existing NewsArticle dataclass)
+    headline: Mapped[str] = mapped_column(Text, nullable=False)
+    url: Mapped[str] = mapped_column(
+        Text, nullable=False, unique=True
+    )  # Used for deduplication
+    source: Mapped[str] = mapped_column(String(100), nullable=False)
+    published_date: Mapped[date] = mapped_column(Date, nullable=False, index=True)
+
+    # Optional fields from NewsArticle dataclass
+    summary: Mapped[str | None] = mapped_column(Text, nullable=True)
+    entities: Mapped[list[str] | None] = mapped_column(
+        JSON, nullable=True
+    )  # Store list[str] as JSON array
+    sentiment_score: Mapped[float | None] = mapped_column(Float, nullable=True)
+    author: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    category: Mapped[str | None] = mapped_column(String(100), nullable=True)
+
+    # Symbol field for filtering (nullable for global news)
+    symbol: Mapped[str | None] = mapped_column(String(20), index=True, nullable=True)
+
+    # Vector embeddings for semantic similarity (1536 dimensions for OpenAI embeddings)
+    title_embedding: Mapped[list[float] | None] = mapped_column(
+        Vector(1536), nullable=True
+    )
+    content_embedding: Mapped[list[float] | None] = mapped_column(
+        Vector(1536), nullable=True
+    )
+
+    # Audit timestamps
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime, server_default=func.now(), onupdate=func.now()
+    )
+
+    def __repr__(self) -> str:
+        return f"<NewsArticleDB(id={self.id}, headline='{self.headline[:50]}...', source='{self.source}')>"
 
 
 class NewsRepository:
-    """Repository for accessing cached news data with source separation."""
+    """Repository for news articles"""
 
-    def __init__(self, data_dir: str):
+    def __init__(self, database_manager: DatabaseManager):
         """
-        Initialize news repository.
+        Initialize async PostgreSQL news repository.
 
         Args:
-            data_dir: Base directory for news data storage
-            **kwargs: Additional configuration
+            database_manager: AsyncDatabaseManager instance. If None, creates default.
         """
-        self.news_data_dir = Path(data_dir) / "news_data"
-        self.news_data_dir.mkdir(parents=True, exist_ok=True)
+        self.db_manager = database_manager
 
-    def get_news_data(
+    async def list(self, symbol: str, date: date) -> list[NewsArticle]:
+        """
+        List articles for a symbol on a specific date.
+
+        Args:
+            symbol: Stock symbol or query
+            date: Date to filter articles
+
+        Returns:
+            List[NewsArticle]: Articles for the symbol and date
+        """
+        async with self.db_manager.get_session() as session:
+            result = await session.execute(
+                select(NewsArticleEntity)
+                .filter(
+                    and_(
+                        NewsArticleEntity.symbol == symbol,
+                        NewsArticleEntity.published_date == date,
+                    )
+                )
+                .order_by(NewsArticleEntity.published_date.desc())
+            )
+            db_articles = result.scalars().all()
+
+            # Convert to dataclass instances
+            articles = [NewsArticle.from_entity(article) for article in db_articles]
+
+        logger.info(f"Retrieved {len(articles)} articles for {symbol} on {date}")
+        return articles
+
+    async def get(self, article_id: uuid.UUID) -> NewsArticle | None:
+        """
+        Get single article by UUID.
+
+        Args:
+            article_id: UUID v7 of the article
+
+        Returns:
+            NewsArticle | None: Article if found, None otherwise
+        """
+        async with self.db_manager.get_session() as session:
+            result = await session.execute(
+                select(NewsArticleEntity).filter(NewsArticleEntity.id == article_id)
+            )
+            db_article = result.scalar_one_or_none()
+
+            if db_article:
+                article = NewsArticle.from_entity(db_article)
+                logger.debug(f"Retrieved article {article_id}")
+                return article
+
+        logger.debug(f"Article {article_id} not found")
+        return None
+
+    async def upsert(self, article: NewsArticle, symbol: str) -> NewsArticle:
+        """
+        Insert or update article using URL as unique constraint.
+
+        Args:
+            article: NewsArticle to insert or update
+            symbol: Optional symbol to associate with the article
+
+        Returns:
+            NewsArticle: The stored article with database metadata
+        """
+        from sqlalchemy.dialects.postgresql import insert
+
+        async with self.db_manager.get_session() as session:
+            try:
+                # Convert to entity and prepare data for insert
+                entity_data = {
+                    "headline": article.headline,
+                    "url": article.url,
+                    "source": article.source,
+                    "published_date": article.published_date,
+                    "summary": article.summary,
+                    "entities": article.entities if article.entities else None,
+                    "sentiment_score": article.sentiment_score,
+                    "author": article.author,
+                    "category": article.category,
+                    "symbol": symbol,
+                }
+
+                # Use PostgreSQL INSERT ON CONFLICT for atomic upsert
+                stmt = insert(NewsArticleEntity).values(**entity_data)
+                upsert_stmt = stmt.on_conflict_do_update(
+                    index_elements=["url"],
+                    set_={
+                        "headline": stmt.excluded.headline,
+                        "source": stmt.excluded.source,
+                        "published_date": stmt.excluded.published_date,
+                        "summary": stmt.excluded.summary,
+                        "entities": stmt.excluded.entities,
+                        "sentiment_score": stmt.excluded.sentiment_score,
+                        "author": stmt.excluded.author,
+                        "category": stmt.excluded.category,
+                        "symbol": stmt.excluded.symbol,
+                        "updated_at": func.now(),
+                    },
+                ).returning(NewsArticleEntity)
+
+                result = await session.execute(upsert_stmt)
+                db_article = result.scalar_one()
+                result_article = NewsArticle.from_entity(db_article)
+
+                logger.info(f"Upserted article: {article.url}")
+                return result_article
+
+            except IntegrityError as e:
+                await session.rollback()
+                logger.error(
+                    f"Database integrity error upserting article {article.url}: {e}"
+                )
+                raise
+            except Exception as e:
+                await session.rollback()
+                logger.error(f"Error upserting article {article.url}: {e}")
+                raise
+
+    async def delete(self, article_id: uuid.UUID) -> bool:
+        """
+        Delete article by UUID.
+
+        Args:
+            article_id: UUID v7 of the article to delete
+
+        Returns:
+            bool: True if deleted, False if not found
+        """
+
+        async with self.db_manager.get_session() as session:
+            result = await session.execute(
+                select(NewsArticleEntity).filter(NewsArticleEntity.id == article_id)
+            )
+            db_article = result.scalar_one_or_none()
+
+            if db_article:
+                await session.delete(db_article)
+                logger.info(f"Deleted article {article_id}")
+                return True
+
+        logger.debug(f"Article {article_id} not found for deletion")
+        return False
+
+    async def list_by_date_range(
         self,
-        query: str,
+        symbol: str,
         start_date: date,
         end_date: date,
-        sources: list[str] | None = None,
-    ) -> dict[date, list[NewsData]]:
+        limit: int = 100,
+    ) -> builtins.list[NewsArticle]:
         """
-        Get cached news data for a query and date range across sources.
+        List articles by date range, optionally filtered by symbol.
 
         Args:
-            query: Search query or symbol
-            start_date: Start date
-            end_date: End date
-            sources: List of sources to check (default: ["finnhub", "google_news"])
+            symbol: Optional symbol filter
+            start_date: Optional start date
+            end_date: Optional end date
+            limit: Maximum number of articles to return
 
         Returns:
-            Dict[date, list[NewsData]]: News data keyed by date, with list of source data
+            List[NewsArticle]: Articles matching the criteria
         """
-        if sources is None:
-            sources = ["finnhub", "google_news"]
+        async with self.db_manager.get_session() as session:
+            query = select(NewsArticleEntity)
 
-        news_data = {}
+            # Apply filters
+            filters = []
+            if symbol:
+                filters.append(NewsArticleEntity.symbol == symbol)
+            if start_date:
+                filters.append(NewsArticleEntity.published_date >= start_date)
+            if end_date:
+                filters.append(NewsArticleEntity.published_date <= end_date)
 
-        for source in sources:
-            source_dir = self.news_data_dir / source / query
+            if filters:
+                query = query.filter(and_(*filters))
 
-            if not source_dir.exists():
-                logger.debug(f"No data directory found for {source}/{query}")
-                continue
+            # Order by date descending and limit
+            query = query.order_by(NewsArticleEntity.published_date.desc()).limit(limit)
 
-            # Scan for JSON files in the source/query directory
-            for json_file in source_dir.glob("*.json"):
-                try:
-                    # Parse date from filename (YYYY-MM-DD.json)
-                    date_str = json_file.stem
-                    file_date = date.fromisoformat(date_str)
+            result = await session.execute(query)
+            db_articles = result.scalars().all()
 
-                    # Filter by date range
-                    if start_date <= file_date <= end_date:
-                        with open(json_file) as f:
-                            data = json.load(f)
+            articles = [
+                NewsArticle.from_entity(db_article) for db_article in db_articles
+            ]
 
-                        # Create NewsArticle objects from JSON data
-                        articles = []
-                        for article_data in data.get("articles", []):
-                            # Convert date strings back to date objects
-                            article_data_copy = article_data.copy()
-                            if "published_date" in article_data_copy:
-                                article_data_copy["published_date"] = (
-                                    date.fromisoformat(
-                                        article_data_copy["published_date"]
-                                    )
-                                )
+        logger.info(f"Retrieved {len(articles)} articles for date range query")
+        return articles
 
-                            article = NewsArticle(**article_data_copy)
-                            articles.append(article)
-
-                        # Create NewsData container
-                        news_data_item = NewsData(
-                            query=query,
-                            date=file_date,
-                            source=source,
-                            articles=articles,
-                        )
-
-                        # Group by date (multiple sources per date)
-                        if file_date not in news_data:
-                            news_data[file_date] = []
-                        news_data[file_date].append(news_data_item)
-
-                except (ValueError, json.JSONDecodeError, KeyError, TypeError) as e:
-                    logger.error(f"Error reading news data from {json_file}: {e}")
-                    continue
-
-        logger.info(
-            f"Retrieved news data for {len(news_data)} dates for query '{query}'"
-        )
-        return news_data
-
-    def store_news_articles(
-        self,
-        query: str,
-        date: date,
-        source: str,
-        articles: list[NewsArticle],
-    ) -> tuple[date, NewsData]:
+    async def upsert_batch(
+        self, articles: builtins.list[NewsArticle], symbol: str
+    ) -> builtins.list[NewsArticle]:
         """
-        Store news articles for a query, date, and source, merging with existing data.
+        Batch insert or update articles using bulk SQL operations.
 
         Args:
-            query: Search query or symbol
-            date: Date of the news articles
-            source: News source ("finnhub", "google_news", etc.)
-            articles: List of news articles
+            articles: List of NewsArticle objects to store
+            symbol: Symbol to associate with all articles
 
         Returns:
-            Tuple[date, NewsData]: The stored date and news data
+            List[NewsArticle]: The stored articles with database metadata
         """
-        # Create source/query directory
-        source_dir = self.news_data_dir / source / query
+        from sqlalchemy.dialects.postgresql import insert
 
-        # Create JSON file path
-        file_path = source_dir / f"{date.isoformat()}.json"
+        if not articles:
+            return []
 
-        try:
-            # Merge with existing articles if file exists
-            merged_articles = self._merge_articles_with_existing(file_path, articles)
-
-            # Prepare data for JSON serialization
-            articles_data = []
-            for article in merged_articles:
-                article_dict = asdict(article)
-                # Convert date objects to ISO format strings for JSON
-                if article_dict.get("published_date"):
-                    article_dict["published_date"] = article_dict[
-                        "published_date"
-                    ].isoformat()
-                articles_data.append(article_dict)
-
-            data = {
-                "query": query,
-                "date": date.isoformat(),
-                "source": source,
-                "articles": articles_data,
-                "metadata": {
-                    "article_count": len(merged_articles),
-                    "stored_at": date.today().isoformat(),
-                    "repository": "news_repository",
-                },
-            }
-
-            # Write to JSON file
-            with open(file_path, "w") as f:
-                json.dump(data, f, indent=2, default=str)
-
-            # Create NewsData result
-            news_data = NewsData(
-                query=query, date=date, source=source, articles=merged_articles
-            )
-
-            logger.info(
-                f"Stored {len(articles)} new articles for {query} on {date} from {source} (total: {len(merged_articles)})"
-            )
-            return (date, news_data)
-
-        except Exception as e:
-            logger.error(
-                f"Error storing news articles for {query} on {date} from {source}: {e}"
-            )
-            raise
-
-    def store_news_data_batch(
-        self,
-        query: str,
-        news_data_by_source: dict[str, dict[date, list[NewsArticle]]],
-    ) -> dict[date, list[NewsData]]:
-        """
-        Store multiple news data sets for a query across sources.
-
-        Args:
-            query: Search query or symbol
-            news_data_by_source: Nested dict of {source: {date: [articles]}}
-
-        Returns:
-            Dict[date, list[NewsData]]: The stored news data organized by date
-        """
-        stored_data = {}
-
-        for source, date_articles in news_data_by_source.items():
-            for article_date, articles in date_articles.items():
-                try:
-                    stored_date, stored_news_data = self.store_news_articles(
-                        query, article_date, source, articles
-                    )
-
-                    # Group by date
-                    if stored_date not in stored_data:
-                        stored_data[stored_date] = []
-                    stored_data[stored_date].append(stored_news_data)
-
-                except Exception as e:
-                    logger.error(
-                        f"Failed to store news data for {query} on {article_date} from {source}: {e}"
-                    )
-                    continue
-
-        total_dates = len(stored_data)
-        total_sources = sum(len(news_list) for news_list in stored_data.values())
-        logger.info(
-            f"Stored news data for {total_dates} dates, {total_sources} source entries for query '{query}'"
-        )
-        return stored_data
-
-    def _merge_articles_with_existing(
-        self, file_path: Path, new_articles: list[NewsArticle]
-    ) -> list[NewsArticle]:
-        """
-        Merge new articles with existing articles, deduplicating by URL.
-
-        Args:
-            file_path: Path to existing JSON file
-            new_articles: New articles to merge
-
-        Returns:
-            List[NewsArticle]: Merged and deduplicated articles
-        """
-        existing_articles = []
-
-        # Load existing articles if file exists
-        if file_path.exists():
+        async with self.db_manager.get_session() as session:
             try:
-                with open(file_path) as f:
-                    data = json.load(f)
+                # Prepare data for bulk insert
+                entity_data_list = [
+                    {
+                        "headline": article.headline,
+                        "url": article.url,
+                        "source": article.source,
+                        "published_date": article.published_date,
+                        "summary": article.summary,
+                        "entities": article.entities if article.entities else None,
+                        "sentiment_score": article.sentiment_score,
+                        "author": article.author,
+                        "category": article.category,
+                        "symbol": symbol,
+                    }
+                    for article in articles
+                ]
 
-                for existing_data in data.get("articles", []):
-                    # Convert date strings back to date objects
-                    existing_data_copy = existing_data.copy()
-                    if "published_date" in existing_data_copy:
-                        existing_data_copy["published_date"] = date.fromisoformat(
-                            existing_data_copy["published_date"]
-                        )
+                # Use PostgreSQL bulk INSERT ON CONFLICT for atomic batch upsert
+                stmt = insert(NewsArticleEntity).values(entity_data_list)
+                upsert_stmt = stmt.on_conflict_do_update(
+                    index_elements=["url"],
+                    set_={
+                        "headline": stmt.excluded.headline,
+                        "source": stmt.excluded.source,
+                        "published_date": stmt.excluded.published_date,
+                        "summary": stmt.excluded.summary,
+                        "entities": stmt.excluded.entities,
+                        "sentiment_score": stmt.excluded.sentiment_score,
+                        "author": stmt.excluded.author,
+                        "category": stmt.excluded.category,
+                        "symbol": stmt.excluded.symbol,
+                        "updated_at": func.now(),
+                    },
+                ).returning(NewsArticleEntity)
 
-                    existing_article = NewsArticle(**existing_data_copy)
-                    existing_articles.append(existing_article)
+                result = await session.execute(upsert_stmt)
+                db_articles = result.scalars().all()
+                stored_articles = [
+                    NewsArticle.from_entity(db_article) for db_article in db_articles
+                ]
 
-            except (json.JSONDecodeError, KeyError, ValueError, TypeError) as e:
-                logger.warning(f"Error reading existing file {file_path}: {e}")
-                existing_articles = []
+                logger.info(
+                    f"Batch upserted {len(stored_articles)} articles for {symbol}"
+                )
+                return stored_articles
 
-        # Merge articles, deduplicating by URL (keep newer data)
-        articles_by_url = {}
-
-        # Add existing articles
-        for article in existing_articles:
-            articles_by_url[article.url] = article
-
-        # Add/update with new articles (they take precedence)
-        for article in new_articles:
-            articles_by_url[article.url] = article
-
-        # Return as sorted list
-        merged_articles = list(articles_by_url.values())
-        merged_articles.sort(
-            key=lambda x: x.published_date, reverse=True
-        )  # Newest first
-
-        return merged_articles
+            except IntegrityError as e:
+                await session.rollback()
+                logger.error(
+                    f"Database integrity error during batch upsert for {symbol}: {e}"
+                )
+                raise
+            except Exception as e:
+                await session.rollback()
+                logger.error(f"Error during batch upsert for {symbol}: {e}")
+                raise

@@ -1,0 +1,23 @@
+services:
+  timescaledb:
+    build: .
+    container_name: tradingagents_timescaledb
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: tradingagents
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql
+      - timescale_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tradingagents"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  timescale_data:
+    driver: local

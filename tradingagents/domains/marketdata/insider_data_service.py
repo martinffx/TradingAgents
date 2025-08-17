@@ -21,9 +21,11 @@ class InsiderDataRepository:
         self.data_dir = data_dir
 
     def get_data(self, symbol: str, start_date: str, end_date: str) -> dict:
+        _ = symbol, start_date, end_date  # Acknowledge unused parameters
         return {}
 
     def store_data(self, symbol: str, data: dict) -> bool:
+        _ = symbol, data  # Acknowledge unused parameters
         return True
 
 

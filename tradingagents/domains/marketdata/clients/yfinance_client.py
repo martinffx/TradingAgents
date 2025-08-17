@@ -50,6 +50,7 @@ class YFinanceClient:
         Returns:
             Dict[str, Any]: Price data with metadata
         """
+        _ = kwargs  # Acknowledge unused parameter
         try:
             ticker = yf.Ticker(symbol.upper())
 

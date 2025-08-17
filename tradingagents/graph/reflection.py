@@ -65,6 +65,7 @@ Adhere strictly to these instructions, and ensure your output is detailed, accur
         self, component_type: str, report: str, situation: str, returns_losses
     ) -> str:
         """Generate reflection for a component."""
+        _ = component_type  # Acknowledge unused parameter
         messages = [
             ("system", self.reflection_system_prompt),
             (

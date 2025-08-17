@@ -24,6 +24,7 @@ class MarketDataRepository:
             data_dir: Base directory for market data storage
             **kwargs: Additional configuration
         """
+        _ = kwargs  # Acknowledge unused parameter
         self.market_data_dir = Path(data_dir) / "market_data"
         self.market_data_dir.mkdir(parents=True, exist_ok=True)
 

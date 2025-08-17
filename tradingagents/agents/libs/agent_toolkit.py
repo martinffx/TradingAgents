@@ -55,7 +55,7 @@ class AgentToolkit:
         self._config = config
 
     @tool
-    def get_global_news(
+    async def get_global_news(
         self,
         curr_date: Annotated[str, "Date you want to get news for in yyyy-mm-dd format"],
     ) -> GlobalNewsContext:
@@ -71,14 +71,14 @@ class AgentToolkit:
         end_date = curr_date
 
         # Call specialized service method
-        return self._news_service.get_global_news_context(
+        return await self._news_service.get_global_news_context(
             start_date=start_date,
             end_date=end_date,
             categories=["general", "business", "politics"],
         )
 
     @tool
-    def get_news(
+    async def get_news(
         self,
         ticker: Annotated[
             str,
@@ -102,7 +102,7 @@ class AgentToolkit:
             datetime.strptime(start_date, "%Y-%m-%d")
             datetime.strptime(end_date, "%Y-%m-%d")
 
-            return self._news_service.get_company_news_context(
+            return await self._news_service.get_company_news_context(
                 symbol=ticker, start_date=start_date, end_date=end_date
             )
         except Exception as e:
@@ -280,6 +280,7 @@ class AgentToolkit:
         Returns:
             BalanceSheetContext: Structured balance sheet analysis with key liquidity and debt metrics.
         """
+        _ = freq  # Acknowledge unused parameter
         curr_date_obj = self._parse_date(curr_date)
         return self._fundamentaldata_service.get_balance_sheet_context(
             symbol=ticker,
@@ -306,6 +307,7 @@ class AgentToolkit:
         Returns:
             CashFlowContext: Structured cash flow analysis with operating cash flow metrics.
         """
+        _ = freq  # Acknowledge unused parameter
         curr_date_obj = self._parse_date(curr_date)
         return self._fundamentaldata_service.get_cashflow_context(
             symbol=ticker,
@@ -332,6 +334,7 @@ class AgentToolkit:
         Returns:
             IncomeStatementContext: Structured income statement analysis with profitability metrics.
         """
+        _ = freq  # Acknowledge unused parameter
         curr_date_obj = self._parse_date(curr_date)
         return self._fundamentaldata_service.get_income_statement_context(
             symbol=ticker,

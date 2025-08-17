@@ -20,6 +20,7 @@ from tradingagents.domains.marketdata.insider_data_service import InsiderDataSer
 from tradingagents.domains.marketdata.market_data_service import MarketDataService
 from tradingagents.domains.news.news_service import NewsService
 from tradingagents.domains.socialmedia.social_media_service import SocialMediaService
+from tradingagents.lib.database import DatabaseManager
 
 from .conditional_logic import ConditionalLogic
 from .graph_setup import GraphSetup
@@ -91,7 +92,10 @@ class TradingAgentsGraph:
         else:
             raise ValueError(f"Unsupported LLM provider: {self.config.llm_provider}")
 
-        news_service = NewsService.build(self.config)
+        # Create database manager for news service
+        database_url = os.getenv("DATABASE_URL", "postgresql://localhost/tradingagents")
+        database_manager = DatabaseManager(database_url)
+        news_service = NewsService.build(database_manager, self.config)
         social_media_service = SocialMediaService.build(self.config)
         market_data_service = MarketDataService.build(self.config)
         fundamental_data_service = FundamentalDataService.build(self.config)

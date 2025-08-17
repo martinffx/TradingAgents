@@ -2,6 +2,7 @@
 python = "3.13"
 uv = "latest"
 ruff = "latest"
+docker = "latest"
 
 [env]
 _.file = ".env"
@@ -13,20 +14,28 @@ PYTHONUNBUFFERED = "1"
 TRADINGAGENTS_RESULTS_DIR = "./results"
 TRADINGAGENTS_DATA_DIR = "./data"
 
+# Database tasks
+[tasks.docker]
+description = "Start docker containers"
+run = "cd docker && docker compose up -d"
+
 [tasks.install]
 description = "Install dependencies using uv"
 run = "uv sync --dev"
 
 [tasks.dev]
-description = "Run the CLI application"
+description = "Run the CLI application (with database)"
+depends = ["docker"]
 run = "uv run python -m cli.main"
 
 [tasks.run]
-description = "Run the main application"
+description = "Run the main application (with database)"
+depends = ["docker"]
 run = "uv run python main.py"
 
 [tasks.test]
-description = "Run tests with pytest"
+description = "Run tests with pytest (with database)"
+depends = ["docker"]
 run = "uv run pytest"
 
 [tasks.lint]

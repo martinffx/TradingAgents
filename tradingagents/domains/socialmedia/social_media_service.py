@@ -141,6 +141,7 @@ class SocialMediaService:
         Returns:
             SocialContext with posts and sentiment analysis
         """
+        _ = query  # Acknowledge unused parameter
         posts = []
         data_source = "unknown"
 

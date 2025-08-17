@@ -10,7 +10,7 @@ from typing import Any
 
 from tradingagents.config import TradingAgentsConfig
 from tradingagents.domains.news.google_news_client import GoogleNewsClient
-from tradingagents.domains.news.news_repository import NewsRepository
+from tradingagents.domains.news.news_repository import NewsArticle, NewsRepository
 
 from .article_scraper_client import ArticleScraperClient
 
@@ -101,7 +101,6 @@ class NewsService:
         Initialize news service.
 
         Args:
-            finnhub_client: Client for Finnhub news data
             google_client: Client for Google News data
             repository: Repository for cached news data
             article_scraper: Client for scraping article content
@@ -111,14 +110,14 @@ class NewsService:
         self.article_scraper = article_scraper
 
     @staticmethod
-    def build(_config: TradingAgentsConfig):
+    def build(database_manager, _config: TradingAgentsConfig):
         google_client = GoogleNewsClient()
-        repository = NewsRepository("")
+        repository = NewsRepository(database_manager)
         article_scraper = ArticleScraperClient("")
         return NewsService(google_client, repository, article_scraper)
 
-    def get_company_news_context(
-        self, symbol: str, start_date: str, end_date: str, **kwargs
+    async def get_company_news_context(
+        self, symbol: str, start_date: str, end_date: str
     ) -> NewsContext:
         """
         Get news context specific to a company from repository (no API calls).
@@ -127,7 +126,6 @@ class NewsService:
             symbol: Stock ticker symbol
             start_date: Start date in YYYY-MM-DD format
             end_date: End date in YYYY-MM-DD format
-            **kwargs: Additional parameters
 
         Returns:
             NewsContext: Company-specific news context
@@ -143,30 +141,27 @@ class NewsService:
                     start_date_obj = date.fromisoformat(start_date)
                     end_date_obj = date.fromisoformat(end_date)
 
-                    # Get cached news data from repository
-                    news_data_by_date = self.repository.get_news_data(
-                        query=symbol,
+                    # Get articles directly from repository
+                    news_articles = await self.repository.list_by_date_range(
+                        symbol=symbol,
                         start_date=start_date_obj,
                         end_date=end_date_obj,
-                        sources=["finnhub", "google_news"],
                     )
 
-                    # Convert repository data to ArticleData objects
-                    for _date_key, news_data_list in news_data_by_date.items():
-                        for news_data in news_data_list:
-                            for article in news_data.articles:
-                                articles.append(
-                                    ArticleData(
-                                        title=article.headline,
-                                        content=article.summary
-                                        or "",  # Use summary as fallback for content
-                                        author=article.author or "",
-                                        source=article.source,
-                                        date=article.published_date.isoformat(),
-                                        url=article.url,
-                                        sentiment=None,  # Will be calculated later
-                                    )
-                                )
+                    # Convert NewsArticle objects to ArticleData objects
+                    for article in news_articles:
+                        articles.append(
+                            ArticleData(
+                                title=article.headline,
+                                content=article.summary
+                                or "",  # Use summary as fallback for content
+                                author=article.author or "",
+                                source=article.source,
+                                date=article.published_date.isoformat(),
+                                url=article.url,
+                                sentiment=None,  # Will be calculated later
+                            )
+                        )
 
                     logger.debug(
                         f"Retrieved {len(articles)} articles from repository for {symbol}"
@@ -218,12 +213,11 @@ class NewsService:
                 },
             )
 
-    def get_global_news_context(
+    async def get_global_news_context(
         self,
         start_date: str,
         end_date: str,
         categories: list[str] | None = None,
-        **kwargs,
     ) -> GlobalNewsContext:
         """
         Get global/macro news context from repository (no API calls).
@@ -232,7 +226,6 @@ class NewsService:
             start_date: Start date in YYYY-MM-DD format
             end_date: End date in YYYY-MM-DD format
             categories: News categories to search
-            **kwargs: Additional parameters
 
         Returns:
             GlobalNewsContext: Global news context
@@ -253,30 +246,27 @@ class NewsService:
                     start_date_obj = date.fromisoformat(start_date)
                     end_date_obj = date.fromisoformat(end_date)
 
-                    # Get cached news data from repository for each category
+                    # Get articles for each category
                     for category in categories:
-                        news_data_by_date = self.repository.get_news_data(
-                            query=category,
+                        news_articles = await self.repository.list_by_date_range(
+                            symbol=category,  # Use category as symbol for global news
                             start_date=start_date_obj,
                             end_date=end_date_obj,
-                            sources=["google_news"],  # Global news mainly from Google
                         )
 
-                        # Convert repository data to ArticleData objects
-                        for _date_key, news_data_list in news_data_by_date.items():
-                            for news_data in news_data_list:
-                                for article in news_data.articles:
-                                    articles.append(
-                                        ArticleData(
-                                            title=article.headline,
-                                            content=article.summary or "",
-                                            author=article.author or "",
-                                            source=article.source,
-                                            date=article.published_date.isoformat(),
-                                            url=article.url,
-                                            sentiment=None,
-                                        )
-                                    )
+                        # Convert NewsArticle objects to ArticleData objects
+                        for article in news_articles:
+                            articles.append(
+                                ArticleData(
+                                    title=article.headline,
+                                    content=article.summary or "",
+                                    author=article.author or "",
+                                    source=article.source,
+                                    date=article.published_date.isoformat(),
+                                    url=article.url,
+                                    sentiment=None,
+                                )
+                            )
 
                     logger.debug(
                         f"Retrieved {len(articles)} global articles from repository"
@@ -333,7 +323,7 @@ class NewsService:
                 },
             )
 
-    def update_company_news(self, symbol: str) -> NewsUpdateResult:
+    async def update_company_news(self, symbol: str) -> NewsUpdateResult:
         """
         Update company news by fetching RSS feeds and scraping article content.
 
@@ -408,7 +398,22 @@ class NewsService:
             # 3. Store in repository
             try:
                 logger.info(f"Storing {len(article_data_list)} articles for {symbol}")
-                # Store articles (implementation depends on repository interface)
+
+                # Convert ArticleData to NewsArticle for repository storage
+                news_articles = []
+                for article_data in article_data_list:
+                    news_article = NewsArticle(
+                        headline=article_data.title,
+                        url=article_data.url,
+                        source=article_data.source,
+                        published_date=date.fromisoformat(article_data.date),
+                        summary=article_data.content,
+                        author=article_data.author,
+                    )
+                    news_articles.append(news_article)
+
+                # Store all articles in batch
+                await self.repository.upsert_batch(news_articles, symbol)
 
             except Exception as e:
                 logger.error(f"Error storing articles in repository: {e}")
@@ -429,7 +434,7 @@ class NewsService:
             logger.error(f"Error updating company news for {symbol}: {e}")
             raise
 
-    def update_global_news(
+    async def update_global_news(
         self, start_date: str, end_date: str, categories: list[str] | None = None
     ) -> NewsUpdateResult:
         """
@@ -514,7 +519,23 @@ class NewsService:
             # 3. Store in repository
             try:
                 logger.info(f"Storing {len(article_data_list)} global articles")
-                # Store articles (implementation depends on repository interface)
+
+                # Convert ArticleData to NewsArticle for repository storage
+                news_articles = []
+                for article_data in article_data_list:
+                    news_article = NewsArticle(
+                        headline=article_data.title,
+                        url=article_data.url,
+                        source=article_data.source,
+                        published_date=date.fromisoformat(article_data.date),
+                        summary=article_data.content,
+                        author=article_data.author,
+                        category="global",  # Mark as global news
+                    )
+                    news_articles.append(news_article)
+
+                # Store all articles in batch (use "global" as symbol for global news)
+                await self.repository.upsert_batch(news_articles, "global")
 
             except Exception as e:
                 logger.error(f"Error storing global articles in repository: {e}")

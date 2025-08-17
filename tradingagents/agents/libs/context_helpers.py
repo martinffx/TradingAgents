@@ -328,6 +328,7 @@ def create_msg_delete():
 
     def delete_messages(state):
         """Delete all messages from the current state."""
+        del state  # Acknowledge the parameter
         return {"messages": [RemoveMessage(id=REMOVE_ALL_MESSAGES)]}
 
     return delete_messages
