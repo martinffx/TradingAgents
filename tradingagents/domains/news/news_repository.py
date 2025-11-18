@@ -50,7 +50,7 @@ class NewsArticle:
     sentiment_label: str | None = None  # New field
     author: str | None = None
     category: str | None = None
-    
+
     # Vector embeddings for semantic similarity
     title_embedding: list[float] | None = None
     content_embedding: list[float] | None = None
