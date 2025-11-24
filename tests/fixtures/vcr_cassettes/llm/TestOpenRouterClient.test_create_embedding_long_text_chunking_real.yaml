@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: '{"input":[[13068,13332,5068,25363,6020,3135,369,279,20323,8502,11,720,286,45296,22514,6650,4028,1202,9624,25213,11,21075,11478,11,323,720,286,26206,3241,37601,13,578,5557,14880,34908,18738,17078,720,286,449,13254,19261,400,3487,13,16,7239,11,14393,264,220,1032,4,5376,1060,29352,4771,13,720,286,35219,9624,3600,8738,872,16358,14800,11,7982,220,1682,4,323,1457]],"model":"openai/text-embedding-3-small","encoding_format":"base64"}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate, zstd
+      connection:
+      - keep-alive
+      content-length:
+      - '429'
+      content-type:
+      - application/json
+      host:
+      - openrouter.ai
+      x-stainless-arch:
+      - arm64
+      x-stainless-async:
+      - async:asyncio
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - MacOS
+      x-stainless-package-version:
+      - 1.86.0
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.13.1
+    method: POST
+    uri: https://openrouter.ai/api/v1/embeddings
+  response:
+    body:
+      string: '{"error":{"message":"No auth credentials found","code":401}}'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-RAY:
+      - 9a22c1261966d9e0-AMS
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 21 Nov 2025 19:57:09 GMT
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 401
+      message: Unauthorized
+version: 1

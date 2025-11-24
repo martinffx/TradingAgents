@@ -50,47 +50,17 @@ run = "ruff check ."
 description = "Format code with ruff"
 run = "ruff format ."
 
-[tasks.typecheck]
-description = "Run pyrefly type checking"
-run = "uv run pyrefly check ."
+[tasks.types]
+description = "Run pyright type checking"
+run = "uv run pyright ."
 
 [tasks.fix]
 description = "Auto-fix linting issues"
 run = "ruff check --fix ."
 
-[tasks.all]
-description = "Run format, lint, and typecheck"
-run = ["ruff format .", "ruff check .", "uv run pyrefly check ."]
-
-[tasks.quality]
+[tasks.check]
 description = "Run complete quality check (format, lint, typecheck, test, coverage)"
-depends = ["docker"]
-run = ["ruff format .", "ruff check .", "uv run pyrefly check .", "uv run pytest --cov=tradingagents --cov-report=term-missing"]
-
-[tasks.ui]
-    description = "Start Dagster UI webserver for workflow monitoring"
-    depends = ["docker"]
-    run = "uv run dagster dev -h 0.0.0.0 -p 3000"
-
-[tasks.dagster-webserver]
-    description = "Start Dagster webserver UI for workflow monitoring"
-    depends = ["docker"]
-    run = "uv run dagster dev -h 0.0.0.0 -p 3000"
-
-[tasks.dagster-daemon]
-    description = "Start Dagster daemon for background job execution"
-    depends = ["docker"]
-    run = "uv run dagster dev -h 0.0.0.0 -p 3000 --daemon"
-
-[tasks.dagster-list]
-description = "List all available Dagster jobs and ops"
-depends = ["docker"]
-run = "uv run dagster job list"
-
-[tasks.dagster-run]
-description = "Run a specific Dagster job (usage: mise run dagster-run -- <job_name>)"
-depends = ["docker"]
-run = "uv run dagster job run"
+depends = ["format", "lint", "types", "test"]
 
 [tasks.clean]
 description = "Clean up cache and build artifacts"

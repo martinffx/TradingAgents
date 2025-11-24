@@ -239,6 +239,30 @@ class NewsRepository:
         logger.debug(f"Article {article_id} not found")
         return None
 
+    async def get_by_url(self, url: str) -> NewsArticle | None:
+        """
+        Get single article by URL.
+
+        Args:
+            url: URL of the article
+
+        Returns:
+            NewsArticle | None: Article if found, None otherwise
+        """
+        async with self.db_manager.get_session() as session:
+            result = await session.execute(
+                select(NewsArticleEntity).filter(NewsArticleEntity.url == url)
+            )
+            db_article = result.scalar_one_or_none()
+
+            if db_article:
+                article = NewsArticle.from_entity(db_article)
+                logger.debug(f"Retrieved article by URL: {url}")
+                return article
+
+        logger.debug(f"Article with URL {url} not found")
+        return None
+
     async def upsert(self, article: NewsArticle, symbol: str) -> NewsArticle:
         """
         Insert or update article using URL as unique constraint.

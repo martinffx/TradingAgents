@@ -202,25 +202,3 @@ class ArticleScraperClient:
             return bool(parsed.netloc) and parsed.scheme in ("http", "https")
         except Exception:
             return False
-
-    def scrape_multiple_articles(self, urls: list[str]) -> dict[str, ScrapeResult]:
-        """
-        Scrape multiple articles sequentially.
-
-        Args:
-            urls: List of article URLs to scrape
-
-        Returns:
-            Dict mapping URLs to ScrapeResults
-        """
-        results = {}
-
-        for i, url in enumerate(urls):
-            logger.info(f"Scraping article {i + 1}/{len(urls)}: {url}")
-            results[url] = self.scrape_article(url)
-
-            # Add delay between requests
-            if i < len(urls) - 1:
-                time.sleep(self.delay)
-
-        return results

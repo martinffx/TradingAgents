@@ -4,7 +4,7 @@
 
 This roadmap outlines the technical development path for the personal fork of TradingAgents, focusing on building a robust data infrastructure with PostgreSQL + TimescaleDB + pgvectorscale, implementing RAG-powered agents, and establishing automated data collection pipelines with Dagster.
 
-**Last Updated**: 2025-11-11
+**Last Updated**: 2025-11-24
 
 ### Key Roadmap Changes
 - **Pragmatic Dagster Integration**: Dagster jobs built incrementally per domain (not separate phase)
@@ -231,3 +231,10 @@ The foundation has been established with core domain architecture, comprehensive
 - **Educational Use**: Comprehensive learning platform for financial AI
 
 This roadmap prioritizes building a solid data foundation before enhancing agent capabilities, ensuring each phase delivers measurable value while maintaining high code quality and comprehensive testing.
+
+---
+
+**Version**: 1.0  
+**Last Updated**: 2025-11-24  
+**Total Timeline**: 10-14 weeks  
+**Current Phase**: News Domain Completion (85% complete)

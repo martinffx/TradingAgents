@@ -24,7 +24,12 @@ from tradingagents.domains.news.news_repository import (
     NewsArticle,
     NewsRepository,
 )
-from tradingagents.domains.news.openrouter_client import OpenRouterClient
+
+try:
+    from tradingagents.lib.llm_client import OpenRouterClient
+except ImportError:
+    # Handle case where dependencies are not available
+    OpenRouterClient = None
 
 
 @pytest.fixture
@@ -49,6 +54,12 @@ def mock_repository():
 def mock_openrouter_client():
     """Mock OpenRouterClient for testing I/O boundary."""
     return Mock(spec=OpenRouterClient)
+
+
+@pytest.fixture
+def mock_config():
+    """Mock TradingAgentsConfig for testing."""
+    return Mock(spec=TradingAgentsConfig)
 
 
 @pytest.fixture

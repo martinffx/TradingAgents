@@ -8,3 +8,8 @@ eval_data/
 *.egg-info/
 .env
 .coverage
+
+.claude
+.pytest_cache
+.ruff_cache
+.venv
