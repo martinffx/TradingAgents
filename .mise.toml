@@ -8,6 +8,7 @@ _.file = ".env"
 # Python environment settings
 PYTHONDONTWRITEBYTECODE = "1"
 PYTHONUNBUFFERED = "1"
+PYTHONPATH = "${PWD}"
 
 # TradingAgents specific environment variables
 TRADINGAGENTS_RESULTS_DIR = "./results"
@@ -52,7 +53,7 @@ run = "ruff format ."
 
 [tasks.types]
 description = "Run pyright type checking"
-run = "uv run pyright ."
+run = "uv run basedpyright --project pyproject.toml ."
 
 [tasks.fix]
 description = "Auto-fix linting issues"
@@ -65,11 +66,11 @@ depends = ["format", "lint", "types", "test"]
 [tasks.clean]
 description = "Clean up cache and build artifacts"
 run = [
-    "find . -type d -name __pycache__ -exec rm -rf {} +",
-    "find . -type f -name '*.pyc' -delete",
-    "rm -rf .pytest_cache",
-    "rm -rf .ruff_cache",
-    "rm -rf dist",
-    "rm -rf build",
-    "rm -rf *.egg-info",
+  "find . -type d -name __pycache__ -exec rm -rf {} +",
+  "find . -type f -name '*.pyc' -delete",
+  "rm -rf .pytest_cache",
+  "rm -rf .ruff_cache",
+  "rm -rf dist",
+  "rm -rf build",
+  "rm -rf *.egg-info",
 ]

@@ -25,7 +25,6 @@ from tradingagents.domains.marketdata.market_data_service import (
 
 # Import context models
 from tradingagents.domains.news.news_service import (
-    GlobalNewsContext,
     NewsContext,
     NewsService,
 )
@@ -58,13 +57,13 @@ class AgentToolkit:
     async def get_global_news(
         self,
         curr_date: Annotated[str, "Date you want to get news for in yyyy-mm-dd format"],
-    ) -> GlobalNewsContext:
+    ) -> NewsContext:
         """
         Retrieve global news from Reddit within a specified time frame.
         Args:
             curr_date (str): Date you want to get news for in yyyy-mm-dd format
         Returns:
-            GlobalNewsContext: Structured global news context with articles and sentiment analysis.
+            NewsContext: Structured global news context with articles and sentiment analysis.
         """
         # Calculate date range (current date only)
         start_date = curr_date

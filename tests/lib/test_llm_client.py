@@ -3,11 +3,10 @@ Tests for OpenRouter LLM client using pytest-vcr for HTTP interactions.
 Integration tests only - no mocking of client behavior.
 """
 
-
 import pytest
 
 from tradingagents.config import TradingAgentsConfig
-from tradingagents.lib.llm_client import OpenRouterClient, SentimentResult
+from tradingagents.lib.llm_client import LLMClient, SentimentResult
 
 # VCR configuration
 vcr = pytest.mark.vcr(
@@ -21,7 +20,7 @@ vcr = pytest.mark.vcr(
 
 @pytest.fixture
 def client():
-    """OpenRouterClient instance for testing."""
+    """LLMClient instance for testing."""
     from unittest.mock import Mock, patch
 
     mock_config = Mock(spec=TradingAgentsConfig)
@@ -29,11 +28,11 @@ def client():
     mock_config.news_embedding_llm = "openai/text-embedding-3-small"
 
     with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
-        return OpenRouterClient(mock_config)
+        return LLMClient(mock_config)
 
 
-class TestOpenRouterClient:
-    """Test OpenRouterClient with VCR integration tests."""
+class TestLLMClient:
+    """Test LLMClient with VCR integration tests."""
 
     def test_initialization_with_api_key(self):
         """Test client initializes correctly with API key."""
@@ -44,7 +43,7 @@ class TestOpenRouterClient:
         mock_config.news_embedding_llm = "openai/text-embedding-3-small"
 
         with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
-            client = OpenRouterClient(mock_config)
+            client = LLMClient(mock_config)
 
             assert client.config == mock_config
             assert client.api_key == "test-key"
@@ -63,7 +62,7 @@ class TestOpenRouterClient:
             with pytest.raises(
                 ValueError, match="OPENROUTER_API_KEY environment variable is required"
             ):
-                OpenRouterClient(mock_config)
+                LLMClient(mock_config)
 
     def test_sentiment_result_dataclass(self):
         """Test SentimentResult dataclass."""
@@ -144,11 +143,11 @@ class TestOpenRouterClient:
     async def test_analyze_sentiment_positive_news(self, client):
         """Test sentiment analysis with positive financial news."""
         text = """
-        Apple Inc. reported strong quarterly earnings that beat analyst expectations, 
-        sending the stock higher in after-hours trading. The tech giant posted revenue 
-        of $89.5 billion, up 8% from the same quarter last year, with earnings per share 
-        of $1.26, exceeding the expected $1.20. iPhone sales remained robust, and the 
-        company's services segment showed significant growth. Management raised its 
+        Apple Inc. reported strong quarterly earnings that beat analyst expectations,
+        sending the stock higher in after-hours trading. The tech giant posted revenue
+        of $89.5 billion, up 8% from the same quarter last year, with earnings per share
+        of $1.26, exceeding the expected $1.20. iPhone sales remained robust, and the
+        company's services segment showed significant growth. Management raised its
         guidance for the upcoming quarter, citing strong demand across all product lines.
         """
 
@@ -164,11 +163,11 @@ class TestOpenRouterClient:
     async def test_analyze_sentiment_negative_news(self, client):
         """Test sentiment analysis with negative financial news."""
         text = """
-        Wells Fargo & Co. reported disappointing quarterly results as rising 
-        interest rates impacted its lending business. The bank's net income 
-        fell 23% to $3.5 billion, missing analyst expectations. provisions for 
-        credit losses increased significantly, reflecting concerns about 
-        potential loan defaults in a higher-rate environment. The stock 
+        Wells Fargo & Co. reported disappointing quarterly results as rising
+        interest rates impacted its lending business. The bank's net income
+        fell 23% to $3.5 billion, missing analyst expectations. provisions for
+        credit losses increased significantly, reflecting concerns about
+        potential loan defaults in a higher-rate environment. The stock
         declined sharply on the news.
         """
 
@@ -184,10 +183,10 @@ class TestOpenRouterClient:
     async def test_analyze_sentiment_neutral_news(self, client):
         """Test sentiment analysis with neutral/mixed financial news."""
         text = """
-        The Federal Reserve held interest rates steady at its latest meeting, 
-        maintaining the current federal funds rate range of 5.25% to 5.50%. 
-        Officials indicated they would remain data-dependent regarding future 
-        rate adjustments. Markets showed muted reaction to the announcement, 
+        The Federal Reserve held interest rates steady at its latest meeting,
+        maintaining the current federal funds rate range of 5.25% to 5.50%.
+        Officials indicated they would remain data-dependent regarding future
+        rate adjustments. Markets showed muted reaction to the announcement,
         with investors awaiting clearer signals on monetary policy direction.
         """
 
@@ -235,9 +234,9 @@ class TestOpenRouterClient:
     async def test_create_embedding_typical_news_text(self, client):
         """Test embedding creation with typical news text."""
         text = """
-        Tesla Motors announced record vehicle deliveries for the quarter, 
-        surpassing analyst estimates. The electric vehicle manufacturer delivered 
-        422,875 vehicles, a 36% increase year-over-year, driven by strong demand 
+        Tesla Motors announced record vehicle deliveries for the quarter,
+        surpassing analyst estimates. The electric vehicle manufacturer delivered
+        422,875 vehicles, a 36% increase year-over-year, driven by strong demand
         for Model 3 and Model Y vehicles. Stock prices surged on the news.
         """
 
@@ -254,22 +253,22 @@ class TestOpenRouterClient:
         # Create a very long financial news article
         long_text = (
             """
-        Microsoft Corporation reported exceptional financial results for the fiscal quarter, 
-        demonstrating robust growth across its cloud computing, artificial intelligence, and 
-        productivity software divisions. The technology giant exceeded analyst expectations 
-        with revenue reaching $56.1 billion, representing a 13% increase year-over-year. 
-        Azure cloud services continued their impressive expansion, growing 29% and now 
-        contributing significantly to the company's overall revenue stream. The integration 
-        of OpenAI's technologies into Microsoft's product ecosystem has yielded substantial 
-        benefits, with AI-powered features driving increased adoption of Office 365 and 
-        other productivity solutions. The company's gaming division also performed well, 
-        with Xbox sales and Game Pass subscriptions showing steady growth. Microsoft's 
-        strategic investments in data centers and AI infrastructure appear to be paying 
-        dividends, positioning the company favorably in the competitive cloud services market. 
-        Management expressed optimism about future prospects, citing strong demand for 
-        digital transformation services and AI capabilities across various industries. 
-        The company's stock has responded positively to these results, reflecting investor 
-        confidence in Microsoft's ability to capitalize on emerging technology trends and 
+        Microsoft Corporation reported exceptional financial results for the fiscal quarter,
+        demonstrating robust growth across its cloud computing, artificial intelligence, and
+        productivity software divisions. The technology giant exceeded analyst expectations
+        with revenue reaching $56.1 billion, representing a 13% increase year-over-year.
+        Azure cloud services continued their impressive expansion, growing 29% and now
+        contributing significantly to the company's overall revenue stream. The integration
+        of OpenAI's technologies into Microsoft's product ecosystem has yielded substantial
+        benefits, with AI-powered features driving increased adoption of Office 365 and
+        other productivity solutions. The company's gaming division also performed well,
+        with Xbox sales and Game Pass subscriptions showing steady growth. Microsoft's
+        strategic investments in data centers and AI infrastructure appear to be paying
+        dividends, positioning the company favorably in the competitive cloud services market.
+        Management expressed optimism about future prospects, citing strong demand for
+        digital transformation services and AI capabilities across various industries.
+        The company's stock has responded positively to these results, reflecting investor
+        confidence in Microsoft's ability to capitalize on emerging technology trends and
         maintain its competitive advantage in the rapidly evolving tech landscape.
         """
             * 3

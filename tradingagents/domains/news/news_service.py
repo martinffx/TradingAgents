@@ -339,9 +339,21 @@ class NewsService:
                 )
 
                 # Update article with sentiment data
-                article.sentiment_score = sentiment_score
-                article.sentiment_confidence = llm_sentiment.confidence
-                article.sentiment_label = llm_sentiment.sentiment
+                article = NewsArticle(
+                    headline=article.headline,
+                    url=article.url,
+                    source=article.source,
+                    published_date=article.published_date,
+                    summary=article.summary,
+                    entities=article.entities,
+                    sentiment_score=sentiment_score,
+                    sentiment_confidence=llm_sentiment.confidence,
+                    sentiment_label=llm_sentiment.sentiment,
+                    author=article.author,
+                    category=article.category,
+                    title_embedding=article.title_embedding,
+                    content_embedding=article.content_embedding,
+                )
             except Exception as e:
                 logger.error(
                     f"LLM sentiment analysis failed for article {article.url}: {e}"
@@ -357,8 +369,22 @@ class NewsService:
                 ) = await self._generate_article_embeddings(
                     scrape_result.title or article.headline, scrape_result.content
                 )
-                article.title_embedding = title_embedding
-                article.content_embedding = content_embedding
+                # Update article with embedding data
+                article = NewsArticle(
+                    headline=article.headline,
+                    url=article.url,
+                    source=article.source,
+                    published_date=article.published_date,
+                    summary=article.summary,
+                    entities=article.entities,
+                    sentiment_score=article.sentiment_score,
+                    sentiment_confidence=article.sentiment_confidence,
+                    sentiment_label=article.sentiment_label,
+                    author=article.author,
+                    category=article.category,
+                    title_embedding=title_embedding,
+                    content_embedding=content_embedding,
+                )
             except Exception as e:
                 logger.error(
                     f"Embedding generation failed for article {article.url}: {e}"
@@ -366,8 +392,21 @@ class NewsService:
                 # Continue without embeddings
 
             # 5. Update article with scraped content
-            article.headline = scrape_result.title or article.headline
-            article.summary = scrape_result.content
+            article = NewsArticle(
+                headline=scrape_result.title or article.headline,
+                url=article.url,
+                source=article.source,
+                published_date=article.published_date,
+                summary=scrape_result.content,
+                entities=article.entities,
+                sentiment_score=article.sentiment_score,
+                sentiment_confidence=article.sentiment_confidence,
+                sentiment_label=article.sentiment_label,
+                author=article.author,
+                category=article.category,
+                title_embedding=article.title_embedding,
+                content_embedding=article.content_embedding,
+            )
             article.author = scrape_result.author
             # Keep the published_date from RSS if we don't have a better one from scraping
             if scrape_result.publish_date:

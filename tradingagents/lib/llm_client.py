@@ -1,6 +1,4 @@
-"""
-OpenRouter client for LLM-powered sentiment analysis and embeddings.
-"""
+"""LLM client for sentiment analysis and embeddings with timeout and exception handling."""
 
 import json
 import logging
@@ -16,8 +14,36 @@ from tradingagents.config import TradingAgentsConfig
 
 logger = logging.getLogger(__name__)
 
+DEFAULT_TIMEOUT_SECONDS = 60
+DEFAULT_REQUEST_TIMEOUT_SECONDS = 90
+DEFAULT_EMBEDDING_DIMENSIONS = 1536
 
-@dataclass
+
+class LLMError(Exception):
+    """Base exception for LLM errors."""
+
+    pass
+
+
+class SentimentAnalysisError(LLMError):
+    """Raised when sentiment analysis fails."""
+
+    pass
+
+
+class EmbeddingGenerationError(LLMError):
+    """Raised when embedding generation fails."""
+
+    pass
+
+
+class InsufficientTextError(LLMError):
+    """Raised when text is too short for analysis."""
+
+    pass
+
+
+@dataclass(frozen=True)
 class SentimentResult:
     """Structured sentiment analysis result."""
 
@@ -26,8 +52,12 @@ class SentimentResult:
     reasoning: str | None = None
 
 
-class OpenRouterClient:
-    """OpenRouter client for sentiment analysis and embeddings using LangChain."""
+class LLMClient:
+    """LLM client for sentiment analysis and embeddings using LangChain.
+
+    All methods raise exceptions on failure (no silent defaults).
+    Temporal handles retry with exponential backoff on these exceptions.
+    """
 
     def __init__(self, config: TradingAgentsConfig):
         self.config = config
@@ -35,192 +65,205 @@ class OpenRouterClient:
         if not self.api_key:
             raise ValueError("OPENROUTER_API_KEY environment variable is required")
 
-        # Initialize LangChain OpenAI client for OpenRouter chat models
+        self.timeout = getattr(config, "llm_timeout", DEFAULT_TIMEOUT_SECONDS)
+        self.request_timeout = getattr(
+            config, "llm_request_timeout", DEFAULT_REQUEST_TIMEOUT_SECONDS
+        )
+        self.embedding_dimensions = getattr(
+            config, "embedding_dimensions", DEFAULT_EMBEDDING_DIMENSIONS
+        )
+
         self.llm = ChatOpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=SecretStr(self.api_key),
             model=config.news_sentiment_llm,
-            temperature=0.1,  # Low temperature for consistent results
+            temperature=0.1,
+            timeout=self.timeout,
         )
 
-        # Initialize LangChain OpenAI embeddings client for OpenRouter
         self.embeddings = OpenAIEmbeddings(
             base_url="https://openrouter.ai/api/v1",
             api_key=SecretStr(self.api_key),
             model=config.news_embedding_llm,
+            timeout=self.timeout,
         )
 
-        # Initialize RecursiveCharacterTextSplitter with production defaults
         self.text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=500,  # 400-600 tokens sweet spot, ~500 characters
-            chunk_overlap=75,  # 75-100 token overlap (15-20%)
+            chunk_size=500,
+            chunk_overlap=75,
             length_function=len,
-            separators=[
-                "\n\n",
-                "\n",
-                ". ",
-                " ",
-                "",
-            ],  # Respect paragraph/sentence boundaries
+            separators=["\n\n", "\n", ". ", " ", ""],
             keep_separator=True,
         )
 
     async def analyze_sentiment(self, text: str) -> SentimentResult:
-        """
-        Analyze sentiment of news article content using OpenRouter LLM via LangChain.
+        """Analyze sentiment of news article content.
 
-        Args:
-            text: News article content to analyze
-
-        Returns:
-            SentimentResult with structured sentiment data
+        Raises:
+            InsufficientTextError: If text is too short (< 50 chars).
+            SentimentAnalysisError: If LLM call fails or response is invalid.
         """
         if not text or len(text.strip()) < 50:
-            return SentimentResult(
-                sentiment="neutral",
-                confidence=0.0,
-                reasoning="Insufficient text for analysis",
+            raise InsufficientTextError(
+                f"Text must be at least 50 characters, got {len(text.strip())}"
             )
+
+        truncated_text = self._prepare_text_for_analysis(text)
+
+        prompt = self._create_sentiment_prompt(truncated_text)
+
+        messages = [
+            SystemMessage(
+                content="You are a financial news sentiment analyst. Always respond with valid JSON in the specified format."
+            ),
+            HumanMessage(content=prompt),
+        ]
 
         try:
-            # Use chunking for articles that might be too long for effective analysis
-            # Reasonable threshold: ~1000 characters for when to apply intelligent chunking
-            if len(text) > 1000:
-                # Split into chunks and analyze key parts
-                chunks = self.text_splitter.split_text(text)
-                # For sentiment analysis, use first chunk plus a bit of context from subsequent chunks
-                if len(chunks) > 1:
-                    # Combine first chunk with beginning of second for better context
-                    truncated_text = chunks[0]
-                    if len(chunks) > 1 and len(truncated_text) < 800:
-                        # Add some content from the second chunk if we have space
-                        additional_content = chunks[1][: min(200, len(chunks[1]))]
-                        truncated_text += f"\n\n[Continued] {additional_content}"
-                else:
-                    truncated_text = chunks[0]
-            else:
-                truncated_text = text  # No truncation needed for short texts
-
-            # Create sentiment analysis prompt
-            prompt = self._create_sentiment_prompt(truncated_text)
-
-            # Create messages for LangChain
-            messages = [
-                SystemMessage(
-                    content="You are a financial news sentiment analyst. Always respond with valid JSON in the specified format."
-                ),
-                HumanMessage(content=prompt),
-            ]
-
-            # Use LangChain to call the LLM
             response = await self.llm.ainvoke(messages)
+        except Exception as e:
+            logger.error(f"LLM sentiment analysis failed: {e}")
+            raise SentimentAnalysisError(f"LLM call failed: {e}") from e
 
-            # Parse the response
+        return self._parse_sentiment_response(response)
 
-            # Try to parse as JSON
+    def _prepare_text_for_analysis(self, text: str) -> str:
+        """Prepare text for analysis with truncation and chunking."""
+        if len(text) > 1000:
+            chunks = self.text_splitter.split_text(text)
+            if len(chunks) > 1:
+                truncated_text = chunks[0]
+                if len(truncated_text) < 800 and len(chunks) > 1:
+                    additional_content = chunks[1][: min(200, len(chunks[1]))]
+                    truncated_text += f"\n\n[Continued] {additional_content}"
+                return truncated_text
+            return chunks[0] if chunks else text[:1000]
+        return text
+
+    def _parse_sentiment_response(self, response) -> SentimentResult:
+        """Parse LLM response into SentimentResult.
+
+        Raises:
+            SentimentAnalysisError: If response cannot be parsed.
+        """
+        try:
             if isinstance(response.content, str):
                 sentiment_data = json.loads(response.content)
-                return SentimentResult(
-                    sentiment=sentiment_data.get("sentiment", "neutral"),
-                    confidence=sentiment_data.get("confidence", 0.0),
-                    reasoning=sentiment_data.get("reasoning", "LLM analysis complete"),
-                )
-            else:
-                # Handle case where response.content might be a list or dict
+            elif isinstance(response.content, dict):
                 sentiment_data = response.content
-                if isinstance(sentiment_data, dict):
-                    return SentimentResult(
-                        sentiment=sentiment_data.get("sentiment", "neutral"),
-                        confidence=sentiment_data.get("confidence", 0.0),
-                        reasoning=sentiment_data.get(
-                            "reasoning", "LLM analysis complete"
-                        ),
-                    )
-                else:
-                    # Fallback to neutral sentiment
-                    return SentimentResult(
-                        sentiment="neutral",
-                        confidence=0.0,
-                        reasoning="Failed to parse LLM response",
-                    )
-        except Exception as e:
-            logger.error(f"OpenRouter sentiment analysis failed: {e}")
+            else:
+                raise SentimentAnalysisError(
+                    f"Unexpected response type: {type(response.content)}"
+                )
+
+            sentiment = sentiment_data.get("sentiment", "neutral")
+            if sentiment not in ("positive", "negative", "neutral"):
+                raise SentimentAnalysisError(f"Invalid sentiment: {sentiment}")
+
+            confidence = float(sentiment_data.get("confidence", 0.0))
+            if not 0.0 <= confidence <= 1.0:
+                raise SentimentAnalysisError(
+                    f"Confidence must be 0.0-1.0, got {confidence}"
+                )
+
             return SentimentResult(
-                sentiment="neutral",
-                confidence=0.0,
-                reasoning=f"Analysis failed: {str(e)}",
+                sentiment=sentiment,
+                confidence=confidence,
+                reasoning=sentiment_data.get("reasoning"),
             )
+        except (json.JSONDecodeError, KeyError, ValueError) as e:
+            logger.error(f"Failed to parse sentiment response: {e}")
+            raise SentimentAnalysisError(f"Failed to parse response: {e}") from e
 
     async def create_embedding(self, text: str) -> list[float]:
-        """
-        Create vector embedding for text using OpenRouter embeddings API via LangChain.
+        """Create vector embedding for text.
 
-        Args:
-            text: Text to embed (processed with chunking for long texts)
-
-        Returns:
-            List of float values representing the embedding vector
+        Raises:
+            EmbeddingGenerationError: If embedding generation fails.
         """
-        if not text:
+        if not text or not text.strip():
             raise ValueError("Text cannot be empty for embedding")
 
         try:
-            # For texts that might exceed token limits, use chunking and combine embeddings
-            # Reasonable threshold: ~2000 characters for when to apply chunking
             if len(text) > 2000:
-                # Split into chunks using RecursiveCharacterTextSplitter
-                chunks = self.text_splitter.split_text(text)
-
-                # Generate embeddings for each chunk
-                chunk_embeddings = []
-                for chunk in chunks:
-                    if chunk.strip():  # Skip empty chunks
-                        embedding = await self.embeddings.aembed_query(chunk)
-                        chunk_embeddings.append(embedding)
-
-                # Average the embeddings to get a single representation
-                if chunk_embeddings:
-                    averaged_embedding = []
-                    for i in range(len(chunk_embeddings[0])):
-                        avg_value = sum(
-                            embedding[i] for embedding in chunk_embeddings
-                        ) / len(chunk_embeddings)
-                        averaged_embedding.append(avg_value)
-                    return averaged_embedding
-                else:
-                    # Fallback to zero vector if no valid chunks
-                    return [0.0] * 1536
+                return await self._create_chunked_embedding(text)
             else:
-                # For shorter texts, use directly
                 embedding = await self.embeddings.aembed_query(text)
 
-                if len(embedding) != 1536:
-                    logger.error(
-                        f"Unexpected embedding dimension: {len(embedding)}, expected 1536"
+                if len(embedding) != self.embedding_dimensions:
+                    raise EmbeddingGenerationError(
+                        f"Embedding dimension mismatch: got {len(embedding)}, "
+                        f"expected {self.embedding_dimensions}"
                     )
 
                 return embedding
 
-        except Exception as e:
-            logger.error(f"OpenRouter embedding generation failed: {e}")
+        except EmbeddingGenerationError:
             raise
+        except Exception as e:
+            logger.error(f"LLM embedding generation failed: {e}")
+            raise EmbeddingGenerationError(f"Embedding generation failed: {e}") from e
+
+    async def _create_chunked_embedding(self, text: str) -> list[float]:
+        """Create embedding for long text using chunking and averaging."""
+        chunks = self.text_splitter.split_text(text)
+
+        chunk_embeddings = []
+        for chunk in chunks:
+            if chunk.strip():
+                embedding = await self.embeddings.aembed_query(chunk)
+                chunk_embeddings.append(embedding)
+
+        if not chunk_embeddings:
+            raise EmbeddingGenerationError(
+                "No valid chunks to embed (all chunks were empty)"
+            )
+
+        dimension = len(chunk_embeddings[0])
+        if dimension != self.embedding_dimensions:
+            raise EmbeddingGenerationError(
+                f"Embedding dimension mismatch in chunks: got {dimension}, "
+                f"expected {self.embedding_dimensions}"
+            )
+
+        averaged_embedding = [
+            sum(embedding[i] for embedding in chunk_embeddings) / len(chunk_embeddings)
+            for i in range(dimension)
+        ]
+
+        return averaged_embedding
 
     def _create_sentiment_prompt(self, text: str) -> str:
-        """Create structured prompt for sentiment analysis."""
-        return f"""Analyze the sentiment of this financial news article. Respond with JSON in this exact format:
-        {{
-        "sentiment": "positive|negative|neutral",
-        "confidence": 0.0-1.0,
-        "reasoning": "Brief explanation"
-        }}
+        """Create structured prompt for sentiment analysis with delimiter protection."""
+        safe_text = self._sanitize_text_for_prompt(text)
 
-        Article:
-        {text}
+        return f"""Analyze the sentiment of this financial news article.
 
-        Focus on:
-        - Overall market/stock sentiment impact
-        - Financial performance indicators
-        - Risk factors mentioned
-        - Business outlook expressed
+---
+CONTENT START
+{safe_text}
+---
+CONTENT END
 
-        Consider financial context and avoid overreacting to minor fluctuations. Be objective and data-driven."""
+Respond with JSON in this exact format:
+{{"sentiment": "positive|negative|neutral", "confidence": 0.0-1.0, "reasoning": "Brief explanation"}}
+
+Focus on:
+- Overall market/stock sentiment impact
+- Financial performance indicators
+- Risk factors mentioned
+- Business outlook expressed"""
+
+    def _sanitize_text_for_prompt(self, text: str) -> str:
+        """Sanitize text to prevent prompt injection and ensure proper parsing.
+
+        Uses delimiter-based protection and truncation.
+        """
+        max_chars = 5000
+        truncated = text[:max_chars] if len(text) > max_chars else text
+
+        truncated = truncated.replace("---", "")
+        truncated = truncated.replace('{"', "").replace('"}', "")
+        truncated = truncated.replace("CONTENT START", "").replace("CONTENT END", "")
+
+        return truncated

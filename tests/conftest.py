@@ -12,6 +12,7 @@ from unittest.mock import Mock
 
 import pytest
 
+from tradingagents.config import TradingAgentsConfig
 from tradingagents.domains.news.article_scraper_client import (
     ArticleScraperClient,
     ScrapeResult,
@@ -26,10 +27,10 @@ from tradingagents.domains.news.news_repository import (
 )
 
 try:
-    from tradingagents.lib.llm_client import OpenRouterClient
+    from tradingagents.lib.llm_client import LLMClient
 except ImportError:
     # Handle case where dependencies are not available
-    OpenRouterClient = None
+    LLMClient = None
 
 
 @pytest.fixture
@@ -52,8 +53,8 @@ def mock_repository():
 
 @pytest.fixture
 def mock_openrouter_client():
-    """Mock OpenRouterClient for testing I/O boundary."""
-    return Mock(spec=OpenRouterClient)
+    """Mock LLMClient for testing I/O boundary."""
+    return Mock(spec=LLMClient)
 
 
 @pytest.fixture
