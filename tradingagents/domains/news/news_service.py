@@ -102,6 +102,21 @@ class NewsService:
         self._article_scraper = article_scraper
         self._llm_client = llm_client
 
+    @property
+    def repository(self) -> NewsRepository:
+        """Repository for news article persistence."""
+        return self._repository
+
+    @property
+    def scraper(self) -> ArticleScraperClient:
+        """Article scraper client."""
+        return self._article_scraper
+
+    @property
+    def llm_client(self) -> LLMClient:
+        """LLM client for sentiment and embeddings."""
+        return self._llm_client
+
     @staticmethod
     def build(database_manager, config: TradingAgentsConfig):
         google_client = GoogleNewsClient()

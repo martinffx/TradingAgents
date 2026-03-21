@@ -5,9 +5,9 @@ import logging
 import os
 from dataclasses import dataclass
 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pydantic import SecretStr
 
 from tradingagents.config import TradingAgentsConfig

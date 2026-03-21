@@ -6,9 +6,8 @@ from datetime import timedelta
 from temporalio import workflow
 from temporalio.common import RetryPolicy
 
-from tradingagents.activities.llm_activities import LLMActivities
-from tradingagents.activities.news_activities import NewsActivities
 from tradingagents.domains.news.news_article import NewsArticle
+from tradingagents.workflows.activities.news_activities import NewsActivities
 
 
 @workflow.defn
@@ -76,7 +75,7 @@ class NewsProcessingWorkflow:
         )
 
         sentiment = await workflow.execute_activity_method(
-            LLMActivities.analyze_sentiment,
+            NewsActivities.analyze_sentiment,
             article.summary,
             start_to_close_timeout=timedelta(seconds=90),
             retry_policy=retry_policy,
@@ -89,13 +88,13 @@ class NewsProcessingWorkflow:
 
         title_emb, content_emb = await asyncio.gather(
             workflow.execute_activity_method(
-                LLMActivities.create_embedding,
+                NewsActivities.create_embedding,
                 article.headline,
                 start_to_close_timeout=timedelta(seconds=60),
                 retry_policy=retry_policy,
             ),
             workflow.execute_activity_method(
-                LLMActivities.create_embedding,
+                NewsActivities.create_embedding,
                 article.summary,
                 start_to_close_timeout=timedelta(seconds=60),
                 retry_policy=retry_policy,
