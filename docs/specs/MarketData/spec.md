@@ -1,111 +1,184 @@
 # MarketData Domain - PostgreSQL Migration Specification
 
-## Feature Overview
+## Context
 
-**Feature**: MarketData Domain PostgreSQL Migration  
-**Status**: Migration project (85% complete → PostgreSQL integration)  
-**Priority**: High (foundational infrastructure for AI agents)
+**Product**: Multi-agent LLM financial trading framework that mirrors real-world trading firm dynamics for research-based market analysis and trading decisions.
 
-This specification defines the migration of the MarketData domain from CSV-based storage to PostgreSQL + TimescaleDB + pgvectorscale integration, while preserving 100% API compatibility and delivering 10x performance improvements for AI agent operations.
+**Domain**: MarketData (85% complete with CSV storage → migrate to PostgreSQL)
 
-## User Stories
+**Stack**: PostgreSQL + TimescaleDB + pgvectorscale + OpenRouter
 
-### Primary User Story
+**Current Status**: CSV-based storage in `./data/market_data/` with 85% functionality. Migration target: PostgreSQL with 10x performance improvement and RAG capabilities.
+
+---
+
+## User Story
+
+**Primary Actor**: Dagster Pipeline + AI Agents
+
 > As a Dagster pipeline and AI Agent, I want to collect daily OHLC data from yfinance, insider data from FinnHub, and fundamental data from FinnHub with PostgreSQL + TimescaleDB storage, so that agents have high-performance, RAG-enhanced market data access for comprehensive trading analysis.
 
-### Supporting User Stories
-
-**Agent Performance**
-- As an AI Agent, I want market data queries to complete in under 100ms, so that real-time trading analysis is efficient
-- As a Technical Analyst Agent, I want vector similarity search for historical patterns, so that pattern-based trading decisions are context-aware
-
-**Data Pipeline Reliability**  
-- As a Dagster pipeline, I want atomic data ingestion with PostgreSQL ACID transactions, so that data integrity is guaranteed during bulk operations
-- As a Risk Management Agent, I want comprehensive audit trails for all market data access, so that trading decisions are fully traceable
+---
 
 ## Acceptance Criteria
 
-### Migration Compatibility
-- **AC1**: GIVEN the MarketData domain migration WHEN PostgreSQL + TimescaleDB integration is complete THEN all existing MarketDataService APIs remain 100% compatible with 10x performance improvement
+### AC1: API Compatibility
+**GIVEN** the MarketData domain migration  
+**WHEN** PostgreSQL + TimescaleDB integration is complete  
+**THEN** all existing MarketDataService APIs remain 100% compatible with 10x performance improvement
 
-### Data Collection Pipeline
-- **AC2**: GIVEN daily market data collection WHEN Dagster pipelines execute THEN OHLC data from yfinance and insider/fundamental data from FinnHub are stored in TimescaleDB hypertables
+### AC2: Data Collection Pipeline
+**GIVEN** daily market data collection  
+**WHEN** Dagster pipelines execute  
+**THEN** OHLC data from yfinance and insider/fundamental data from FinnHub are stored in TimescaleDB hypertables
 
-### Performance Requirements
-- **AC3**: GIVEN historical market data queries WHEN AI agents request technical analysis THEN responses are delivered within 100ms using TimescaleDB time-series optimization
-- **AC4**: GIVEN technical analysis requests WHEN agents query indicators THEN all 20 existing TA-Lib indicators are preserved with PostgreSQL-backed data access
+### AC3: Performance Requirements
+**GIVEN** historical market data queries  
+**WHEN** AI agents request technical analysis  
+**THEN** responses are delivered within 100ms using TimescaleDB time-series optimization
 
-### RAG Integration
-- **AC5**: GIVEN RAG-powered analysis WHEN agents search for historical patterns THEN vector similarity search using pgvectorscale returns relevant market conditions within 200ms
+### AC4: Technical Indicators Preservation
+**GIVEN** technical analysis requests  
+**WHEN** agents query indicators  
+**THEN** all 20 existing TA-Lib indicators are preserved with PostgreSQL-backed data access
 
-### Scalability
-- **AC6**: GIVEN concurrent agent operations WHEN multiple agents access market data THEN PostgreSQL async operations support concurrent reads without file system limitations
+### AC5: RAG Integration
+**GIVEN** RAG-powered analysis  
+**WHEN** agents search for historical patterns  
+**THEN** vector similarity search using pgvectorscale returns relevant market conditions within 200ms
 
-### Data Quality
-- **AC7**: GIVEN data quality requirements WHEN market data is collected THEN comprehensive validation, audit trails, and error handling maintain data integrity with PostgreSQL ACID transactions
+### AC6: Concurrent Access
+**GIVEN** concurrent agent operations  
+**WHEN** multiple agents access market data  
+**THEN** PostgreSQL async operations support concurrent reads without file system limitations
+
+### AC7: Data Quality
+**GIVEN** data quality requirements  
+**WHEN** market data is collected  
+**THEN** comprehensive validation, audit trails, and error handling maintain data integrity with PostgreSQL ACID transactions
+
+---
 
 ## Business Rules
 
-### API Preservation
-- **BR1**: Preserve 100% API compatibility with existing MarketDataService for seamless migration
-- **BR2**: Maintain all existing method signatures in FundamentalDataService and InsiderDataService
+### BR1: API Preservation
+- Preserve 100% API compatibility with existing MarketDataService for seamless migration
+- Maintain all existing method signatures in FundamentalDataService and InsiderDataService
 
-### Data Collection Standards
-- **BR3**: Daily automated collection from yfinance (OHLC) and FinnHub (insider + fundamentals) via Dagster pipelines
-- **BR4**: FinnHub API rate limiting compliance with proper backoff strategies
-- **BR5**: Graceful degradation when external APIs are unavailable
+### BR2: Data Collection Standards
+- Daily automated collection from yfinance (OHLC) and FinnHub (insider + fundamentals) via Dagster pipelines
+- FinnHub API rate limiting compliance with proper backoff strategies
+- Graceful degradation when external APIs are unavailable
 
-### Database Architecture
-- **BR6**: TimescaleDB hypertables for market_data, fundamental_data, and insider_data tables
-- **BR7**: Vector embeddings generation for technical analysis patterns using pgvectorscale
+### BR3: Database Architecture
+- TimescaleDB hypertables for market_data, fundamental_data, and insider_data tables
+- Vector embeddings generation for technical analysis patterns using pgvectorscale
 
-### Performance Standards
-- **BR8**: Sub-100ms query performance for common market data operations
-- **BR9**: Data retention policy: 10 years for OHLC, 5 years for fundamentals, 3 years for insider data
+### BR4: Performance Standards
+- Sub-100ms query performance for common market data operations
+- Data retention policy: 10 years for OHLC, 5 years for fundamentals, 3 years for insider data
 
-### Audit and Compliance
-- **BR10**: Comprehensive audit logging for all data collection and agent queries
+### BR5: Audit and Compliance
+- Comprehensive audit logging for all data collection and agent queries
 
-## Technical Implementation Details
+---
+
+## Scope
+
+### Included
+- PostgreSQL + TimescaleDB + pgvectorscale migration from CSV storage
+- Preserve all existing YFinanceClient and FinnhubClient integrations
+- Maintain complete MarketDataService, FundamentalDataService, InsiderDataService APIs
+- Async PostgreSQL repository operations following news domain patterns
+- Vector embeddings for RAG-powered historical pattern matching
+- TimescaleDB hypertables for time-series optimization
+- Batch data ingestion pipeline for daily Dagster collection
+- Comprehensive testing with real PostgreSQL database
+
+### Excluded
+- Real-time data streaming (daily batch collection only)
+- Additional data providers beyond yfinance and FinnHub
+- New technical indicators beyond existing 20 TA-Lib indicators
+- Multi-database support (PostgreSQL only)
+- GraphQL or REST API endpoints (agent integration only)
+
+---
+
+## Technical Design
 
 ### Architecture Pattern
+
 **Router → Service → Repository → Entity → Database**
 
 The migration preserves the existing service interfaces while upgrading the underlying data persistence layer.
 
-### Database Schema Design
+### Data Flow
 
-#### TimescaleDB Hypertables
+```
+External APIs (YFinance + FinnHub) → Dagster Pipeline → PostgreSQL Storage 
+                                                  ↓
+                                         Repository Layer → Service Layer → Agents
+                                                  ↓
+                                         pgvectorscale (RAG)
+```
+
+### Domain Model
+
+#### MarketDataEntity (new)
+OHLC price data with TimescaleDB optimization
+- Fields: symbol, timestamp, open_price, high_price, low_price, close_price, volume, adjusted_close
+- Vector fields: technical_pattern_embedding (384 dims), price_movement_embedding (384 dims)
+- Validation: high >= low, high >= open/close, low <= open/close
+
+#### FundamentalDataEntity (new)
+Financial statement data with PostgreSQL storage
+- Fields: symbol, report_date, period_type, balance sheet, income statement, cash flow, calculated ratios
+- Vector field: financial_health_embedding (384 dims)
+
+#### InsiderDataEntity (new)
+SEC insider transaction records with sentiment analysis
+- Fields: symbol, transaction_date, insider_name, insider_position, transaction_type, shares_traded, transaction_price, sentiment_score
+- Vector field: transaction_pattern_embedding (384 dims)
+
+#### TechnicalIndicatorEntity (new)
+Calculated TA-Lib indicator values with vector embeddings
+- Fields: symbol, timestamp, all 20 TA-Lib indicators (SMA, EMA, RSI, MACD, Bollinger, ATR, OBV, patterns)
+- Vector field: indicator_pattern_embedding (384 dims)
+
+---
+
+## Database Schema
+
+### TimescaleDB Hypertables
 
 ```sql
 -- Market Data (OHLC)
 CREATE TABLE market_data (
     id SERIAL PRIMARY KEY,
     symbol VARCHAR(10) NOT NULL,
-    date TIMESTAMPTZ NOT NULL,
-    open DECIMAL(12,4),
-    high DECIMAL(12,4), 
-    low DECIMAL(12,4),
-    close DECIMAL(12,4),
-    adj_close DECIMAL(12,4),
+    timestamp TIMESTAMPTZ NOT NULL,
+    open_price DECIMAL(10,2),
+    high_price DECIMAL(10,2),
+    low_price DECIMAL(10,2),
+    close_price DECIMAL(10,2),
     volume BIGINT,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
+    adjusted_close DECIMAL(10,2),
+    technical_pattern_embedding vector(384),
+    price_movement_embedding vector(384),
+    created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
-SELECT create_hypertable('market_data', 'date', chunk_time_interval => INTERVAL '1 month');
+SELECT create_hypertable('market_data', 'timestamp', chunk_time_interval => INTERVAL '1 day');
 
 -- Fundamental Data
 CREATE TABLE fundamental_data (
     id SERIAL PRIMARY KEY,
     symbol VARCHAR(10) NOT NULL,
     report_date TIMESTAMPTZ NOT NULL,
-    period_type VARCHAR(20), -- annual, quarterly
-    metric_name VARCHAR(100),
-    metric_value DECIMAL(20,4),
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    period_type VARCHAR(10),
+    -- Balance Sheet, Income Statement, Cash Flow columns
+    financial_health_embedding vector(384),
+    UNIQUE(symbol, report_date, period_type)
 );
-
 SELECT create_hypertable('fundamental_data', 'report_date', chunk_time_interval => INTERVAL '3 months');
 
 -- Insider Data
@@ -113,223 +186,110 @@ CREATE TABLE insider_data (
     id SERIAL PRIMARY KEY,
     symbol VARCHAR(10) NOT NULL,
     transaction_date TIMESTAMPTZ NOT NULL,
-    person_name VARCHAR(200),
-    position VARCHAR(100),
-    transaction_type VARCHAR(50),
-    shares BIGINT,
-    price DECIMAL(12,4),
-    value DECIMAL(20,4),
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    insider_name VARCHAR(200),
+    insider_position VARCHAR(100),
+    transaction_type VARCHAR(20),
+    shares_traded BIGINT,
+    transaction_price DECIMAL(10,2),
+    sentiment_score DECIMAL(3,2),
+    transaction_pattern_embedding vector(384)
 );
-
 SELECT create_hypertable('insider_data', 'transaction_date', chunk_time_interval => INTERVAL '1 month');
-```
 
-#### Vector Storage for RAG
-
-```sql
--- Technical Indicators with Vector Embeddings
+-- Technical Indicators
 CREATE TABLE technical_indicators (
     id SERIAL PRIMARY KEY,
     symbol VARCHAR(10) NOT NULL,
-    date TIMESTAMPTZ NOT NULL,
-    indicator_name VARCHAR(50),
-    indicator_value DECIMAL(12,6),
-    pattern_embedding vector(384), -- OpenRouter embeddings
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    timestamp TIMESTAMPTZ NOT NULL,
+    -- 20 TA-Lib indicators (sma, ema, rsi, macd, bollinger, atr, obv, patterns)
+    indicator_pattern_embedding vector(384)
 );
-
-CREATE INDEX ON technical_indicators USING hnsw (pattern_embedding vector_cosine_ops);
+SELECT create_hypertable('technical_indicators', 'timestamp', chunk_time_interval => INTERVAL '1 day');
 ```
 
-### SQLAlchemy Entity Models
+### Vector Indexes
 
-```python
-# MarketDataEntity
-@dataclass
-class MarketDataEntity:
-    symbol: str
-    date: datetime
-    open: Optional[Decimal] = None
-    high: Optional[Decimal] = None
-    low: Optional[Decimal] = None
-    close: Optional[Decimal] = None
-    adj_close: Optional[Decimal] = None
-    volume: Optional[int] = None
-    id: Optional[int] = None
-    created_at: Optional[datetime] = None
-    updated_at: Optional[datetime] = None
-
-    @classmethod
-    def from_yfinance_data(cls, symbol: str, row: pd.Series) -> "MarketDataEntity":
-        """Convert yfinance data to entity"""
-        
-    def to_database_record(self) -> dict:
-        """Convert entity to database record"""
-        
-    def validate(self) -> None:
-        """Validate entity data integrity"""
+```sql
+-- DiskANN indexes for pgvectorscale
+CREATE INDEX idx_market_technical_emb ON market_data USING diskann (technical_pattern_embedding);
+CREATE INDEX idx_market_price_emb ON market_data USING diskann (price_movement_embedding);
+CREATE INDEX idx_fundamental_emb ON fundamental_data USING diskann (financial_health_embedding);
+CREATE INDEX idx_insider_emb ON insider_data USING diskann (transaction_pattern_embedding);
+CREATE INDEX idx_technical_emb ON technical_indicators USING diskann (indicator_pattern_embedding);
 ```
 
-### Repository Migration
+---
 
-```python
-class MarketDataRepository:
-    """PostgreSQL + TimescaleDB repository with async operations"""
-    
-    def __init__(self, database_manager: DatabaseManager):
-        self.db = database_manager
-    
-    async def get_ohlc_data(
-        self, 
-        symbol: str, 
-        start_date: datetime, 
-        end_date: datetime
-    ) -> List[MarketDataEntity]:
-        """Retrieve OHLC data with TimescaleDB optimization"""
-        query = """
-        SELECT * FROM market_data 
-        WHERE symbol = $1 AND date BETWEEN $2 AND $3
-        ORDER BY date DESC
-        """
-        rows = await self.db.fetch(query, symbol, start_date, end_date)
-        return [MarketDataEntity.from_database_record(row) for row in rows]
-    
-    async def bulk_upsert_market_data(
-        self, 
-        entities: List[MarketDataEntity]
-    ) -> int:
-        """Atomic bulk upsert for Dagster pipelines"""
-        
-    async def find_similar_patterns(
-        self, 
-        pattern_embedding: List[float], 
-        limit: int = 10
-    ) -> List[Dict]:
-        """RAG-powered pattern matching using pgvectorscale"""
-        query = """
-        SELECT symbol, date, indicator_name, indicator_value,
-               pattern_embedding <=> $1 as similarity
-        FROM technical_indicators
-        ORDER BY pattern_embedding <=> $1
-        LIMIT $2
-        """
-        return await self.db.fetch(query, pattern_embedding, limit)
+## Implementation Phases
+
+### Phase 1: Database Infrastructure (2-3 hours)
+- Set up PostgreSQL with TimescaleDB and pgvectorscale extensions
+- Create database schemas with proper indexing
+- Run migrations to create all tables
+
+### Phase 2: Entity Models (4-6 hours)
+- MarketDataEntity with TimescaleDB optimization
+- FundamentalDataEntity for financial statement data
+- InsiderDataEntity for SEC transaction records
+- TechnicalIndicatorEntity for calculated indicator values
+
+### Phase 3: Repository Migration (6-8 hours)
+- Async PostgreSQL repository operations (match news domain patterns)
+- Vector similarity search capabilities
+- Batch operations for high-performance data loading
+
+### Phase 4: Data Migration (4-6 hours)
+- CSV to PostgreSQL migration scripts
+- Data validation and integrity checks
+- Generate vector embeddings for all data
+
+### Phase 5: Service Preservation (4-6 hours)
+- Update MarketDataService with PostgreSQL backend
+- Update FundamentalDataService with PostgreSQL backend
+- Update InsiderDataService with PostgreSQL backend
+- Add RAG-enhanced analysis features
+
+### Phase 6: Testing & Integration (4-6 hours)
+- Data integrity tests
+- API compatibility validation
+- Performance benchmarks
+- Concurrent access testing
+
+---
+
+## Configuration
+
+### Environment Variables
+
+```bash
+DATABASE_URL="postgresql://..."
+FINNHUB_API_KEY="..."
+OPENROUTER_API_KEY="..."
 ```
 
-### Service Compatibility Layer
+### Dependencies
 
-```python
-class MarketDataService:
-    """Preserved API with PostgreSQL backend"""
-    
-    def __init__(self, repository: MarketDataRepository, yfinance_client: YFinanceClient):
-        self.repository = repository
-        self.yfinance_client = yfinance_client
-    
-    async def get_stock_data(self, symbol: str, period: str = "1y") -> pd.DataFrame:
-        """100% compatible with existing API signature"""
-        # Implementation using PostgreSQL repository
-        
-    async def calculate_technical_indicators(
-        self, 
-        symbol: str, 
-        indicators: List[str]
-    ) -> Dict[str, np.ndarray]:
-        """Preserve all 20 TA-Lib indicators with PostgreSQL data"""
-        
-    async def get_trading_style_preset(self, style: str) -> Dict:
-        """Preserved trading style presets with enhanced performance"""
+```toml
+# Already implemented
+yfinance = "*"
+finnhub-python = "*"
+talib = "*"
+psycopg2-binary = "*"
+asyncpg = "*"
+sqlalchemy = {extras = ["asyncio"]}
 ```
 
-### Vector RAG Enhancement
+---
 
-```python
-class MarketDataRAGService:
-    """RAG-powered market analysis enhancement"""
-    
-    async def find_historical_patterns(
-        self, 
-        current_indicators: Dict[str, float],
-        lookback_days: int = 30
-    ) -> List[Dict]:
-        """Vector similarity search for historical patterns"""
-        
-    async def generate_pattern_embedding(
-        self, 
-        indicator_values: Dict[str, float]
-    ) -> List[float]:
-        """Generate embeddings using OpenRouter for pattern matching"""
-```
+## Success Metrics
 
-## Migration Components
-
-### Phase 1: Database Schema & Entities
-1. **SQLAlchemy Entity Models**
-   - MarketDataEntity for OHLC data
-   - FundamentalDataEntity for financial statements  
-   - InsiderDataEntity for SEC transactions
-   - TechnicalIndicatorEntity for calculated values
-
-2. **TimescaleDB Setup**
-   - Hypertable creation for time-series optimization
-   - Proper indexing strategy
-   - Vector extension configuration
-
-### Phase 2: Repository Migration
-1. **Async PostgreSQL Operations**
-   - Follow news domain patterns for consistency
-   - Connection pooling and transaction management
-   - Error handling and retry logic
-
-2. **Data Migration Scripts**
-   - CSV to PostgreSQL data transfer
-   - Data validation and integrity checks
-   - Performance optimization
-
-### Phase 3: Service Preservation
-1. **API Compatibility**
-   - Maintain all existing method signatures
-   - Preserve return types and data formats
-   - Performance optimization through PostgreSQL
-
-2. **Vector RAG Integration**
-   - Pattern embedding generation
-   - Similarity search capabilities
-   - Historical context enhancement
-
-### Phase 4: Testing & Integration
-1. **Comprehensive Testing**
-   - Real PostgreSQL database for repository tests
-   - Preserved pytest-vcr for API clients
-   - Service compatibility validation
-
-2. **Agent Integration**
-   - AgentToolkit RAG capabilities
-   - Performance benchmarking
-   - Concurrent access testing
-
-## Dependencies
-
-### Ready Dependencies
-- **YFinanceClient and FinnhubClient**: Fully implemented and tested
-- **PostgreSQL + TimescaleDB + pgvectorscale**: Database infrastructure established
-- **News domain PostgreSQL patterns**: Migration templates available
-- **DatabaseManager**: Async operations and connection management ready
-- **OpenRouter configuration**: Vector embeddings generation available
-
-### Planned Dependencies
-- **Dagster orchestration**: Framework for daily data collection pipelines
-
-## Success Criteria
-
-### Performance Metrics
+### Performance Targets
 - **10x query performance improvement** over CSV-based storage
 - **Sub-100ms market data operations** for common agent queries
 - **Sub-200ms RAG queries** for vector similarity search
 - **Support for 500+ tickers** with concurrent agent access
 
-### Compatibility Standards  
+### Compatibility Standards
 - **100% existing API preservation** without breaking changes
 - **Seamless migration** without agent disruption
 - **Efficient bulk data ingestion** for Dagster pipelines
@@ -338,15 +298,3 @@ class MarketDataRAGService:
 - **85%+ test coverage maintained** across all components
 - **Comprehensive data validation** and audit trails
 - **PostgreSQL ACID transactions** for data integrity
-
-## Architecture Alignment
-
-This migration aligns with the multi-agent trading framework vision by providing:
-
-1. **High-performance market data foundation** for sophisticated agent analysis
-2. **RAG-powered historical context** for pattern-based trading decisions  
-3. **Scalable concurrent access** supporting multiple agents simultaneously
-4. **Comprehensive audit trails** for regulatory compliance and risk management
-5. **Time-series optimization** for efficient technical analysis operations
-
-The migration follows established news domain patterns to ensure architectural consistency across the entire TradingAgents framework.
