@@ -1,15 +1,25 @@
 # News Domain Completion Specification
 
-## Feature Overview
+## Context
 
-Complete the final 5% of the news domain by adding scheduled execution, LLM sentiment analysis, and vector embeddings to the existing 95% complete infrastructure. This enables automated daily news collection with advanced sentiment analysis and semantic search capabilities for News Analysts in the multi-agent trading framework.
+**Product**: Multi-agent LLM financial trading framework that mirrors real-world trading firm dynamics for research-based market analysis and trading decisions.
+
+**Domain**: News (95% complete → finalize 5%)
+
+**Stack**: PostgreSQL + TimescaleDB + pgvectorscale + OpenRouter
+
+**Current Status**: Core infrastructure exists (NewsService, GoogleNewsClient, ArticleScraperClient, NewsRepository). Missing: scheduled execution, LLM sentiment analysis, vector embeddings.
+
+---
 
 ## User Story
 
-**Primary User**: Dagster Job (automated system)  
-**Secondary Users**: News Analysts (LLM agents)
+**Primary Actor**: Dagster Job (automated system)  
+**Secondary Actor**: News Analysts (LLM agents)
 
 > As a Dagster Job, I want to automatically fetch Google News articles for tracked tickers, extract content, perform LLM sentiment analysis, and store with embeddings in the database, so that News Analysts can access comprehensive, up-to-date news data for trading decisions.
+
+---
 
 ## Acceptance Criteria
 
@@ -23,7 +33,7 @@ Complete the final 5% of the news domain by adding scheduled execution, LLM sent
 - All tickers in configuration are processed
 - Job completion status is logged with metrics
 
-### AC2: Content Extraction Resilience  
+### AC2: Content Resilience
 **GIVEN** a news article is found  
 **WHEN** content extraction fails due to paywall  
 **THEN** a warning is logged and processing continues with available metadata
@@ -63,6 +73,8 @@ Complete the final 5% of the news domain by adding scheduled execution, LLM sent
 - Embeddings stored in pgvectorscale-optimized columns
 - Semantic similarity search returns relevant results
 
+---
+
 ## Business Rules
 
 ### BR1: Best Effort Processing
@@ -95,172 +107,183 @@ Complete the final 5% of the news domain by adding scheduled execution, LLM sent
 - Comprehensive logging for monitoring and debugging
 - Database transactions ensure data consistency
 
-## Technical Implementation
+---
 
-### Architecture Alignment
+## Scope
+
+### Included
+- Scheduled news collection job using existing NewsService
+- LLM-based sentiment analysis replacing current keyword approach
+- Vector embedding generation for articles
+- Configuration management for ticker lists and schedules
+- Integration with existing GoogleNewsClient and ArticleScraperClient
+- Database storage using existing NewsRepository patterns
+
+### Excluded
+- Other news sources beyond Google News XML feed
+- Real-time news streaming (daily batch processing only)
+- Custom sentiment models (use OpenRouter LLMs only)
+- News source reliability scoring
+- Multi-language news support
+
+---
+
+## Technical Design
+
+### Architecture Pattern
 
 Follows established **Router → Service → Repository → Entity → Database** pattern:
 
 ```
-ScheduledNewsJob → NewsService → NewsRepository → NewsArticle → PostgreSQL+pgvectorscale
+ScheduledNewsCollector → NewsService → NewsRepository → NewsArticle → PostgreSQL+pgvectorscale
 ```
 
-### Database Schema Integration
+### Data Flow
 
-Leverages existing NewsRepository with vector extensions:
+1. **Scheduled Collection Flow**
+   ```
+   APScheduler → ScheduledNewsCollector → NewsService.update_company_news()
+   → GoogleNewsClient → ArticleScraperClient → OpenRouter (sentiment + embeddings)
+   → NewsRepository.upsert_batch() → PostgreSQL
+   ```
+
+2. **Agent Query Flow**
+   ```
+   News Analyst → AgentToolkit → NewsService.find_relevant_articles()
+   → NewsRepository (semantic search) → pgvectorscale vector similarity
+   ```
+
+### Domain Model Changes
+
+#### NewsArticle (enhance existing)
+
+New fields:
+- `sentiment_score: JSONB` - structured sentiment: `{sentiment, confidence, reasoning}`
+- `title_embedding: vector(1536)` - semantic embedding for headline
+- `content_embedding: vector(1536)` - semantic embedding for article content
+
+Validation rules:
+- Sentiment confidence must be ≥ 0.5 for reliable classification
+- Embeddings must be exactly 1536 dimensions
+
+#### NewsJobConfig (new entity)
+
+Fields:
+- `id: UUID` - primary key
+- `name: str` - job name (max 255 chars)
+- `symbols: List[str]` - ticker symbols to track (uppercase)
+- `categories: List[str]` - news categories (optional)
+- `frequency_cron: str` - cron expression for schedule
+- `enabled: bool` - job active state
+- `last_run: datetime` - timestamp of last execution
+
+---
+
+## Database Schema
+
+### news_articles Enhancements
 
 ```sql
--- Existing news_articles table enhanced with:
-ALTER TABLE news_articles 
-ADD COLUMN IF NOT EXISTS sentiment_score JSONB,
-ADD COLUMN IF NOT EXISTS title_embedding vector(1536),
-ADD COLUMN IF NOT EXISTS content_embedding vector(1536);
+-- Add sentiment and embedding columns
+ALTER TABLE news_articles ADD COLUMN sentiment_score JSONB;
+ALTER TABLE news_articles ADD COLUMN title_embedding vector(1536);
+ALTER TABLE news_articles ADD COLUMN content_embedding vector(1536);
 
 -- Vector similarity indexes
-CREATE INDEX IF NOT EXISTS idx_title_embedding 
-ON news_articles USING ivfflat (title_embedding vector_cosine_ops);
+CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_news_articles_title_embedding 
+    ON news_articles USING vectors (title_embedding vector_cosine_ops);
+
+CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_news_articles_content_embedding 
+    ON news_articles USING vectors (content_embedding vector_cosine_ops);
+
+-- Sentiment filter index
+CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_news_articles_sentiment 
+    ON news_articles (((sentiment_score->>'sentiment'))) 
+    WHERE sentiment_score IS NOT NULL;
 ```
 
-### LLM Integration Pattern
+### news_job_configs Table
 
-```python
-# OpenRouter sentiment analysis
-sentiment_result = await llm_client.analyze_sentiment(
-    text=article.content,
-    model="anthropic/claude-3.5-haiku",  # quick_think_llm
-    structured_output=True
-)
+```sql
+CREATE TABLE news_job_configs (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    symbols JSONB NOT NULL,
+    categories JSONB DEFAULT '[]',
+    frequency_cron VARCHAR(100) NOT NULL,
+    enabled BOOLEAN DEFAULT true,
+    last_run TIMESTAMPTZ,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+);
 
-# Expected response format
-{
-    "sentiment": "positive|negative|neutral",
-    "confidence": 0.85,
-    "reasoning": "Brief explanation"
-}
+CREATE INDEX idx_news_jobs_enabled_frequency ON news_job_configs (enabled, frequency_cron);
+CREATE INDEX idx_news_jobs_last_run ON news_job_configs (last_run) WHERE enabled = true;
 ```
 
-### Vector Embedding Strategy
+---
 
-```python
-# Generate embeddings for semantic search
-title_embedding = await embedding_client.create_embedding(
-    text=article.title,
-    model="text-embedding-3-small"  # 1536 dimensions
-)
+## External APIs
 
-content_embedding = await embedding_client.create_embedding(
-    text=article.content[:8000],  # Truncate for token limits
-    model="text-embedding-3-small"
-)
-```
+### OpenRouter (unified LLM provider)
 
-### Scheduled Execution Framework
+**Sentiment Analysis**:
+- Model: quick_think_llm (default: anthropic/claude-3.5-haiku)
+- Structured output: JSON with sentiment, confidence, reasoning
 
-Use APScheduler for job orchestration (Dagster not in current dependencies):
+**Embeddings**:
+- Model: text-embedding-3-small (1536 dimensions)
+- Input: article title and content (truncated to 8000 chars)
 
-```python
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
+---
 
-scheduler = AsyncIOScheduler()
-scheduler.add_job(
-    run_news_collection,
-    'cron',
-    hour=6,  # 6 AM UTC
-    minute=0,
-    timezone=timezone.utc,
-    id='daily_news_collection'
-)
-```
+## Implementation Phases
 
-## Implementation Approach
+### Phase 1: Foundation (4-7 hours)
+- Database migration for news_job_configs table
+- Enhance NewsArticle entity with sentiment and embedding fields
+- Create NewsJobConfig entity
 
-### Phase 1: Scheduled Execution (2-3 hours)
-1. Configure APScheduler for daily news collection
-2. Create job configuration management for ticker lists
-3. Implement job monitoring and status tracking
-4. Add manual execution capability for testing
+### Phase 2: Data Access (2-3 hours)
+- Enhance NewsRepository with vector similarity search
+- Add NewsJobConfig CRUD operations
 
-### Phase 2: LLM Sentiment Integration (3-4 hours)
-1. Integrate OpenRouter LLM for sentiment analysis  
-2. Create structured sentiment analysis prompts
-3. Update NewsService to include sentiment processing
-4. Add sentiment data to NewsArticle domain model
+### Phase 3: LLM Integration (5-8 hours)
+- OpenRouter sentiment analysis client
+- OpenRouter embeddings client
+- Integrate into NewsService
 
-### Phase 3: Vector Embeddings (2-3 hours)
-1. Add embedding generation to article processing
-2. Update database schema for vector storage
-3. Implement semantic search capabilities in NewsRepository
-4. Create vector similarity query methods
+### Phase 4: Scheduling (4-6 hours)
+- APScheduler integration with job management
+- CLI commands for job management
 
-### Phase 4: Testing & Monitoring (2 hours)
-1. Add comprehensive test coverage for new components
-2. Implement job monitoring and alerting
-3. Create configuration validation
-4. Performance testing for 2-second query requirement
+### Phase 5: Validation (3-5 hours)
+- Integration tests
+- Performance benchmarks
+- Documentation updates
 
-### Total Estimated Effort: 9-12 hours
+---
 
-## Dependencies
-
-### Required APIs
-- **OpenRouter API**: LLM sentiment analysis (`OPENROUTER_API_KEY`)
-- **OpenAI API**: Vector embeddings (`OPENAI_API_KEY` for embeddings)
-
-### Database Requirements  
-- **PostgreSQL**: Base storage with async support
-- **TimescaleDB**: Time-series optimization for news data
-- **pgvectorscale**: Vector storage and similarity search
-
-### Existing Infrastructure (95% Complete)
-- `NewsService` with `update_news_for_symbol` method
-- `GoogleNewsClient` for RSS feed parsing
-- `ArticleScraperClient` with newspaper4k integration
-- `NewsRepository` with async PostgreSQL operations
-- `NewsArticle` domain model with validation
-- Comprehensive test coverage with pytest-vcr
-
-### New Dependencies
-- `apscheduler` for job scheduling
-- Enhanced vector embedding capabilities
-- LLM client integration for sentiment analysis
-
-## Configuration Management
+## Configuration
 
 ### Environment Variables
+
 ```bash
-# Existing
 OPENROUTER_API_KEY="sk-or-..."
+OPENAI_API_KEY="sk-..."  # For embeddings via OpenRouter
 DATABASE_URL="postgresql://..."
-
-# New requirements
-OPENAI_API_KEY="sk-..."  # For embeddings
 NEWS_SCHEDULE_HOUR=6     # UTC hour for daily execution
-NEWS_TICKERS="AAPL,GOOGL,MSFT,TSLA"  # Comma-separated ticker list
+NEWS_TICKERS="AAPL,GOOGL,MSFT,TSLA"
 ```
 
-### Configuration File Support
-```yaml
-# config/news_collection.yaml
-schedule:
-  hour: 6
-  minute: 0
-  timezone: "UTC"
+### Dependencies
 
-tickers:
-  - "AAPL"
-  - "GOOGL" 
-  - "MSFT"
-  - "TSLA"
-
-sentiment:
-  llm_model: "anthropic/claude-3.5-haiku"
-  confidence_threshold: 0.5
-
-embeddings:
-  model: "text-embedding-3-small"
-  dimensions: 1536
-  content_max_length: 8000
+```toml
+# Add to pyproject.toml
+apscheduler = "^3.10"
 ```
+
+---
 
 ## Success Metrics
 
@@ -268,67 +291,13 @@ embeddings:
 - **Query Response Time**: < 2 seconds for news retrieval with sentiment
 - **Job Execution Time**: < 30 minutes for daily collection (4 tickers)
 - **Success Rate**: > 95% article processing success rate
-- **Test Coverage**: Maintain > 85% coverage including new components
+
+### Quality Targets
+- **Test Coverage**: Maintain > 85% including new components
+- **Zero Breaking Changes**: AgentToolkit integration unchanged
 
 ### Operational Metrics
 - Daily job completion status and execution time
 - Article processing success/failure rates per ticker
 - LLM sentiment analysis success rates
 - Vector embedding generation performance
-- Database query performance monitoring
-
-## Risk Mitigation
-
-### Technical Risks
-1. **LLM API Rate Limits**: Implement exponential backoff and batch processing
-2. **Vector Storage Performance**: Monitor query times and optimize indexes
-3. **Paywall Content Blocking**: Graceful degradation with metadata-only storage
-4. **Database Migration Complexity**: Test schema changes thoroughly
-
-### Operational Risks  
-1. **Scheduled Job Failures**: Implement monitoring and alerting
-2. **API Key Management**: Secure configuration management
-3. **Data Quality Issues**: Validation at multiple pipeline stages
-4. **Performance Degradation**: Regular performance monitoring and optimization
-
-## Testing Strategy
-
-### Unit Testing (pytest with pytest-vcr)
-- Scheduled job execution logic
-- LLM sentiment analysis integration  
-- Vector embedding generation
-- Configuration management
-
-### Integration Testing
-- End-to-end news collection pipeline
-- Database vector operations
-- LLM API integration
-- Job scheduling functionality
-
-### Performance Testing
-- Query response time validation (< 2 seconds)
-- Batch processing performance
-- Vector similarity search optimization
-- Concurrent job execution handling
-
-## Monitoring and Observability
-
-### Logging Strategy
-- Job execution start/completion with metrics
-- Individual article processing success/failure
-- LLM API call status and timing
-- Database operation performance
-
-### Health Checks
-- Daily job completion status
-- Database connectivity and performance
-- LLM API availability and response times
-- Vector search functionality
-
-### Alerting Triggers
-- Failed daily news collection jobs
-- API rate limit violations
-- Database query performance degradation
-- Sentiment analysis failure rates > 10%
-
-This specification completes the news domain infrastructure to support advanced news analysis for the multi-agent trading framework, providing News Analysts with comprehensive, sentiment-analyzed, and semantically searchable news data for informed trading decisions.

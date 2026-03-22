@@ -1,0 +1,176 @@
+{
+  "feature": "news-domain-completion",
+  "status": "pending",
+  "created_at": "2026-03-22",
+  "updated_at": "2026-03-22",
+  "estimated_total_hours": 29,
+  "estimated_with_ai_hours": 16,
+  "description": "Complete final 5% of news domain: scheduled execution, LLM sentiment analysis, vector embeddings",
+  "tasks": [
+    {
+      "id": "T001",
+      "title": "Database Migration - NewsJobConfig Table",
+      "phase": 1,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "news_job_configs table created with UUID primary key",
+        "JSONB fields for symbols and categories with validation",
+        "Proper indexes for enabled/frequency queries",
+        "Migration script tests with rollback capability"
+      ]
+    },
+    {
+      "id": "T002",
+      "title": "Enhance NewsArticle Entity - Sentiment and Embeddings",
+      "phase": 1,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["T001"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "Add sentiment_score, sentiment_confidence, sentiment_label fields",
+        "Add title_embedding and content_embedding vector fields",
+        "Enhanced validate() method with sentiment range checks",
+        "Embedding dimension validation (1536)"
+      ]
+    },
+    {
+      "id": "T003",
+      "title": "Create NewsJobConfig Entity",
+      "phase": 1,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["T001"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "NewsJobConfig dataclass with all required fields",
+        "Business rule validation for job configuration",
+        "Cron expression validation for frequency",
+        "Symbol list validation"
+      ]
+    },
+    {
+      "id": "T004",
+      "title": "Enhance NewsRepository - Vector and Job Operations",
+      "phase": 2,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["T002", "T003"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "Vector similarity search with cosine distance",
+        "Batch embedding update operations",
+        "NewsJobConfig CRUD methods",
+        "Optimized query performance for vector operations"
+      ]
+    },
+    {
+      "id": "T005",
+      "title": "OpenRouter Client - Sentiment Analysis",
+      "phase": 3,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["T002"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "OpenRouter API integration for sentiment analysis",
+        "Structured prompts for financial news sentiment",
+        "Response parsing with Pydantic models",
+        "Error handling with graceful fallbacks"
+      ]
+    },
+    {
+      "id": "T006",
+      "title": "OpenRouter Client - Vector Embeddings",
+      "phase": 3,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["T002"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "OpenRouter embeddings API integration",
+        "Text preprocessing for embedding generation",
+        "Batch processing for multiple articles",
+        "1536-dimensional vector validation"
+      ]
+    },
+    {
+      "id": "T007",
+      "title": "Enhance NewsService - LLM Integration",
+      "phase": 3,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["T005", "T006"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "Replace keyword sentiment with LLM analysis",
+        "Add embedding generation to article processing",
+        "End-to-end article processing pipeline",
+        "Proper error handling and fallback strategies"
+      ]
+    },
+    {
+      "id": "T008",
+      "title": "APScheduler Integration - Job Scheduling",
+      "phase": 4,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["T003", "T004", "T007"],
+      "estimated_hours": 4,
+      "acceptance_criteria": [
+        "APScheduler setup with PostgreSQL job store",
+        "Scheduled job execution with proper error handling",
+        "Job configuration loading and validation",
+        "Status monitoring and failure recovery"
+      ]
+    },
+    {
+      "id": "T009",
+      "title": "CLI Integration - Job Management Commands",
+      "phase": 4,
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["T008"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "CLI commands for job creation/management",
+        "Manual job execution commands",
+        "Job status and monitoring commands",
+        "Integration with existing CLI structure"
+      ]
+    },
+    {
+      "id": "T010",
+      "title": "Integration Tests - End-to-End Workflow",
+      "phase": 5,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["T007", "T008"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "End-to-end workflow tests from RSS to vector storage",
+        "Agent integration tests via AgentToolkit",
+        "Performance tests for daily collection volumes",
+        "Test coverage maintained above 85%"
+      ]
+    },
+    {
+      "id": "T011",
+      "title": "Documentation and Monitoring",
+      "phase": 5,
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["T010"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "Updated API documentation for new methods",
+        "Job scheduling configuration examples",
+        "Performance monitoring dashboard queries",
+        "Agent integration documentation"
+      ]
+    }
+  ]
+}
