@@ -1,0 +1,192 @@
+{
+  "feature": "socialmedia-domain-implementation",
+  "status": "pending",
+  "created_at": "2026-03-22",
+  "updated_at": "2026-03-22",
+  "estimated_total_hours": 35,
+  "estimated_with_ai_hours": 20,
+  "description": "Complete implementation of social media domain from stubs to production: Reddit API, PostgreSQL, LLM sentiment, vector embeddings, AgentToolkit integration",
+  "tasks": [
+    {
+      "id": "S001",
+      "title": "Database Schema Migration - social_media_posts Table",
+      "phase": 1,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": [],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "social_media_posts hypertable created with TimescaleDB",
+        "UUID primary key with uuid7()",
+        "Vector embedding columns for title and content",
+        "JSONB sentiment_score field",
+        "Proper indexes including GIN for tickers array"
+      ]
+    },
+    {
+      "id": "S002",
+      "title": "SQLAlchemy Entity - SocialMediaPostEntity",
+      "phase": 1,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["S001"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "SocialMediaPostEntity with all database fields",
+        "to_domain() and from_domain() transformations",
+        "Proper handling of vector fields and JSONB sentiment",
+        "Integration with existing database session management"
+      ]
+    },
+    {
+      "id": "S003",
+      "title": "Domain Model Enhancement - SocialPost",
+      "phase": 1,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": [],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "SocialPost model with comprehensive validation",
+        "from_praw_submission() creates valid domain objects",
+        "extract_tickers() finds ticker symbols in text",
+        "to_agent_context() formats data for AI agents"
+      ]
+    },
+    {
+      "id": "S004",
+      "title": "Repository Implementation - SocialRepository",
+      "phase": 1,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["S001", "S002"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "Batch upsert with deduplication by post_id",
+        "Vector similarity search using pgvectorscale",
+        "find_by_ticker() and find_by_subreddit() methods",
+        "get_sentiment_summary() aggregation"
+      ]
+    },
+    {
+      "id": "S005",
+      "title": "Reddit Client Implementation - PRAW Integration",
+      "phase": 2,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": [],
+      "estimated_hours": 4,
+      "acceptance_criteria": [
+        "PRAW Reddit client properly authenticated",
+        "Rate limiting implemented (1 request/second)",
+        "Financial subreddit focus (wallstreetbets, investing, stocks, SecurityAnalysis)",
+        "Structured data extraction from Reddit submissions"
+      ]
+    },
+    {
+      "id": "S006",
+      "title": "Sentiment Analyzer - OpenRouter LLM Integration",
+      "phase": 2,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "OpenRouter sentiment analysis with structured JSON output",
+        "Social media-specific prompts for informal language",
+        "Batch processing with rate limiting",
+        "Confidence scoring for sentiment reliability"
+      ]
+    },
+    {
+      "id": "S007",
+      "title": "Embedding Generator - Vector Embeddings",
+      "phase": 2,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "1536-dimension embeddings using text-embedding-3-large",
+        "Separate embeddings for title and content",
+        "Batch processing for multiple posts",
+        "Query embedding generation for semantic search"
+      ]
+    },
+    {
+      "id": "S008",
+      "title": "Service Layer - SocialMediaService",
+      "phase": 2,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["S004", "S005", "S006", "S007"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "Orchestrates: Reddit → Sentiment → Embeddings → Storage",
+        "Ticker-specific social context generation",
+        "Aggregate sentiment metrics calculation",
+        "Error handling and fallback strategies"
+      ]
+    },
+    {
+      "id": "S009",
+      "title": "AgentToolkit Integration - RAG Methods",
+      "phase": 3,
+      "status": "pending",
+      "priority": "critical",
+      "dependencies": ["S008"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "get_reddit_news() returns formatted social context",
+        "get_reddit_stock_info() provides semantic search results",
+        "Vector similarity ranking for relevant posts",
+        "Proper formatting for AI agent consumption"
+      ]
+    },
+    {
+      "id": "S010",
+      "title": "Dagster Pipeline - Scheduled Collection",
+      "phase": 3,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["S008"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "Daily automated collection from financial subreddits",
+        "Sentiment analysis and embedding generation",
+        "Progress logging and error handling",
+        "Monitoring and alerting setup"
+      ]
+    },
+    {
+      "id": "S011",
+      "title": "Integration Tests - End-to-End Workflow",
+      "phase": 3,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["S009", "S010"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "End-to-end collection pipeline tests",
+        "Agent integration tests via AgentToolkit",
+        "Vector similarity search tests",
+        "Test coverage maintained above 85%"
+      ]
+    },
+    {
+      "id": "S012",
+      "title": "Documentation - API and Configuration",
+      "phase": 3,
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["S011"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "API documentation for new methods",
+        "Configuration examples for Reddit API",
+        "Troubleshooting guide for common issues",
+        "Agent integration documentation"
+      ]
+    }
+  ]
+}
