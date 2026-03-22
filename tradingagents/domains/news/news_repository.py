@@ -461,3 +461,194 @@ class NewsRepository:
                 await session.rollback()
                 logger.error(f"Failed to update sentiment for article {url}: {e}")
                 raise
+
+    async def find_similar_by_title(
+        self,
+        query_embedding: list[float],
+        limit: int = 10,
+        threshold: float = 0.7,
+        symbol: str | None = None,
+    ) -> builtins.list[NewsArticle]:
+        """
+        Find articles with similar titles using vector similarity search.
+
+        Args:
+            query_embedding: 1536-dimensional title embedding vector
+            limit: Maximum number of results to return
+            threshold: Minimum similarity score (0.0-1.0), default 0.7
+            symbol: Optional symbol filter
+
+        Returns:
+            List of similar articles ordered by similarity (most similar first)
+        """
+        async with self.db_manager.get_session() as session:
+            query = select(NewsArticleEntity).where(
+                NewsArticleEntity.title_embedding.isnot(None)
+            )
+
+            if symbol:
+                query = query.where(NewsArticleEntity.symbol == symbol)
+
+            query = (
+                query
+                .order_by(NewsArticleEntity.title_embedding.cosine_distance(query_embedding))
+                .limit(limit * 2)
+            )
+
+            result = await session.execute(query)
+            db_articles = result.scalars().all()
+
+            articles = [
+                NewsArticle.from_record(article) for article in db_articles
+            ]
+
+        filtered = [a for a in articles if self._calculate_similarity(a.title_embedding, query_embedding) >= threshold][:limit]
+
+        logger.info(f"Found {len(filtered)} similar articles by title (threshold={threshold})")
+        return filtered
+
+    def _calculate_similarity(
+        self, embedding1: list[float] | None, embedding2: list[float] | None
+    ) -> float:
+        """Calculate cosine similarity between two embeddings."""
+        if embedding1 is None or embedding2 is None:
+            return 0.0
+
+        dot_product = sum(a * b for a, b in zip(embedding1, embedding2, strict=True))
+        magnitude1 = sum(a * a for a in embedding1) ** 0.5
+        magnitude2 = sum(b * b for b in embedding2) ** 0.5
+
+        if magnitude1 == 0 or magnitude2 == 0:
+            return 0.0
+
+        return dot_product / (magnitude1 * magnitude2)
+
+    async def find_similar_by_content(
+        self,
+        query_embedding: list[float],
+        limit: int = 10,
+        threshold: float = 0.7,
+        symbol: str | None = None,
+    ) -> builtins.list[NewsArticle]:
+        """
+        Find articles with similar content using vector similarity search.
+
+        Args:
+            query_embedding: 1536-dimensional content embedding vector
+            limit: Maximum number of results to return
+            threshold: Minimum similarity score (0.0-1.0), default 0.7
+            symbol: Optional symbol filter
+
+        Returns:
+            List of similar articles ordered by similarity (most similar first)
+        """
+        async with self.db_manager.get_session() as session:
+            query = select(NewsArticleEntity).where(
+                NewsArticleEntity.content_embedding.isnot(None)
+            )
+
+            if symbol:
+                query = query.where(NewsArticleEntity.symbol == symbol)
+
+            query = (
+                query
+                .order_by(NewsArticleEntity.content_embedding.cosine_distance(query_embedding))
+                .limit(limit * 2)
+            )
+
+            result = await session.execute(query)
+            db_articles = result.scalars().all()
+
+            articles = [
+                NewsArticle.from_record(article) for article in db_articles
+            ]
+
+        filtered = [a for a in articles if self._calculate_similarity(a.content_embedding, query_embedding) >= threshold][:limit]
+
+        logger.info(f"Found {len(filtered)} similar articles by content (threshold={threshold})")
+        return filtered
+
+    async def find_similar_to_article(
+        self,
+        article_id: uuid.UUID,
+        limit: int = 10,
+        use_title: bool = False,
+    ) -> builtins.list[NewsArticle]:
+        """
+        Find articles similar to an existing article.
+
+        Args:
+            article_id: UUID of the reference article
+            limit: Maximum number of results to return
+            use_title: If True, use title embedding; otherwise use content embedding
+
+        Returns:
+            List of similar articles (excluding the reference article)
+        """
+        article = await self.get(article_id)
+        if article is None:
+            logger.warning(f"Article {article_id} not found for similarity search")
+            return []
+
+        embedding = article.title_embedding if use_title else article.content_embedding
+
+        if embedding is None:
+            logger.warning(f"Article {article_id} has no embedding for similarity search")
+            return []
+
+        search_method = self.find_similar_by_title if use_title else self.find_similar_by_content
+        similar = await search_method(
+            query_embedding=embedding,
+            limit=limit + 1,
+            symbol=None,
+        )
+
+        return [a for a in similar if a.id != article_id][:limit]
+
+    async def find_by_sentiment_and_similarity(
+        self,
+        sentiment_label: str,
+        query_embedding: list[float],
+        limit: int = 10,
+        use_title: bool = False,
+    ) -> builtins.list[NewsArticle]:
+        """
+        Find articles matching sentiment label and similar to query embedding.
+
+        Args:
+            sentiment_label: Filter by sentiment ("positive", "negative", "neutral")
+            query_embedding: 1536-dimensional embedding vector
+            limit: Maximum number of results to return
+            use_title: If True, use title embedding; otherwise use content embedding
+
+        Returns:
+            List of matching articles ordered by similarity
+        """
+        async with self.db_manager.get_session() as session:
+            embedding_col = (
+                NewsArticleEntity.title_embedding if use_title
+                else NewsArticleEntity.content_embedding
+            )
+
+            query = select(NewsArticleEntity).where(
+                and_(
+                    NewsArticleEntity.sentiment_label == sentiment_label,
+                    embedding_col.isnot(None),
+                )
+            )
+
+            query = (
+                query
+                .order_by(embedding_col.cosine_distance(query_embedding))
+                .limit(limit)
+            )
+
+            result = await session.execute(query)
+            db_articles = result.scalars().all()
+
+            articles = [
+                NewsArticle.from_record(article) for article in db_articles
+            ]
+
+        logger.info(f"Found {len(articles)} articles with sentiment={sentiment_label}")
+        return articles
