@@ -57,6 +57,11 @@ run = "ruff check --fix ."
 description = "Run format, lint, and typecheck"
 run = ["ruff format .", "ruff check .", "uv run pyrefly check ."]
 
+[tasks.coverage]
+description = "Run tests with coverage report"
+depends = ["docker"]
+run = "uv run pytest --cov=tradingagents --cov-report=html --cov-report=term-missing"
+
 [tasks.clean]
 description = "Clean up cache and build artifacts"
 run = [
