@@ -1,5 +1,6 @@
 """News domain activities for Temporal workflow."""
 
+import logging
 from datetime import date
 from uuid import UUID
 
@@ -8,112 +9,105 @@ from temporalio import activity
 from tradingagents.domains.news.news_article import NewsArticle
 from tradingagents.domains.news.news_service import NewsService
 
-_news_service: NewsService | None = None
-
-
-def _get_news_service() -> NewsService:
-    """Get the injected NewsService or raise if not configured."""
-    if _news_service is None:
-        raise RuntimeError("NewsService not injected. Call create_news_activities first.")
-    return _news_service
+logger = logging.getLogger(__name__)
 
 
 @activity.defn
 class NewsActivities:
-    """All news-domain activities including LLM operations.
+    """News domain activities with constructor-injected NewsService.
 
-    Thin Temporal shell over NewsService.
-    NewsService provides: repository, scraper, llm_client.
+    This class is instantiated by the worker with dependencies, then
+    Temporal calls the decorated methods for each activity invocation.
     """
 
-    def __init__(self) -> None:
-        """Initialize - NewsService injected via module-level state."""
-        pass
+    def __init__(self, news_service: NewsService) -> None:
+        """Initialize with injected NewsService.
+
+        Args:
+            news_service: NewsService with repository, scraper, and LLM client.
+        """
+        self._news_service = news_service
 
     @activity.defn
     async def fetch_article(self, article_id: str) -> dict | None:
-        """Fetch article from repository by ID.
-
-        Args:
-            article_id: UUID string of article to fetch.
-
-        Returns:
-            Article as dict, or None if not found.
-        """
-        news_service = _get_news_service()
-        article = await news_service.repository.get(UUID(article_id))
-        if article is None:
+        """Fetch article from repository by ID."""
+        logger.info("fetch_article started", extra={"article_id": article_id})
+        try:
+            article = await self._news_service.repository.get(UUID(article_id))
+            if article is None:
+                logger.warning("Article not found", extra={"article_id": article_id})
+                return None
+            logger.info("fetch_article completed")
+            return article.to_dict()
+        except ValueError:
+            logger.error("Invalid UUID format", extra={"article_id": article_id})
             return None
-        return article.to_dict()
+        except Exception:
+            logger.exception("fetch_article failed", extra={"article_id": article_id})
+            raise
 
     @activity.defn
     async def scrape_article(self, url: str) -> dict:
-        """Scrape article content from URL.
-
-        Args:
-            url: URL of article to scrape.
-
-        Returns:
-            Dict with content, title, author, publish_date.
-        """
-        news_service = _get_news_service()
-        result = news_service.scraper.scrape_article(url)
-        return {
-            "content": result.content,
-            "title": result.title,
-            "author": result.author,
-            "publish_date": result.publish_date,
-        }
+        """Scrape article content from URL."""
+        logger.info("scrape_article started", extra={"url": url[:100]})
+        try:
+            result = self._news_service.scraper.scrape_article(url)
+            logger.info("scrape_article completed", extra={"status": result.status})
+            return {
+                "content": result.content,
+                "title": result.title,
+                "author": result.author,
+                "publish_date": result.publish_date,
+            }
+        except Exception:
+            logger.exception("scrape_article failed", extra={"url": url[:100]})
+            raise
 
     @activity.defn
     async def analyze_sentiment(self, text: str) -> dict:
-        """Analyze sentiment of text using LLM.
-
-        Temporal retry policy handles 429 rate limits automatically.
-
-        Args:
-            text: Text content to analyze.
-
-        Returns:
-            Dict with sentiment label, confidence, and reasoning.
-        """
-        news_service = _get_news_service()
-        result = await news_service.llm_client.analyze_sentiment(text)
-        return {
-            "sentiment": result.sentiment,
-            "confidence": result.confidence,
-            "reasoning": result.reasoning,
-        }
+        """Analyze sentiment of text using LLM."""
+        logger.info("analyze_sentiment started", extra={"text_length": len(text)})
+        try:
+            result = await self._news_service.llm_client.analyze_sentiment(text)
+            logger.info(
+                "analyze_sentiment completed",
+                extra={"sentiment": result.sentiment, "confidence": result.confidence},
+            )
+            return {
+                "sentiment": result.sentiment,
+                "confidence": result.confidence,
+                "reasoning": result.reasoning,
+            }
+        except Exception:
+            logger.exception("analyze_sentiment failed")
+            raise
 
     @activity.defn
     async def create_embedding(self, text: str) -> list[float]:
-        """Create vector embedding for text.
-
-        Temporal retry policy handles 429 rate limits automatically.
-
-        Args:
-            text: Text content to embed.
-
-        Returns:
-            List of float values representing embedding vector.
-        """
-        news_service = _get_news_service()
-        return await news_service.llm_client.create_embedding(text)
+        """Create vector embedding for text."""
+        logger.info("create_embedding started", extra={"text_length": len(text)})
+        try:
+            result = await self._news_service.llm_client.create_embedding(text)
+            logger.info(
+                "create_embedding completed", extra={"embedding_length": len(result)}
+            )
+            return result
+        except Exception:
+            logger.exception("create_embedding failed")
+            raise
 
     @activity.defn
     async def save_article(self, article_data: dict) -> str:
-        """Save processed article to repository.
-
-        Args:
-            article_data: Article dict with all fields.
-
-        Returns:
-            Saved article ID as string.
-        """
-        news_service = _get_news_service()
-        article = NewsArticle.from_dict(article_data)
-        saved = await news_service.repository.upsert(article)
-        return str(saved.id)
+        """Save processed article to repository."""
+        logger.info("save_article started")
+        try:
+            article = NewsArticle.from_dict(article_data)
+            saved = await self._news_service.repository.upsert(article)
+            logger.info("save_article completed", extra={"article_id": str(saved.id)})
+            return str(saved.id)
+        except Exception:
+            logger.exception("save_article failed")
+            raise
 
     @activity.defn
     async def list_articles_for_processing(
@@ -123,26 +117,26 @@ class NewsActivities:
         end_date: str,
         limit: int = 50,
     ) -> list[dict]:
-        """List articles that need processing.
-
-        Args:
-            symbol: Stock symbol to filter by.
-            start_date: Start date (YYYY-MM-DD).
-            end_date: End date (YYYY-MM-DD).
-            limit: Maximum articles to return.
-
-        Returns:
-            List of article dicts needing enrichment.
-        """
-        news_service = _get_news_service()
-        start = date.fromisoformat(start_date)
-        end = date.fromisoformat(end_date)
-
-        articles = await news_service.repository.list_by_date_range(
-            symbol=symbol,
-            start_date=start,
-            end_date=end,
-            limit=limit,
+        """List articles that need processing."""
+        logger.info(
+            "list_articles_for_processing started",
+            extra={"symbol": symbol, "limit": limit},
         )
+        try:
+            start = date.fromisoformat(start_date)
+            end = date.fromisoformat(end_date)
 
-        return [a.to_dict() for a in articles]
+            articles = await self._news_service.repository.list_by_date_range(
+                symbol=symbol,
+                start_date=start,
+                end_date=end,
+                limit=limit,
+            )
+
+            logger.info(
+                "list_articles_for_processing completed", extra={"count": len(articles)}
+            )
+            return [a.to_dict() for a in articles]
+        except Exception:
+            logger.exception("list_articles_for_processing failed")
+            raise

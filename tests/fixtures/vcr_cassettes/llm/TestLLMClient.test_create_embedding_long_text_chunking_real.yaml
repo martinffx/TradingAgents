@@ -1,51 +1,42 @@
 interactions:
 - request:
-    body: '{"input":[[198,286,28298,37792,7376,3335,7458,55659,369,279,8502,11,720,286,53120,287,18738,17989,13,578,9249,7458,14290,12886,720,286,220,16460,11,17419,11731,11,264,220,1927,4,5376,1060,29352,4771,11,16625,555,3831,7631,720,286,369,5008,220,18,323,5008,816,11731,13,12937,7729,85007,389,279,3754,627,260]],"model":"openai/text-embedding-3-small","encoding_format":"base64"}'
+    body: '{"input":"Microsoft Corporation reported exceptional financial results
+      for the fiscal quarter,\n        demonstrating robust growth across its cloud
+      computing, artificial intelligence, and\n        productivity software divisions.
+      The technology giant exceeded analyst expectations\n        with revenue reaching
+      $56.1 billion, representing a 13% increase year-over-year.\n        Azure cloud
+      services continued their impressive expansion, growing 29% and now","model":"openai/text-embedding-3-small","encoding_format":"base64"}'
     headers:
       accept:
       - application/json
       accept-encoding:
-      - gzip, deflate, zstd
+      - gzip, deflate, br, zstd
       connection:
       - keep-alive
       content-length:
-      - '375'
+      - '528'
       content-type:
       - application/json
       host:
       - openrouter.ai
-      x-stainless-arch:
-      - arm64
-      x-stainless-async:
-      - async:asyncio
-      x-stainless-lang:
-      - python
-      x-stainless-os:
-      - MacOS
-      x-stainless-package-version:
-      - 1.86.0
-      x-stainless-retry-count:
-      - '0'
       x-stainless-runtime:
       - CPython
-      x-stainless-runtime-version:
-      - 3.13.1
     method: POST
     uri: https://openrouter.ai/api/v1/embeddings
   response:
     body:
-      string: '{"error":{"message":"No auth credentials found","code":401}}'
+      string: '{"error":{"message":"Missing Authentication header","code":401}}'
     headers:
       Access-Control-Allow-Origin:
       - '*'
       CF-RAY:
-      - 9a22c1251d91b8ea-AMS
+      - 9e03ef848e2dc13c-AMS
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Fri, 21 Nov 2025 19:57:09 GMT
+      - Sun, 22 Mar 2026 08:48:08 GMT
       Permissions-Policy:
       - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
         "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
@@ -55,8 +46,6 @@ interactions:
       - cloudflare
       Transfer-Encoding:
       - chunked
-      Vary:
-      - Accept-Encoding
       X-Content-Type-Options:
       - nosniff
     status:

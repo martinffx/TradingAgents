@@ -2,7 +2,7 @@ import datetime
 from collections import deque
 from functools import wraps
 from pathlib import Path
-from typing import Literal, cast
+from typing import TYPE_CHECKING, Literal, cast
 
 import typer
 from rich import box
@@ -29,6 +29,9 @@ from cli.utils import (
 )
 from tradingagents.config import TradingAgentsConfig
 from tradingagents.graph.trading_graph import TradingAgentsGraph
+
+if TYPE_CHECKING:
+    from tradingagents.agents.libs.agent_states import AgentState
 
 console = Console()
 
@@ -882,7 +885,7 @@ def run_analysis():
 
         # Stream the analysis
         trace = []
-        for chunk in graph.graph.stream(init_agent_state, **args):
+        for chunk in graph.graph.stream(cast("AgentState", init_agent_state), **args):
             if len(chunk["messages"]) > 0:
                 # Get the last message from the chunk
                 last_message = chunk["messages"][-1]

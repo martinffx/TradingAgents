@@ -1,21 +1,17 @@
-"""LLM client for sentiment analysis and embeddings with timeout and exception handling."""
+"""LLM client for sentiment analysis and embeddings using OpenAI SDK with LangChain text splitting."""
 
 import json
 import logging
-import os
 from dataclasses import dataclass
 
-from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from pydantic import SecretStr
+from openai import AsyncOpenAI
 
 from tradingagents.config import TradingAgentsConfig
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_TIMEOUT_SECONDS = 60
-DEFAULT_REQUEST_TIMEOUT_SECONDS = 90
 DEFAULT_EMBEDDING_DIMENSIONS = 1536
 
 
@@ -53,39 +49,25 @@ class SentimentResult:
 
 
 class LLMClient:
-    """LLM client for sentiment analysis and embeddings using LangChain.
+    """LLM client for sentiment analysis and embeddings.
 
+    Uses OpenAI SDK directly for API calls and LangChain text splitter for chunking.
     All methods raise exceptions on failure (no silent defaults).
     Temporal handles retry with exponential backoff on these exceptions.
     """
 
     def __init__(self, config: TradingAgentsConfig):
-        self.config = config
-        self.api_key = os.getenv("OPENROUTER_API_KEY")
-        if not self.api_key:
-            raise ValueError("OPENROUTER_API_KEY environment variable is required")
+        if not config.openrouter_api_key:
+            raise ValueError("openrouter_api_key is required in config")
 
-        self.timeout = getattr(config, "llm_timeout", DEFAULT_TIMEOUT_SECONDS)
-        self.request_timeout = getattr(
-            config, "llm_request_timeout", DEFAULT_REQUEST_TIMEOUT_SECONDS
+        self.config = config
+        self.client = AsyncOpenAI(
+            api_key=config.openrouter_api_key,
+            base_url=config.backend_url,
+            timeout=DEFAULT_TIMEOUT_SECONDS,
         )
         self.embedding_dimensions = getattr(
             config, "embedding_dimensions", DEFAULT_EMBEDDING_DIMENSIONS
-        )
-
-        self.llm = ChatOpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            api_key=SecretStr(self.api_key),
-            model=config.news_sentiment_llm,
-            temperature=0.1,
-            timeout=self.timeout,
-        )
-
-        self.embeddings = OpenAIEmbeddings(
-            base_url="https://openrouter.ai/api/v1",
-            api_key=SecretStr(self.api_key),
-            model=config.news_embedding_llm,
-            timeout=self.timeout,
         )
 
         self.text_splitter = RecursiveCharacterTextSplitter(
@@ -109,23 +91,29 @@ class LLMClient:
             )
 
         truncated_text = self._prepare_text_for_analysis(text)
-
         prompt = self._create_sentiment_prompt(truncated_text)
 
-        messages = [
-            SystemMessage(
-                content="You are a financial news sentiment analyst. Always respond with valid JSON in the specified format."
-            ),
-            HumanMessage(content=prompt),
-        ]
-
         try:
-            response = await self.llm.ainvoke(messages)
+            response = await self.client.chat.completions.create(
+                model=self.config.news_sentiment_llm,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a financial news sentiment analyst. Always respond with valid JSON in the specified format.",
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=0.1,
+            )
         except Exception as e:
             logger.error(f"LLM sentiment analysis failed: {e}")
             raise SentimentAnalysisError(f"LLM call failed: {e}") from e
 
-        return self._parse_sentiment_response(response)
+        content = response.choices[0].message.content
+        if not content:
+            raise SentimentAnalysisError("Empty response from LLM")
+
+        return self._parse_sentiment_response(content)
 
     def _prepare_text_for_analysis(self, text: str) -> str:
         """Prepare text for analysis with truncation and chunking."""
@@ -140,21 +128,14 @@ class LLMClient:
             return chunks[0] if chunks else text[:1000]
         return text
 
-    def _parse_sentiment_response(self, response) -> SentimentResult:
+    def _parse_sentiment_response(self, content: str) -> SentimentResult:
         """Parse LLM response into SentimentResult.
 
         Raises:
             SentimentAnalysisError: If response cannot be parsed.
         """
         try:
-            if isinstance(response.content, str):
-                sentiment_data = json.loads(response.content)
-            elif isinstance(response.content, dict):
-                sentiment_data = response.content
-            else:
-                raise SentimentAnalysisError(
-                    f"Unexpected response type: {type(response.content)}"
-                )
+            sentiment_data = json.loads(content)
 
             sentiment = sentiment_data.get("sentiment", "neutral")
             if sentiment not in ("positive", "negative", "neutral"):
@@ -187,16 +168,20 @@ class LLMClient:
         try:
             if len(text) > 2000:
                 return await self._create_chunked_embedding(text)
-            else:
-                embedding = await self.embeddings.aembed_query(text)
 
-                if len(embedding) != self.embedding_dimensions:
-                    raise EmbeddingGenerationError(
-                        f"Embedding dimension mismatch: got {len(embedding)}, "
-                        f"expected {self.embedding_dimensions}"
-                    )
+            response = await self.client.embeddings.create(
+                model=self.config.news_embedding_llm,
+                input=text,
+            )
+            embedding = list(response.data[0].embedding)
 
-                return embedding
+            if len(embedding) != self.embedding_dimensions:
+                raise EmbeddingGenerationError(
+                    f"Embedding dimension mismatch: got {len(embedding)}, "
+                    f"expected {self.embedding_dimensions}"
+                )
+
+            return embedding
 
         except EmbeddingGenerationError:
             raise
@@ -211,7 +196,11 @@ class LLMClient:
         chunk_embeddings = []
         for chunk in chunks:
             if chunk.strip():
-                embedding = await self.embeddings.aembed_query(chunk)
+                response = await self.client.embeddings.create(
+                    model=self.config.news_embedding_llm,
+                    input=chunk,
+                )
+                embedding = list(response.data[0].embedding)
                 chunk_embeddings.append(embedding)
 
         if not chunk_embeddings:
@@ -255,10 +244,7 @@ Focus on:
 - Business outlook expressed"""
 
     def _sanitize_text_for_prompt(self, text: str) -> str:
-        """Sanitize text to prevent prompt injection and ensure proper parsing.
-
-        Uses delimiter-based protection and truncation.
-        """
+        """Sanitize text to prevent prompt injection and ensure proper parsing."""
         max_chars = 5000
         truncated = text[:max_chars] if len(text) > max_chars else text
 

@@ -44,6 +44,11 @@ class TradingAgentsConfig:
     # Tool settings
     online_tools: bool = True
 
+    # API Keys
+    openrouter_api_key: str = field(
+        default_factory=lambda: os.getenv("OPENROUTER_API_KEY", "")
+    )
+
     # Data retrieval settings
     default_lookback_days: int = 30
     default_ta_lookback_days: int = 30
@@ -101,6 +106,7 @@ class TradingAgentsConfig:
             database_url=os.getenv(
                 "DATABASE_URL", "postgresql://localhost:5432/tradingagents"
             ),
+            openrouter_api_key=os.getenv("OPENROUTER_API_KEY", ""),
         )
 
     def to_dict(self) -> dict:
@@ -123,6 +129,7 @@ class TradingAgentsConfig:
             "default_lookback_days": self.default_lookback_days,
             "default_ta_lookback_days": self.default_ta_lookback_days,
             "database_url": self.database_url,
+            "openrouter_api_key": self.openrouter_api_key,
         }
 
     def copy(self) -> "TradingAgentsConfig":
@@ -144,6 +151,7 @@ class TradingAgentsConfig:
             default_lookback_days=self.default_lookback_days,
             default_ta_lookback_days=self.default_ta_lookback_days,
             database_url=self.database_url,
+            openrouter_api_key=self.openrouter_api_key,
         )
 
 

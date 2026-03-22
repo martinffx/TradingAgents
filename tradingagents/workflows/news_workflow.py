@@ -70,13 +70,13 @@ class NewsProcessingWorkflow:
         )
 
         article = article.with_content(
-            summary=scraped["content"],
+            summary=scraped.get("content", ""),
             author=scraped.get("author"),
         )
 
         sentiment = await workflow.execute_activity_method(
             NewsActivities.analyze_sentiment,
-            article.summary,
+            article.summary or "",
             start_to_close_timeout=timedelta(seconds=90),
             retry_policy=retry_policy,
         )
@@ -95,7 +95,7 @@ class NewsProcessingWorkflow:
             ),
             workflow.execute_activity_method(
                 NewsActivities.create_embedding,
-                article.summary,
+                article.summary or "",
                 start_to_close_timeout=timedelta(seconds=60),
                 retry_policy=retry_policy,
             ),

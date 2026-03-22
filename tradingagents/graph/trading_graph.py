@@ -3,7 +3,7 @@
 import json
 import os
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any, cast
 
 from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -11,6 +11,10 @@ from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import ToolNode
 
 from tradingagents.agents.libs.agent_toolkit import AgentToolkit
+
+if TYPE_CHECKING:
+    from tradingagents.agents.libs.agent_states import AgentState
+
 from tradingagents.agents.libs.memory import FinancialSituationMemory
 from tradingagents.config import TradingAgentsConfig
 from tradingagents.domains.marketdata.fundamental_data_service import (
@@ -195,7 +199,9 @@ class TradingAgentsGraph:
         if self.debug:
             # Debug mode with tracing
             trace = []
-            for chunk in self.graph.stream(init_agent_state, **args):
+            for chunk in self.graph.stream(
+                cast("AgentState", init_agent_state), **args
+            ):
                 if len(chunk["messages"]) == 0:
                     pass
                 else:
@@ -205,7 +211,9 @@ class TradingAgentsGraph:
             final_state = trace[-1]
         else:
             # Standard mode without tracing
-            final_state = self.graph.invoke(init_agent_state, **args)
+            final_state = self.graph.invoke(
+                cast("AgentState", init_agent_state), **args
+            )
 
         # Store current state for reflection
         self.curr_state = final_state

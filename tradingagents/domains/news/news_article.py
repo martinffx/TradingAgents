@@ -5,11 +5,13 @@ from datetime import date
 from typing import TYPE_CHECKING, Self
 from uuid import UUID
 
+from uuid_utils import uuid7
+
 if TYPE_CHECKING:
     from tradingagents.domains.news.news_repository import NewsArticleEntity
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, kw_only=True)
 class NewsArticle:
     """Immutable domain entity for news articles.
 
@@ -19,7 +21,7 @@ class NewsArticle:
     - Immutable - all mutations return new instances
     """
 
-    id: UUID
+    id: UUID = field(default_factory=uuid7, kw_only=True)  # type: ignore[assignment]
     url: str
     headline: str
     source: str

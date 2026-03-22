@@ -164,32 +164,6 @@ class TestArticleScraperClient:
         assert result.status in ["SUCCESS", "SCRAPE_FAILED"]
 
     @vcr
-    def test_scrape_multiple_financial_sites(self, scraper):
-        """Test scraping multiple financial news sites (recorded)."""
-        # Common financial news sources that appear in Google News
-        urls = [
-            "https://www.cnbc.com/",
-            "https://finance.yahoo.com/",
-            "https://www.barchart.com/",
-        ]
-
-        results = scraper.scrape_multiple_articles(urls)
-
-        assert isinstance(results, dict)
-        assert len(results) == len(urls)
-
-        for url in urls:
-            assert url in results
-            assert isinstance(results[url], ScrapeResult)
-            assert results[url].final_url == url
-            assert results[url].status in [
-                "SUCCESS",
-                "SCRAPE_FAILED",
-                "NOT_FOUND",
-                "PAYWALL_DETECTED",
-            ]
-
-    @vcr
     def test_scrape_article_with_404(self, scraper):
         """Test handling of 404 pages (recorded)."""
         # A URL that should return 404

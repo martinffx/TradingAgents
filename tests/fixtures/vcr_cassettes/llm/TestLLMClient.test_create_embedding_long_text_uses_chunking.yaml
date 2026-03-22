@@ -1,51 +1,43 @@
 interactions:
 - request:
-    body: '{"input":[[57330,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492,17961,3157,6492]],"model":"openai/text-embedding-3-small","encoding_format":"base64"}'
+    body: '{"input":"Financial market analysis Financial market analysis Financial
+      market analysis Financial market analysis Financial market analysis Financial
+      market analysis Financial market analysis Financial market analysis Financial
+      market analysis Financial market analysis Financial market analysis Financial
+      market analysis Financial market analysis Financial market analysis Financial
+      market analysis Financial market analysis Financial market analysis Financial
+      market analysis Financial market analysis","model":"openai/text-embedding-3-small","encoding_format":"base64"}'
     headers:
       accept:
       - application/json
       accept-encoding:
-      - gzip, deflate, zstd
+      - gzip, deflate, br, zstd
       connection:
       - keep-alive
       content-length:
-      - '384'
+      - '572'
       content-type:
       - application/json
       host:
       - openrouter.ai
-      x-stainless-arch:
-      - arm64
-      x-stainless-async:
-      - async:asyncio
-      x-stainless-lang:
-      - python
-      x-stainless-os:
-      - MacOS
-      x-stainless-package-version:
-      - 1.86.0
-      x-stainless-retry-count:
-      - '0'
       x-stainless-runtime:
       - CPython
-      x-stainless-runtime-version:
-      - 3.13.1
     method: POST
     uri: https://openrouter.ai/api/v1/embeddings
   response:
     body:
-      string: '{"error":{"message":"No auth credentials found","code":401}}'
+      string: '{"error":{"message":"Missing Authentication header","code":401}}'
     headers:
       Access-Control-Allow-Origin:
       - '*'
       CF-RAY:
-      - 9a22c1243dbf19ba-AMS
+      - 9e03ef833fd90e5c-AMS
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Fri, 21 Nov 2025 19:57:09 GMT
+      - Sun, 22 Mar 2026 08:48:08 GMT
       Permissions-Policy:
       - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
         "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
@@ -55,8 +47,6 @@ interactions:
       - cloudflare
       Transfer-Encoding:
       - chunked
-      Vary:
-      - Accept-Encoding
       X-Content-Type-Options:
       - nosniff
     status:

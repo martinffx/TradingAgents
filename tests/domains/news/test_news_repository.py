@@ -6,9 +6,11 @@ Follows pragmatic TDD principles - test real persistence with Docker container.
 """
 
 from datetime import date
+from uuid import UUID
 
 import pytest
 from sqlalchemy import text
+from uuid_utils import uuid7
 
 from tradingagents.domains.news.news_repository import (
     NewsArticle,
@@ -54,6 +56,7 @@ async def repository(test_db_manager):
 def sample_article():
     """Create a sample news article for testing."""
     return NewsArticle(
+        id=UUID(str(uuid7())),
         headline="Apple Quarterly Earnings Beat Expectations",
         url="https://example.com/apple-earnings-q1-2024",
         source="TechCrunch",

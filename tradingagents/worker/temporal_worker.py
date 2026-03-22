@@ -2,6 +2,9 @@
 
 import asyncio
 import logging
+import signal
+from collections.abc import Callable, Sequence
+from typing import cast
 
 from temporalio.client import Client
 from temporalio.worker import Worker
@@ -20,7 +23,7 @@ logger = logging.getLogger(__name__)
 NEWS_PROCESSING_TASK_QUEUE = "news-processing"
 
 
-async def create_news_service(config: TradingAgentsConfig) -> NewsService:
+def create_news_service(config: TradingAgentsConfig) -> NewsService:
     """Create NewsService with injected dependencies.
 
     Args:
@@ -33,21 +36,16 @@ async def create_news_service(config: TradingAgentsConfig) -> NewsService:
     return NewsService.build(db_manager, config)
 
 
-async def create_news_activities(
-    news_service: NewsService,
-) -> type[NewsActivities]:
-    """Inject NewsService and return NewsActivities class for worker.
+def create_news_activities(news_service: NewsService) -> NewsActivities:
+    """Create NewsActivities with constructor-injected NewsService.
 
     Args:
         news_service: Configured NewsService with repository, scraper, and LLM.
 
     Returns:
-        NewsActivities class ready for worker registration.
+        NewsActivities instance with injected dependencies.
     """
-    import tradingagents.workflows.activities.news_activities as activities_module
-
-    activities_module._news_service = news_service
-    return NewsActivities
+    return NewsActivities(news_service)
 
 
 async def run_worker(
@@ -62,25 +60,39 @@ async def run_worker(
         host: Temporal server host.
         port: Temporal server port.
     """
+    shutdown_event = asyncio.Event()
+
+    def handle_shutdown() -> None:
+        logger.info("Shutdown signal received, draining worker...")
+        shutdown_event.set()
+
+    loop = asyncio.get_running_loop()
+    for sig in (signal.SIGTERM, signal.SIGINT):
+        loop.add_signal_handler(sig, handle_shutdown)
+
     temporal_address = f"{host}:{port}"
     logger.info(f"Connecting to Temporal at {temporal_address}")
 
     client = await Client.connect(temporal_address)
 
     logger.info("Creating services with dependency injection")
-    news_service = await create_news_service(config)
-    news_activities = await create_news_activities(news_service)
+    news_service = create_news_service(config)
+    news_activities = create_news_activities(news_service)
 
     logger.info(f"Starting worker on task queue: {NEWS_PROCESSING_TASK_QUEUE}")
     worker = Worker(
         client,
         task_queue=NEWS_PROCESSING_TASK_QUEUE,
         workflows=[NewsProcessingWorkflow, BatchNewsProcessingWorkflow],
-        activities=[news_activities],
+        activities=cast("Sequence[Callable[..., object]]", [news_activities]),
     )
 
     logger.info("Worker started, awaiting tasks...")
-    await worker.run()
+
+    async with worker:
+        await shutdown_event.wait()
+
+    logger.info("Worker shutdown complete")
 
 
 async def main() -> None:

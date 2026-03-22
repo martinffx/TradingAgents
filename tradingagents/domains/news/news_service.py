@@ -21,6 +21,54 @@ from .article_scraper_client import ArticleScraperClient
 logger = logging.getLogger(__name__)
 
 
+def _is_safe_url(url: str) -> bool:
+    """Validate URL to prevent SSRF attacks.
+
+    Blocks internal/private IPs and non-HTTP schemes.
+    """
+    import ipaddress
+    import socket
+    from urllib.parse import urlparse
+
+    try:
+        parsed = urlparse(url)
+        if parsed.scheme not in ("http", "https"):
+            logger.warning(f"Blocked non-HTTP URL scheme: {parsed.scheme}")
+            return False
+
+        host = parsed.hostname
+        if not host:
+            return False
+
+        try:
+            ips = socket.getaddrinfo(host, None)
+            for _, _, _, _, sockaddr in ips:
+                try:
+                    ip = ipaddress.ip_address(sockaddr[0])
+                    if ip.is_private or ip.is_loopback or ip.is_link_local:
+                        logger.warning(f"Blocked private IP: {ip}")
+                        return False
+                except ValueError:
+                    continue
+        except socket.gaierror:
+            pass
+
+        return True
+    except Exception as e:
+        logger.warning(f"URL validation error: {e}")
+        return False
+
+
+def _parse_publish_date(date_str: str | None) -> date | None:
+    """Parse publish date string to date object."""
+    if not date_str:
+        return None
+    try:
+        return date.fromisoformat(date_str)
+    except Exception:
+        return None
+
+
 class DataQuality(Enum):
     """Data quality levels for news data."""
 
@@ -318,7 +366,6 @@ class NewsService:
         try:
             logger.info(f"Processing article {article_id}")
 
-            # 1. Get article from repository
             article = await self._repository.get(article_id)
             if not article:
                 raise ValueError(f"Article with ID {article_id} not found")
@@ -326,7 +373,9 @@ class NewsService:
             if not article.url:
                 raise ValueError(f"Article {article_id} has no URL to process")
 
-            # 2. Scrape article content
+            if not _is_safe_url(article.url):
+                raise ValueError(f"Article URL blocked for security: {article.url}")
+
             logger.info(f"Scraping article content from {article.url}")
             scrape_result = self._article_scraper.scrape_article(article.url)
 
@@ -406,33 +455,23 @@ class NewsService:
                 )
                 # Continue without embeddings
 
-            # 5. Update article with scraped content
+            # 5. Update article with scraped content (immutable - use all values at construction)
             article = NewsArticle(
                 headline=scrape_result.title or article.headline,
                 url=article.url,
                 source=article.source,
-                published_date=article.published_date,
+                published_date=_parse_publish_date(scrape_result.publish_date)
+                or article.published_date,
                 summary=scrape_result.content,
                 entities=article.entities,
                 sentiment_score=article.sentiment_score,
                 sentiment_confidence=article.sentiment_confidence,
                 sentiment_label=article.sentiment_label,
-                author=article.author,
+                author=scrape_result.author or article.author,
                 category=article.category,
                 title_embedding=article.title_embedding,
                 content_embedding=article.content_embedding,
             )
-            article.author = scrape_result.author
-            # Keep the published_date from RSS if we don't have a better one from scraping
-            if scrape_result.publish_date:
-                try:
-                    from datetime import date as date_class
-
-                    article.published_date = date_class.fromisoformat(
-                        scrape_result.publish_date
-                    )
-                except Exception:
-                    pass  # Keep existing date if parsing fails
 
             # 6. Save updated article
             logger.info(f"Saving processed article {article_id}")

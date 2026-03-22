@@ -10,7 +10,6 @@ from uuid import uuid4
 import pytest
 
 from tradingagents.domains.news.news_article import NewsArticle
-from tradingagents.workflows.activities import news_activities as activities_module
 from tradingagents.workflows.activities.news_activities import NewsActivities
 
 
@@ -29,9 +28,8 @@ def mock_news_service():
 
 @pytest.fixture
 def news_activities(mock_news_service):
-    """Create NewsActivities with mocked NewsService via module-level DI."""
-    activities_module._news_service = mock_news_service
-    return NewsActivities()
+    """Create NewsActivities with mocked NewsService via constructor DI."""
+    return NewsActivities(mock_news_service)
 
 
 class TestFetchArticleActivity:
