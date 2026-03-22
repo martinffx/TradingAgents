@@ -1,0 +1,291 @@
+{
+  "feature": "marketdata-postgresql-migration",
+  "status": "pending",
+  "created_at": "2026-03-22",
+  "updated_at": "2026-03-22",
+  "estimated_total_hours": 40,
+  "description": "Migrate MarketData domain from CSV storage to PostgreSQL + TimescaleDB + pgvectorscale with 10x performance and RAG capabilities",
+  "tasks": [
+    {
+      "id": "M001",
+      "title": "Database Schema - Create Tables and Indexes",
+      "phase": 1,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": [],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "market_data hypertable created with TimescaleDB",
+        "fundamental_data hypertable created with proper chunking",
+        "insider_data hypertable created with TimescaleDB",
+        "technical_indicators hypertable with all 20 TA-Lib fields",
+        "Vector indexes created for all embedding columns"
+      ]
+    },
+    {
+      "id": "M002",
+      "title": "MarketDataEntity - OHLC Entity Model",
+      "phase": 2,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M001"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "MarketDataEntity with all OHLC fields",
+        "Vector embedding fields for RAG",
+        "Business rule validation (high >= low, etc.)",
+        "from_yfinance_data() transformation",
+        "to_database_record() conversion"
+      ]
+    },
+    {
+      "id": "M003",
+      "title": "FundamentalDataEntity - Financial Data Entity",
+      "phase": 2,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M001"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "FundamentalDataEntity with balance sheet fields",
+        "Income statement and cash flow fields",
+        "Calculated ratio fields (PE, PB, ROE, ROA, D/E)",
+        "Financial health embedding for RAG",
+        "from_finnhub_response() transformation"
+      ]
+    },
+    {
+      "id": "M004",
+      "title": "InsiderDataEntity - Transaction Entity",
+      "phase": 2,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M001"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "InsiderDataEntity with transaction fields",
+        "Insider sentiment score calculation",
+        "Transaction pattern embedding for RAG",
+        "from_finnhub_response() transformation",
+        "Position-based sentiment adjustment"
+      ]
+    },
+    {
+      "id": "M005",
+      "title": "TechnicalIndicatorEntity - TA-Lib Indicators",
+      "phase": 2,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M001"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "All 20 TA-Lib indicators as fields",
+        "Moving averages (SMA, EMA)",
+        "Momentum indicators (RSI, MACD)",
+        "Volatility indicators (Bollinger, ATR)",
+        "Pattern embedding for RAG similarity"
+      ]
+    },
+    {
+      "id": "M006",
+      "title": "MarketDataRepository - Async PostgreSQL",
+      "phase": 3,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M002"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "get_ohlc_data() with TimescaleDB optimization",
+        "bulk_upsert_market_data() for Dagster ingestion",
+        "get_latest_ohlc() for current data",
+        "find_similar_momentum_patterns() for RAG",
+        "Sub-100ms query performance"
+      ]
+    },
+    {
+      "id": "M007",
+      "title": "FundamentalDataRepository - Financial Data Access",
+      "phase": 3,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M003"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "get_fundamental_data() with date range",
+        "get_latest_fundamental_data() for current ratios",
+        "get_fundamental_history() for trend analysis",
+        "find_similar_financial_profiles() for RAG",
+        "Bulk upsert for Dagster pipelines"
+      ]
+    },
+    {
+      "id": "M008",
+      "title": "InsiderDataRepository - Transaction Data Access",
+      "phase": 3,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M004"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "get_insider_transactions() with date filter",
+        "get_recent_insider_activity() for agent queries",
+        "find_similar_insider_patterns() for RAG",
+        "Bulk upsert for Dagster pipelines",
+        "Sentiment aggregation methods"
+      ]
+    },
+    {
+      "id": "M009",
+      "title": "TechnicalIndicatorRepository - Indicator Data Access",
+      "phase": 3,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M005"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "get_technical_indicators() for all 20 indicators",
+        "save_technical_indicators() batch operation",
+        "find_similar_patterns() for RAG",
+        "Performance optimized for bulk operations"
+      ]
+    },
+    {
+      "id": "M010",
+      "title": "CSV to PostgreSQL Migration Scripts",
+      "phase": 4,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M006", "M007", "M008", "M009"],
+      "estimated_hours": 4,
+      "acceptance_criteria": [
+        "MarketData migrator from CSV files",
+        "FundamentalData migrator",
+        "InsiderData migrator",
+        "Data validation during migration",
+        "Migration progress tracking"
+      ]
+    },
+    {
+      "id": "M011",
+      "title": "Vector Embedding Generation",
+      "phase": 4,
+      "status": "pending",
+      "priority": "P1",
+      "dependencies": ["M002", "M003", "M004", "M005"],
+      "estimated_hours": 4,
+      "acceptance_criteria": [
+        "Technical pattern embedding generation",
+        "Price movement embedding generation",
+        "Financial health embedding generation",
+        "Transaction pattern embedding generation",
+        "Batch embedding for existing data"
+      ]
+    },
+    {
+      "id": "M012",
+      "title": "MarketDataService - PostgreSQL Backend",
+      "phase": 5,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M006"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "get_stock_data() with 100% API compatibility",
+        "calculate_technical_indicators() - all 20 TA-Lib",
+        "get_trading_style_preset() - existing presets",
+        "Sub-100ms query performance",
+        "RAG-enhanced analysis methods"
+      ]
+    },
+    {
+      "id": "M013",
+      "title": "FundamentalDataService - PostgreSQL Backend",
+      "phase": 5,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M007"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "get_financial_ratios() with 100% API compatibility",
+        "analyze_financial_health() with RAG enhancement",
+        "get_financial_history() for trends",
+        "Preserve existing return types"
+      ]
+    },
+    {
+      "id": "M014",
+      "title": "InsiderDataService - PostgreSQL Backend",
+      "phase": 5,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M008"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "get_recent_insider_activity() with 100% API compatibility",
+        "analyze_insider_sentiment() with RAG enhancement",
+        "Preserve existing return types",
+        "Sentiment calculation consistency"
+      ]
+    },
+    {
+      "id": "M015",
+      "title": "MarketDataRAGService - Pattern Matching",
+      "phase": 5,
+      "status": "pending",
+      "priority": "P1",
+      "dependencies": ["M011", "M012"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "find_similar_market_conditions() for decision support",
+        "get_peer_analysis() for company comparison",
+        "Sub-200ms RAG query performance",
+        "Historical pattern outcome analysis"
+      ]
+    },
+    {
+      "id": "M016",
+      "title": "Integration Tests - Data Integrity",
+      "phase": 6,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M012", "M013", "M014"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "OHLC data accuracy vs CSV files",
+        "Fundamental data validation",
+        "Insider data integrity checks",
+        "Indicator calculation accuracy"
+      ]
+    },
+    {
+      "id": "M017",
+      "title": "Integration Tests - API Compatibility",
+      "phase": 6,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M012", "M013", "M014"],
+      "estimated_hours": 2,
+      "acceptance_criteria": [
+        "MarketDataService API unchanged",
+        "FundamentalDataService API unchanged",
+        "InsiderDataService API unchanged",
+        "All return types preserved"
+      ]
+    },
+    {
+      "id": "M018",
+      "title": "Performance Tests - Benchmarks",
+      "phase": 6,
+      "status": "pending",
+      "priority": "P0",
+      "dependencies": ["M012", "M015"],
+      "estimated_hours": 3,
+      "acceptance_criteria": [
+        "Sub-100ms market data queries",
+        "Sub-200ms RAG vector similarity",
+        "10x improvement over CSV baseline",
+        "Concurrent access performance"
+      ]
+    }
+  ]
+}
