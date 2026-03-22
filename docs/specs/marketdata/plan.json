@@ -4,6 +4,7 @@
   "created_at": "2026-03-22",
   "updated_at": "2026-03-22",
   "estimated_total_hours": 40,
+  "estimated_with_ai_hours": 24,
   "description": "Migrate MarketData domain from CSV storage to PostgreSQL + TimescaleDB + pgvectorscale with 10x performance and RAG capabilities",
   "tasks": [
     {
@@ -11,7 +12,7 @@
       "title": "Database Schema - Create Tables and Indexes",
       "phase": 1,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": [],
       "estimated_hours": 3,
       "acceptance_criteria": [
@@ -27,7 +28,7 @@
       "title": "MarketDataEntity - OHLC Entity Model",
       "phase": 2,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M001"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -43,7 +44,7 @@
       "title": "FundamentalDataEntity - Financial Data Entity",
       "phase": 2,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M001"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -59,7 +60,7 @@
       "title": "InsiderDataEntity - Transaction Entity",
       "phase": 2,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M001"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -75,7 +76,7 @@
       "title": "TechnicalIndicatorEntity - TA-Lib Indicators",
       "phase": 2,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M001"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -91,7 +92,7 @@
       "title": "MarketDataRepository - Async PostgreSQL",
       "phase": 3,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M002"],
       "estimated_hours": 3,
       "acceptance_criteria": [
@@ -107,7 +108,7 @@
       "title": "FundamentalDataRepository - Financial Data Access",
       "phase": 3,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M003"],
       "estimated_hours": 3,
       "acceptance_criteria": [
@@ -123,7 +124,7 @@
       "title": "InsiderDataRepository - Transaction Data Access",
       "phase": 3,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M004"],
       "estimated_hours": 3,
       "acceptance_criteria": [
@@ -139,7 +140,7 @@
       "title": "TechnicalIndicatorRepository - Indicator Data Access",
       "phase": 3,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M005"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -154,7 +155,7 @@
       "title": "CSV to PostgreSQL Migration Scripts",
       "phase": 4,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M006", "M007", "M008", "M009"],
       "estimated_hours": 4,
       "acceptance_criteria": [
@@ -170,7 +171,7 @@
       "title": "Vector Embedding Generation",
       "phase": 4,
       "status": "pending",
-      "priority": "P1",
+      "priority": "high",
       "dependencies": ["M002", "M003", "M004", "M005"],
       "estimated_hours": 4,
       "acceptance_criteria": [
@@ -186,7 +187,7 @@
       "title": "MarketDataService - PostgreSQL Backend",
       "phase": 5,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M006"],
       "estimated_hours": 3,
       "acceptance_criteria": [
@@ -202,7 +203,7 @@
       "title": "FundamentalDataService - PostgreSQL Backend",
       "phase": 5,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M007"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -217,7 +218,7 @@
       "title": "InsiderDataService - PostgreSQL Backend",
       "phase": 5,
       "status": "pending",
-      "priority": "P0",
+      "priority": "critical",
       "dependencies": ["M008"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -232,7 +233,7 @@
       "title": "MarketDataRAGService - Pattern Matching",
       "phase": 5,
       "status": "pending",
-      "priority": "P1",
+      "priority": "high",
       "dependencies": ["M011", "M012"],
       "estimated_hours": 3,
       "acceptance_criteria": [
@@ -247,7 +248,7 @@
       "title": "Integration Tests - Data Integrity",
       "phase": 6,
       "status": "pending",
-      "priority": "P0",
+      "priority": "high",
       "dependencies": ["M012", "M013", "M014"],
       "estimated_hours": 3,
       "acceptance_criteria": [
@@ -262,7 +263,7 @@
       "title": "Integration Tests - API Compatibility",
       "phase": 6,
       "status": "pending",
-      "priority": "P0",
+      "priority": "high",
       "dependencies": ["M012", "M013", "M014"],
       "estimated_hours": 2,
       "acceptance_criteria": [
@@ -277,7 +278,7 @@
       "title": "Performance Tests - Benchmarks",
       "phase": 6,
       "status": "pending",
-      "priority": "P0",
+      "priority": "high",
       "dependencies": ["M012", "M015"],
       "estimated_hours": 3,
       "acceptance_criteria": [
