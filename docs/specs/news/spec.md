@@ -8,7 +8,7 @@
 
 **Stack**: PostgreSQL + TimescaleDB + pgvectorscale + OpenRouter
 
-**Current Status**: Core infrastructure exists (NewsService, GoogleNewsClient, ArticleScraperClient, NewsRepository). Missing: scheduled execution, LLM sentiment analysis, vector embeddings.
+**Current Status**: Core infrastructure exists (NewsService, GoogleNewsClient, ArticleScraperClient, NewsRepository). Implemented: Temporal workflow orchestration, LLM sentiment analysis, vector embeddings. Missing: vector similarity search, CLI workflow triggers.
 
 ---
 
@@ -132,24 +132,26 @@
 
 ### Architecture Pattern
 
-Follows established **Router → Service → Repository → Entity → Database** pattern:
+Follows established **Router → Service → Repository → Entity → Database** pattern with Temporal orchestration:
 
 ```
-ScheduledNewsCollector → NewsService → NewsRepository → NewsArticle → PostgreSQL+pgvectorscale
+Temporal Worker → NewsProcessingWorkflow → NewsActivities → NewsService → NewsRepository → NewsArticle → PostgreSQL+pgvectorscale
 ```
 
 ### Data Flow
 
-1. **Scheduled Collection Flow**
+1. **News Collection Flow**
    ```
-   APScheduler → ScheduledNewsCollector → NewsService.update_company_news()
-   → GoogleNewsClient → ArticleScraperClient → OpenRouter (sentiment + embeddings)
-   → NewsRepository.upsert_batch() → PostgreSQL
+   Temporal Worker → NewsProcessingWorkflow
+   → NewsActivities.fetch_article() / scrape_article()
+   → NewsActivities.analyze_sentiment() + create_embedding()
+   → NewsActivities.save_article() → NewsRepository
+   → PostgreSQL+pgvectorscale
    ```
 
 2. **Agent Query Flow**
    ```
-   News Analyst → AgentToolkit → NewsService.find_relevant_articles()
+   News Analyst → AgentToolkit → NewsService
    → NewsRepository (semantic search) → pgvectorscale vector similarity
    ```
 
@@ -163,19 +165,8 @@ New fields:
 - `content_embedding: vector(1536)` - semantic embedding for article content
 
 Validation rules:
-- Sentiment confidence must be ≥ 0.5 for reliable classification
+- Sentiment confidence must be ≥ 0.6 for reliable classification
 - Embeddings must be exactly 1536 dimensions
-
-#### NewsJobConfig (new entity)
-
-Fields:
-- `id: UUID` - primary key
-- `name: str` - job name (max 255 chars)
-- `symbols: List[str]` - ticker symbols to track (uppercase)
-- `categories: List[str]` - news categories (optional)
-- `frequency_cron: str` - cron expression for schedule
-- `enabled: bool` - job active state
-- `last_run: datetime` - timestamp of last execution
 
 ---
 
@@ -198,27 +189,8 @@ CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_news_articles_content_embedding
 
 -- Sentiment filter index
 CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_news_articles_sentiment 
-    ON news_articles (((sentiment_score->>'sentiment'))) 
-    WHERE sentiment_score IS NOT NULL;
-```
-
-### news_job_configs Table
-
-```sql
-CREATE TABLE news_job_configs (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name VARCHAR(255) NOT NULL,
-    symbols JSONB NOT NULL,
-    categories JSONB DEFAULT '[]',
-    frequency_cron VARCHAR(100) NOT NULL,
-    enabled BOOLEAN DEFAULT true,
-    last_run TIMESTAMPTZ,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
-CREATE INDEX idx_news_jobs_enabled_frequency ON news_job_configs (enabled, frequency_cron);
-CREATE INDEX idx_news_jobs_last_run ON news_job_configs (last_run) WHERE enabled = true;
+    ON news_articles USING btree (sentiment_label) 
+    WHERE sentiment_label IS NOT NULL;
 ```
 
 ---
@@ -235,32 +207,48 @@ CREATE INDEX idx_news_jobs_last_run ON news_job_configs (last_run) WHERE enabled
 - Model: text-embedding-3-small (1536 dimensions)
 - Input: article title and content (truncated to 8000 chars)
 
+### Temporal (workflow orchestration)
+
+**NewsProcessingWorkflow**:
+- Single article processing workflow
+- Handles fetch, scrape, sentiment, embeddings, save
+- Activity retry with exponential backoff on 429
+
+**BatchNewsProcessingWorkflow**:
+- Parallel processing of multiple articles
+- Uses asyncio.gather for concurrent execution
+- Returns success/failed counts
+
 ---
 
 ## Implementation Phases
 
-### Phase 1: Foundation (4-7 hours)
-- Database migration for news_job_configs table
-- Enhance NewsArticle entity with sentiment and embedding fields
-- Create NewsJobConfig entity
+### Phase 1: Foundation ✅
+- [x] Temporal workflow orchestration (NewsProcessingWorkflow)
+- [x] NewsArticle entity with sentiment and embedding fields
+- [x] NewsActivities for LLM calls
+- [x] NewsArticleEntity with Vector(1536) columns
 
-### Phase 2: Data Access (2-3 hours)
-- Enhance NewsRepository with vector similarity search
-- Add NewsJobConfig CRUD operations
+### Phase 2: Data Access ⚠️
+- [x] NewsRepository CRUD operations
+- [x] Batch upsert operations
+- [ ] Vector similarity search (cosine distance queries)
+- [ ] Semantic article search endpoint
 
-### Phase 3: LLM Integration (5-8 hours)
-- OpenRouter sentiment analysis client
-- OpenRouter embeddings client
-- Integrate into NewsService
+### Phase 3: LLM Integration ✅
+- [x] OpenRouter sentiment analysis client
+- [x] OpenRouter embeddings client
+- [x] NewsService LLM integration
 
-### Phase 4: Scheduling (4-6 hours)
-- APScheduler integration with job management
-- CLI commands for job management
+### Phase 4: Workflow Orchestration ⚠️
+- [x] Temporal workflow execution
+- [ ] CLI commands for workflow triggers
+- [ ] Temporal worker configuration
 
 ### Phase 5: Validation (3-5 hours)
-- Integration tests
-- Performance benchmarks
-- Documentation updates
+- [ ] Integration tests
+- [ ] Performance benchmarks
+- [ ] Documentation updates
 
 ---
 
@@ -270,17 +258,18 @@ CREATE INDEX idx_news_jobs_last_run ON news_job_configs (last_run) WHERE enabled
 
 ```bash
 OPENROUTER_API_KEY="sk-or-..."
-OPENAI_API_KEY="sk-..."  # For embeddings via OpenRouter
 DATABASE_URL="postgresql://..."
-NEWS_SCHEDULE_HOUR=6     # UTC hour for daily execution
-NEWS_TICKERS="AAPL,GOOGL,MSFT,TSLA"
+TEMPORAL_HOST="localhost:7233"  # Temporal server address
+TEMPORAL_NAMESPACE="default"
 ```
 
 ### Dependencies
 
 ```toml
-# Add to pyproject.toml
-apscheduler = "^3.10"
+# Already in pyproject.toml
+temporalio = "^1.0"
+pgvector = "^0.2"
+openai = "^1.0"
 ```
 
 ---
@@ -289,7 +278,7 @@ apscheduler = "^3.10"
 
 ### Performance Targets
 - **Query Response Time**: < 2 seconds for news retrieval with sentiment
-- **Job Execution Time**: < 30 minutes for daily collection (4 tickers)
+- **Workflow Execution Time**: < 5 minutes per article (including LLM calls)
 - **Success Rate**: > 95% article processing success rate
 
 ### Quality Targets
@@ -297,7 +286,7 @@ apscheduler = "^3.10"
 - **Zero Breaking Changes**: AgentToolkit integration unchanged
 
 ### Operational Metrics
-- Daily job completion status and execution time
-- Article processing success/failure rates per ticker
+- Workflow completion status and execution time
+- Article processing success/failure rates
 - LLM sentiment analysis success rates
 - Vector embedding generation performance

@@ -1,6 +1,6 @@
 {
   "feature": "news-domain-completion",
-  "status": "pending",
+  "status": "in_progress",
   "created_at": "2026-03-22",
   "updated_at": "2026-03-22",
   "estimated_total_hours": 29,
@@ -11,136 +11,96 @@
       "id": "T001",
       "title": "Database Migration - NewsJobConfig Table",
       "phase": 1,
-      "status": "pending",
+      "status": "cancelled",
       "priority": "critical",
       "dependencies": [],
       "estimated_hours": 2,
-      "acceptance_criteria": [
-        "news_job_configs table created with UUID primary key",
-        "JSONB fields for symbols and categories with validation",
-        "Proper indexes for enabled/frequency queries",
-        "Migration script tests with rollback capability"
-      ]
+      "notes": "Cancelled - using Temporal instead of APScheduler. Job scheduling handled by Temporal workflows."
     },
     {
       "id": "T002",
       "title": "Enhance NewsArticle Entity - Sentiment and Embeddings",
       "phase": 1,
-      "status": "pending",
+      "status": "completed",
       "priority": "critical",
-      "dependencies": ["T001"],
+      "dependencies": [],
       "estimated_hours": 3,
-      "acceptance_criteria": [
-        "Add sentiment_score, sentiment_confidence, sentiment_label fields",
-        "Add title_embedding and content_embedding vector fields",
-        "Enhanced validate() method with sentiment range checks",
-        "Embedding dimension validation (1536)"
-      ]
+      "completion_date": "2026-03-22",
+      "notes": "NewsArticle entity with immutable transformation methods. Fields: sentiment_score, sentiment_confidence, sentiment_label, title_embedding, content_embedding."
     },
     {
       "id": "T003",
       "title": "Create NewsJobConfig Entity",
       "phase": 1,
-      "status": "pending",
+      "status": "cancelled",
       "priority": "critical",
-      "dependencies": ["T001"],
+      "dependencies": [],
       "estimated_hours": 2,
-      "acceptance_criteria": [
-        "NewsJobConfig dataclass with all required fields",
-        "Business rule validation for job configuration",
-        "Cron expression validation for frequency",
-        "Symbol list validation"
-      ]
+      "notes": "Cancelled - using Temporal instead. Temporal workflows handle scheduling."
     },
     {
       "id": "T004",
-      "title": "Enhance NewsRepository - Vector and Job Operations",
+      "title": "Enhance NewsRepository - CRUD and Batch Operations",
       "phase": 2,
-      "status": "pending",
+      "status": "completed",
       "priority": "critical",
-      "dependencies": ["T002", "T003"],
+      "dependencies": ["T002"],
       "estimated_hours": 3,
-      "acceptance_criteria": [
-        "Vector similarity search with cosine distance",
-        "Batch embedding update operations",
-        "NewsJobConfig CRUD methods",
-        "Optimized query performance for vector operations"
-      ]
+      "completion_date": "2026-03-22",
+      "notes": "NewsRepository with get, upsert, upsert_batch, list, list_by_date_range, update_article_sentiment. Vector columns in NewsArticleEntity."
     },
     {
       "id": "T005",
       "title": "OpenRouter Client - Sentiment Analysis",
       "phase": 3,
-      "status": "pending",
+      "status": "completed",
       "priority": "critical",
-      "dependencies": ["T002"],
+      "dependencies": [],
       "estimated_hours": 3,
-      "acceptance_criteria": [
-        "OpenRouter API integration for sentiment analysis",
-        "Structured prompts for financial news sentiment",
-        "Response parsing with Pydantic models",
-        "Error handling with graceful fallbacks"
-      ]
+      "completion_date": "2026-03-22",
+      "notes": "OpenRouter sentiment analysis via NewsActivities.analyze_sentiment(). Uses quick_think_llm."
     },
     {
       "id": "T006",
       "title": "OpenRouter Client - Vector Embeddings",
       "phase": 3,
-      "status": "pending",
+      "status": "completed",
       "priority": "critical",
-      "dependencies": ["T002"],
+      "dependencies": [],
       "estimated_hours": 2,
-      "acceptance_criteria": [
-        "OpenRouter embeddings API integration",
-        "Text preprocessing for embedding generation",
-        "Batch processing for multiple articles",
-        "1536-dimensional vector validation"
-      ]
+      "completion_date": "2026-03-22",
+      "notes": "OpenRouter embeddings via NewsActivities.create_embedding(). 1536 dimensions."
     },
     {
       "id": "T007",
       "title": "Enhance NewsService - LLM Integration",
       "phase": 3,
-      "status": "pending",
+      "status": "completed",
       "priority": "critical",
       "dependencies": ["T005", "T006"],
       "estimated_hours": 3,
-      "acceptance_criteria": [
-        "Replace keyword sentiment with LLM analysis",
-        "Add embedding generation to article processing",
-        "End-to-end article processing pipeline",
-        "Proper error handling and fallback strategies"
-      ]
+      "completion_date": "2026-03-22",
+      "notes": "NewsService integrated with NewsActivities. Workflow calls activities for LLM processing."
     },
     {
       "id": "T008",
       "title": "APScheduler Integration - Job Scheduling",
       "phase": 4,
-      "status": "pending",
+      "status": "cancelled",
       "priority": "high",
-      "dependencies": ["T003", "T004", "T007"],
+      "dependencies": [],
       "estimated_hours": 4,
-      "acceptance_criteria": [
-        "APScheduler setup with PostgreSQL job store",
-        "Scheduled job execution with proper error handling",
-        "Job configuration loading and validation",
-        "Status monitoring and failure recovery"
-      ]
+      "notes": "Cancelled - replaced by Temporal. NewsProcessingWorkflow and BatchNewsProcessingWorkflow handle orchestration."
     },
     {
       "id": "T009",
-      "title": "CLI Integration - Job Management Commands",
+      "title": "CLI Integration - Workflow Triggers",
       "phase": 4,
       "status": "pending",
       "priority": "medium",
-      "dependencies": ["T008"],
+      "dependencies": [],
       "estimated_hours": 2,
-      "acceptance_criteria": [
-        "CLI commands for job creation/management",
-        "Manual job execution commands",
-        "Job status and monitoring commands",
-        "Integration with existing CLI structure"
-      ]
+      "notes": "CLI commands for triggering Temporal workflows. Need: start workflow, check status."
     },
     {
       "id": "T010",
@@ -148,29 +108,29 @@
       "phase": 5,
       "status": "pending",
       "priority": "high",
-      "dependencies": ["T007", "T008"],
+      "dependencies": ["T007"],
       "estimated_hours": 3,
-      "acceptance_criteria": [
-        "End-to-end workflow tests from RSS to vector storage",
-        "Agent integration tests via AgentToolkit",
-        "Performance tests for daily collection volumes",
-        "Test coverage maintained above 85%"
-      ]
+      "notes": "End-to-end tests for Temporal workflows. Test news collection to storage."
     },
     {
       "id": "T011",
-      "title": "Documentation and Monitoring",
+      "title": "Documentation - Temporal Worker Setup",
       "phase": 5,
       "status": "pending",
       "priority": "medium",
-      "dependencies": ["T010"],
+      "dependencies": [],
       "estimated_hours": 2,
-      "acceptance_criteria": [
-        "Updated API documentation for new methods",
-        "Job scheduling configuration examples",
-        "Performance monitoring dashboard queries",
-        "Agent integration documentation"
-      ]
+      "notes": "Document Temporal worker configuration, startup commands, namespace setup."
+    },
+    {
+      "id": "T012",
+      "title": "Vector Similarity Search",
+      "phase": 2,
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["T004"],
+      "estimated_hours": 3,
+      "notes": "Add cosine similarity search to NewsRepository. Enable semantic article search."
     }
   ]
 }
