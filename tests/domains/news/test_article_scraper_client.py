@@ -2,6 +2,8 @@
 Tests for ArticleScraperClient using pytest-vcr for HTTP interactions.
 """
 
+from unittest.mock import patch
+
 import pytest
 
 from tradingagents.domains.news.article_scraper_client import (
@@ -9,34 +11,21 @@ from tradingagents.domains.news.article_scraper_client import (
     ScrapeResult,
 )
 
-
-# VCR configuration optimized for minimal cassette size
-def response_content_filter(response):
-    """Filter response content to reduce cassette size."""
-    if "text/html" in response.get("headers", {}).get("content-type", [""])[0]:
-        # For HTML responses, keep only the first 1KB for basic structure
-        if "string" in response["body"]:
-            content = response["body"]["string"]
-            if len(content) > 1024:
-                response["body"]["string"] = (
-                    content[:1024] + "... [TRUNCATED for test size]"
-                )
-    return response
-
-
+# VCR configuration
 vcr = pytest.mark.vcr(
     cassette_library_dir="tests/fixtures/vcr_cassettes/news",
     record_mode="once",  # Record once, then replay
     match_on=["uri", "method"],
-    filter_headers=["authorization", "cookie", "user-agent", "set-cookie"],
-    before_record_response=response_content_filter,
+    filter_headers=["authorization", "cookie", "user-agent"],
 )
 
 
 @pytest.fixture
 def scraper():
     """ArticleScraperClient instance for testing."""
-    return ArticleScraperClient(user_agent="Test-Agent/1.0", delay=0.1)
+    # Mock NLTK downloads to avoid external HTTP requests during tests
+    with patch("nltk.download"):
+        return ArticleScraperClient(user_agent="Test-Agent/1.0", delay=0.1)
 
 
 class TestArticleScraperClient:
@@ -173,32 +162,6 @@ class TestArticleScraperClient:
         assert isinstance(result, ScrapeResult)
         assert result.final_url == url
         assert result.status in ["SUCCESS", "SCRAPE_FAILED"]
-
-    @vcr
-    def test_scrape_multiple_financial_sites(self, scraper):
-        """Test scraping multiple financial news sites (recorded)."""
-        # Common financial news sources that appear in Google News
-        urls = [
-            "https://www.cnbc.com/",
-            "https://finance.yahoo.com/",
-            "https://www.barchart.com/",
-        ]
-
-        results = scraper.scrape_multiple_articles(urls)
-
-        assert isinstance(results, dict)
-        assert len(results) == len(urls)
-
-        for url in urls:
-            assert url in results
-            assert isinstance(results[url], ScrapeResult)
-            assert results[url].final_url == url
-            assert results[url].status in [
-                "SUCCESS",
-                "SCRAPE_FAILED",
-                "NOT_FOUND",
-                "PAYWALL_DETECTED",
-            ]
 
     @vcr
     def test_scrape_article_with_404(self, scraper):

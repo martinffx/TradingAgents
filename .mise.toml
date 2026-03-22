@@ -2,13 +2,13 @@
 python = "3.13"
 uv = "latest"
 ruff = "latest"
-docker = "latest"
 
 [env]
 _.file = ".env"
 # Python environment settings
 PYTHONDONTWRITEBYTECODE = "1"
 PYTHONUNBUFFERED = "1"
+PYTHONPATH = "${PWD}"
 
 # TradingAgents specific environment variables
 TRADINGAGENTS_RESULTS_DIR = "./results"
@@ -38,6 +38,11 @@ description = "Run tests with pytest (with database)"
 depends = ["docker"]
 run = "uv run pytest"
 
+[tasks.coverage]
+description = "Run tests with coverage report"
+depends = ["docker"]
+run = "uv run pytest --cov=tradingagents --cov-report=html --cov-report=term-missing"
+
 [tasks.lint]
 description = "Run ruff linting"
 run = "ruff check ."
@@ -46,26 +51,26 @@ run = "ruff check ."
 description = "Format code with ruff"
 run = "ruff format ."
 
-[tasks.typecheck]
-description = "Run pyrefly type checking"
-run = "uv run pyrefly check ."
+[tasks.types]
+description = "Run pyright type checking"
+run = "uv run basedpyright --project pyproject.toml ."
 
 [tasks.fix]
 description = "Auto-fix linting issues"
 run = "ruff check --fix ."
 
-[tasks.all]
-description = "Run format, lint, and typecheck"
-run = ["ruff format .", "ruff check .", "uv run pyrefly check ."]
+[tasks.check]
+description = "Run complete quality check (format, lint, typecheck, test, coverage)"
+depends = ["format", "lint", "types", "test"]
 
 [tasks.clean]
 description = "Clean up cache and build artifacts"
 run = [
-    "find . -type d -name __pycache__ -exec rm -rf {} +",
-    "find . -type f -name '*.pyc' -delete",
-    "rm -rf .pytest_cache",
-    "rm -rf .ruff_cache",
-    "rm -rf dist",
-    "rm -rf build",
-    "rm -rf *.egg-info",
+  "find . -type d -name __pycache__ -exec rm -rf {} +",
+  "find . -type f -name '*.pyc' -delete",
+  "rm -rf .pytest_cache",
+  "rm -rf .ruff_cache",
+  "rm -rf dist",
+  "rm -rf build",
+  "rm -rf *.egg-info",
 ]

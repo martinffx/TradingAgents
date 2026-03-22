@@ -7,7 +7,6 @@ from __future__ import annotations
 import builtins
 import logging
 import uuid
-from dataclasses import dataclass, field
 from datetime import date, datetime
 
 from pgvector.sqlalchemy import Vector
@@ -28,58 +27,10 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Mapped, mapped_column
 from uuid_utils import uuid7
 
+from tradingagents.domains.news.news_article import NewsArticle
 from tradingagents.lib.database import Base, DatabaseManager
 
 logger = logging.getLogger(__name__)
-
-
-@dataclass
-class NewsArticle:
-    """Represents a news article."""
-
-    headline: str
-    url: str  # Unique identifier for deduplication
-    source: str  # "Finnhub", "Google News", etc.
-    published_date: date
-
-    # Optional fields
-    summary: str | None = None
-    entities: list[str] = field(default_factory=list)
-    sentiment_score: float | None = None
-    author: str | None = None
-    category: str | None = None
-
-    def to_entity(self, symbol: str | None = None) -> NewsArticleEntity:
-        """Convert NewsArticle dataclass to NewsArticleEntity SQLAlchemy model."""
-        return NewsArticleEntity(
-            headline=self.headline,
-            url=self.url,
-            source=self.source,
-            published_date=self.published_date,
-            summary=self.summary,
-            entities=self.entities if self.entities else None,
-            sentiment_score=self.sentiment_score,
-            author=self.author,
-            category=self.category,
-            symbol=symbol,
-        )
-
-    @staticmethod
-    def from_entity(entity: NewsArticleEntity) -> NewsArticle:
-        """Convert NewsArticleEntity SQLAlchemy model to NewsArticle dataclass."""
-        from typing import cast
-
-        return NewsArticle(
-            headline=cast("str", entity.headline),
-            url=cast("str", entity.url),
-            source=cast("str", entity.source),
-            published_date=cast("date", entity.published_date),
-            summary=cast("str | None", entity.summary),
-            entities=cast("list[str] | None", entity.entities) or [],
-            sentiment_score=cast("float | None", entity.sentiment_score),
-            author=cast("str | None", entity.author),
-            category=cast("str | None", entity.category),
-        )
 
 
 class NewsArticleEntity(Base):
@@ -113,6 +64,12 @@ class NewsArticleEntity(Base):
         JSON, nullable=True
     )  # Store list[str] as JSON array
     sentiment_score: Mapped[float | None] = mapped_column(Float, nullable=True)
+    sentiment_confidence: Mapped[float | None] = mapped_column(
+        Float, nullable=True
+    )  # New field
+    sentiment_label: Mapped[str | None] = mapped_column(
+        String(50), nullable=True
+    )  # New field
     author: Mapped[str | None] = mapped_column(String(255), nullable=True)
     category: Mapped[str | None] = mapped_column(String(100), nullable=True)
 
@@ -174,7 +131,7 @@ class NewsRepository:
             db_articles = result.scalars().all()
 
             # Convert to dataclass instances
-            articles = [NewsArticle.from_entity(article) for article in db_articles]
+            articles = [NewsArticle.from_record(article) for article in db_articles]
 
         logger.info(f"Retrieved {len(articles)} articles for {symbol} on {date}")
         return articles
@@ -196,19 +153,45 @@ class NewsRepository:
             db_article = result.scalar_one_or_none()
 
             if db_article:
-                article = NewsArticle.from_entity(db_article)
+                article = NewsArticle.from_record(db_article)
                 logger.debug(f"Retrieved article {article_id}")
                 return article
 
         logger.debug(f"Article {article_id} not found")
         return None
 
-    async def upsert(self, article: NewsArticle, symbol: str) -> NewsArticle:
+    async def get_by_url(self, url: str) -> NewsArticle | None:
+        """
+        Get single article by URL.
+
+        Args:
+            url: URL of the article
+
+        Returns:
+            NewsArticle | None: Article if found, None otherwise
+        """
+        async with self.db_manager.get_session() as session:
+            result = await session.execute(
+                select(NewsArticleEntity).filter(NewsArticleEntity.url == url)
+            )
+            db_article = result.scalar_one_or_none()
+
+            if db_article:
+                article = NewsArticle.from_record(db_article)
+                logger.debug(f"Retrieved article by URL: {url}")
+                return article
+
+        logger.debug(f"Article with URL {url} not found")
+        return None
+
+    async def upsert(
+        self, article: NewsArticle, symbol: str | None = None
+    ) -> NewsArticle:
         """
         Insert or update article using URL as unique constraint.
 
         Args:
-            article: NewsArticle to insert or update
+            article: NewsArticle entity to insert or update
             symbol: Optional symbol to associate with the article
 
         Returns:
@@ -218,21 +201,26 @@ class NewsRepository:
 
         async with self.db_manager.get_session() as session:
             try:
-                # Convert to entity and prepare data for insert
+                db_entity = article.to_record(symbol=symbol)
+
                 entity_data = {
-                    "headline": article.headline,
-                    "url": article.url,
-                    "source": article.source,
-                    "published_date": article.published_date,
-                    "summary": article.summary,
-                    "entities": article.entities if article.entities else None,
-                    "sentiment_score": article.sentiment_score,
-                    "author": article.author,
-                    "category": article.category,
+                    "id": db_entity.id,
+                    "headline": db_entity.headline,
+                    "url": db_entity.url,
+                    "source": db_entity.source,
+                    "published_date": db_entity.published_date,
+                    "summary": db_entity.summary,
+                    "entities": db_entity.entities,
+                    "sentiment_score": db_entity.sentiment_score,
+                    "sentiment_confidence": db_entity.sentiment_confidence,
+                    "sentiment_label": db_entity.sentiment_label,
+                    "author": db_entity.author,
+                    "category": db_entity.category,
                     "symbol": symbol,
+                    "title_embedding": db_entity.title_embedding,
+                    "content_embedding": db_entity.content_embedding,
                 }
 
-                # Use PostgreSQL INSERT ON CONFLICT for atomic upsert
                 stmt = insert(NewsArticleEntity).values(**entity_data)
                 upsert_stmt = stmt.on_conflict_do_update(
                     index_elements=["url"],
@@ -243,16 +231,20 @@ class NewsRepository:
                         "summary": stmt.excluded.summary,
                         "entities": stmt.excluded.entities,
                         "sentiment_score": stmt.excluded.sentiment_score,
+                        "sentiment_confidence": stmt.excluded.sentiment_confidence,
+                        "sentiment_label": stmt.excluded.sentiment_label,
                         "author": stmt.excluded.author,
                         "category": stmt.excluded.category,
                         "symbol": stmt.excluded.symbol,
+                        "title_embedding": stmt.excluded.title_embedding,
+                        "content_embedding": stmt.excluded.content_embedding,
                         "updated_at": func.now(),
                     },
                 ).returning(NewsArticleEntity)
 
                 result = await session.execute(upsert_stmt)
                 db_article = result.scalar_one()
-                result_article = NewsArticle.from_entity(db_article)
+                result_article = NewsArticle.from_record(db_article)
 
                 logger.info(f"Upserted article: {article.url}")
                 return result_article
@@ -334,7 +326,7 @@ class NewsRepository:
             db_articles = result.scalars().all()
 
             articles = [
-                NewsArticle.from_entity(db_article) for db_article in db_articles
+                NewsArticle.from_record(db_article) for db_article in db_articles
             ]
 
         logger.info(f"Retrieved {len(articles)} articles for date range query")
@@ -370,6 +362,8 @@ class NewsRepository:
                         "summary": article.summary,
                         "entities": article.entities if article.entities else None,
                         "sentiment_score": article.sentiment_score,
+                        "sentiment_confidence": article.sentiment_confidence,
+                        "sentiment_label": article.sentiment_label,
                         "author": article.author,
                         "category": article.category,
                         "symbol": symbol,
@@ -388,6 +382,8 @@ class NewsRepository:
                         "summary": stmt.excluded.summary,
                         "entities": stmt.excluded.entities,
                         "sentiment_score": stmt.excluded.sentiment_score,
+                        "sentiment_confidence": stmt.excluded.sentiment_confidence,
+                        "sentiment_label": stmt.excluded.sentiment_label,
                         "author": stmt.excluded.author,
                         "category": stmt.excluded.category,
                         "symbol": stmt.excluded.symbol,
@@ -398,7 +394,7 @@ class NewsRepository:
                 result = await session.execute(upsert_stmt)
                 db_articles = result.scalars().all()
                 stored_articles = [
-                    NewsArticle.from_entity(db_article) for db_article in db_articles
+                    NewsArticle.from_record(db_article) for db_article in db_articles
                 ]
 
                 logger.info(
@@ -415,4 +411,53 @@ class NewsRepository:
             except Exception as e:
                 await session.rollback()
                 logger.error(f"Error during batch upsert for {symbol}: {e}")
+                raise
+
+    async def update_article_sentiment(
+        self,
+        url: str,
+        sentiment_score: float,
+        sentiment_confidence: float,
+        sentiment_label: str,
+    ) -> bool:
+        """
+        Update sentiment analysis for a specific article by URL.
+
+        Args:
+            url: Article URL (unique identifier)
+            sentiment_score: Sentiment score (-1.0 to 1.0)
+            sentiment_confidence: Confidence level (0.0 to 1.0)
+            sentiment_label: Sentiment label ("positive", "negative", "neutral")
+
+        Returns:
+            bool: True if updated successfully, False if article not found
+        """
+        async with self.db_manager.get_session() as session:
+            try:
+                # Find the article by URL
+                result = await session.execute(
+                    select(NewsArticleEntity).filter(NewsArticleEntity.url == url)
+                )
+                db_article = result.scalar_one_or_none()
+
+                if not db_article:
+                    logger.debug(f"Article not found for sentiment update: {url}")
+                    return False
+
+                # Update sentiment fields
+                db_article.sentiment_score = sentiment_score
+                db_article.sentiment_confidence = sentiment_confidence
+                db_article.sentiment_label = sentiment_label
+
+                # Commit the changes
+                await session.commit()
+
+                logger.debug(
+                    f"Updated sentiment for article {url}: {sentiment_label} (score: {sentiment_score:.3f})"
+                )
+                return True
+
+            except Exception as e:
+                await session.rollback()
+                logger.error(f"Failed to update sentiment for article {url}: {e}")
                 raise

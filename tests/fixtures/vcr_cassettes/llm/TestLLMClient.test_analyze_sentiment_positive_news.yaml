@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a financial news sentiment
+      analyst. Always respond with valid JSON in the specified format."},{"role":"user","content":"Analyze
+      the sentiment of this financial news article.\n\n---\nCONTENT START\n\n        Apple
+      Inc. reported strong quarterly earnings that beat analyst expectations,\n        sending
+      the stock higher in after-hours trading. The tech giant posted revenue\n        of
+      $89.5 billion, up 8% from the same quarter last year, with earnings per share\n        of
+      $1.26, exceeding the expected $1.20. iPhone sales remained robust, and the\n        company''s
+      services segment showed significant growth. Management raised its\n        guidance
+      for the upcoming quarter, citing strong demand across all product lines.\n        \n---\nCONTENT
+      END\n\nRespond with JSON in this exact format:\n{\"sentiment\": \"positive|negative|neutral\",
+      \"confidence\": 0.0-1.0, \"reasoning\": \"Brief explanation\"}\n\nFocus on:\n-
+      Overall market/stock sentiment impact\n- Financial performance indicators\n-
+      Risk factors mentioned\n- Business outlook expressed"}],"model":"anthropic/claude-3.5-sonnet","temperature":0.1}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate, br, zstd
+      connection:
+      - keep-alive
+      content-length:
+      - '1162'
+      content-type:
+      - application/json
+      host:
+      - openrouter.ai
+      x-stainless-runtime:
+      - CPython
+    method: POST
+    uri: https://openrouter.ai/api/v1/chat/completions
+  response:
+    body:
+      string: '{"error":{"message":"Missing Authentication header","code":401}}'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      CF-RAY:
+      - 9e03ef800baa50ff-AMS
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 22 Mar 2026 08:48:07 GMT
+      Permissions-Policy:
+      - payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com"
+        "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+      Referrer-Policy:
+      - no-referrer, strict-origin-when-cross-origin
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+    status:
+      code: 401
+      message: Unauthorized
+version: 1

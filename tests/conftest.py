@@ -9,9 +9,12 @@ import shutil
 import tempfile
 from datetime import date, datetime
 from unittest.mock import Mock
+from uuid import UUID
 
 import pytest
+from uuid_utils import uuid7
 
+from tradingagents.config import TradingAgentsConfig
 from tradingagents.domains.news.article_scraper_client import (
     ArticleScraperClient,
     ScrapeResult,
@@ -24,6 +27,12 @@ from tradingagents.domains.news.news_repository import (
     NewsArticle,
     NewsRepository,
 )
+
+try:
+    from tradingagents.lib.llm_client import LLMClient
+except ImportError:
+    # Handle case where dependencies are not available
+    LLMClient = None
 
 
 @pytest.fixture
@@ -42,6 +51,23 @@ def mock_article_scraper():
 def mock_repository():
     """Mock NewsRepository for testing I/O boundary."""
     return Mock(spec=NewsRepository)
+
+
+@pytest.fixture
+def mock_openrouter_client():
+    """Mock LLMClient for testing I/O boundary."""
+    return Mock(spec=LLMClient)
+
+
+@pytest.fixture
+def mock_config():
+    """Mock TradingAgentsConfig for testing."""
+    config = Mock(spec=TradingAgentsConfig)
+    config.openrouter_api_key = "test-api-key"
+    config.news_sentiment_llm = "test-model"
+    config.news_embedding_llm = "test-embedding-model"
+    config.backend_url = "https://openrouter.ai/api/v1"
+    return config
 
 
 @pytest.fixture
@@ -67,6 +93,7 @@ def sample_news_articles():
     """Sample NewsArticle objects for testing data transformations."""
     return [
         NewsArticle(
+            id=UUID(str(uuid7())),
             headline="Apple Stock Rises 5% on Strong Earnings",
             url="https://example.com/apple-earnings",
             source="CNBC",
@@ -76,6 +103,7 @@ def sample_news_articles():
             author="John Reporter",
         ),
         NewsArticle(
+            id=UUID(str(uuid7())),
             headline="Apple Faces Supply Chain Challenges",
             url="https://example.com/apple-supply-chain",
             source="Reuters",
